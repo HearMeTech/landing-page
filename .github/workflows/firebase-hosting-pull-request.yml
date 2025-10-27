@@ -7,8 +7,28 @@ permissions:
   checks: write
   contents: read
   pull-requests: write
+  statuses: write
 jobs:
+  lint:
+      name: Run Code Linter
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check out code
+          uses: actions/checkout@v4
+          with:
+            fetch-depth: 0
+  
+        - name: Run Super-Linter
+          uses: github/super-linter@v6
+          env:
+            DEFAULT_BRANCH: main
+            VALIDATE_ALL_CODEBASE: false
+            VALIDATE_HTML: true
+            VALIDATE_CSS: true
+            VALIDATE_JAVASCRIPT_ES: true
+            FILTER_REGEX_EXCLUDE: (.*.firebaserc)
   build_and_preview:
+    needs: lint
     if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
     steps:
