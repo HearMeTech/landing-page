@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hear Me — Under Maintenance</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-size='20' font-weight='bold' fill='%230a9396' font-family='sans-serif'>H</text></svg>">
+        
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="/styles/style.css">
+    
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="maintenance-container bg-white p-8 md:p-12 rounded-xl shadow-xl max-w-lg w-full text-center">
+        
+        <svg class="icon-gear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
+             fill="#0a9396" stroke="none" style="stroke-width: 0;">
+            <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61l-1.92-3.32c-0.12-0.2-0.37-0.26-0.59-0.18l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.23c-0.04-0.24-0.24-0.41-0.48-0.41H9.08c-0.24,0-0.44,0.17-0.48,0.41L8.2,4.51C7.61,4.75,7.08,5.07,6.58,5.45L4.19,4.49C3.97,4.41,3.72,4.47,3.6,4.67L1.68,8c-0.12,0.2-0.07,0.47,0.12,0.61l2.03,1.58C3.78,10.51,3.76,10.82,3.76,11.15c0,0.32,0.02,0.64,0.07,0.94l-2.03,1.58c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.2,0.37,0.26,0.59,0.18l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.39,2.28c0.04,0.24,0.24,0.41,0.48,0.41h4.84c0.24,0,0.44-0.17,0.48-0.41l0.39-2.28c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96c0.22,0.08,0.47,0.02,0.59-0.18l1.92-3.32c0.12-0.2,0.07-0.47-0.12-0.61L19.14,12.94z M12,14.5c-1.93,0-3.5-1.57-3.5-3.5s1.57-3.5,3.5-3.5s3.5,1.57,3.5,3.5S13.93,14.5,12,14.5z"/>
+        </svg>
+
+        <h1 class="text-3xl md:text-4xl font-semibold text-gray-800 mb-4">We'll be back soon!</h1>
+        <p class="text-gray-600 text-lg mb-6">
+            Sorry for the inconvenience. We're currently performing scheduled maintenance 
+            to improve our website. We'll be back online shortly.
+        </p>
+
+        <div id="timer" class="text-3xl font-bold text-teal-600 my-8"></div>
+
+        <p class="text-gray-500 italic mt-6">Hear Me — The Team</p>
+    </div>
+
+    <script src="/scripts/script.js"></script>
+</body>
+</html>

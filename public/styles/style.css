@@ -1,0 +1,33 @@
+/* --- Font import --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.maintenance-container {
+    max-width: 600px;
+}
+
+/* --- Animation for Maintenance page --- */
+.icon-gear {
+    width: 60px;
+    height: 60px;
+    stroke: #0a9396; /* Our new brand color 'brand-teal' */
+    stroke-width: 1.5px;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+
+    animation: spin 10s linear infinite;
+}
+
+/* Animation defenition */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
