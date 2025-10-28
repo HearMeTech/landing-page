@@ -17,18 +17,36 @@ It is designed to be hosted on the **Firebase Hosting** platform and is built us
 
 ## **🛠️ How to Test Locally**
 
-This project is configured to work with **Firebase Hosting**. You can easily run a local server to test all pages before deploying them.
+Testing our project involves two key steps:
+1.  **Running the Quality Linter:** Checking the code for errors and style issues.
+2.  **Running the Local Server:** Previewing the website visually in your browser.
 
-### **Prerequisites**
+### Prerequisites
 
-Before you begin, ensure you have the **Firebase CLI** (Command Line Tools) installed.
-
-If you don't have it, install it globally via `npm`:
+Before you begin, ensure you have:
+1.  **Node.js and npm:** (This provides the `npm` command).
+2.  **Firebase CLI:** If you don't have it, install it globally:
 ```bash
-npm install \-g firebase-tools
+npm install -g firebase-tools
 ```
 
-### **Running the Local Server**
+### Step 1: Install Dependencies
+
+After cloning the repository, you must first install the local development tools (linters):
+```bash
+npm install
+```
+
+### Step 2: Check Code Quality (Linting)
+
+Before any commit, run our complete quality check. This command checks all `HTML`, `CSS`, and `JavaScript` files for errors, ensuring our code stays clean and consistent.
+```bash
+npm run lint
+```
+
+**If this command shows errors, please fix them before proceeding.**
+
+### Step 3: **Running the Local Server**
 
 1. **Log in to Firebase:** (This step might be optional for firebase serve, but it's good practice).
 ```bash
