@@ -1,38 +1,201 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hear Me —  Under Maintenance</title>
-
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23007BFF' d='M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61l-1.92-3.32c-0.12-0.2-0.37-0.26-0.59-0.18l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.23c-0.04-0.24-0.24-0.41-0.48-0.41H9.08c-0.24,0-0.44,0.17-0.48,0.41L8.2,4.51C7.61,4.75,7.08,5.07,6.58,5.45L4.19,4.49C3.97,4.41,3.72,4.47,3.6,4.67L1.68,8c-0.12,0.2-0.07,0.47,0.12,0.61l2.03,1.58C3.78,10.51,3.76,10.82,3.76,11.15c0,0.32,0.02,0.64,0.07,0.94l-2.03,1.58c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.2,0.37,0.26,0.59,0.18l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.39,2.28c0.04,0.24,0.24,0.41,0.48,0.41h4.84c0.24,0,0.44-0.17,0.48-0.41l0.39-2.28c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96c0.22,0.08,0.47,0.02,0.59-0.18l1.92-3.32c0.12-0.2,0.07-0.47-0.12-0.61L19.14,12.94z M12,14.5c-1.93,0-3.5-1.57-3.5-3.5s1.57-3.5,3.5-3.5s3.5,1.57,3.5,3.5S13.93,14.5,12,14.5z'/></svg>">
-    
-    <link rel="stylesheet" href="style.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <title>Hear Me — Your Voice, Understood</title>
+    <meta name="description" content="Hear Me is a revolutionary AI-powered mobile app that provides personalized speech recognition for individuals with speech impairments.">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-size='20' font-weight='bold' fill='%230a9396' font-family='sans-serif'>H</text></svg>">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
-<body>
 
-    <div class="maintenance-container">
-        
-        <svg class="icon-gear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 20v-4M12 4v4M4 12h4M16 12h4M18.36 18.36l-2.83-2.83M8.46 8.46l-2.83-2.83M18.36 5.64l-2.83 2.83M8.46 15.54l-2.83 2.83"/>
-            <circle cx="12" cy="12" r="3"/>
-        </svg>
+<body class="font-sans text-gray-800 antialiased">
 
-        <h1>We'll be back soon!</h1>
-        <p>
-            Sorry for the inconvenience. We're currently performing scheduled maintenance 
-            to improve our website. We'll be back online shortly.
-        </p>
+    <!-- === HEADER === -->
+    <div id="header-placeholder"></div>
 
-        <div id="timer"></div>
+    <!-- === MAIN CONTENT === -->
+    <main>
 
-        <p class="team-note">Hear Me — The Team</p>
-    </div>
+        <!-- === HERO === -->
+        <section class="bg-white pt-16 pb-20 md:pt-24 md:pb-28">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <!-- Text -->
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-6">
+                        Your Voice. Your Words.
+                        <span class="text-brand-teal">Finally Understood.</span>
+                    </h1>
+                    <p class="text-lg lg:text-xl text-gray-600 mb-8">
+                        <b>Hear Me</b> is a revolutionary AI app that learns your unique speech patterns, giving you the power to communicate clearly and confidently.
+                    </p>
+                    <a href="pages/coming-soon.html" class="bg-brand-teal text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg">
+                        Start Your Free Trial
+                    </a>
+                </div>
+                <!-- Logo -->
+                <div class="flex justify-center">
+                    <img src="images/Hear-Me-Logo.png" alt="Hear Me App Logo" class="w-full max-w-sm lg:max-w-md drop-shadow-lg rounded-full">
+                </div>
+            </div>
+        </section>
 
-    <script src="script.js"></script>
+        <!-- === FEATURES === -->
+        <section id="features" class="bg-gray-50/70 py-20 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Empowering Your Communication</h2>
+                    <p class="text-lg text-gray-600">
+                        Designed for individuals with speech impairments from Cerebral Palsy, stroke, or ALS. Hear Me is your personal speech assistant.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3">Real-Time Recognition</h3>
+                        <p class="text-gray-600">Our AI instantly transcribes your speech into text, enabling seamless conversation.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3">Voice &amp; Text Output</h3>
+                        <p class="text-gray-600">Play your recognized phrase aloud, copy the text, or send it directly to popular messengers.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3">Personalized AI Model</h3>
+                        <p class="text-gray-600">The app trains on <b>your</b> voice, becoming more accurate with every use.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === HOW IT WORKS === -->
+        <section id="how-it-works" class="bg-white py-20 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">A Simple, Powerful Learning Process</h2>
+                    <p class="text-lg text-gray-600">
+                        Our unique two-stage training makes personalization fast and effective.
+                    </p>
+                </div>
+
+                <div class="relative grid md:grid-cols-2 gap-8 items-center">
+                    <div class="hidden md:block absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 h-4/5 w-1 bg-brand-teal/20 rounded-full"></div>
+                    
+                    <!-- Stage 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-xl border border-gray-100 text-center md:text-right z-10">
+                        <span class="text-5xl font-bold text-brand-teal/30">01</span>
+                        <h3 class="text-2xl font-semibold text-brand-navy mt-2 mb-3">Stage 1: Core Phrases</h3>
+                        <p class="text-gray-600">Start by training the app to recognize a set of predefined, essential phrases. This builds the initial foundation of your personal voice model.</p>
+                    </div>
+                    
+                    <!-- Stage 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-xl border border-gray-100 text-center md:text-left z-10">
+                        <span class="text-5xl font-bold text-brand-teal/30">02</span>
+                        <h3 class="text-2xl font-semibold text-brand-navy mt-2 mb-3">Stage 2: Open Recognition</h3>
+                        <p class="text-gray-600">After the initial training, the AI unlocks its full potential, learning to recognize and transcribe anything you say.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === PRICING === -->
+        <section id="pricing" class="bg-brand-navy text-white py-20 md:py-24">
+            <div class="container mx-auto px-6 text-center">
+                <div class="max-w-xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+                    <p class="text-lg text-gray-300 mb-8">
+                        Try every feature of Hear Me completely free for one month. No credit card required.
+                    </p>
+                    <div class="bg-white text-gray-800 rounded-xl p-10 shadow-2xl">
+                        <h3 class="text-xl font-semibold text-gray-500 mb-2">Full Access Subscription</h3>
+                        <div class="text-5xl font-bold text-brand-navy mb-4">
+                            $19 <span class="text-2xl font-medium text-gray-600">/ month</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">Billed monthly after your 1-month free trial ends. Cancel anytime.</p>
+                        <a href="pages/coming-soon.html" class="w-full bg-brand-teal text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg">
+                            Start Your Free Trial
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === ROADMAP === -->
+        <section id="roadmap" class="bg-white py-20 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">The Future of Hear Me</h2>
+                    <p class="text-lg text-gray-600">
+                        Our mission doesn't stop here. We are actively working on integrating Hear Me into every part of your digital life.
+                    </p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <!-- Roadmap Item 1 -->
+                    <div class="flex items-start space-x-6 p-6 mb-6">
+                        <div class="bg-brand-teal text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center font-bold text-xl">1</div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-brand-navy mb-2">Keyboard Integration</h3>
+                            <p class="text-gray-600">Use your personalized voice model to dictate text in any app, directly from your keyboard.</p>
+                        </div>
+                    </div>
+                    <!-- Roadmap Item 2 -->
+                    <div class="flex items-start space-x-6 p-6 mb-6">
+                        <div class="bg-brand-teal text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center font-bold text-xl">2</div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-brand-navy mb-2">Real-Time Call Translation</h3>
+                            <p class="text-gray-600">Integrate with messenger audio calls (e.g., WhatsApp, Telegram) to provide real-time transcription and speech generation during calls.</p>
+                        </div>
+                    </div>
+                    <!-- Roadmap Item 3 -->
+                    <div class="flex items-start space-x-6 p-6 mb-6">
+                        <div class="bg-brand-teal text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center font-bold text-xl">3</div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-brand-navy mb-2">Voice Assistant Integration</h3>
+                            <p class="text-gray-600">Replace the default Siri or Google Assistant recognizer with your Hear Me model, allowing you to control your smart home and devices reliably.</p>
+                        </div>
+                    </div>
+                    <!-- Roadmap Item 4 -->
+                    <div class="flex items-start space-x-6 p-6">
+                        <div class="bg-brand-teal text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center font-bold text-xl">4</div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-brand-navy mb-2">Offline Personal Translator</h3>
+                            <p class="text-gray-600">A future device that works entirely offline, providing instant, personalized speech-to-text and speech-to-speech communication anywhere.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- === FOOTER === -->
+    <div id="footer-placeholder"></div>
+
+    <script src="scripts/script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-teal': {
+                            light: '#94d2bd',
+                            DEFAULT: '#0a9396',
+                            dark: '#005f73'
+                        },
+                        'brand-navy': '#001219',
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>
