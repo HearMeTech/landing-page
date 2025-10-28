@@ -1,4 +1,6 @@
 # **"Hear Me" Landing Page**
+[![PR Linter & Preview](https://github.com/HearMeTech/landing-page/actions/workflows/firebase-hosting-pull-request.yml/badge.svg)](https://github.com/HearMeTech/landing-page/actions/workflows/firebase-hosting-pull-request.yml)
+[![Deploy to Live](https://github.com/HearMeTech/landing-page/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://github.com/HearMeTech/landing-page/actions/workflows/firebase-hosting-merge.yml)
 
 This is a simple static website that serves as the official landing page for the "Hear Me" project.
 
@@ -78,9 +80,9 @@ Any push or pull request merge to the `main` branch will trigger an automatic de
     * `pages/`: Additional content pages (e.g., coming-soon).
     * `scripts/`: JavaScript files.
     * `styles/`: CSS stylesheets.
-* `index.html`: The main landing page (hosting root).
-* `404.html`: Custom 404 error page.
-* `maintenance.html`: "Under Maintenance" page.
+    * `index.html`: The main landing page (hosting root).
+    * `404.html`: Custom 404 error page.
+    * `maintenance.html`: "Under Maintenance" page.
 * `firebase.json`: Firebase configuration file.
 * `package.json`: Manages npm dependencies (linters) and scripts.
 * `eslint.config.js`: Configuration for ESLint.
