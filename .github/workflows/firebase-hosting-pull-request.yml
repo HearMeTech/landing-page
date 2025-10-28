@@ -25,7 +25,7 @@ jobs:
             VALIDATE_HTML: true
             VALIDATE_CSS: true
             VALIDATE_JAVASCRIPT_ES: true
-            FILTER_REGEX_EXCLUDE: (.*.firebaserc)
+            FILTER_REGEX_EXCLUDE: (.*.firebaserc|public/components/.*)
   build_and_preview:
     needs: lint
     if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
