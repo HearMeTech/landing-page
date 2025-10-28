@@ -71,24 +71,19 @@ Any push or pull request merge to the `main` branch will trigger an automatic de
 
 ## **📁 File Structure**
 
-* `.github/workflows`: The directory containing CD/CI instructions for GitHub (if used).
-* `public/`: The root directory for Firebase Hosting.
-  * `index.html`: The main landing page.
-  * `404.html`: The 404 error page.
-  * `maintenance.html`: The scheduled maintenance page.
-  * `components/`: Contains reusable HTML snippets.
-    * `header.html`
-    * `footer.html`
-  * `pages/`: Contains all secondary website pages.
-    * `coming-soon.html`
-  * `images/`: Contains all static image assets.
-    * `Hear-Me-Logo.png`
-    * `Hear-Me.png`
-  * `scripts/`: Contains all JavaScript files.
-    * `script.js` (handles component loading, mobile menu, and maintenance timer)
-  * `styles/`: Contains all CSS files.
-    * `style.css` (global styles, font imports, animations)
-* `.firebaserc`: Contains your Firebase project ID ("hear-me-landing").
-* `firebase.json`: The main Firebase configuration file. It specifies public as the root directory for hosting.
-* `.gitignore`: A standard file for ignoring files in Git.
+* `.github/`: Contains CI/CD workflows and linter configurations.
+* `public/`: Contains all static assets, components, and content pages.
+    * `components/`: Reusable HTML partials (header, footer).
+    * `images/`: Brand logos and other images.
+    * `pages/`: Additional content pages (e.g., coming-soon).
+    * `scripts/`: JavaScript files.
+    * `styles/`: CSS stylesheets.
+* `index.html`: The main landing page (hosting root).
+* `404.html`: Custom 404 error page.
+* `maintenance.html`: "Under Maintenance" page.
+* `firebase.json`: Firebase configuration file.
+* `package.json`: Manages npm dependencies (linters) and scripts.
+* `eslint.config.js`: Configuration for ESLint.
+* `.stylelintrc.json`: Configuration for Stylelint.
+* `.gitignore`: Specifies files for Git to ignore.
 * `README.md`: This file.
