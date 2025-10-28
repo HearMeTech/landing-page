@@ -1,0 +1,33 @@
+{
+  "name": "landing",
+  "version": "1.0.0",
+  "description": "This is a simple static website that serves as the official landing page for the \"Hear Me\" project.",
+  "type": "module",
+  "main": "index.js",
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "lint:html": "htmlhint --config .github/linters/.htmlhintrc \"**/*.html\" --ignore \"public/components/**\"",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:js": "eslint \"**/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HearMeTech/landing-page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HearMeTech/landing-page/issues"
+  },
+  "homepage": "https://github.com/HearMeTech/landing-page#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "eslint": "^9.38.0",
+    "globals": "^16.4.0",
+    "htmlhint": "^1.7.1",
+    "stylelint": "^16.25.0",
+    "stylelint-config-standard": "^39.0.1"
+  }
+}
