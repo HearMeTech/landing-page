@@ -14,18 +14,14 @@ jobs:
       steps:
         - name: Check out code
           uses: actions/checkout@v4
+        - name: Set up Node.js
+          uses: actions/setup-node@v4
           with:
-            fetch-depth: 0
-        - name: Run Super-Linter
-          uses: github/super-linter@v6
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            DEFAULT_BRANCH: main
-            VALIDATE_ALL_CODEBASE: false
-            VALIDATE_HTML: true
-            VALIDATE_CSS: true
-            VALIDATE_JAVASCRIPT_ES: true
-            FILTER_REGEX_EXCLUDE: (.*.firebaserc|public/components/.*)
+            node-version: '20'
+        - name: Install dependencies
+          run: npm install
+        - name: Run lint scripts
+          run: npm run lint
   build_and_preview:
     needs: lint
     if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
