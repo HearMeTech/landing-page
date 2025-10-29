@@ -1,10 +1,10 @@
 {
   "name": "landing",
   "version": "1.0.0",
-  "description": "This is a simple static website that serves as the official landing page for the \"Hear Me\" project.",
+  "description": "This is a simple static website that serves as the official landing page for the \"HearMe\" project.",
   "type": "module",
   "main": "index.js",
-"scripts": {
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
     "lint:html": "htmlhint --config .github/linters/.htmlhintrc \"**/*.html\" --ignore \"public/components/**\"",

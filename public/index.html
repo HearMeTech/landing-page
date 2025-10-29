@@ -4,32 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hear Me — Your Voice, Understood</title>
-    <meta name="description" content="Hear Me is a revolutionary AI-powered mobile app that provides personalized speech recognition for individuals with speech impairments.">
+    <title>HearMe — Your Voice, Understood</title>
+    <meta name="description" content="HearMe is a revolutionary AI-powered mobile app that provides personalized speech recognition for individuals with speech impairments.">
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-size='20' font-weight='bold' fill='%230a9396' font-family='sans-serif'>H</text></svg>">
 
+    <!-- Tailwind CDN Script -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'sans': ['Montserrat', 'sans-serif'],
-                    },
-                    colors: {
-                        'brand-teal': {
-                            light: '#94d2bd',
-                            DEFAULT: '#0a9396',
-                            dark: '#005f73'
-                        },
-                        'brand-navy': '#001219',
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Centralized Tailwind Config -->
+    <script src="/scripts/tailwind-config.js"></script>
+
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
@@ -51,15 +36,15 @@
                         <span class="text-brand-teal">Finally Understood.</span>
                     </h1>
                     <p class="text-lg lg:text-xl text-gray-600 mb-8">
-                        <b>Hear Me</b> is a revolutionary AI app that learns your unique speech patterns, giving you the power to communicate clearly and confidently.
+                        <b>HearMe</b> is a revolutionary AI app that learns your unique speech patterns, giving you the power to communicate clearly and confidently.
                     </p>
-                    <a href="pages/coming-soon.html" class="bg-brand-teal text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg">
-                        Start Your Free Trial
+                    <a href="pages/waitlist.html" class="bg-brand-teal text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg">
+                        Get Early Access
                     </a>
                 </div>
-                <!-- Logo -->
+                <!-- Attractive picture -->
                 <div class="flex justify-center">
-                    <img src="images/Hear-Me-Logo.png" alt="Hear Me App Logo" class="w-full max-w-sm lg:max-w-md drop-shadow-lg rounded-full">
+                    <img src="images/person_sitting_in_wheelchair.png" alt="Person sitting in a wheelchair" class="w-full max-w-sm lg:max-w-md drop-shadow-lg rounded-full">
                 </div>
             </div>
         </section>
@@ -70,7 +55,7 @@
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Empowering Your Communication</h2>
                     <p class="text-lg text-gray-600">
-                        Designed for individuals with speech impairments from Cerebral Palsy, stroke, or ALS. Hear Me is your personal speech assistant.
+                        Designed for individuals with speech impairments from Cerebral Palsy, stroke, or ALS. <b>HearMe</b> is your personal speech assistant.
                     </p>
                 </div>
 
@@ -124,22 +109,23 @@
             </div>
         </section>
 
-        <!-- === PRICING === -->
+        <!-- === PRICING (Early Access CTA) === -->
         <section id="pricing" class="bg-brand-navy text-white py-20 md:py-24">
             <div class="container mx-auto px-6 text-center">
                 <div class="max-w-xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Get Early Access</h2>
                     <p class="text-lg text-gray-300 mb-8">
-                        Try every feature of Hear Me completely free for one month. No credit card required.
+                        Be the first to experience <b>HearMe</b>. Join our waitlist to get
+                        access to our exclusive beta and a 1-month free trial at launch.
                     </p>
-                    <div class="bg-white text-gray-800 rounded-xl p-10 shadow-2xl">
-                        <h3 class="text-xl font-semibold text-gray-500 mb-2">Full Access Subscription</h3>
-                        <div class="text-5xl font-bold text-brand-navy mb-4">
-                            $19 <span class="text-2xl font-medium text-gray-600">/ month</span>
-                        </div>
-                        <p class="text-gray-600 mb-6">Billed monthly after your 1-month free trial ends. Cancel anytime.</p>
-                        <a href="pages/coming-soon.html" class="w-full bg-brand-teal text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg">
-                            Start Your Free Trial
+                    <div class="bg-white text-gray-800 rounded-xl p-10 shadow-2xl max-w-lg mx-auto">
+                        <h3 class="text-2xl font-semibold text-brand-navy mb-4">Join the Waitlist</h3>
+                        <p class="text-gray-600 mb-6">
+                            We are currently in the final stages of development.
+                            Sign up to be notified as soon as we launch!
+                        </p>
+                        <a href="pages/waitlist.html" class="w-full bg-brand-teal text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg">
+                            Get Early Access
                         </a>
                     </div>
                 </div>
@@ -150,9 +136,9 @@
         <section id="roadmap" class="bg-white py-20 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">The Future of Hear Me</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">The Future of HearMe</h2>
                     <p class="text-lg text-gray-600">
-                        Our mission doesn't stop here. We are actively working on integrating Hear Me into every part of your digital life.
+                        Our mission doesn't stop here. We are actively working on integrating <b>HearMe</b> into every part of your digital life.
                     </p>
                 </div>
                 
@@ -178,7 +164,9 @@
                         <div class="bg-brand-teal text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center font-bold text-xl">3</div>
                         <div>
                             <h3 class="text-2xl font-semibold text-brand-navy mb-2">Voice Assistant Integration</h3>
-                            <p class="text-gray-600">Replace the default Siri or Google Assistant recognizer with your Hear Me model, allowing you to control your smart home and devices reliably.</p>
+                            <p class="text-gray-600">
+                                Replace the default Siri or Google Assistant recognizer with your <b>HearMe</b> model, allowing you to control your smart home and devices reliably.
+                            </p>
                         </div>
                     </div>
                     <!-- Roadmap Item 4 -->
@@ -198,7 +186,8 @@
     <!-- === FOOTER === -->
     <div id="footer-placeholder"></div>
 
-    <script src="scripts/script.js"></script>
+    <!-- Page-specific script -->
+    <script type="module" src="/scripts/page-index.js"></script>
 
 </body>
 </html>
