@@ -1,44 +1,9 @@
-// === Loading components logic (Header/Footer) ===
-async function loadCommonElements() {
-    const headerPlaceholder = document.getElementById('header-placeholder');
-    const footerPlaceholder = document.getElementById('footer-placeholder');
+// This is the entry point for the Maintenance page.
+// It does NOT load common elements (header/footer) as it's a standalone page.
 
-    const [headerResponse, footerResponse] = await Promise.all([
-        headerPlaceholder ? fetch('/components/header.html') : Promise.resolve(null),
-        footerPlaceholder ? fetch('/components/footer.html') : Promise.resolve(null)
-    ]);
-
-    if (headerPlaceholder && headerResponse && headerResponse.ok) {
-        headerPlaceholder.outerHTML = await headerResponse.text();
-        setupMobileMenu();
-    }
-
-    if (footerPlaceholder && footerResponse && footerResponse.ok) {
-        footerPlaceholder.innerHTML = await footerResponse.text();
-    }
-}
-
-// === Landing logic (index.html, coming-soon.html) ===
-function setupMobileMenu() {
-    const menuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (menuButton && mobileMenu) {
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-    }
-}
-
-// === Maintenance page logic (maintenance.html) ===
-
-// Timer update
+/**
+ * Timer update logic for the maintenance countdown.
+ */
 function setupMaintenanceTimer() {
     // Set the exact end date and time for the maintenance.
     // FORMAT: "Year-Month-DayTHour:Minute:Second"
@@ -51,7 +16,7 @@ function setupMaintenanceTimer() {
     const timerElement = document.getElementById('timer');
     
     if (!timerElement) {
-        return;
+        return; // Exit if timer element isn't on the page
     }
 
     const endTime = new Date(MAINTENANCE_END_TIME).getTime();
@@ -90,8 +55,14 @@ function setupMaintenanceTimer() {
     updateTimer();
 }
 
-// === Init when page is opened ===
-document.addEventListener('DOMContentLoaded', async () => {
-    await loadCommonElements();
+
+/**
+ * Main initialization function for the Maintenance page.
+ */
+function main() {
     setupMaintenanceTimer();
-});
+    console.log("Maintenance page initialized.");
+}
+
+// Run the main initialization function when the DOM is ready
+document.addEventListener('DOMContentLoaded', main);
