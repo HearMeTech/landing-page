@@ -1,0 +1,20 @@
+# This workflow syncs labels with the central config file
+# in the .github repository.
+
+name: "🔄 Sync Labels"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sync-labels:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: "Run Label Sync"
+        uses: "EndBug/label-sync@v2"
+        with:
+          config-file: "https://raw.githubusercontent.com/HearMeTech/.github/main/labels.yml"
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          delete-other-labels: true
