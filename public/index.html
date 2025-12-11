@@ -67,7 +67,6 @@
         <!-- === HERO === -->
         <section class="bg-white pt-16 pb-20 md:pt-24 md:pb-28">
             <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-                <!-- Text -->
                 <div class="text-center md:text-left">
                     <h1 class="text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-6">
                         Your Voice. Your Words.
@@ -76,11 +75,15 @@
                     <p class="text-lg lg:text-xl text-gray-600 mb-8">
                         <b>HearMe</b> is a revolutionary AI app that learns your unique speech patterns, giving you the power to communicate clearly and confidently.
                     </p>
-                    <a href="pages/waitlist.html" class="bg-brand-teal text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg">
-                        Get Early Access
-                    </a>
+                    <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+                        <a href="https://mvp.hearme.tech" target="_blank" rel="noopener noreferrer" class="bg-brand-teal text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg flex items-center justify-center">
+                            Launch App
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <!-- Attractive picture -->
                 <div class="flex justify-center">
                     <img src="images/person_sitting_in_wheelchair.png" alt="Person sitting in a wheelchair" class="w-full max-w-sm lg:max-w-md drop-shadow-lg rounded-full">
                 </div>
@@ -147,25 +150,85 @@
             </div>
         </section>
 
-        <!-- === PRICING (Early Access CTA) === -->
+        <!-- === PRICING === -->
         <section id="pricing" class="bg-brand-navy text-white py-20 md:py-24">
-            <div class="container mx-auto px-6 text-center">
-                <div class="max-w-xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Get Early Access</h2>
-                    <p class="text-lg text-gray-300 mb-8">
-                        Be the first to experience <b>HearMe</b>. Join our waitlist to get
-                        access to our exclusive beta and a 1-month free trial at launch.
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Pricing</h2>
+                    <p class="text-lg text-gray-300">
+                        Choose the plan that fits your needs. Start for free and upgrade as you grow.
                     </p>
-                    <div class="bg-white text-gray-800 rounded-xl p-10 shadow-2xl max-w-lg mx-auto">
-                        <h3 class="text-2xl font-semibold text-brand-navy mb-4">Join the Waitlist</h3>
-                        <p class="text-gray-600 mb-6">
-                            We are currently in the final stages of development.
-                            Sign up to be notified as soon as we launch!
-                        </p>
-                        <a href="pages/waitlist.html" class="w-full bg-brand-teal text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg">
-                            Get Early Access
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 flex flex-col hover:border-brand-teal/30 transition duration-300 relative overflow-hidden group">
+                        <div class="mb-4">
+                            <h3 class="text-2xl font-semibold text-white">Basic</h3>
+                            <p class="text-brand-teal font-bold text-3xl mt-2">Free <span class="text-base font-normal text-gray-400">/ forever</span></p>
+                        </div>
+                        <p class="text-gray-400 mb-8">Perfect for getting started with essential communication tools.</p>
+                        
+                        <ul class="space-y-4 mb-8 flex-grow text-gray-300">
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-brand-teal mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                                Access to preset phrase library
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-brand-teal mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                                Unlimited usage of preset phrases
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-brand-teal mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                                Text-to-Speech output
+                            </li>
+                        </ul>
+
+                        <a href="https://mvp.hearme.tech" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-brand-teal text-white px-6 py-3 rounded-full font-semibold hover:bg-brand-teal-dark transition duration-200 shadow-lg">
+                            Launch App
                         </a>
                     </div>
+
+                    <div class="bg-gradient-to-b from-brand-teal/10 to-brand-navy border border-gray-700 rounded-2xl p-8 flex flex-col relative">
+                        <div class="absolute top-0 right-0 bg-gray-700 text-gray-300 text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wide border-l border-b border-gray-600">
+                            Coming Soon
+                        </div>
+
+                        <div class="mb-4">
+                            <h3 class="text-2xl font-semibold text-white opacity-90">Pro</h3>
+                            <p class="text-white font-bold text-3xl mt-2">$19 <span class="text-base font-normal text-gray-400">/ month</span></p>
+                        </div>
+                        <p class="text-gray-300 mb-8">Unlock the full power of personalized AI speech recognition.</p>
+                        
+                        <ul class="space-y-4 mb-8 flex-grow text-gray-400">
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-brand-teal mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                                <span><b>Everything in Basic</b></span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-brand-teal mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                                Create &amp; train custom phrases
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-brand-teal mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                                Full Personalized AI Model training
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-brand-teal mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                                Priority Support
+                            </li>
+                        </ul>
+
+                        <div class="mt-auto">
+                            <a href="pages/waitlist.html" class="w-full block text-center border border-gray-500 text-gray-300 px-6 py-3 rounded-full font-semibold hover:bg-gray-700 hover:text-white hover:border-gray-400 transition duration-200">
+                                Join Waitlist
+                            </a>
+                            <p class="text-center text-xs text-gray-500 mt-3">
+                                Get notified when Pro becomes available.
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
