@@ -4,129 +4,97 @@
 
 This is a simple static website that serves as the official landing page for the **HearMe** project.
 
-It is designed to be hosted on the **Firebase Hosting** platform and is built using **Tailwind CSS** (via the play CDN) for a modern, responsive design.
+It is designed to be hosted on the **Firebase Hosting** platform and is built using **Tailwind CSS** (via CLI) for a modern, responsive design.
 
 ## **🌟 Key Features**
 
 * **Home Page (`index.html`):** The primary page that introduces visitors to our project, vision, features, and roadmap.
 * **Waitlist Page (`pages/waitlist.html`):** A dedicated page with a form to capture emails, integrated with Firebase Firestore.
 * **Internationalization (i18n):** Client-side translation support. Automatically detects user language, saves preferences, and supports multiple languages (EN, UK, DE, ES, FR, PT).
-* **Component-Based Structure:** Shared elements (`header.html`, `footer.html`) are loaded from the `/components` directory.
-* **Modular JavaScript:** Logic is cleanly split into modules:
-  * `firebase-init.js`: Centralized Firebase SDK imports and initialization.
-  * `tailwind-config.js`: Centralized Tailwind CSS configuration.
-  * `common.js`: Shared logic for loading header/footer and the mobile menu.
-  * `i18n.js`: Core logic for language detection, loading JSON translations, and updating the UI.
-  * `page-index.js`: Page-specific logic for `index.html`.
-  * `page-waitlist.js`: Page-specific logic for the waitlist form.
-  * `page-maintenance.js`: Page-specific logic for the maintenance countdown timer.
-  * `page-404.js`: Page-specific logic for the 404 page.
-* **Utility Pages:**
-  * `pages/maintenance.html`: A temporary page to display during scheduled maintenance.
-  * `404.html`: A user-friendly "Not Found" page with full navigation (header/footer).
-* **Responsive Design:** The site uses Tailwind CSS for a mobile-first, responsive layout.
+* **Optimized CSS:** Uses Tailwind CLI to generate a minified, production-ready CSS file without runtime overhead.
+* **Modular JavaScript:** Logic is cleanly split into modules.
+
+## **🎨 Styling & CSS (Important!)**
+
+We use **Tailwind CSS v3** via CLI. Unlike the CDN version, styles are generated at build time.
+
+### **⚠️ Critical Workflow for Deployment**
+Since our GitHub Actions workflow **does not** build CSS automatically, you **must build it locally** before pushing changes.
+
+1. Make your changes to HTML/JS files.
+2. Run the CSS build command:
+   ```bash
+   npm run build:css
+   ```
+3. This will update `public/styles/tailwind.css`.
+4. **Commit the generated `public/styles/tailwind.css` file** along with your other changes.
+
+If you skip this step, the live site will not reflect your styling changes!
 
 ## **🛠️ How to Test Locally**
 
-Testing our project involves two key steps:
-
-1. **Running the Quality Linter:** Checking the code for errors and style issues.
-2. **Running the Local Server:** Previewing the website visually in your browser.
-
 ### Prerequisites
 
-Before you begin, ensure you have:
-
-1. **Node.js and npm:** (This provides the `npm` command).
-2. **Firebase CLI:** If you don't have it, install it globally:
-
-```bash
-npm install -g firebase-tools
-```
+1. **Node.js and npm:** Required for building CSS and linting.
+2. **Firebase CLI:** `npm install -g firebase-tools`
 
 ### Step 1: Install Dependencies
 
-After cloning the repository, you must first install the local development tools (linters):
 ```bash
 npm install
 ```
 
-### Step 2: Check Code Quality (Linting)
+### Step 2: Build CSS
 
-Before any commit, run our complete quality check. This command checks all `HTML`, `CSS`, and `JavaScript` files for errors, ensuring our code stays clean and consistent.
+Before running the server, ensure styles are generated:
 ```bash
-npm run lint
-```
-**If this command shows errors, please fix them before proceeding.**
-
-### Step 3: **Running the Local Server**
-
-1. **Log in to Firebase:** (This step might be optional for `firebase serve`, but it's good practice).
-```bash
-firebase login
+npm run build:css
 ```
 
-2. **Run the server:** While in the project's root directory (where `firebase.json` is located), execute the following command:
+### Step 3: Run Local Server
+
 ```bash
 firebase serve
 ```
-
-3. **Open the site in your browser:** After running the command, the terminal will show you a local address. By default, it is: `http://localhost:5000`
-   * Main page: `http://localhost:5000` (or `http://localhost:5000/index.html`)
-   * Waitlist page: `http://localhost:5000/pages/waitlist.html`
-   * Maintenance page: `http://localhost:5000/maintenance.html`
-   * 404 Page: Navigate to any non-existent URL (e.g., `http://localhost:5000/test`)
+Open `http://localhost:5000` to see the site.
 
 ## **🌍 Localization (i18n)**
 
 The project uses a lightweight client-side approach for translations.
 
-1.  **JSON Files:** All text content is stored in `public/locales/{lang}.json` (e.g., `en.json`, `uk.json`).
-2.  **HTML Attributes:** Elements to be translated must have a `data-i18n="key.path"` attribute.
+1.  **JSON Files:** Content is stored in `public/locales/{lang}.json` (e.g., `en.json`, `uk.json`).
+2.  **HTML Attributes:** Elements have `data-i18n="key.path"`.
     * Example: `<h1 data-i18n="hero.title">Default Text</h1>`
-3.  **Language Detection:** The `i18n.js` script checks for language in this order:
-    1.  URL query parameter (`?lang=uk`)
-    2.  LocalStorage (`app_lang`)
-    3.  Browser language settings
-    4.  Default (`en`)
+3.  **Language Detection:** `i18n.js` checks: URL param -> LocalStorage -> Browser -> Default (`en`).
 
-To add a new language, create a new JSON file in `public/locales/` and add the option to the `<select>` element in `public/components/header.html`.
+To add a language, create a JSON file in `public/locales/` and update the `<select>` in `header.html`.
 
 ## **🚀 Deployment**
 
-For soft reset new version of landing page on all devices run followiing command:
+To deploy manually (bypassing GitHub Actions):
+
 ```bash
-npm run update-version
+npm run deploy
 ```
-
-Deployment is handled automatically.
-
-Any push or pull request merge to the `main` branch will trigger an automatic deployment to Firebase Hosting.
+*This command automatically rebuilds CSS, updates the version timestamp, and deploys to Firebase.*
 
 ## **📁 File Structure**
 
-* `.github/`: Contains CI/CD workflows and linter configurations.
-* `public/`: Contains all static assets, components, and content pages.
-  * `components/`: Reusable HTML partials (header, footer).
-  * `locales/`: JSON translation files (`en.json`, `uk.json`, `de.json`, etc.).
-  * `images/`: Brand logos and other images.
-  * `pages/`: Additional content pages (e.g., `waitlist.html`, `maintenance.html`).
-  * `scripts/`: Modular JavaScript files.
-    * `common.js`: Loads header/footer, menu logic.
+* `.github/`: CI/CD workflows.
+* `src/`: Source files for compilation.
+  * `input.css`: Tailwind entry point (`@tailwind` directives).
+* `public/`: Hosting root (static assets).
+  * `components/`: HTML partials (header, footer).
+  * `locales/`: Translation files (`en.json`, `uk.json`, etc.).
+  * `styles/`:
+    * `tailwind.css`: **Generated** Tailwind styles (do not edit manually).
+    * `style.css`: Custom animations (spinner, etc.).
+  * `scripts/`:
     * `i18n.js`: Localization logic.
-    * `firebase-init.js`: Connects to and authenticates with Firebase.
-    * `tailwind-config.js`: Shared config for Tailwind CDN.
-    * `page-index.js`: Logic for `index.html`.
-    * `page-waitlist.js`: Logic for `waitlist.html`.
-    * `page-maintenance.js`: Logic for `maintenance.html`.
-    * `page-404.js`: Logic for `404.html`.
-  * `styles/`: CSS stylesheets (`style.css`).
-  * `index.html`: The main landing page (hosting root).
-  * `404.html`: Custom 404 error page.
-* `firebase.json`: Firebase configuration file.
-* `package.json`: Manages npm dependencies (linters) and scripts.
-* `eslint.config.js`: Configuration for ESLint.
-* `.stylelintrc.json`: Configuration for Stylelint.
-* `.gitignore`: Specifies files for Git to ignore.
-* `update-version.js`: module for update version of main html files.
-* `README.md`: This file.
+    * `common.js`, `page-*.js`: Page logic.
+    * `firebase-init.js`: Firebase setup.
+  * `index.html`, `404.html`, `pages/`: Content pages.
+* `tailwind.config.js`: Tailwind configuration (colors, fonts).
+* `firebase.json`: Hosting config.
+* `package.json`: Scripts and dependencies.
+* `update-version.js`: Versioning script.
