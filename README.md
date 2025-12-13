@@ -51,7 +51,15 @@ Before running the server, ensure styles are generated:
 npm run build:css
 ```
 
-### Step 3: Run Local Server
+### Step 3: Refrtesh cashing
+
+Before running the server, ensure versions are updated:
+```bash
+npm run update-version
+```
+
+
+### Step 4: Run Local Server
 
 ```bash
 firebase serve

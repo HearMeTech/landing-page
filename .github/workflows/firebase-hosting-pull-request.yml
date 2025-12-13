@@ -1,0 +1,47 @@
+name: "🔍 Landing Page - Lint & 🚀 Preview on PR"
+on: pull_request
+
+permissions:
+  checks: write
+  contents: read
+  pull-requests: write
+  statuses: write
+
+jobs:
+  lint:
+    name: Run Code Linter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run lint scripts
+        run: npm run lint
+
+  build_and_preview:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run build 
+      
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HEAR_ME_LANDING }}
+          projectId: hear-me-landing
+          expires: 7d

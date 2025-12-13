@@ -6,6 +6,13 @@ export default [
   js.configs.recommended,
 
   {
+    ignores: [
+      "tailwind.config.js",
+      ".firebase/**"
+    ]
+  },
+
+  {
     files: ["**/*.js"],
     languageOptions: {
       ecmaVersion: 2020,

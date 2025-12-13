@@ -10,6 +10,7 @@
     "lint:html": "htmlhint --config .github/linters/.htmlhintrc \"**/*.html\" --ignore \"public/components/**\"",
     "lint:css": "stylelint \"**/*.css\"",
     "lint:js": "eslint \"**/*.js\"",
+    "build": "npm run build:css",
     "build:css": "npx tailwindcss -i ./src/input.css -o ./public/styles/tailwind.css --minify",
     "update-version": "node update-version.js",
     "deploy": "npm run build:css && npm run update-version && firebase deploy"

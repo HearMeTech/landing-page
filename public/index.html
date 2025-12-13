@@ -22,7 +22,6 @@
     <meta name="twitter:domain" content="hearme.tech">
 
     <link rel="icon" href="/images/company_icon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/styles/tailwind.css">
 
     <script type="application/ld+json">
     {
@@ -47,7 +46,8 @@
     }
     </script>
 
-    <link rel="stylesheet" href="styles/style.css?v=1765591634444">
+    <link rel="stylesheet" href="/styles/tailwind.css?v=1765665186275">
+    <link rel="stylesheet" href="styles/style.css?v=1765665186275">
 </head>
 
 <body class="font-sans text-gray-800 antialiased">
@@ -76,7 +76,15 @@
                     </div>
                 </div>
                 <div class="flex justify-center">
-                    <img src="images/person_sitting_in_wheelchair.png" alt="Person sitting in a wheelchair" class="w-full max-w-sm lg:max-w-md drop-shadow-lg rounded-full">
+                    <picture>
+                        <source srcset="images/person_sitting_in_wheelchair_mobile.webp" type="image/webp" media="(max-width: 767px)">
+                        
+                        <img 
+                            src="images/person_sitting_in_wheelchair.png" 
+                            alt="Person sitting in a wheelchair" 
+                            class="w-full max-w-sm lg:max-w-md drop-shadow-lg rounded-full"
+                        >
+                    </picture>
                 </div>
             </div>
         </section>
@@ -382,7 +390,7 @@
 
     <div id="footer-placeholder"></div>
 
-    <script type="module" src="/scripts/page-index.js?v=1765591634444"></script>
+    <script type="module" src="/scripts/page-index.js?v=1765665186275"></script>
 
 </body>
 </html>
