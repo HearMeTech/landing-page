@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "HearMe — Deine Stimme. Verstanden.",
+    "desc": "HearMe ist eine revolutionäre KI-App, die personalisierte Spracherkennung für Menschen mit Sprachstörungen bietet."
+  },
   "nav": {
     "features": "Funktionen",
     "howItWorks": "Ablauf",
@@ -75,18 +79,19 @@
     "item4_desc": "Ein zukünftiges Wearable, das komplett offline funktioniert. Es spricht deine Worte klar aus – überall."
   },
   "waitlist": {
-      "title": "Auf die Warteliste",
-      "subtitle": "Erlebe personalisierte Spracherkennung als Erster. <br class='hidden md:inline'> Melde dich für Early Access an.",
-      "name_placeholder": "Dein Name (Optional)",
-      "email_placeholder": "Deine E-Mail-Adresse",
-      "comment_placeholder": "Wünsche oder Fragen? (Optional)",
-      "btn_join": "Beitreten",
-      "btn_joining": "Einen Moment...",
-      "privacy": "Wir achten deine Privatsphäre. Kein Spam.",
-      "success_title": "Du bist drauf!",
-      "success_desc": "Danke für dein Interesse an <b>HearMe</b>. Wir melden uns bald mit deinem Zugang.",
-      "btn_back": "Zur Startseite",
-      "error_title": "Etwas lief schief"
+    "meta_title": "HearMe — Warteliste",
+    "title": "Auf die Warteliste",
+    "subtitle": "Erlebe personalisierte Spracherkennung als Erster. <br class='hidden md:inline'> Melde dich für Early Access an.",
+    "name_placeholder": "Dein Name (Optional)",
+    "email_placeholder": "Deine E-Mail-Adresse",
+    "comment_placeholder": "Wünsche oder Fragen? (Optional)",
+    "btn_join": "Beitreten",
+    "btn_joining": "Einen Moment...",
+    "privacy": "Wir achten deine Privatsphäre. Kein Spam.",
+    "success_title": "Du bist drauf!",
+    "success_desc": "Danke für dein Interesse an <b>HearMe</b>. Wir melden uns bald mit deinem Zugang.",
+    "btn_back": "Zur Startseite",
+    "error_title": "Etwas lief schief"
   },
   "footer": {
       "desc": "Wir geben jedem die Kraft, gehört zu werden.",
@@ -95,11 +100,14 @@
       "rights": "&copy; 2025 <b>HearMe</b>. Alle Rechte vorbehalten."
   },
   "maintenance": {
+    "meta_title": "HearMe — Wartungsarbeiten",
     "title": "Wir sind bald zurück!",
     "desc": "Entschuldigung für die Umstände. Wir führen Wartungsarbeiten durch, um die Seite zu verbessern.",
+    "returning_in": "Zurück in:",
     "signature": "<b>HearMe</b> — Das Team"
   },
   "error404": {
+    "meta_title": "HearMe — Seite nicht gefunden",
     "title": "Seite nicht gefunden",
     "desc": "Wir können die Seite nicht finden. Vielleicht wurde sie verschoben, gelöscht oder die URL ist falsch.",
     "btn_home": "Zur Startseite"

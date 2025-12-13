@@ -1,6 +1,8 @@
 // This is the entry point for the Maintenance page.
 // It does NOT load common elements (header/footer) as it's a standalone page.
 
+import { initI18n } from './i18n.js';
+
 /**
  * Timer update logic for the maintenance countdown.
  */
@@ -43,7 +45,6 @@ function setupMaintenanceTimer() {
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         timerElement.innerHTML = `
-            Returning in:</br>
             <span class="inline-block w-11">${days}</span>d
             <span class="inline-block w-11">${pad(hours)}</span>h
             <span class="inline-block w-11">${pad(minutes)}</span>m

@@ -82,8 +82,11 @@ export function applyTranslations() {
         if (text) {
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = text;
+            } else if (element.tagName === 'TITLE') {
+                document.title = text;
+            } else if (element.tagName === 'META') {
+                element.setAttribute('content', text);
             } else {
-                // innerHTML allows using <b>, <span>, <a> tags inside translations
                 element.innerHTML = text; 
             }
         }

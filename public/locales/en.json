@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "HearMe — Your Voice, Understood",
+    "desc": "HearMe is a revolutionary AI-powered mobile app that provides personalized speech recognition for individuals with speech impairments."
+  },
   "nav": {
     "features": "Features",
     "howItWorks": "How It Works",
@@ -75,18 +79,19 @@
     "item4_desc": "A future wearable device that works entirely offline. It speaks your words clearly in any language, serving as your personal voice bridge—speech-to-speech, anywhere."
   },
   "waitlist": {
-      "title": "Join the Waitlist",
-      "subtitle": "Be the first to experience personalized speech recognition. <br class='hidden md:inline'> Sign up for early access and updates.",
-      "name_placeholder": "Your Name (Optional)",
-      "email_placeholder": "Enter your email address",
-      "comment_placeholder": "Wishes or comments? (Optional)",
-      "btn_join": "Join Now",
-      "btn_joining": "Joining...",
-      "privacy": "We respect your privacy. No spam, ever.",
-      "success_title": "You're on the list!",
-      "success_desc": "Thank you for joining <b>HearMe</b>. We'll be in touch soon with your invitation for early access.",
-      "btn_back": "Back to Homepage",
-      "error_title": "Something went wrong"
+    "meta_title": "HearMe — Join the Waitlist",
+    "title": "Join the Waitlist",
+    "subtitle": "Be the first to experience personalized speech recognition. <br class='hidden md:inline'> Sign up for early access and updates.",
+    "name_placeholder": "Your Name (Optional)",
+    "email_placeholder": "Enter your email address",
+    "comment_placeholder": "Wishes or comments? (Optional)",
+    "btn_join": "Join Now",
+    "btn_joining": "Joining...",
+    "privacy": "We respect your privacy. No spam, ever.",
+    "success_title": "You're on the list!",
+    "success_desc": "Thank you for joining <b>HearMe</b>. We'll be in touch soon with your invitation for early access.",
+    "btn_back": "Back to Homepage",
+    "error_title": "Something went wrong"
   },
   "footer": {
       "desc": "Giving everyone the power to be heard.",
@@ -95,11 +100,14 @@
       "rights": "&copy; 2025 <b>HearMe</b>. All rights reserved."
   },
   "maintenance": {
+    "meta_title": "HearMe — Under Maintenance",
     "title": "We'll be back soon!",
     "desc": "Sorry for the inconvenience. We're currently performing scheduled maintenance to improve our website. We'll be back online shortly.",
+    "returning_in": "Returning in:",
     "signature": "<b>HearMe</b> — The Team"
   },
   "error404": {
+    "meta_title": "HearMe — Page Not Found",
     "title": "Oops! Page Not Found",
     "desc": "Sorry, we can't seem to find the page you're looking for. It might have been moved, deleted, or you just mistyped the URL.",
     "btn_home": "Return to Homepage"

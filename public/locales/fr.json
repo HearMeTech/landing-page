@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "HearMe — Votre Voix. Comprise.",
+    "desc": "HearMe est une application IA révolutionnaire offrant une reconnaissance vocale personnalisée pour les personnes ayant des troubles de la parole."
+  },
   "nav": {
     "features": "Fonctions",
     "howItWorks": "Comment ça marche",
@@ -75,18 +79,19 @@
     "item4_desc": "Un futur appareil portable totalement hors ligne. Il prononce vos mots clairement dans n'importe quelle langue."
   },
   "waitlist": {
-      "title": "Rejoindre la liste d'attente",
-      "subtitle": "Soyez le premier à tester la reconnaissance personnalisée. <br class='hidden md:inline'> Inscrivez-vous pour l'accès anticipé.",
-      "name_placeholder": "Votre Nom (Optionnel)",
-      "email_placeholder": "Votre email",
-      "comment_placeholder": "Souhaits ou commentaires ?",
-      "btn_join": "Rejoindre",
-      "btn_joining": "En cours...",
-      "privacy": "Nous respectons votre vie privée. Pas de spam.",
-      "success_title": "Vous êtes inscrit !",
-      "success_desc": "Merci d'avoir rejoint <b>HearMe</b>. Nous vous contacterons bientôt pour votre accès.",
-      "btn_back": "Retour Accueil",
-      "error_title": "Une erreur est survenue"
+    "meta_title": "HearMe — Liste d'attente",
+    "title": "Rejoindre la liste d'attente",
+    "subtitle": "Soyez le premier à tester la reconnaissance personnalisée. <br class='hidden md:inline'> Inscrivez-vous pour l'accès anticipé.",
+    "name_placeholder": "Votre Nom (Optionnel)",
+    "email_placeholder": "Votre email",
+    "comment_placeholder": "Souhaits ou commentaires ?",
+    "btn_join": "Rejoindre",
+    "btn_joining": "En cours...",
+    "privacy": "Nous respectons votre vie privée. Pas de spam.",
+    "success_title": "Vous êtes inscrit !",
+    "success_desc": "Merci d'avoir rejoint <b>HearMe</b>. Nous vous contacterons bientôt pour votre accès.",
+    "btn_back": "Retour Accueil",
+    "error_title": "Une erreur est survenue"
   },
   "footer": {
       "desc": "Donner à chacun le pouvoir d'être entendu.",
@@ -95,11 +100,14 @@
       "rights": "&copy; 2025 <b>HearMe</b>. Tous droits réservés."
   },
   "maintenance": {
+    "meta_title": "HearMe — Maintenance",
     "title": "Nous revenons vite !",
     "desc": "Désolé pour le dérangement. Nous effectuons une maintenance pour améliorer le site. Retour très bientôt.",
+    "returning_in": "De retour dans :",
     "signature": "<b>HearMe</b> — L'Équipe"
   },
   "error404": {
+    "meta_title": "HearMe — Page non trouvée",
     "title": "Oups ! Page non trouvée",
     "desc": "Nous ne trouvons pas la page. Elle a peut-être été déplacée, supprimée ou l'URL est incorrecte.",
     "btn_home": "Retour Accueil"

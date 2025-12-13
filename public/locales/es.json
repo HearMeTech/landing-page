@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "HearMe — Tu voz. Entendida.",
+    "desc": "HearMe es una app revolucionaria de IA que ofrece reconocimiento de voz personalizado para personas con dificultades del habla."
+  },
   "nav": {
     "features": "Funciones",
     "howItWorks": "Cómo funciona",
@@ -75,18 +79,19 @@
     "item4_desc": "Un futuro dispositivo wearable totalmente offline. Dice tus palabras claramente en cualquier idioma."
   },
   "waitlist": {
-      "title": "Únete a la lista de espera",
-      "subtitle": "Sé el primero en probar el reconocimiento personalizado. <br class='hidden md:inline'> Regístrate para acceso anticipado.",
-      "name_placeholder": "Tu nombre (Opcional)",
-      "email_placeholder": "Tu correo electrónico",
-      "comment_placeholder": "¿Deseos o comentarios?",
-      "btn_join": "Unirse ahora",
-      "btn_joining": "Uniéndose...",
-      "privacy": "Respetamos tu privacidad. Sin spam.",
-      "success_title": "¡Estás en la lista!",
-      "success_desc": "Gracias por unirte a <b>HearMe</b>. Te contactaremos pronto con tu invitación.",
-      "btn_back": "Volver al inicio",
-      "error_title": "Algo salió mal"
+    "meta_title": "HearMe — Lista de espera",
+    "title": "Únete a la lista de espera",
+    "subtitle": "Sé el primero en probar el reconocimiento personalizado. <br class='hidden md:inline'> Regístrate para acceso anticipado.",
+    "name_placeholder": "Tu nombre (Opcional)",
+    "email_placeholder": "Tu correo electrónico",
+    "comment_placeholder": "¿Deseos o comentarios?",
+    "btn_join": "Unirse ahora",
+    "btn_joining": "Uniéndose...",
+    "privacy": "Respetamos tu privacidad. Sin spam.",
+    "success_title": "¡Estás en la lista!",
+    "success_desc": "Gracias por unirte a <b>HearMe</b>. Te contactaremos pronto con tu invitación.",
+    "btn_back": "Volver al inicio",
+    "error_title": "Algo salió mal"
   },
   "footer": {
       "desc": "Dando a todos el poder de ser escuchados.",
@@ -95,11 +100,14 @@
       "rights": "&copy; 2025 <b>HearMe</b>. Todos los derechos reservados."
   },
   "maintenance": {
+    "meta_title": "HearMe — En mantenimiento",
     "title": "¡Volveremos pronto!",
     "desc": "Disculpa las molestias. Estamos realizando mantenimiento para mejorar nuestro sitio web. Volveremos en breve.",
+    "returning_in": "Volvemos en:",
     "signature": "<b>HearMe</b> — El Equipo"
   },
   "error404": {
+    "meta_title": "HearMe — Página no encontrada",
     "title": "¡Vaya! Página no encontrada",
     "desc": "No encontramos la página que buscas. Puede que se haya movido, borrado o que la URL sea incorrecta.",
     "btn_home": "Volver al inicio"
