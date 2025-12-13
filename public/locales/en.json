@@ -1,0 +1,107 @@
+{
+  "nav": {
+    "features": "Features",
+    "howItWorks": "How It Works",
+    "pricing": "Pricing",
+    "roadmap": "Roadmap",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "title": "Your Voice. Your Words. <span class='text-brand-teal'>Finally Understood.</span>",
+    "subtitle": "<b>HearMe</b> is a revolutionary AI app that learns your unique speech patterns, giving you the power to communicate clearly and confidently.",
+    "cta": "Launch App"
+  },
+  "features": {
+    "title": "Empowering Your Communication",
+    "subtitle": "Designed for individuals with speech impairments from Cerebral Palsy, stroke, or ALS. <b>HearMe</b> combines advanced AI with an intuitive interface.",
+    "recognition_title": "Real-Time Recognition",
+    "recognition_desc": "Our AI instantly transcribes your speech into text with low latency, enabling seamless and natural conversation flows.",
+    "output_title": "Voice & Text Output",
+    "output_desc": "Play your recognized phrase aloud using clear synthesis, copy the text to clipboard, or send it directly to other apps.",
+    "personal_title": "Personalized AI Model",
+    "personal_desc": "The app trains on <b>your</b> specific voice patterns using advanced Machine Learning, becoming more accurate with every use.",
+    "cloud_title": "Cloud Powered",
+    "cloud_desc": "Built on Google Cloud infrastructure, ensuring enterprise-grade reliability, speed, and continuous availability of your voice model.",
+    "secure_title": "Secure & Private",
+    "secure_desc": "Your voice data is yours. We use industry-standard encryption and secure Firebase authentication to protect your privacy.",
+    "access_title": "Accessible Everywhere",
+    "access_desc": "Access your account and trained model from any device via our web application. Your voice travels with you."
+  },
+  "howItWorks": {
+    "title": "Your Journey to Clear Speech",
+    "subtitle": "Getting started is easy. Our step-by-step process ensures the AI adapts to you immediately.",
+    "step1_title": "Launch the Web App",
+    "step1_desc": "No downloads or app stores required. Simply open <a href='https://mvp.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> directly in your browser to get started instantly on any device.",
+    "step2_title": "Core Training (MVP)",
+    "step2_desc": "Train 5 predefined phrases by recording multiple voice samples for each. This builds a robust baseline model tailored specifically to your speech patterns.",
+    "step3_badge": "Coming Soon",
+    "step3_title": "Expand Vocabulary",
+    "step3_desc": "In the full version, you will be able to add custom phrases specific to your life, making the AI smarter and more personalized.",
+    "step4_title": "Speak Freely",
+    "step4_desc": "Use the app to speak for you in real-time. Whether text-to-speech or text display, your voice is finally understood."
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Choose the plan that fits your needs. Start for free and upgrade as you grow.",
+    "basic_title": "Basic",
+    "free_forever": "Free <span class='text-base font-normal text-gray-400'>/ forever</span>",
+    "basic_desc": "Perfect for getting started with essential communication tools.",
+    "full_title": "Full",
+    "full_price": "£19 <span class='text-base font-normal text-gray-400'>/ month</span>",
+    "full_desc": "Unlock the full power of personalized AI speech recognition.",
+    "coming_soon": "Coming Soon",
+    "cta_launch": "Launch App",
+    "cta_waitlist": "Join Waitlist",
+    "notify_text": "Get notified when Full becomes available.",
+    "feat_preset": "Access to preset phrase library",
+    "feat_unlimited": "Unlimited usage of preset phrases",
+    "feat_tts": "Text-to-Speech output",
+    "feat_everything": "<b>Everything in Basic</b>",
+    "feat_custom": "Create & train custom phrases",
+    "feat_model": "Full Personalized AI Model training",
+    "feat_support": "Priority Support",
+    "feat_roadmap": "Access to all <a href='#roadmap' class='border-b border-gray-400 hover:border-brand-teal hover:text-brand-teal transition duration-200'>Roadmap features</a>"
+  },
+  "roadmap": {
+    "title": "The Future of HearMe",
+    "subtitle": "Our mission goes beyond screens. We are working to integrate <b>HearMe</b> into every aspect of your life, removing barriers in both the digital and physical worlds.",
+    "item1_title": "In-App Voice Calls",
+    "item1_desc": "Make crystal-clear calls directly within the <b>HearMe</b> app. Connect with friends and family effortlessly, with our AI ensuring your voice is heard perfectly on the other end.",
+    "item2_title": "Keyboard Integration",
+    "item2_desc": "Use your personalized voice model to dictate text in any app, directly from your system keyboard.",
+    "item3_title": "Voice Assistant Integration",
+    "item3_desc": "Enhance Siri or Google Assistant with your personalized <b>HearMe</b> model. Control your smart home and devices reliably using the assistants you already know.",
+    "item4_title": "Offline Personal Translator",
+    "item4_desc": "A future wearable device that works entirely offline. It speaks your words clearly in any language, serving as your personal voice bridge—speech-to-speech, anywhere."
+  },
+  "waitlist": {
+      "title": "Join the Waitlist",
+      "subtitle": "Be the first to experience personalized speech recognition. <br class='hidden md:inline'> Sign up for early access and updates.",
+      "name_placeholder": "Your Name (Optional)",
+      "email_placeholder": "Enter your email address",
+      "comment_placeholder": "Wishes or comments? (Optional)",
+      "btn_join": "Join Now",
+      "btn_joining": "Joining...",
+      "privacy": "We respect your privacy. No spam, ever.",
+      "success_title": "You're on the list!",
+      "success_desc": "Thank you for joining <b>HearMe</b>. We'll be in touch soon with your invitation for early access.",
+      "btn_back": "Back to Homepage",
+      "error_title": "Something went wrong"
+  },
+  "footer": {
+      "desc": "Giving everyone the power to be heard.",
+      "navigate": "Navigate",
+      "connect": "Connect",
+      "rights": "&copy; 2025 <b>HearMe</b>. All rights reserved."
+  },
+  "maintenance": {
+    "title": "We'll be back soon!",
+    "desc": "Sorry for the inconvenience. We're currently performing scheduled maintenance to improve our website. We'll be back online shortly.",
+    "signature": "<b>HearMe</b> — The Team"
+  },
+  "error404": {
+    "title": "Oops! Page Not Found",
+    "desc": "Sorry, we can't seem to find the page you're looking for. It might have been moved, deleted, or you just mistyped the URL.",
+    "btn_home": "Return to Homepage"
+  }
+}

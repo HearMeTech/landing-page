@@ -1,0 +1,107 @@
+{
+  "nav": {
+    "features": "Funktionen",
+    "howItWorks": "Ablauf",
+    "pricing": "Preise",
+    "roadmap": "Roadmap",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Deine Stimme. Deine Worte. <span class='text-brand-teal'>Endlich verstanden.</span>",
+    "subtitle": "<b>HearMe</b> ist eine revolutionäre KI-App, die deine Sprachmuster lernt und dir hilft, klar und selbstbewusst zu kommunizieren.",
+    "cta": "App starten"
+  },
+  "features": {
+    "title": "Stärke deine Kommunikation",
+    "subtitle": "Für Menschen mit Sprachstörungen (z. B. durch CP, Schlaganfall oder ALS). <b>HearMe</b> vereint KI mit intuitiver Bedienung.",
+    "recognition_title": "Echtzeiterkennung",
+    "recognition_desc": "Unsere KI transkribiert deine Sprache sofort und fast ohne Verzögerung in Text – für natürliche Gespräche.",
+    "output_title": "Sprach- & Textausgabe",
+    "output_desc": "Lass Sätze mit klarer Stimme vorlesen, kopiere den Text oder sende ihn direkt an andere Apps.",
+    "personal_title": "Personalisiertes KI-Modell",
+    "personal_desc": "Die App lernt durch Machine Learning deine <b>individuellen</b> Stimmmuster und wird mit jeder Nutzung präziser.",
+    "cloud_title": "Cloud-Technologie",
+    "cloud_desc": "Basiert auf Google Cloud für höchste Zuverlässigkeit, Geschwindigkeit und ständige Verfügbarkeit deines Modells.",
+    "secure_title": "Sicher & Privat",
+    "secure_desc": "Deine Daten gehören dir. Wir nutzen Verschlüsselung nach Industriestandard und sichere Firebase-Auth.",
+    "access_title": "Überall verfügbar",
+    "access_desc": "Greife von jedem Gerät über unsere Web-App auf dein Konto und Modell zu. Deine Stimme reist mit dir."
+  },
+  "howItWorks": {
+    "title": "Dein Weg zur klaren Sprache",
+    "subtitle": "Der Einstieg ist leicht. Unser Prozess sorgt dafür, dass sich die KI sofort an dich anpasst.",
+    "step1_title": "Web-App öffnen",
+    "step1_desc": "Kein Download nötig. Öffne <a href='https://mvp.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> direkt im Browser und starte sofort auf jedem Gerät.",
+    "step2_title": "Basis-Training (MVP)",
+    "step2_desc": "Trainiere 5 Sätze durch mehrfaches Einsprechen. So entsteht ein robustes Basismodell für deine Stimme.",
+    "step3_badge": "Bald verfügbar",
+    "step3_title": "Wortschatz erweitern",
+    "step3_desc": "In der Vollversion kannst du eigene Sätze hinzufügen, um die KI noch schlauer und persönlicher zu machen.",
+    "step4_title": "Frei sprechen",
+    "step4_desc": "Nutze die App für Echtzeit-Gespräche. Ob Text-zu-Sprache oder Textanzeige – man versteht dich endlich."
+  },
+  "pricing": {
+    "title": "Preise",
+    "subtitle": "Wähle deinen Plan. Starte kostenlos und upgrade, wenn du wächst.",
+    "basic_title": "Basic",
+    "free_forever": "Gratis <span class='text-base font-normal text-gray-400'>/ für immer</span>",
+    "basic_desc": "Perfekt für den Einstieg mit den wichtigsten Tools.",
+    "full_title": "Full",
+    "full_price": "€19 <span class='text-base font-normal text-gray-400'>/ Monat</span>",
+    "full_desc": "Nutze die volle Kraft der personalisierten Spracherkennung.",
+    "coming_soon": "Bald",
+    "cta_launch": "Starten",
+    "cta_waitlist": "Warteliste",
+    "notify_text": "Erfahre, wenn Full verfügbar ist.",
+    "feat_preset": "Zugriff auf Standard-Sätze",
+    "feat_unlimited": "Unbegrenzte Nutzung der Sätze",
+    "feat_tts": "Text-zu-Sprache Ausgabe",
+    "feat_everything": "<b>Alles im Basic-Plan</b>",
+    "feat_custom": "Eigene Sätze erstellen & trainieren",
+    "feat_model": "Vollständiges KI-Modell-Training",
+    "feat_support": "Priorisierter Support",
+    "feat_roadmap": "Zugriff auf alle <a href='#roadmap' class='border-b border-gray-400 hover:border-brand-teal hover:text-brand-teal transition duration-200'>Roadmap-Features</a>"
+  },
+  "roadmap": {
+    "title": "Die Zukunft von HearMe",
+    "subtitle": "Wir wollen mehr. Wir integrieren <b>HearMe</b> in deinen Alltag, um Barrieren digital und physisch abzubauen.",
+    "item1_title": "In-App Anrufe",
+    "item1_desc": "Führe klare Anrufe direkt in der <b>HearMe</b> App. Verbinde dich mühelos mit Freunden – unsere KI sorgt für Verständlichkeit.",
+    "item2_title": "Tastatur-Integration",
+    "item2_desc": "Nutze dein Sprachmodell, um Text in jeder beliebigen App direkt über die Systemtastatur zu diktieren.",
+    "item3_title": "Sprachassistenten",
+    "item3_desc": "Optimiere Siri oder Google Assistant mit deinem <b>HearMe</b> Modell. Steuere dein Smart Home zuverlässig mit deiner Stimme.",
+    "item4_title": "Offline-Übersetzer",
+    "item4_desc": "Ein zukünftiges Wearable, das komplett offline funktioniert. Es spricht deine Worte klar aus – überall."
+  },
+  "waitlist": {
+      "title": "Auf die Warteliste",
+      "subtitle": "Erlebe personalisierte Spracherkennung als Erster. <br class='hidden md:inline'> Melde dich für Early Access an.",
+      "name_placeholder": "Dein Name (Optional)",
+      "email_placeholder": "Deine E-Mail-Adresse",
+      "comment_placeholder": "Wünsche oder Fragen? (Optional)",
+      "btn_join": "Beitreten",
+      "btn_joining": "Einen Moment...",
+      "privacy": "Wir achten deine Privatsphäre. Kein Spam.",
+      "success_title": "Du bist drauf!",
+      "success_desc": "Danke für dein Interesse an <b>HearMe</b>. Wir melden uns bald mit deinem Zugang.",
+      "btn_back": "Zur Startseite",
+      "error_title": "Etwas lief schief"
+  },
+  "footer": {
+      "desc": "Wir geben jedem die Kraft, gehört zu werden.",
+      "navigate": "Menü",
+      "connect": "Kontakt",
+      "rights": "&copy; 2025 <b>HearMe</b>. Alle Rechte vorbehalten."
+  },
+  "maintenance": {
+    "title": "Wir sind bald zurück!",
+    "desc": "Entschuldigung für die Umstände. Wir führen Wartungsarbeiten durch, um die Seite zu verbessern.",
+    "signature": "<b>HearMe</b> — Das Team"
+  },
+  "error404": {
+    "title": "Seite nicht gefunden",
+    "desc": "Wir können die Seite nicht finden. Vielleicht wurde sie verschoben, gelöscht oder die URL ist falsch.",
+    "btn_home": "Zur Startseite"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "nav": {
+    "features": "Recursos",
+    "howItWorks": "Como funciona",
+    "pricing": "Preços",
+    "roadmap": "Roteiro",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "Sua Voz. Suas Palavras. <span class='text-brand-teal'>Finalmente Entendidas.</span>",
+    "subtitle": "<b>HearMe</b> é um app de IA revolucionário que aprende seus padrões de fala, dando a você o poder de se comunicar com clareza.",
+    "cta": "Lançar App"
+  },
+  "features": {
+    "title": "Potencializando sua comunicação",
+    "subtitle": "Projetado para pessoas com dificuldades de fala (PC, derrame, ELA). <b>HearMe</b> une IA avançada a uma interface intuitiva.",
+    "recognition_title": "Reconhecimento em tempo real",
+    "recognition_desc": "Nossa IA transcreve sua fala em texto instantaneamente com baixa latência, permitindo conversas naturais.",
+    "output_title": "Saída de Voz e Texto",
+    "output_desc": "Reproduza sua frase com voz sintética clara, copie o texto ou envie diretamente para outros aplicativos.",
+    "personal_title": "Modelo de IA Personalizado",
+    "personal_desc": "O app treina com <b>seus</b> padrões de voz específicos usando Machine Learning, ficando mais preciso a cada uso.",
+    "cloud_title": "Poder da Nuvem",
+    "cloud_desc": "Construído no Google Cloud, garantindo confiabilidade empresarial, velocidade e disponibilidade contínua do seu modelo.",
+    "secure_title": "Seguro e Privado",
+    "secure_desc": "Seus dados de voz são seus. Usamos criptografia padrão e autenticação segura do Firebase para sua proteção.",
+    "access_title": "Acessível em todo lugar",
+    "access_desc": "Acesse sua conta e modelo de qualquer dispositivo via web. Sua voz viaja com você."
+  },
+  "howItWorks": {
+    "title": "Sua jornada para a fala clara",
+    "subtitle": "Começar é fácil. Nosso processo garante que a IA se adapte a você imediatamente.",
+    "step1_title": "Abra o Web App",
+    "step1_desc": "Sem downloads ou lojas. Abra o <a href='https://mvp.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> direto no navegador para começar agora.",
+    "step2_title": "Treino Básico (MVP)",
+    "step2_desc": "Treine 5 frases predefinidas gravando várias amostras. Isso cria um modelo base robusto adaptado a você.",
+    "step3_badge": "Em breve",
+    "step3_title": "Expandir Vocabulário",
+    "step3_desc": "Na versão completa, você poderá adicionar frases personalizadas da sua vida, tornando a IA mais inteligente.",
+    "step4_title": "Fale Livremente",
+    "step4_desc": "Use o app para falar em tempo real. Seja texto-para-fala ou exibição de texto, sua voz será finalmente entendida."
+  },
+  "pricing": {
+    "title": "Preços",
+    "subtitle": "Escolha o plano ideal. Comece grátis e faça upgrade conforme necessário.",
+    "basic_title": "Básico",
+    "free_forever": "Grátis <span class='text-base font-normal text-gray-400'>/ para sempre</span>",
+    "basic_desc": "Perfeito para começar com ferramentas essenciais de comunicação.",
+    "full_title": "Completo",
+    "full_price": "€19 <span class='text-base font-normal text-gray-400'>/ mês</span>",
+    "full_desc": "Desbloqueie todo o poder do reconhecimento de voz personalizado.",
+    "coming_soon": "Em breve",
+    "cta_launch": "Lançar",
+    "cta_waitlist": "Lista de Espera",
+    "notify_text": "Seja notificado quando estiver disponível.",
+    "feat_preset": "Acesso à biblioteca de frases",
+    "feat_unlimited": "Uso ilimitado das frases",
+    "feat_tts": "Saída de texto para fala (TTS)",
+    "feat_everything": "<b>Tudo do plano Básico</b>",
+    "feat_custom": "Criar e treinar frases próprias",
+    "feat_model": "Treinamento completo do modelo IA",
+    "feat_support": "Suporte Prioritário",
+    "feat_roadmap": "Acesso a tudo no <a href='#roadmap' class='border-b border-gray-400 hover:border-brand-teal hover:text-brand-teal transition duration-200'>Roteiro</a>"
+  },
+  "roadmap": {
+    "title": "O Futuro do HearMe",
+    "subtitle": "Nossa missão vai além das telas. Trabalhamos para integrar o <b>HearMe</b> em sua vida, removendo barreiras.",
+    "item1_title": "Chamadas no App",
+    "item1_desc": "Faça chamadas nítidas direto no <b>HearMe</b>. Conecte-se com amigos e família; nossa IA garante que você seja ouvido.",
+    "item2_title": "Integração de Teclado",
+    "item2_desc": "Use seu modelo de voz personalizado para ditar texto em qualquer app diretamente do teclado do sistema.",
+    "item3_title": "Assistentes de Voz",
+    "item3_desc": "Melhore a Siri ou Google Assistant com seu modelo <b>HearMe</b>. Controle sua casa inteligente de forma confiável.",
+    "item4_title": "Tradutor Pessoal Offline",
+    "item4_desc": "Um futuro dispositivo vestível totalmente offline. Ele fala suas palavras claramente em qualquer idioma."
+  },
+  "waitlist": {
+      "title": "Entre na lista de espera",
+      "subtitle": "Seja o primeiro a testar o reconhecimento personalizado. <br class='hidden md:inline'> Inscreva-se para acesso antecipado.",
+      "name_placeholder": "Seu Nome (Opcional)",
+      "email_placeholder": "Seu e-mail",
+      "comment_placeholder": "Desejos ou comentários?",
+      "btn_join": "Entrar Agora",
+      "btn_joining": "Entrando...",
+      "privacy": "Respeitamos sua privacidade. Sem spam.",
+      "success_title": "Você está na lista!",
+      "success_desc": "Obrigado por se juntar ao <b>HearMe</b>. Entraremos em contato em breve com seu convite.",
+      "btn_back": "Voltar ao Início",
+      "error_title": "Algo deu errado"
+  },
+  "footer": {
+      "desc": "Dando a todos o poder de serem ouvidos.",
+      "navigate": "Navegar",
+      "connect": "Conectar",
+      "rights": "&copy; 2025 <b>HearMe</b>. Todos os direitos reservados."
+  },
+  "maintenance": {
+    "title": "Voltaremos logo!",
+    "desc": "Desculpe o transtorno. Estamos fazendo manutenção para melhorar nosso site. Voltaremos em breve.",
+    "signature": "<b>HearMe</b> — A Equipe"
+  },
+  "error404": {
+    "title": "Ops! Página não encontrada",
+    "desc": "Não encontramos a página. Ela pode ter sido movida, excluída ou a URL está incorreta.",
+    "btn_home": "Voltar ao Início"
+  }
+}

@@ -1,5 +1,9 @@
+// public/scripts/common.js
+
 // This file contains common logic shared across pages,
 // such as loading the header/footer, navigation state, and global UI elements.
+
+import { initI18n } from './i18n.js';
 
 /**
  * Loads header.html and footer.html into their respective placeholders.
@@ -8,22 +12,24 @@ async function loadCommonElements() {
     const headerPlaceholder = document.getElementById('header-placeholder');
     const footerPlaceholder = document.getElementById('footer-placeholder');
 
+    // Parallel fetch for better performance
     const [headerResponse, footerResponse] = await Promise.all([
-        headerPlaceholder ? fetch('/components/header.html') : Promise.resolve(null),
-        footerPlaceholder ? fetch('/components/footer.html') : Promise.resolve(null)
+        fetch('/components/header.html'),
+        fetch('/components/footer.html')
     ]);
 
     if (headerPlaceholder && headerResponse && headerResponse.ok) {
         headerPlaceholder.outerHTML = await headerResponse.text();
-        setupMobileMenu(); // Init mobile menu
-        setupActiveNavigation(); // Init scroll spy (highlight active menu item)
+        setupMobileMenu(); 
+        setupActiveNavigation(); 
     }
 
     if (footerPlaceholder && footerResponse && footerResponse.ok) {
         footerPlaceholder.innerHTML = await footerResponse.text();
     }
+    
+    await initI18n(); 
 
-    // Initialize UI elements that don't depend on header/footer loading
     setupScrollToTop();
 }
 

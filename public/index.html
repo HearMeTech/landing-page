@@ -1,20 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HearMe — Your Voice, Understood</title>
     <meta name="description" content="HearMe is a revolutionary AI-powered mobile app that provides personalized speech recognition for individuals with speech impairments.">
     
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://hearme.tech/" />
 
-    <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hearme.tech/">
     <meta property="og:title" content="HearMe — Your Voice, Understood">
     <meta property="og:description" content="HearMe is a revolutionary AI-powered mobile app that provides personalized speech recognition for individuals with speech impairments.">
     <meta property="og:image" content="https://hearme.tech/images/company_icon.png">
 
-    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://hearme.tech/">
     <meta name="twitter:title" content="HearMe — Your Voice, Understood">
@@ -22,14 +21,10 @@
     <meta name="twitter:image" content="https://hearme.tech/images/company_icon.png">
     <meta name="twitter:domain" content="hearme.tech">
 
-    <!-- Favicon -->
     <link rel="icon" href="/images/company_icon.svg" type="image/svg+xml">
-    <!-- Tailwind CDN Script -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Centralized Tailwind Config -->
     <script src="/scripts/tailwind-config.js"></script>
 
-    <!-- Schema.org for Rich Results -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -58,26 +53,23 @@
 
 <body class="font-sans text-gray-800 antialiased">
 
-    <!-- === HEADER === -->
     <div id="header-placeholder"></div>
 
-    <!-- === MAIN CONTENT === -->
     <main>
 
-        <!-- === HERO === -->
         <section class="bg-white pt-16 pb-20 md:pt-24 md:pb-28">
             <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                 <div class="text-center md:text-left">
-                    <h1 class="text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-6">
+                    <h1 class="text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-6" data-i18n="hero.title">
                         Your Voice. Your Words.
                         <span class="text-brand-teal">Finally Understood.</span>
                     </h1>
-                    <p class="text-lg lg:text-xl text-gray-600 mb-8">
+                    <p class="text-lg lg:text-xl text-gray-600 mb-8" data-i18n="hero.subtitle">
                         <b>HearMe</b> is a revolutionary AI app that learns your unique speech patterns, giving you the power to communicate clearly and confidently.
                     </p>
                     <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
                         <a href="https://mvp.hearme.tech" target="_blank" rel="noopener noreferrer" class="bg-brand-teal text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg flex items-center justify-center">
-                            Launch App
+                            <span data-i18n="hero.cta">Launch App</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
@@ -90,12 +82,11 @@
             </div>
         </section>
 
-        <!-- === FEATURES === -->
         <section id="features" class="bg-gray-50/70 py-20 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Empowering Your Communication</h2>
-                    <p class="text-lg text-gray-600">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4" data-i18n="features.title">Empowering Your Communication</h2>
+                    <p class="text-lg text-gray-600" data-i18n="features.subtitle">
                         Designed for individuals with speech impairments from Cerebral Palsy, stroke, or ALS. <b>HearMe</b> combines advanced AI with an intuitive interface.
                     </p>
                 </div>
@@ -105,59 +96,58 @@
                         <div class="w-12 h-12 bg-brand-teal/10 rounded-lg flex items-center justify-center mb-6">
                             <svg class="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3">Real-Time Recognition</h3>
-                        <p class="text-gray-600">Our AI instantly transcribes your speech into text with low latency, enabling seamless and natural conversation flows.</p>
+                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3" data-i18n="features.recognition_title">Real-Time Recognition</h3>
+                        <p class="text-gray-600" data-i18n="features.recognition_desc">Our AI instantly transcribes your speech into text with low latency, enabling seamless and natural conversation flows.</p>
                     </div>
 
                     <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
                         <div class="w-12 h-12 bg-brand-teal/10 rounded-lg flex items-center justify-center mb-6">
                             <svg class="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" /></svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3">Voice &amp; Text Output</h3>
-                        <p class="text-gray-600">Play your recognized phrase aloud using clear synthesis, copy the text to clipboard, or send it directly to other apps.</p>
+                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3" data-i18n="features.output_title">Voice &amp; Text Output</h3>
+                        <p class="text-gray-600" data-i18n="features.output_desc">Play your recognized phrase aloud using clear synthesis, copy the text to clipboard, or send it directly to other apps.</p>
                     </div>
 
                     <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
                         <div class="w-12 h-12 bg-brand-teal/10 rounded-lg flex items-center justify-center mb-6">
                             <svg class="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3">Personalized AI Model</h3>
-                        <p class="text-gray-600">The app trains on <b>your</b> specific voice patterns using advanced Machine Learning, becoming more accurate with every use.</p>
+                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3" data-i18n="features.personal_title">Personalized AI Model</h3>
+                        <p class="text-gray-600" data-i18n="features.personal_desc">The app trains on <b>your</b> specific voice patterns using advanced Machine Learning, becoming more accurate with every use.</p>
                     </div>
 
                     <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
                         <div class="w-12 h-12 bg-brand-teal/10 rounded-lg flex items-center justify-center mb-6">
                             <svg class="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3">Cloud Powered</h3>
-                        <p class="text-gray-600">Built on Google Cloud infrastructure, ensuring enterprise-grade reliability, speed, and continuous availability of your voice model.</p>
+                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3" data-i18n="features.cloud_title">Cloud Powered</h3>
+                        <p class="text-gray-600" data-i18n="features.cloud_desc">Built on Google Cloud infrastructure, ensuring enterprise-grade reliability, speed, and continuous availability of your voice model.</p>
                     </div>
 
                     <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
                         <div class="w-12 h-12 bg-brand-teal/10 rounded-lg flex items-center justify-center mb-6">
                             <svg class="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3">Secure &amp; Private</h3>
-                        <p class="text-gray-600">Your voice data is yours. We use industry-standard encryption and secure Firebase authentication to protect your privacy.</p>
+                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3" data-i18n="features.secure_title">Secure &amp; Private</h3>
+                        <p class="text-gray-600" data-i18n="features.secure_desc">Your voice data is yours. We use industry-standard encryption and secure Firebase authentication to protect your privacy.</p>
                     </div>
 
                     <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
                         <div class="w-12 h-12 bg-brand-teal/10 rounded-lg flex items-center justify-center mb-6">
                             <svg class="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3">Accessible Everywhere</h3>
-                        <p class="text-gray-600">Access your account and trained model from any device via our web application. Your voice travels with you.</p>
+                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3" data-i18n="features.access_title">Accessible Everywhere</h3>
+                        <p class="text-gray-600" data-i18n="features.access_desc">Access your account and trained model from any device via our web application. Your voice travels with you.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- === HOW IT WORKS === -->
         <section id="how-it-works" class="bg-white py-16 md:py-20 relative overflow-hidden">
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Your Journey to Clear Speech</h2>
-                    <p class="text-lg text-gray-600">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4" data-i18n="howItWorks.title">Your Journey to Clear Speech</h2>
+                    <p class="text-lg text-gray-600" data-i18n="howItWorks.subtitle">
                         Getting started is easy. Our step-by-step process ensures the AI adapts to you immediately.
                     </p>
                 </div>
@@ -170,10 +160,12 @@
                             <div class="relative z-10">
                                 <div class="flex flex-col md:flex-row items-center md:justify-end gap-3 mb-2">
                                     <span class="text-4xl md:text-5xl font-bold text-brand-teal/20 select-none">01</span>
-                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy m-0">Launch the Web App</h3>
+                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy m-0" data-i18n="howItWorks.step1_title">Launch the Web App</h3>
                                 </div>
-                                <p class="text-gray-600">
-                                    No downloads or app stores required. Simply open <b>HearMe</b> directly in your browser to get started instantly on any device.
+                                <p class="text-gray-600" data-i18n="howItWorks.step1_desc">
+                                    No downloads or app stores required. Simply open 
+                                    <a href="https://mvp.hearme.tech" target="_blank" rel="noopener noreferrer" class="text-brand-teal font-semibold hover:underline">HearMe</a> 
+                                    directly in your browser to get started instantly on any device.
                                 </p>
                             </div>
                             <div class="hidden md:block absolute top-1/2 -right-[calc(2rem+5px)] w-5 h-5 bg-brand-teal rounded-full border-4 border-white shadow-sm z-20 transform -translate-y-1/2"></div>
@@ -187,9 +179,9 @@
                             <div class="relative z-10">
                                 <div class="flex flex-col md:flex-row items-center md:justify-start gap-3 mb-2">
                                     <span class="text-4xl md:text-5xl font-bold text-brand-teal/20 select-none order-1 md:order-2">02</span>
-                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy m-0 order-2 md:order-1">Core Training (MVP)</h3>
+                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy m-0 order-2 md:order-1" data-i18n="howItWorks.step2_title">Core Training (MVP)</h3>
                                 </div>
-                                <p class="text-gray-600">
+                                <p class="text-gray-600" data-i18n="howItWorks.step2_desc">
                                     Train 5 predefined phrases by recording multiple voice samples for each. This builds a robust baseline model tailored specifically to your speech patterns.
                                 </p>
                             </div>
@@ -199,16 +191,16 @@
 
                     <div class="grid md:grid-cols-2 gap-8 items-center relative z-20 mt-8 md:-mt-12">
                         <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-right relative hover:-translate-y-1 transition duration-300">
-                            <div class="absolute top-0 left-0 md:left-0 md:right-auto bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-tl-xl rounded-br-lg uppercase tracking-wide border-r border-b border-gray-200 z-20">
+                            <div class="absolute top-0 left-0 md:left-0 md:right-auto bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-tl-xl rounded-br-lg uppercase tracking-wide border-r border-b border-gray-200 z-20" data-i18n="howItWorks.step3_badge">
                                 Coming Soon
                             </div>
 
                             <div class="relative z-10">
                                 <div class="flex flex-col md:flex-row items-center md:justify-end gap-3 mb-2">
                                     <span class="text-4xl md:text-5xl font-bold text-gray-200 select-none">03</span>
-                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy m-0 opacity-90">Expand Vocabulary</h3>
+                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy m-0 opacity-90" data-i18n="howItWorks.step3_title">Expand Vocabulary</h3>
                                 </div>
-                                <p class="text-gray-500">
+                                <p class="text-gray-500" data-i18n="howItWorks.step3_desc">
                                     In the full version, you will be able to add custom phrases specific to your life, making the AI smarter and more personalized.
                                 </p>
                             </div>
@@ -223,9 +215,9 @@
                             <div class="relative z-10">
                                 <div class="flex flex-col md:flex-row items-center md:justify-start gap-3 mb-2">
                                     <span class="text-4xl md:text-5xl font-bold text-brand-teal/20 select-none order-1 md:order-2">04</span>
-                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy m-0 order-2 md:order-1">Speak Freely</h3>
+                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy m-0 order-2 md:order-1" data-i18n="howItWorks.step4_title">Speak Freely</h3>
                                 </div>
-                                <p class="text-gray-600">
+                                <p class="text-gray-600" data-i18n="howItWorks.step4_desc">
                                     Use the app to speak for you in real-time. Whether text-to-speech or text display, your voice is finally understood.
                                 </p>
                             </div>
@@ -237,12 +229,11 @@
             </div>
         </section>
 
-        <!-- === PRICING === -->
         <section id="pricing" class="bg-brand-navy text-white py-20 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Pricing</h2>
-                    <p class="text-lg text-gray-300">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="pricing.title">Pricing</h2>
+                    <p class="text-lg text-gray-300" data-i18n="pricing.subtitle">
                         Choose the plan that fits your needs. Start for free and upgrade as you grow.
                     </p>
                 </div>
@@ -251,78 +242,83 @@
                     
                     <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 flex flex-col hover:border-brand-teal/30 transition duration-300 relative overflow-hidden group">
                         <div class="mb-4">
-                            <h3 class="text-2xl font-semibold text-white">Basic</h3>
-                            <p class="text-brand-teal font-bold text-3xl mt-2">Free <span class="text-base font-normal text-gray-400">/ forever</span></p>
+                            <h3 class="text-2xl font-semibold text-white" data-i18n="pricing.basic_title">Basic</h3>
+                            <p class="text-brand-teal font-bold text-3xl mt-2" data-i18n="pricing.free_forever">Free <span class="text-base font-normal text-gray-400">/ forever</span></p>
                         </div>
-                        <p class="text-gray-400 mb-8">Perfect for getting started with essential communication tools.</p>
+                        <p class="text-gray-400 mb-8" data-i18n="pricing.basic_desc">Perfect for getting started with essential communication tools.</p>
                         
                         <ul class="space-y-4 mb-8 flex-grow text-gray-300">
                             <li class="flex items-start">
                                 <svg class="h-6 w-6 text-brand-teal mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                                Access to preset phrase library
+                                <span data-i18n="pricing.feat_preset">Access to preset phrase library</span>
                             </li>
                             <li class="flex items-start">
                                 <svg class="h-6 w-6 text-brand-teal mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                                Unlimited usage of preset phrases
+                                <span data-i18n="pricing.feat_unlimited">Unlimited usage of preset phrases</span>
                             </li>
                             <li class="flex items-start">
                                 <svg class="h-6 w-6 text-brand-teal mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                                Text-to-Speech output
+                                <span data-i18n="pricing.feat_tts">Text-to-Speech output</span>
                             </li>
                         </ul>
 
                         <div class="mt-auto">
                             <a href="https://mvp.hearme.tech" target="_blank" rel="noopener noreferrer" class="w-full bg-brand-teal text-white px-6 py-3 rounded-full font-semibold hover:bg-brand-teal-dark transition duration-200 shadow-lg flex items-center justify-center">
-                                Launch App
+                                <span data-i18n="pricing.cta_launch">Launch App</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                 </svg>
                             </a>
-                            <p class="text-center text-xs mt-3 opacity-0 select-none" aria-hidden="true">
+                            <p class="text-center text-xs mt-3 opacity-0 select-none" aria-hidden="true" data-i18n="pricing.notify_text">
                                 Get notified when Full becomes available.
                             </p>
                         </div>
                     </div>
 
                     <div class="bg-gradient-to-b from-brand-teal/10 to-brand-navy border border-gray-700 rounded-2xl p-8 flex flex-col relative">
-                        <div class="absolute top-0 right-0 bg-gray-700 text-gray-300 text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wide border-l border-b border-gray-600">
+                        <div class="absolute top-0 right-0 bg-gray-700 text-gray-300 text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wide border-l border-b border-gray-600" data-i18n="pricing.coming_soon">
                             Coming Soon
                         </div>
 
                         <div class="mb-4">
-                            <h3 class="text-2xl font-semibold text-white opacity-90">Full</h3>
-                            <p class="text-white font-bold text-3xl mt-2">$19 <span class="text-base font-normal text-gray-400">/ month</span></p>
+                            <h3 class="text-2xl font-semibold text-white opacity-90" data-i18n="pricing.full_title">Full</h3>
+                            <p class="text-white font-bold text-3xl mt-2" data-i18n="pricing.full_price">$19 <span class="text-base font-normal text-gray-400">/ month</span></p>
                         </div>
-                        <p class="text-gray-300 mb-8">Unlock the full power of personalized AI speech recognition.</p>
+                        <p class="text-gray-300 mb-8" data-i18n="pricing.full_desc">Unlock the full power of personalized AI speech recognition.</p>
                         
                         <ul class="space-y-4 mb-8 flex-grow text-gray-400">
                             <li class="flex items-start">
                                 <svg class="h-6 w-6 text-brand-teal mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                                <span><b>Everything in Basic</b></span>
+                                <span data-i18n="pricing.feat_everything"><b>Everything in Basic</b></span>
                             </li>
                             <li class="flex items-start">
                                 <svg class="h-6 w-6 text-brand-teal mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                                Create &amp; train custom phrases
+                                <span data-i18n="pricing.feat_custom">Create &amp; train custom phrases</span>
                             </li>
                             <li class="flex items-start">
                                 <svg class="h-6 w-6 text-brand-teal mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                                Full Personalized AI Model training
+                                <span data-i18n="pricing.feat_model">Full Personalized AI Model training</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-brand-teal mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span data-i18n="pricing.feat_roadmap">
+                                    Access to all 
+                                    <a href="#roadmap" class="border-b border-gray-400 hover:border-brand-teal hover:text-brand-teal transition duration-200">Roadmap features</a>
+                                </span>
                             </li>
                             <li class="flex items-start">
                                 <svg class="h-6 w-6 text-brand-teal mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                                Access to all Roadmap features
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="h-6 w-6 text-brand-teal mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                                Priority Support
+                                <span data-i18n="pricing.feat_support">Priority Support</span>
                             </li>
                         </ul>
 
                         <div class="mt-auto">
-                            <a href="pages/waitlist.html" class="w-full block text-center border border-gray-500 text-gray-300 px-6 py-3 rounded-full font-semibold hover:bg-gray-700 hover:text-white hover:border-gray-400 transition duration-200">
+                            <a href="pages/waitlist.html" class="w-full block text-center border border-gray-500 text-gray-300 px-6 py-3 rounded-full font-semibold hover:bg-gray-700 hover:text-white hover:border-gray-400 transition duration-200" data-i18n="pricing.cta_waitlist">
                                 Join Waitlist
                             </a>
-                            <p class="text-center text-xs text-gray-500 mt-3">
+                            <p class="text-center text-xs text-gray-500 mt-3" data-i18n="pricing.notify_text">
                                 Get notified when Full becomes available.
                             </p>
                         </div>
@@ -332,12 +328,11 @@
             </div>
         </section>
 
-        <!-- === ROADMAP === -->
-<section id="roadmap" class="bg-white py-20 md:py-24">
+        <section id="roadmap" class="bg-white py-20 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">The Future of HearMe</h2>
-                    <p class="text-lg text-gray-600">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4" data-i18n="roadmap.title">The Future of HearMe</h2>
+                    <p class="text-lg text-gray-600" data-i18n="roadmap.subtitle">
                         Our mission goes beyond screens. We are working to integrate <b>HearMe</b> into every aspect of your life, removing barriers in both the digital and physical worlds.
                     </p>
                 </div>
@@ -346,8 +341,8 @@
                     <div class="flex items-start space-x-6 p-6 mb-6 hover:bg-gray-50 rounded-xl transition duration-300">
                         <div class="bg-brand-teal text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center font-bold text-xl shadow-md">1</div>
                         <div>
-                            <h3 class="text-2xl font-semibold text-brand-navy mb-2">In-App Voice Calls</h3>
-                            <p class="text-gray-600">
+                            <h3 class="text-2xl font-semibold text-brand-navy mb-2" data-i18n="roadmap.item1_title">In-App Voice Calls</h3>
+                            <p class="text-gray-600" data-i18n="roadmap.item1_desc">
                                 Make crystal-clear calls directly within the <b>HearMe</b> app. Connect with friends and family effortlessly, with our AI ensuring your voice is heard perfectly on the other end.
                             </p>
                         </div>
@@ -356,16 +351,16 @@
                     <div class="flex items-start space-x-6 p-6 mb-6 hover:bg-gray-50 rounded-xl transition duration-300">
                         <div class="bg-brand-teal text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center font-bold text-xl shadow-md">2</div>
                         <div>
-                            <h3 class="text-2xl font-semibold text-brand-navy mb-2">Keyboard Integration</h3>
-                            <p class="text-gray-600">Use your personalized voice model to dictate text in any app, directly from your system keyboard.</p>
+                            <h3 class="text-2xl font-semibold text-brand-navy mb-2" data-i18n="roadmap.item2_title">Keyboard Integration</h3>
+                            <p class="text-gray-600" data-i18n="roadmap.item2_desc">Use your personalized voice model to dictate text in any app, directly from your system keyboard.</p>
                         </div>
                     </div>
 
                     <div class="flex items-start space-x-6 p-6 mb-6 hover:bg-gray-50 rounded-xl transition duration-300">
                         <div class="bg-brand-teal text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center font-bold text-xl shadow-md">3</div>
                         <div>
-                            <h3 class="text-2xl font-semibold text-brand-navy mb-2">Voice Assistant Integration</h3>
-                            <p class="text-gray-600">
+                            <h3 class="text-2xl font-semibold text-brand-navy mb-2" data-i18n="roadmap.item3_title">Voice Assistant Integration</h3>
+                            <p class="text-gray-600" data-i18n="roadmap.item3_desc">
                                 Enhance Siri or Google Assistant with your personalized <b>HearMe</b> model. Control your smart home and devices reliably using the assistants you already know.
                             </p>
                         </div>
@@ -374,8 +369,8 @@
                     <div class="flex items-start space-x-6 p-6 hover:bg-gray-50 rounded-xl transition duration-300">
                         <div class="bg-brand-teal text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center font-bold text-xl shadow-md">4</div>
                         <div>
-                            <h3 class="text-2xl font-semibold text-brand-navy mb-2">Offline Personal Translator</h3>
-                            <p class="text-gray-600">
+                            <h3 class="text-2xl font-semibold text-brand-navy mb-2" data-i18n="roadmap.item4_title">Offline Personal Translator</h3>
+                            <p class="text-gray-600" data-i18n="roadmap.item4_desc">
                                 A future wearable device that works entirely offline. It speaks your words clearly in any language, serving as your personal voice bridge—speech-to-speech, anywhere.
                             </p>
                         </div>
@@ -386,10 +381,8 @@
 
     </main>
 
-    <!-- === FOOTER === -->
     <div id="footer-placeholder"></div>
 
-    <!-- Page-specific script -->
     <script type="module" src="/scripts/page-index.js?v=1765591634444"></script>
 
 </body>

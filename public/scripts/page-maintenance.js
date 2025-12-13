@@ -55,14 +55,9 @@ function setupMaintenanceTimer() {
     updateTimer();
 }
 
-
-/**
- * Main initialization function for the Maintenance page.
- */
-function main() {
-    setupMaintenanceTimer();
-    console.log("Maintenance page initialized.");
-}
-
 // Run the main initialization function when the DOM is ready
-document.addEventListener('DOMContentLoaded', main);
+document.addEventListener('DOMContentLoaded', async () => {
+    await initI18n();
+    
+    setupMaintenanceTimer();
+});

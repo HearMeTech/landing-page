@@ -4,16 +4,36 @@
             <img src="/images/HearMe.png" alt="HearMe Logo" class="h-8 w-auto rounded-md">
         </a>
 
-        <!-- Navigation (Desktop) -->
         <div class="hidden md:flex space-x-6 lg:space-x-8 items-center">
-            <a href="/#features" class="text-gray-600 hover:text-brand-teal transition duration-200">Features</a>
-            <a href="/#how-it-works" class="text-gray-600 hover:text-brand-teal transition duration-200">How It Works</a>
-            <a href="/#pricing" class="text-gray-600 hover:text-brand-teal transition duration-200">Pricing</a>
-            <a href="/#roadmap" class="text-gray-600 hover:text-brand-teal transition duration-200">Roadmap</a>
-            <a href="mailto:info@hearme.tech" class="bg-brand-teal text-white px-5 py-2 rounded-full font-semibold hover:bg-brand-teal-dark transition duration-200 shadow-sm">Contact Us</a>
+            <a href="/#features" class="text-gray-600 hover:text-brand-teal transition duration-200" data-i18n="nav.features">Features</a>
+            <a href="/#how-it-works" class="text-gray-600 hover:text-brand-teal transition duration-200" data-i18n="nav.howItWorks">How It Works</a>
+            <a href="/#pricing" class="text-gray-600 hover:text-brand-teal transition duration-200" data-i18n="nav.pricing">Pricing</a>
+            <a href="/#roadmap" class="text-gray-600 hover:text-brand-teal transition duration-200" data-i18n="nav.roadmap">Roadmap</a>
+
+            <div class="relative group">
+                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 group-hover:text-brand-teal transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+
+                <select id="language-switcher" class="appearance-none bg-gray-50 border border-gray-200 text-gray-700 py-2 pl-9 pr-8 rounded-full focus:outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/20 text-sm font-medium cursor-pointer hover:border-gray-300 transition-all shadow-sm">
+                    <option value="en">English</option>
+                    <option value="uk">Українська</option>
+                    <option value="de">Deutsch</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="pt">Português</option>
+                </select>
+                
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                </div>
+            </div>
+
+            <a href="mailto:info@hearme.tech" class="bg-brand-teal text-white px-5 py-2 rounded-full font-semibold hover:bg-brand-teal-dark transition duration-200 shadow-sm" data-i18n="nav.contact">Contact Us</a>
         </div>
 
-        <!-- Button of mobile menu -->
         <button id="mobile-menu-button" class="md:hidden text-gray-700">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -21,12 +41,35 @@
         </button>
     </nav>
 
-    <!-- Mobile Menu (Hidden) -->
     <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute top-16 left-0 right-0 z-40">
-        <a href="/#features" class="block px-6 py-3 text-gray-600 hover:bg-gray-50">Features</a>
-        <a href="/#how-it-works" class="block px-6 py-3 text-gray-600 hover:bg-gray-50">How It Works</a>
-        <a href="/#pricing" class="block px-6 py-3 text-gray-600 hover:bg-gray-50">Pricing</a>
-        <a href="/#roadmap" class="block px-6 py-3 text-gray-600 hover:bg-gray-50">Roadmap</a>
-        <a href="mailto:info@hearme.tech" class="block px-6 py-4 bg-brand-teal/10 text-brand-teal-dark font-semibold">Contact Us</a>
+        <a href="/#features" class="block px-6 py-3 text-gray-600 hover:bg-gray-50" data-i18n="nav.features">Features</a>
+        <a href="/#how-it-works" class="block px-6 py-3 text-gray-600 hover:bg-gray-50" data-i18n="nav.howItWorks">How It Works</a>
+        <a href="/#pricing" class="block px-6 py-3 text-gray-600 hover:bg-gray-50" data-i18n="nav.pricing">Pricing</a>
+        <a href="/#roadmap" class="block px-6 py-3 text-gray-600 hover:bg-gray-50" data-i18n="nav.roadmap">Roadmap</a>
+
+        <div class="bg-gray-50 rounded-xl p-3 flex items-center justify-between mt-2 mb-2">
+            <div class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 mr-2 text-brand-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="font-medium text-sm">Language</span>
+            </div>
+            
+            <div class="relative">
+                <select id="language-switcher-mobile" class="appearance-none bg-white border border-gray-200 text-gray-700 py-1.5 pl-3 pr-8 rounded-lg text-sm font-medium focus:outline-none focus:border-brand-teal focus:ring-1 focus:ring-brand-teal/20 cursor-pointer">
+                    <option value="en">English</option>
+                    <option value="uk">Українська</option>
+                    <option value="de">Deutsch</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="pt">Português</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                </div>
+            </div>
+        </div>
+
+        <a href="mailto:info@hearme.tech" class="block px-6 py-4 bg-brand-teal/10 text-brand-teal-dark font-semibold" data-i18n="nav.contact">Contact Us</a>
     </div>
 </header>

@@ -1,0 +1,107 @@
+{
+  "nav": {
+    "features": "Fonctions",
+    "howItWorks": "Comment ça marche",
+    "pricing": "Tarifs",
+    "roadmap": "Feuille de route",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Votre Voix. Vos Mots. <span class='text-brand-teal'>Enfin Compris.</span>",
+    "subtitle": "<b>HearMe</b> est une IA révolutionnaire qui apprend vos schémas vocaux, vous permettant de communiquer avec clarté et assurance.",
+    "cta": "Lancer l'App"
+  },
+  "features": {
+    "title": "Libérez votre communication",
+    "subtitle": "Conçu pour les troubles de la parole (PC, AVC, SLA). <b>HearMe</b> allie IA avancée et interface intuitive.",
+    "recognition_title": "Reconnaissance temps réel",
+    "recognition_desc": "Notre IA transcrit instantanément votre parole en texte avec une latence minimale, pour des échanges fluides.",
+    "output_title": "Sortie vocale et textuelle",
+    "output_desc": "Écoutez votre phrase avec une voix claire, copiez le texte ou envoyez-le directement vers d'autres applis.",
+    "personal_title": "Modèle IA personnalisé",
+    "personal_desc": "L'app s'entraîne sur <b>vos</b> propres motifs vocaux grâce au Machine Learning, s'améliorant à chaque usage.",
+    "cloud_title": "Puissance du Cloud",
+    "cloud_desc": "Basé sur Google Cloud, garantissant fiabilité, vitesse et disponibilité continue de votre modèle vocal.",
+    "secure_title": "Sécurisé et Privé",
+    "secure_desc": "Vos données vocales vous appartiennent. Nous utilisons un cryptage standard et l'auth Firebase sécurisée.",
+    "access_title": "Accessible partout",
+    "access_desc": "Accédez à votre compte et modèle depuis tout appareil via le web. Votre voix voyage avec vous."
+  },
+  "howItWorks": {
+    "title": "Votre parcours vers une voix claire",
+    "subtitle": "Commencer est simple. Notre processus garantit que l'IA s'adapte immédiatement à vous.",
+    "step1_title": "Ouvrir l'App Web",
+    "step1_desc": "Aucun téléchargement requis. Ouvrez <a href='https://mvp.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> dans votre navigateur pour débuter instantanément.",
+    "step2_title": "Entraînement de base",
+    "step2_desc": "Entraînez 5 phrases en enregistrant plusieurs échantillons. Cela crée un modèle de base robuste adapté à vous.",
+    "step3_badge": "Bientôt",
+    "step3_title": "Étendre le vocabulaire",
+    "step3_desc": "Dans la version complète, ajoutez des phrases personnalisées de votre vie pour rendre l'IA plus intelligente.",
+    "step4_title": "Parlez librement",
+    "step4_desc": "Utilisez l'app pour parler en temps réel. Synthèse vocale ou affichage texte : soyez enfin compris."
+  },
+  "pricing": {
+    "title": "Tarifs",
+    "subtitle": "Choisissez votre plan. Commencez gratuitement et évoluez selon vos besoins.",
+    "basic_title": "Basique",
+    "free_forever": "Gratuit <span class='text-base font-normal text-gray-400'>/ pour toujours</span>",
+    "basic_desc": "Parfait pour débuter avec les outils essentiels.",
+    "full_title": "Complet",
+    "full_price": "€19 <span class='text-base font-normal text-gray-400'>/ mois</span>",
+    "full_desc": "Libérez toute la puissance de la reconnaissance vocale IA.",
+    "coming_soon": "Bientôt",
+    "cta_launch": "Lancer",
+    "cta_waitlist": "Liste d'attente",
+    "notify_text": "Soyez notifié de la disponibilité.",
+    "feat_preset": "Accès à la bibliothèque de phrases",
+    "feat_unlimited": "Usage illimité des phrases",
+    "feat_tts": "Synthèse vocale (Text-to-Speech)",
+    "feat_everything": "<b>Tout ce qu'il y a dans Basique</b>",
+    "feat_custom": "Créer & entraîner vos phrases",
+    "feat_model": "Entraînement complet du modèle IA",
+    "feat_support": "Support prioritaire",
+    "feat_roadmap": "Accès aux fonctions de la <a href='#roadmap' class='border-b border-gray-400 hover:border-brand-teal hover:text-brand-teal transition duration-200'>Feuille de route</a>"
+  },
+  "roadmap": {
+    "title": "Le futur de HearMe",
+    "subtitle": "Notre mission dépasse l'écran. Nous voulons intégrer <b>HearMe</b> à votre vie, supprimant les barrières partout.",
+    "item1_title": "Appels via l'App",
+    "item1_desc": "Passez des appels clairs via <b>HearMe</b>. Connectez-vous avec vos proches; notre IA assure que vous soyez entendu.",
+    "item2_title": "Intégration Clavier",
+    "item2_desc": "Utilisez votre modèle vocal pour dicter du texte dans n'importe quelle application via le clavier système.",
+    "item3_title": "Assistants Vocaux",
+    "item3_desc": "Améliorez Siri ou Google Assistant avec votre modèle <b>HearMe</b>. Contrôlez votre maison connectée fiablement.",
+    "item4_title": "Traducteur Offline",
+    "item4_desc": "Un futur appareil portable totalement hors ligne. Il prononce vos mots clairement dans n'importe quelle langue."
+  },
+  "waitlist": {
+      "title": "Rejoindre la liste d'attente",
+      "subtitle": "Soyez le premier à tester la reconnaissance personnalisée. <br class='hidden md:inline'> Inscrivez-vous pour l'accès anticipé.",
+      "name_placeholder": "Votre Nom (Optionnel)",
+      "email_placeholder": "Votre email",
+      "comment_placeholder": "Souhaits ou commentaires ?",
+      "btn_join": "Rejoindre",
+      "btn_joining": "En cours...",
+      "privacy": "Nous respectons votre vie privée. Pas de spam.",
+      "success_title": "Vous êtes inscrit !",
+      "success_desc": "Merci d'avoir rejoint <b>HearMe</b>. Nous vous contacterons bientôt pour votre accès.",
+      "btn_back": "Retour Accueil",
+      "error_title": "Une erreur est survenue"
+  },
+  "footer": {
+      "desc": "Donner à chacun le pouvoir d'être entendu.",
+      "navigate": "Navigation",
+      "connect": "Contact",
+      "rights": "&copy; 2025 <b>HearMe</b>. Tous droits réservés."
+  },
+  "maintenance": {
+    "title": "Nous revenons vite !",
+    "desc": "Désolé pour le dérangement. Nous effectuons une maintenance pour améliorer le site. Retour très bientôt.",
+    "signature": "<b>HearMe</b> — L'Équipe"
+  },
+  "error404": {
+    "title": "Oups ! Page non trouvée",
+    "desc": "Nous ne trouvons pas la page. Elle a peut-être été déplacée, supprimée ou l'URL est incorrecte.",
+    "btn_home": "Retour Accueil"
+  }
+}
