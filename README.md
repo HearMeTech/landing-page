@@ -10,11 +10,13 @@ It is designed to be hosted on the **Firebase Hosting** platform and is built us
 
 * **Home Page (`index.html`):** The primary page that introduces visitors to our project, vision, features, and roadmap.
 * **Waitlist Page (`pages/waitlist.html`):** A dedicated page with a form to capture emails, integrated with Firebase Firestore.
+* **Internationalization (i18n):** Client-side translation support. Automatically detects user language, saves preferences, and supports multiple languages (EN, UK, DE, ES, FR, PT).
 * **Component-Based Structure:** Shared elements (`header.html`, `footer.html`) are loaded from the `/components` directory.
 * **Modular JavaScript:** Logic is cleanly split into modules:
   * `firebase-init.js`: Centralized Firebase SDK imports and initialization.
   * `tailwind-config.js`: Centralized Tailwind CSS configuration.
   * `common.js`: Shared logic for loading header/footer and the mobile menu.
+  * `i18n.js`: Core logic for language detection, loading JSON translations, and updating the UI.
   * `page-index.js`: Page-specific logic for `index.html`.
   * `page-waitlist.js`: Page-specific logic for the waitlist form.
   * `page-maintenance.js`: Page-specific logic for the maintenance countdown timer.
@@ -38,21 +40,21 @@ Before you begin, ensure you have:
 1. **Node.js and npm:** (This provides the `npm` command).
 2. **Firebase CLI:** If you don't have it, install it globally:
 
-```
+```bash
 npm install -g firebase-tools
 ```
 
 ### Step 1: Install Dependencies
 
 After cloning the repository, you must first install the local development tools (linters):
-```
+```bash
 npm install
 ```
 
 ### Step 2: Check Code Quality (Linting)
 
 Before any commit, run our complete quality check. This command checks all `HTML`, `CSS`, and `JavaScript` files for errors, ensuring our code stays clean and consistent.
-```
+```bash
 npm run lint
 ```
 **If this command shows errors, please fix them before proceeding.**
@@ -60,13 +62,13 @@ npm run lint
 ### Step 3: **Running the Local Server**
 
 1. **Log in to Firebase:** (This step might be optional for `firebase serve`, but it's good practice).
-```
-    firebase login
+```bash
+firebase login
 ```
 
 2. **Run the server:** While in the project's root directory (where `firebase.json` is located), execute the following command:
-```
-    firebase serve
+```bash
+firebase serve
 ```
 
 3. **Open the site in your browser:** After running the command, the terminal will show you a local address. By default, it is: `http://localhost:5000`
@@ -74,6 +76,21 @@ npm run lint
    * Waitlist page: `http://localhost:5000/pages/waitlist.html`
    * Maintenance page: `http://localhost:5000/maintenance.html`
    * 404 Page: Navigate to any non-existent URL (e.g., `http://localhost:5000/test`)
+
+## **🌍 Localization (i18n)**
+
+The project uses a lightweight client-side approach for translations.
+
+1.  **JSON Files:** All text content is stored in `public/locales/{lang}.json` (e.g., `en.json`, `uk.json`).
+2.  **HTML Attributes:** Elements to be translated must have a `data-i18n="key.path"` attribute.
+    * Example: `<h1 data-i18n="hero.title">Default Text</h1>`
+3.  **Language Detection:** The `i18n.js` script checks for language in this order:
+    1.  URL query parameter (`?lang=uk`)
+    2.  LocalStorage (`app_lang`)
+    3.  Browser language settings
+    4.  Default (`en`)
+
+To add a new language, create a new JSON file in `public/locales/` and add the option to the `<select>` element in `public/components/header.html`.
 
 ## **🚀 Deployment**
 
@@ -91,10 +108,12 @@ Any push or pull request merge to the `main` branch will trigger an automatic de
 * `.github/`: Contains CI/CD workflows and linter configurations.
 * `public/`: Contains all static assets, components, and content pages.
   * `components/`: Reusable HTML partials (header, footer).
+  * `locales/`: JSON translation files (`en.json`, `uk.json`, `de.json`, etc.).
   * `images/`: Brand logos and other images.
   * `pages/`: Additional content pages (e.g., `waitlist.html`, `maintenance.html`).
   * `scripts/`: Modular JavaScript files.
     * `common.js`: Loads header/footer, menu logic.
+    * `i18n.js`: Localization logic.
     * `firebase-init.js`: Connects to and authenticates with Firebase.
     * `tailwind-config.js`: Shared config for Tailwind CDN.
     * `page-index.js`: Logic for `index.html`.
