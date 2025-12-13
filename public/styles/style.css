@@ -13,7 +13,7 @@ body {
 .icon-gear {
     width: 60px;
     height: 60px;
-    stroke: #0a9396; /* Our new brand color 'brand-teal' */
+    stroke: #0a9396;
     stroke-width: 1.5px;
     margin-bottom: 25px;
     margin-left: auto;
@@ -30,4 +30,51 @@ body {
     to {
         transform: rotate(360deg);
     }
+}
+
+/* --- Fix for sticky header overlay --- */
+section[id] {
+    scroll-margin-top: 100px;
+}
+
+/* --- Scroll to Top Button --- */
+#scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 50;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 9999px;
+    background-color: rgb(10 147 150 / 90%);
+    backdrop-filter: blur(4px);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -2px rgb(0 0 0 / 5%);
+    border: 1px solid rgb(255 255 255 / 20%);
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+#scroll-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+#scroll-to-top:hover {
+    background-color: #005f73;
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 10px 10px -5px rgb(0 0 0 / 4%);
+}
+
+/* --- Active Menu State --- */
+.nav-link-active {
+    color: #0a9396 !important;
+    font-weight: 600;
 }
