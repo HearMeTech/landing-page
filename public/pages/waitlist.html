@@ -30,67 +30,115 @@
     <script src="/scripts/tailwind-config.js"></script>
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/style.css?v=1765591634444">
 </head>
 
 <body class="font-sans text-gray-800 antialiased flex flex-col min-h-screen">
 
-    <!-- === HEADER === -->
     <div id="header-placeholder"></div>
 
-    <!-- === MAIN CONTENT === -->
-    <main class="flex-grow">
+    <main class="flex-grow flex flex-col justify-center">
         <section class="bg-white py-20 md:py-32">
             <div class="container mx-auto px-6 text-center">
                 <div class="max-w-2xl mx-auto">
                     
-                    <!-- Simplified Waitlist CTA (replaces complex form) -->
-                    <div id="waitlist-simple-cta">
+                    <div id="waitlist-container" class="transition-opacity duration-500">
                         <h1 class="text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-6">
                             Join the Waitlist
                         </h1>
-                        <p class="text-lg lg:text-xl text-gray-600 mb-8">
-                            Our sign-up form is currently undergoing scheduled maintenance. 
-                            To join the waitlist, please send us an email directly by clicking the button below.
+                        <p class="text-lg lg:text-xl text-gray-600 mb-10">
+                            Be the first to experience personalized speech recognition. <br class="hidden md:inline">
+                            Sign up for early access and updates.
                         </p>
                         
-                        <!-- Mailto Link (styled as a button) -->
-                        <a href="mailto:info@hearme.tech?subject=Please%20add%20me%20to%20the%20HearMe%20waitlist"
-                           class="inline-block w-full max-w-sm bg-brand-teal text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg">
-                            Join via Email
-                        </a>
+                        <form id="waitlist-form" class="max-w-md mx-auto relative text-left">
+                            <div class="flex flex-col gap-4">
+                                
+                                <div class="relative">
+                                    <label for="name" class="sr-only">Name</label>
+                                    <input 
+                                        type="text" 
+                                        id="name" 
+                                        name="name" 
+                                        placeholder="Your Name (Optional)" 
+                                        class="w-full px-6 py-4 rounded-full border-2 border-gray-200 focus:border-brand-teal focus:ring-4 focus:ring-brand-teal/20 outline-none transition duration-200 text-lg placeholder-gray-400"
+                                    >
+                                </div>
 
-                        <p class="text-gray-500 text-sm mt-6">
-                            We apologize for the inconvenience and will add you to the list manually.
-                        </p>
+                                <div class="relative">
+                                    <label for="email" class="sr-only">Email</label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        placeholder="Enter your email address" 
+                                        required
+                                        class="w-full px-6 py-4 rounded-full border-2 border-gray-200 focus:border-brand-teal focus:ring-4 focus:ring-brand-teal/20 outline-none transition duration-200 text-lg placeholder-gray-400"
+                                    >
+                                </div>
+
+                                <div class="relative">
+                                    <label for="comment" class="sr-only">Comments</label>
+                                    <textarea 
+                                        id="comment" 
+                                        name="comment" 
+                                        rows="3"
+                                        placeholder="Wishes or comments? (Optional)" 
+                                        class="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-brand-teal focus:ring-4 focus:ring-brand-teal/20 outline-none transition duration-200 text-lg placeholder-gray-400 resize-none"
+                                    ></textarea>
+                                </div>
+
+                                <div class="absolute opacity-0 -z-10 w-0 h-0 overflow-hidden">
+                                    <label for="b_phone">Business Phone</label>
+                                    <input 
+                                        type="text" 
+                                        id="b_phone" 
+                                        name="b_phone" 
+                                        tabindex="-1" 
+                                        autocomplete="off"
+                                    >
+                                </div>
+                                
+                                <button 
+                                    type="submit" 
+                                    id="submit-btn"
+                                    class="w-full bg-brand-teal text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-brand-teal-dark active:scale-[0.98] transition-all duration-200 shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center mt-2"
+                                >
+                                    <span>Join Now</span>
+                                    <svg id="loading-spinner" class="animate-spin ml-3 h-5 w-5 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="text-xs text-center text-gray-400 mt-4">
+                                We respect your privacy. No spam, ever.
+                            </p>
+                        </form>
                     </div>
 
-                    <!-- Hidden Success/Failure blocks (no longer needed by default) -->
-                    <div id="waitlist-success-message" class="hidden">
-                        <h1 class="text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-6">
+                    <div id="waitlist-success-message" class="hidden opacity-0 transform translate-y-4 transition-all duration-500">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <h1 class="text-3xl lg:text-4xl font-bold text-brand-navy mb-4">
                             You're on the list!
                         </h1>
-                        <p class="text-lg lg:text-xl text-gray-600 mb-10">
-                            Thank you for your interest in <b>HearMe</b>. We'll be in touch soon with updates and an invitation for early access.
+                        <p class="text-lg text-gray-600 mb-10">
+                            Thank you for joining <b>HearMe</b>. We'll be in touch soon with your invitation for early access.
                         </p>
-                        <a href="/" class="bg-brand-teal text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg">
-                            Go Back to Homepage
+                        <a href="/" class="inline-block bg-brand-teal text-white px-8 py-3 rounded-full font-semibold hover:bg-brand-teal-dark transition duration-200 shadow-lg">
+                            Back to Homepage
                         </a>
                     </div>
                     
-                    <div id="waitlist-failure-message" class="hidden">
-                        <h1 class="text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-6">
-                            Something went wrong
-                        </h1>
-                        <p class="text-lg lg:text-xl text-gray-600 mb-6" id="failure-error-text">
-                            An unexpected error occurred. Please try again later or contact us at info@hearme.tech.
+                    <div id="waitlist-failure-message" class="hidden text-red-600 bg-red-50 p-6 rounded-xl border border-red-100 mt-6">
+                        <h3 class="font-bold text-lg mb-2">Something went wrong</h3>
+                        <p id="failure-error-text" class="text-sm">
+                            We couldn't add you to the list. Please check your internet connection and try again.
                         </p>
-                        <p class="text-lg lg:text-xl text-gray-600 mb-10">
-                            We apologize for the inconvenience.
-                        </p>
-                        <a href="/" class="bg-brand-teal text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg">
-                            Go Back to Homepage
-                        </a>
                     </div>
 
                 </div>
@@ -98,12 +146,11 @@
         </section>
     </main>
 
-    <!-- === FOOTER === -->
     <div id="footer-placeholder"></div>
 
-    <!-- Scripts -->
     <script src="/scripts/common.js" type="module"></script>
-    <script src="/scripts/page-waitlist.js" type="module"></script>
+    <script src="/scripts/page-waitlist.js?v=1765591634444" type="module"></script>
 
 </body>
+
 </html>

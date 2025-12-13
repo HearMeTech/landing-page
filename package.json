@@ -9,7 +9,10 @@
     "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
     "lint:html": "htmlhint --config .github/linters/.htmlhintrc \"**/*.html\" --ignore \"public/components/**\"",
     "lint:css": "stylelint \"**/*.css\"",
-    "lint:js": "eslint \"**/*.js\""
+    "lint:js": "eslint \"**/*.js\"",
+    
+    "update-version": "node update-version.js",
+    "deploy": "npm run update-version && firebase deploy"
   },
   "repository": {
     "type": "git",

@@ -13,7 +13,6 @@ import {
 } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 import { 
     getFirestore, 
-    setLogLevel
 } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
 // --- Module-level variables ---
@@ -32,31 +31,55 @@ const authReadyPromise = new Promise((resolve) => {
  */
 async function initializeFirebaseAndAuth() {
     try {
-        // --- 1. Get Config and App ID ---
-        // These constants are provided by the Canvas environment.
-        appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfigStr = typeof __firebase_config !== 'undefined' ? __firebase_config : '{}';
-        const firebaseConfig = JSON.parse(firebaseConfigStr);
+        let firebaseConfig;
 
-        if (!firebaseConfig.apiKey) {
-            console.error("Firebase config is missing or invalid.");
+        // --- 1. Get Config ---
+        // Спроба А: Перевіряємо глобальну змінну (часто використовується в custom environments)
+        if (typeof __firebase_config !== 'undefined') {
+            try {
+                firebaseConfig = JSON.parse(__firebase_config);
+            } catch (e) {
+                console.error("Error parsing __firebase_config:", e);
+            }
+        }
+
+        // Спроба Б: Якщо змінної немає, тягнемо стандартний файл конфігурації Firebase Hosting.
+        // Це працює і локально (firebase serve), і на продакшені.
+        if (!firebaseConfig) {
+            try {
+                const response = await fetch('/__/firebase/init.json');
+                if (response.ok) {
+                    firebaseConfig = await response.json();
+                } else {
+                    console.warn("Could not fetch /__/firebase/init.json. Status:", response.status);
+                }
+            } catch (e) {
+                console.warn("Fetch error for firebase config:", e);
+            }
+        }
+
+        // Якщо конфіг так і не знайшли — зупиняємось
+        if (!firebaseConfig || !firebaseConfig.apiKey) {
+            console.error("Firebase config is missing or invalid. Check your setup.");
             return;
         }
+
+        // Отримуємо App ID з конфігу або глобальної змінної
+        appId = firebaseConfig.appId || (typeof __app_id !== 'undefined' ? __app_id : 'default-app-id');
 
         // --- 2. Initialize Firebase App ---
         const app = initializeApp(firebaseConfig);
         db = getFirestore(app);
         auth = getAuth(app);
 
-        // Enable Firestore debug logging
-        setLogLevel('Debug');
+        // Enable Firestore debug logging (optional, helpful for dev)
+        // setLogLevel('Debug');
 
         // --- 3. Set up Auth Listener ---
         onAuthStateChanged(auth, async (user) => {
             if (user) {
                 // User is signed in.
                 console.log("Firebase Auth: User is signed in.", user.uid);
-                // If auth wasn't already marked as ready, resolve the promise.
                 if (!isAuthReady) {
                     isAuthReady = true;
                     authResolve({ db, auth, appId });
@@ -68,7 +91,7 @@ async function initializeFirebaseAndAuth() {
             }
         });
 
-        // Initial check, in case onAuthStateChanged doesn't fire immediately
+        // Initial check
         if (!auth.currentUser) {
             await attemptSignIn();
         }
@@ -83,12 +106,10 @@ async function initializeFirebaseAndAuth() {
  */
 async function attemptSignIn() {
     try {
-        // Use __initial_auth_token if available (Canvas environment)
         if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
             console.log("Attempting sign-in with custom token...");
             await signInWithCustomToken(auth, __initial_auth_token);
         } else {
-            // Fallback for local testing or when token is not present
             console.log("Attempting anonymous sign-in...");
             await signInAnonymously(auth);
         }
@@ -98,12 +119,7 @@ async function attemptSignIn() {
 }
 
 // --- Module Execution ---
-// Start the initialization process as soon as this module is imported.
-// We call the function directly and don't assign its result, fixing the no-unused-vars.
 initializeFirebaseAndAuth();
 
 // --- Exports ---
-// Export the variables directly.
-// Note: Other modules should wait for `authReadyPromise` if they need 
-// to use `db` or `auth` immediately on load.
 export { db, auth, appId, authReadyPromise };

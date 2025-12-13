@@ -77,6 +77,11 @@ npm run lint
 
 ## **🚀 Deployment**
 
+For soft reset new version of landing page on all devices run followiing command:
+```bash
+npm run update-version
+```
+
 Deployment is handled automatically.
 
 Any push or pull request merge to the `main` branch will trigger an automatic deployment to Firebase Hosting.
@@ -104,4 +109,5 @@ Any push or pull request merge to the `main` branch will trigger an automatic de
 * `eslint.config.js`: Configuration for ESLint.
 * `.stylelintrc.json`: Configuration for Stylelint.
 * `.gitignore`: Specifies files for Git to ignore.
+* `update-version.js`: module for update version of main html files.
 * `README.md`: This file.
