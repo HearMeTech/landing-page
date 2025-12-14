@@ -37,9 +37,8 @@ export async function initI18n() {
         document.documentElement.lang = currentLang;
 
     } catch (error) {
-        console.error("Critical i18n error:", error);
+        console.error("i18n init error:", error);
     } finally {
-        document.documentElement.classList.remove('language-loading');
         document.body.classList.remove('language-loading');
     }
 }
@@ -47,18 +46,13 @@ export async function initI18n() {
 async function changeLanguage(newLang) {
     if (newLang === currentLang) return;
 
-    // 1. Fade OUT
-    // Note: We use documentElement for the inline script compat, but body for runtime switches.
-    // Let's use both to be safe and consistent.
     document.body.classList.add('language-loading');
 
-    // 2. Force Close Mobile Menu
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenu) {
         mobileMenu.classList.add('hidden');
     }
 
-    // Wait for fade effect
     await new Promise(resolve => setTimeout(resolve, 250));
 
     currentLang = newLang;
@@ -71,7 +65,6 @@ async function changeLanguage(newLang) {
 
     syncSwitchersUI();
 
-    // 3. Fade IN
     document.body.classList.remove('language-loading');
 }
 
