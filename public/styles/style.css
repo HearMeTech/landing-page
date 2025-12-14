@@ -7,9 +7,14 @@ body {
     transition: opacity 0.25s ease-in-out;
 }
 
+/* New class for hiding body during first loading other languages */
+html.language-loading body {
+    opacity: 0 !important;
+}
+
 /* New class for fading out during language switch */
 body.language-loading {
-    opacity: 0;
+    opacity: 0 !important;
 }
 
 .maintenance-container {

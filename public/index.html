@@ -6,6 +6,18 @@
     <title data-i18n="meta.title">HearMe — Your Voice, Understood</title>
     <meta name="description" content="HearMe is a revolutionary AI-powered mobile app that provides personalized speech recognition for individuals with speech impairments." data-i18n="meta.desc">
     
+    <script>
+        (function() {
+            try {
+                var lang = localStorage.getItem('app_lang');
+                // If language is saved and NOT 'en', hide body immediately
+                if (lang && lang !== 'en') {
+                    document.documentElement.className += ' language-loading';
+                }
+            } catch (e) {}
+        })();
+    </script>
+    
     <link rel="canonical" href="https://hearme.tech/" />
 
     <meta property="og:type" content="website">
@@ -389,7 +401,7 @@
 
     </main>
 
-    <div id="footer-placeholder" class="min-h-[600px] md:min-h-[320px] bg-brand-navy"></div>
+    <div id="footer-placeholder" class="min-h-[550px] md:min-h-[280px] bg-brand-navy"></div>
 
     <script type="module" src="/scripts/page-index.js?v=1765665186275"></script>
 

@@ -28,9 +28,6 @@ export async function initI18n() {
             currentLang = browserLang;
         }
 
-        // Immediately fade out if we are going to change content from default (optional polish)
-        // But since we want safety, we assume visible by default.
-        
         await loadTranslations(currentLang);
         applyTranslations();
         syncSwitchersUI();
@@ -41,13 +38,18 @@ export async function initI18n() {
 
     } catch (error) {
         console.error("Critical i18n error:", error);
+    } finally {
+        document.documentElement.classList.remove('language-loading');
+        document.body.classList.remove('language-loading');
     }
 }
 
 async function changeLanguage(newLang) {
     if (newLang === currentLang) return;
 
-    // 1. Fade OUT (Add hidden class)
+    // 1. Fade OUT
+    // Note: We use documentElement for the inline script compat, but body for runtime switches.
+    // Let's use both to be safe and consistent.
     document.body.classList.add('language-loading');
 
     // 2. Force Close Mobile Menu
@@ -69,7 +71,7 @@ async function changeLanguage(newLang) {
 
     syncSwitchersUI();
 
-    // 3. Fade IN (Remove hidden class)
+    // 3. Fade IN
     document.body.classList.remove('language-loading');
 }
 
