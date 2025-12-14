@@ -1,5 +1,8 @@
 name: "🔍 Landing Page - Lint & 🚀 Preview on PR"
-on: pull_request
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
 
 permissions:
   checks: write
@@ -9,36 +12,41 @@ permissions:
 
 jobs:
   lint:
+    if: github.event.action != 'closed' 
     name: Run Code Linter
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
         uses: actions/checkout@v4
-        
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-          
       - name: Install dependencies
         run: npm ci
-        
       - name: Run lint scripts
         run: npm run lint
 
   build_and_preview:
-    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    if: ${{ always() && (github.event.action == 'closed' || needs.lint.result == 'success') }}
     needs: lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
       - name: Install and Build
+        if: github.event.action != 'closed'
         run: |
           npm ci
-          npm run build 
-      
+          npm run build
+
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
