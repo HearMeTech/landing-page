@@ -11,25 +11,22 @@ It is designed to be hosted on the **Firebase Hosting** platform and is built us
 * **Home Page (`index.html`):** The primary page that introduces visitors to our project, vision, features, and roadmap.
 * **Waitlist Page (`pages/waitlist.html`):** A dedicated page with a form to capture emails, integrated with Firebase Firestore.
 * **Internationalization (i18n):** Client-side translation support. Automatically detects user language, saves preferences, and supports multiple languages (EN, UK, DE, ES, FR, PT).
-* **Optimized CSS:** Uses Tailwind CLI to generate a minified, production-ready CSS file without runtime overhead.
-* **Modular JavaScript:** Logic is cleanly split into modules.
+* **Automated CI/CD:** GitHub Actions pipeline automatically builds CSS, updates version timestamps (cache-busting), and deploys to Firebase.
+* **Optimized CSS:** Uses Tailwind CLI to generate a minified, production-ready CSS file.
 
-## **🎨 Styling & CSS (Important!)**
+## **🎨 Styling & CSS**
 
-We use **Tailwind CSS v3** via CLI. Unlike the CDN version, styles are generated at build time.
+We use **Tailwind CSS v3** via CLI.
 
-### **⚠️ Critical Workflow for Deployment**
-Since our GitHub Actions workflow **does not** build CSS automatically, you **must build it locally** before pushing changes.
+### **Development Workflow**
+The **GitHub Actions pipeline** handles the production build automatically. However, to see style changes while developing locally, you must run the build command.
 
-1. Make your changes to HTML/JS files.
-2. Run the CSS build command:
+1. Make your changes to HTML/JS files or `tailwind.config.js`.
+2. Run the CSS build command to update local styles:
    ```bash
    npm run build:css
    ```
-3. This will update `public/styles/tailwind.css`.
-4. **Commit the generated `public/styles/tailwind.css` file** along with your other changes.
-
-If you skip this step, the live site will not reflect your styling changes!
+   *(This generates `public/styles/tailwind.css` based on your changes)*.
 
 ## **🛠️ How to Test Locally**
 
@@ -51,13 +48,12 @@ Before running the server, ensure styles are generated:
 npm run build:css
 ```
 
-### Step 3: Refrtesh cashing
+### Step 3: Refresh Caching (Optional)
 
-Before running the server, ensure versions are updated:
+If you want to test the versioning script locally:
 ```bash
 npm run update-version
 ```
-
 
 ### Step 4: Run Local Server
 
@@ -79,12 +75,21 @@ To add a language, create a JSON file in `public/locales/` and update the `<sele
 
 ## **🚀 Deployment**
 
-To deploy manually (bypassing GitHub Actions):
+### **Automatic (Recommended)**
+Simply push your changes to the `main` branch.
+GitHub Actions will automatically:
+1. Install dependencies.
+2. Build optimized CSS (`npm run build:css`).
+3. Update version timestamps (`npm run update-version`).
+4. Deploy to Firebase Hosting.
+
+### **Manual (Fallback)**
+To deploy manually from your machine:
 
 ```bash
 npm run deploy
 ```
-*This command automatically rebuilds CSS, updates the version timestamp, and deploys to Firebase.*
+*This command locally rebuilds CSS, updates the version timestamp, and deploys to Firebase.*
 
 ## **📁 File Structure**
 
@@ -103,6 +108,6 @@ npm run deploy
     * `firebase-init.js`: Firebase setup.
   * `index.html`, `404.html`, `pages/`: Content pages.
 * `tailwind.config.js`: Tailwind configuration (colors, fonts).
-* `firebase.json`: Hosting config.
+* `firebase.json`: Hosting config (caching rules).
 * `package.json`: Scripts and dependencies.
-* `update-version.js`: Versioning script.
+* `update-version.js`: Versioning script for cache busting.
