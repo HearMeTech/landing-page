@@ -23,6 +23,8 @@ let translations = {};
  */
 export async function initI18n() {
     // 1. Determine language (URL > LocalStorage > Browser > Default)
+    // We KEEP the ability to read URL params (for marketing links), 
+    // but we won't force-push it to the URL bar anymore.
     const urlParams = new URLSearchParams(window.location.search);
     const langParam = urlParams.get('lang');
     const storedLang = localStorage.getItem('app_lang');
@@ -52,8 +54,7 @@ export async function initI18n() {
     localStorage.setItem('app_lang', currentLang);
     document.documentElement.lang = currentLang;
 
-    // FIX 1: Fade IN the page after content is ready
-    // Small delay to ensure DOM is updated
+    // Fade IN the page after content is ready
     requestAnimationFrame(() => {
         document.body.classList.add('loaded');
     });
@@ -65,10 +66,10 @@ export async function initI18n() {
 async function changeLanguage(newLang) {
     if (newLang === currentLang) return;
 
-    // FIX 1: Start Fade OUT
+    // Start Fade OUT
     document.body.classList.remove('loaded');
 
-    // Wait for fade-out transition (matches CSS duration)
+    // Wait for fade-out transition
     await new Promise(resolve => setTimeout(resolve, 250));
 
     currentLang = newLang;
@@ -83,15 +84,13 @@ async function changeLanguage(newLang) {
     localStorage.setItem('app_lang', currentLang);
     document.documentElement.lang = currentLang;
 
-    // Update URL without reload (optional, purely visual)
-    const url = new URL(window.location);
-    url.searchParams.set('lang', currentLang);
-    window.history.pushState({}, '', url);
+    // REMOVED: window.history.pushState logic.
+    // The URL will remain clean (e.g., hearme.tech)
 
     // Sync all dropdowns
     syncSwitchersUI();
 
-    // FIX 1: Fade IN
+    // Fade IN
     document.body.classList.add('loaded');
 }
 
@@ -144,8 +143,6 @@ function setupLanguageSwitchers() {
     const switchers = document.querySelectorAll('#language-switcher, #language-switcher-mobile');
     
     switchers.forEach(switcher => {
-        // Remove old listeners by cloning (if needed) or just ensure single binding
-        // Here we just attach 'change' event
         switcher.addEventListener('change', (e) => {
             const newLang = e.target.value;
             changeLanguage(newLang);
