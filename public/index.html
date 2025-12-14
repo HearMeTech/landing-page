@@ -46,6 +46,20 @@
     }
     </script>
 
+    <script>
+        (function() {
+            try {
+                var lang = localStorage.getItem('app_lang');
+                if (lang && lang !== 'en') {
+                    document.documentElement.className += ' initial-loading';
+                    setTimeout(function() {
+                        document.documentElement.classList.remove('initial-loading');
+                    }, 1500);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
     <link rel="stylesheet" href="/styles/tailwind.css?v=1765665186275">
     <link rel="stylesheet" href="styles/style.css?v=1765665186275">
 </head>

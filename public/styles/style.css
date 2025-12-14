@@ -13,6 +13,12 @@ body.language-loading {
     pointer-events: none;
 }
 
+/* Class for initial loading state */
+html.initial-loading body {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
 .maintenance-container {
     max-width: 600px;
 }

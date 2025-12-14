@@ -39,8 +39,8 @@ export async function initI18n() {
     } catch (error) {
         console.error("i18n init error:", error);
     } finally {
-        // Ensure content is visible after initialization
         document.body.classList.remove('language-loading');
+        document.documentElement.classList.remove('initial-loading');
     }
 }
 
