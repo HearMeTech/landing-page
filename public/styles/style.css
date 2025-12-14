@@ -3,13 +3,13 @@
 
 body {
     font-family: Montserrat, sans-serif;
+    opacity: 1;
     transition: opacity 0.25s ease-in-out;
-    opacity: 0; /* Start hidden to prevent English flash on load */
 }
 
-/* Class to reveal body when content is ready */
-body.loaded {
-    opacity: 1;
+/* New class for fading out during language switch */
+body.language-loading {
+    opacity: 0;
 }
 
 .maintenance-container {
@@ -28,15 +28,9 @@ body.loaded {
     animation: spin 10s linear infinite;
 }
 
-/* Animation definition */
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 /* --- Fix for sticky header overlay --- */
@@ -80,7 +74,6 @@ section[id] {
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 10px 10px -5px rgb(0 0 0 / 4%);
 }
 
-/* --- Active Menu State --- */
 .nav-link-active {
     color: #0a9396 !important;
     font-weight: 600;
