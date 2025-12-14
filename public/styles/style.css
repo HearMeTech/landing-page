@@ -3,6 +3,13 @@
 
 body {
     font-family: Montserrat, sans-serif;
+    transition: opacity 0.25s ease-in-out;
+    opacity: 0; /* Start hidden to prevent English flash on load */
+}
+
+/* Class to reveal body when content is ready */
+body.loaded {
+    opacity: 1;
 }
 
 .maintenance-container {

@@ -42,12 +42,57 @@ export async function initI18n() {
     // 3. Apply translations to the page
     applyTranslations();
 
-    // 4. Update switcher UI (if present)
-    updateLanguageSwitcher();
-    
-    // 5. Save preference
+    // 4. Update switcher UI (sync select boxes)
+    syncSwitchersUI();
+
+    // 5. Setup event listeners for switchers
+    setupLanguageSwitchers();
+
+    // 6. Save preference and HTML lang attribute
     localStorage.setItem('app_lang', currentLang);
     document.documentElement.lang = currentLang;
+
+    // FIX 1: Fade IN the page after content is ready
+    // Small delay to ensure DOM is updated
+    requestAnimationFrame(() => {
+        document.body.classList.add('loaded');
+    });
+}
+
+/**
+ * Change language dynamically without reloading the page (SPA feel)
+ */
+async function changeLanguage(newLang) {
+    if (newLang === currentLang) return;
+
+    // FIX 1: Start Fade OUT
+    document.body.classList.remove('loaded');
+
+    // Wait for fade-out transition (matches CSS duration)
+    await new Promise(resolve => setTimeout(resolve, 250));
+
+    currentLang = newLang;
+    
+    // Load new JSON
+    await loadTranslations(newLang);
+    
+    // Apply new texts
+    applyTranslations();
+    
+    // Update local storage & HTML tag
+    localStorage.setItem('app_lang', currentLang);
+    document.documentElement.lang = currentLang;
+
+    // Update URL without reload (optional, purely visual)
+    const url = new URL(window.location);
+    url.searchParams.set('lang', currentLang);
+    window.history.pushState({}, '', url);
+
+    // Sync all dropdowns
+    syncSwitchersUI();
+
+    // FIX 1: Fade IN
+    document.body.classList.add('loaded');
 }
 
 /**
@@ -61,7 +106,6 @@ async function loadTranslations(lang) {
         translations = await response.json();
     } catch (error) {
         console.error(`Could not load translations for ${lang}`, error);
-        // Fallback to English if loading fails and we are not already on English
         if (lang !== 'en') {
             await loadTranslations('en');
         }
@@ -94,24 +138,27 @@ export function applyTranslations() {
 }
 
 /**
- * Update the <select> element if it exists
+ * Attach event listeners to all language selects
  */
-function updateLanguageSwitcher() {
+function setupLanguageSwitchers() {
     const switchers = document.querySelectorAll('#language-switcher, #language-switcher-mobile');
     
     switchers.forEach(switcher => {
-        if (switcher) {
-            const newSwitcher = switcher.cloneNode(true);
-            
-            switcher.parentNode.replaceChild(newSwitcher, switcher);
-            
-            newSwitcher.value = currentLang;
-            
-            newSwitcher.addEventListener('change', (e) => {
-                const newLang = e.target.value;
-                localStorage.setItem('app_lang', newLang);
-                window.location.reload(); 
-            });
-        }
+        // Remove old listeners by cloning (if needed) or just ensure single binding
+        // Here we just attach 'change' event
+        switcher.addEventListener('change', (e) => {
+            const newLang = e.target.value;
+            changeLanguage(newLang);
+        });
+    });
+}
+
+/**
+ * Ensure all selects (mobile/desktop) show the current language
+ */
+function syncSwitchersUI() {
+    const switchers = document.querySelectorAll('#language-switcher, #language-switcher-mobile');
+    switchers.forEach(switcher => {
+        switcher.value = currentLang;
     });
 }
