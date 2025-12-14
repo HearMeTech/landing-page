@@ -39,6 +39,7 @@ export async function initI18n() {
     } catch (error) {
         console.error("i18n init error:", error);
     } finally {
+        // Ensure content is visible after initialization
         document.body.classList.remove('language-loading');
     }
 }
@@ -46,22 +47,38 @@ export async function initI18n() {
 async function changeLanguage(newLang) {
     if (newLang === currentLang) return;
 
-    if (document.activeElement && document.activeElement.tagName === 'SELECT') {
-        document.activeElement.blur();
-    }
-
-    document.body.classList.add('language-loading');
-
-    void document.body.offsetWidth; 
-
+    // 1. Force close mobile menu immediately (Critical for iOS Chrome)
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenu) {
         mobileMenu.classList.add('hidden');
     }
 
-    await new Promise(resolve => setTimeout(resolve, 250));
+    // 2. Remove focus from the select element to close the native iOS picker
+    if (document.activeElement && document.activeElement.tagName === 'SELECT') {
+        document.activeElement.blur();
+    }
 
+    // 3. Start Fade Out sequence
+    document.body.classList.add('language-loading');
+
+    // 4. "Double RAF" Hack:
+    // This forces the browser to paint the 'opacity: 0' state frame 
+    // BEFORE executing any heavy logic (fetching/parsing).
+    // This solves the "missing fade effect" on mobile Chrome.
+    await new Promise(resolve => {
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                resolve();
+            });
+        });
+    });
+
+    // Wait slightly longer to ensure the CSS transition (250ms) has visually completed
+    await new Promise(resolve => setTimeout(resolve, 300));
+
+    // 5. Perform the data swap (while invisible)
     currentLang = newLang;
+    
     await loadTranslations(newLang);
     applyTranslations();
     
@@ -70,16 +87,22 @@ async function changeLanguage(newLang) {
 
     syncSwitchersUI();
 
-    document.body.classList.remove('language-loading');
+    // 6. Start Fade In sequence
+    // Another RAF to ensure DOM updates are ready before revealing
+    requestAnimationFrame(() => {
+        document.body.classList.remove('language-loading');
+    });
 }
 
 async function loadTranslations(lang) {
     try {
+        // Adding timestamp to bypass caching
         const response = await fetch(`/locales/${lang}.json?v=${Date.now()}`);
         if (!response.ok) throw new Error(`Status ${response.status}`);
         translations = await response.json();
     } catch (error) {
         console.error(`Could not load translations for ${lang}`, error);
+        // Fallback to English only if we aren't already on English
         if (lang !== 'en') {
             await loadTranslations('en');
         }
@@ -90,7 +113,9 @@ export function applyTranslations() {
     const elements = document.querySelectorAll('[data-i18n]');
     elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
+        // Safely access nested keys
         const text = key.split('.').reduce((obj, i) => obj ? obj[i] : null, translations);
+        
         if (text) {
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = text;
@@ -108,6 +133,7 @@ export function applyTranslations() {
 function setupLanguageSwitchers() {
     const switchers = document.querySelectorAll('#language-switcher, #language-switcher-mobile');
     switchers.forEach(switcher => {
+        // Clone node to strip existing event listeners (prevents duplicate bindings)
         const newSwitcher = switcher.cloneNode(true);
         switcher.parentNode.replaceChild(newSwitcher, switcher);
 
@@ -115,6 +141,8 @@ function setupLanguageSwitchers() {
             const newLang = e.target.value;
             changeLanguage(newLang);
         });
+        
+        // Ensure value is synced
         newSwitcher.value = currentLang;
     });
 }
