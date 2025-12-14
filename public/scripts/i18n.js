@@ -46,7 +46,13 @@ export async function initI18n() {
 async function changeLanguage(newLang) {
     if (newLang === currentLang) return;
 
+    if (document.activeElement && document.activeElement.tagName === 'SELECT') {
+        document.activeElement.blur();
+    }
+
     document.body.classList.add('language-loading');
+
+    void document.body.offsetWidth; 
 
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenu) {
@@ -56,7 +62,6 @@ async function changeLanguage(newLang) {
     await new Promise(resolve => setTimeout(resolve, 250));
 
     currentLang = newLang;
-    
     await loadTranslations(newLang);
     applyTranslations();
     
