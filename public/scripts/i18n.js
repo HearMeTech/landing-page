@@ -22,42 +22,51 @@ let translations = {};
  * Initialize localization
  */
 export async function initI18n() {
-    // 1. Determine language (URL > LocalStorage > Browser > Default)
-    // We KEEP the ability to read URL params (for marketing links), 
-    // but we won't force-push it to the URL bar anymore.
-    const urlParams = new URLSearchParams(window.location.search);
-    const langParam = urlParams.get('lang');
-    const storedLang = localStorage.getItem('app_lang');
-    const browserLang = navigator.language.slice(0, 2);
-
-    if (langParam && SUPPORTED_LANGUAGES[langParam]) {
-        currentLang = langParam;
-    } else if (storedLang && SUPPORTED_LANGUAGES[storedLang]) {
-        currentLang = storedLang;
-    } else if (SUPPORTED_LANGUAGES[browserLang]) {
-        currentLang = browserLang;
-    }
-
-    // 2. Load translations
-    await loadTranslations(currentLang);
-
-    // 3. Apply translations to the page
-    applyTranslations();
-
-    // 4. Update switcher UI (sync select boxes)
-    syncSwitchersUI();
-
-    // 5. Setup event listeners for switchers
-    setupLanguageSwitchers();
-
-    // 6. Save preference and HTML lang attribute
-    localStorage.setItem('app_lang', currentLang);
-    document.documentElement.lang = currentLang;
-
-    // Fade IN the page after content is ready
-    requestAnimationFrame(() => {
+    // Safety timeout: If something goes wrong, force show content after 700ms
+    const safetyTimer = setTimeout(() => {
         document.body.classList.add('loaded');
-    });
+    }, 700);
+
+    try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const langParam = urlParams.get('lang');
+        const storedLang = localStorage.getItem('app_lang');
+        const browserLang = navigator.language.slice(0, 2);
+
+        if (langParam && SUPPORTED_LANGUAGES[langParam]) {
+            currentLang = langParam;
+        } else if (storedLang && SUPPORTED_LANGUAGES[storedLang]) {
+            currentLang = storedLang;
+        } else if (SUPPORTED_LANGUAGES[browserLang]) {
+            currentLang = browserLang;
+        }
+
+        // Load translations
+        await loadTranslations(currentLang);
+
+        // Apply translations to the page
+        applyTranslations();
+
+        // Update switcher UI
+        syncSwitchersUI();
+
+        // Setup event listeners
+        setupLanguageSwitchers();
+
+        // Save preference
+        localStorage.setItem('app_lang', currentLang);
+        document.documentElement.lang = currentLang;
+
+    } catch (error) {
+        console.error("Critical i18n error:", error);
+    } finally {
+        // Clear safety timer
+        clearTimeout(safetyTimer);
+        // ALWAYS show the site, even if i18n failed
+        requestAnimationFrame(() => {
+            document.body.classList.add('loaded');
+        });
+    }
 }
 
 /**
@@ -66,10 +75,16 @@ export async function initI18n() {
 async function changeLanguage(newLang) {
     if (newLang === currentLang) return;
 
-    // Start Fade OUT
+    // Fade OUT
     document.body.classList.remove('loaded');
 
-    // Wait for fade-out transition
+    // Close Mobile Menu if open
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+    }
+
+    // Wait for fade-out
     await new Promise(resolve => setTimeout(resolve, 250));
 
     currentLang = newLang;
@@ -84,9 +99,6 @@ async function changeLanguage(newLang) {
     localStorage.setItem('app_lang', currentLang);
     document.documentElement.lang = currentLang;
 
-    // REMOVED: window.history.pushState logic.
-    // The URL will remain clean (e.g., hearme.tech)
-
     // Sync all dropdowns
     syncSwitchersUI();
 
@@ -99,13 +111,14 @@ async function changeLanguage(newLang) {
  */
 async function loadTranslations(lang) {
     try {
-        // Adding timestamp to bypass cache
         const response = await fetch(`/locales/${lang}.json?v=${Date.now()}`);
         if (!response.ok) throw new Error(`Status ${response.status}`);
         translations = await response.json();
     } catch (error) {
         console.error(`Could not load translations for ${lang}`, error);
+        // Try fallback to English if not already English
         if (lang !== 'en') {
+            console.log("Falling back to English...");
             await loadTranslations('en');
         }
     }
@@ -119,7 +132,6 @@ export function applyTranslations() {
     
     elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
-        // Resolve nested keys (e.g. "hero.title")
         const text = key.split('.').reduce((obj, i) => obj ? obj[i] : null, translations);
         
         if (text) {
@@ -143,10 +155,17 @@ function setupLanguageSwitchers() {
     const switchers = document.querySelectorAll('#language-switcher, #language-switcher-mobile');
     
     switchers.forEach(switcher => {
-        switcher.addEventListener('change', (e) => {
+        // Clone to remove old listeners if any, then re-attach
+        const newSwitcher = switcher.cloneNode(true);
+        switcher.parentNode.replaceChild(newSwitcher, switcher);
+
+        newSwitcher.addEventListener('change', (e) => {
             const newLang = e.target.value;
             changeLanguage(newLang);
         });
+        
+        // Ensure value is correct after cloning
+        newSwitcher.value = currentLang;
     });
 }
 

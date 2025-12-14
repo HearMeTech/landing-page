@@ -1,4 +1,4 @@
-<header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+<header class="fixed w-full top-0 left-0 z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
         <a href="/" class="flex items-center space-x-2 shrink-0">
             <img src="/images/HearMe.png" alt="HearMe Logo" class="h-8 w-auto rounded-md">
@@ -34,14 +34,14 @@
             <a href="mailto:info@hearme.tech" class="bg-brand-teal text-white px-5 py-2 rounded-full font-semibold hover:bg-brand-teal-dark transition duration-200 shadow-sm" data-i18n="nav.contact">Contact Us</a>
         </div>
 
-        <button id="mobile-menu-button" class="lg:hidden text-gray-700 outline-none" aria-label="Toggle mobile menu">
+        <button id="mobile-menu-button" class="lg:hidden text-gray-700 outline-none p-2" aria-label="Toggle mobile menu">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
         </button>
     </nav>
 
-    <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-lg absolute top-16 left-0 right-0 z-40 border-t border-gray-100">
+    <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-lg absolute top-full left-0 right-0 z-40 border-t border-gray-100 max-h-[85vh] overflow-y-auto">
         <a href="/#features" class="block px-6 py-3 text-gray-600 hover:bg-gray-50" data-i18n="nav.features">Features</a>
         <a href="/#how-it-works" class="block px-6 py-3 text-gray-600 hover:bg-gray-50" data-i18n="nav.howItWorks">How It Works</a>
         <a href="/#pricing" class="block px-6 py-3 text-gray-600 hover:bg-gray-50" data-i18n="nav.pricing">Pricing</a>
