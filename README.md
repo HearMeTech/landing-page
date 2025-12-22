@@ -81,7 +81,8 @@ GitHub Actions will automatically:
 1. Install dependencies.
 2. Build optimized CSS (`npm run build:css`).
 3. Update version timestamps (`npm run update-version`).
-4. Deploy to Firebase Hosting.
+4. Update Sitemap dates to current date.
+5. Deploy to Firebase Hosting.
 
 ### **Manual (Fallback)**
 To deploy manually from your machine:

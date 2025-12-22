@@ -28,15 +28,15 @@
     "cloud_desc": "Basiert auf Google Cloud für höchste Zuverlässigkeit, Geschwindigkeit und ständige Verfügbarkeit deines Modells.",
     "secure_title": "Sicher & Privat",
     "secure_desc": "Deine Daten gehören dir. Wir nutzen Verschlüsselung nach Industriestandard und sichere Firebase-Auth.",
-    "access_title": "Überall verfügbar",
-    "access_desc": "Greife von jedem Gerät über unsere Web-App auf dein Konto und Modell zu. Deine Stimme reist mit dir."
+    "fallback_title": "Intelligente Alternative",
+    "fallback_desc": "Erkennung unsicher? Wähle blitzschnell eine gespeicherte Phrase direkt auf dem Bildschirm. Lass sie sprechen, kopiere oder teile sie – genau wie bei der Spracheingabe."
   },
   "howItWorks": {
     "title": "Dein Weg zur klaren Sprache",
     "subtitle": "Der Einstieg ist leicht. Unser Prozess sorgt dafür, dass sich die KI sofort an dich anpasst.",
     "step1_title": "Web-App öffnen",
-    "step1_desc": "Kein Download nötig. Öffne <a href='https://mvp.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> direkt im Browser und starte sofort auf jedem Gerät.",
-    "step2_title": "Basis-Training (MVP)",
+    "step1_desc": "Kein Download nötig. Öffne <a href='https://alpha.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> direkt im Browser und starte sofort auf jedem Gerät.",
+    "step2_title": "Basis-Training (Alpha)",
     "step2_desc": "Trainiere 5 Sätze durch mehrfaches Einsprechen. So entsteht ein robustes Basismodell für deine Stimme.",
     "step3_badge": "Bald verfügbar",
     "step3_title": "Wortschatz erweitern",

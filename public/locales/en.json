@@ -28,15 +28,15 @@
     "cloud_desc": "Built on Google Cloud infrastructure, ensuring enterprise-grade reliability, speed, and continuous availability of your voice model.",
     "secure_title": "Secure & Private",
     "secure_desc": "Your voice data is yours. We use industry-standard encryption and secure Firebase authentication to protect your privacy.",
-    "access_title": "Accessible Everywhere",
-    "access_desc": "Access your account and trained model from any device via our web application. Your voice travels with you."
+    "fallback_title": "Smart Fallback",
+    "fallback_desc": "Recognition uncertain? Instantly select a saved phrase directly on screen. Speak, copy, or share it seamlessly—just like voice input."
   },
   "howItWorks": {
     "title": "Your Journey to Clear Speech",
     "subtitle": "Getting started is easy. Our step-by-step process ensures the AI adapts to you immediately.",
     "step1_title": "Launch the Web App",
-    "step1_desc": "No downloads or app stores required. Simply open <a href='https://mvp.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> directly in your browser to get started instantly on any device.",
-    "step2_title": "Core Training (MVP)",
+    "step1_desc": "No downloads or app stores required. Simply open <a href='https://alpha.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> directly in your browser to get started instantly on any device.",
+    "step2_title": "Core Training (Alpha)",
     "step2_desc": "Train 5 predefined phrases by recording multiple voice samples for each. This builds a robust baseline model tailored specifically to your speech patterns.",
     "step3_badge": "Coming Soon",
     "step3_title": "Expand Vocabulary",

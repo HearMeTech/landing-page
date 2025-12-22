@@ -24,6 +24,12 @@ jobs:
           npm run update-version
           npm run build
 
+      - name: "Update Sitemap dates to current date"
+        run: |
+          TODAY=$(date +%Y-%m-%d)
+          echo "Updating sitemap lastmod to $TODAY"
+          sed -i "s|<lastmod>.*</lastmod>|<lastmod>$TODAY</lastmod>|g" public/sitemap.xml
+
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
