@@ -28,14 +28,14 @@
     "cloud_desc": "Basé sur Google Cloud, garantissant fiabilité, vitesse et disponibilité continue de votre modèle vocal.",
     "secure_title": "Sécurisé et Privé",
     "secure_desc": "Vos données vocales vous appartiennent. Nous utilisons un cryptage standard et l'auth Firebase sécurisée.",
-    "access_title": "Accessible partout",
-    "access_desc": "Accédez à votre compte et modèle depuis tout appareil via le web. Votre voix voyage avec vous."
+    "fallback_title": "Relais Intelligent",
+    "fallback_desc": "Reconnaissance incertaine ? Sélectionnez instantanément une phrase sauvegardée à l'écran. Énoncez, copiez ou partagez-la sans heurts — tout comme votre voix."
   },
   "howItWorks": {
     "title": "Votre parcours vers une voix claire",
     "subtitle": "Commencer est simple. Notre processus garantit que l'IA s'adapte immédiatement à vous.",
     "step1_title": "Ouvrir l'App Web",
-    "step1_desc": "Aucun téléchargement requis. Ouvrez <a href='https://mvp.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> dans votre navigateur pour débuter instantanément.",
+    "step1_desc": "Aucun téléchargement requis. Ouvrez <a href='https://alpha.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> dans votre navigateur pour débuter instantanément.",
     "step2_title": "Entraînement de base",
     "step2_desc": "Entraînez 5 phrases en enregistrant plusieurs échantillons. Cela crée un modèle de base robuste adapté à vous.",
     "step3_badge": "Bientôt",

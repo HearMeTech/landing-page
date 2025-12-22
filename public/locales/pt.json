@@ -28,15 +28,15 @@
     "cloud_desc": "Construído no Google Cloud, garantindo confiabilidade empresarial, velocidade e disponibilidade contínua do seu modelo.",
     "secure_title": "Seguro e Privado",
     "secure_desc": "Seus dados de voz são seus. Usamos criptografia padrão e autenticação segura do Firebase para sua proteção.",
-    "access_title": "Acessível em todo lugar",
-    "access_desc": "Acesse sua conta e modelo de qualquer dispositivo via web. Sua voz viaja com você."
+    "fallback_title": "Alternativa Inteligente",
+    "fallback_desc": "Reconhecimento incerto? Selecione na hora uma frase salva na tela. Reproduza, copie ou compartilhe sem interrupções — igual à sua voz."
   },
   "howItWorks": {
     "title": "Sua jornada para a fala clara",
     "subtitle": "Começar é fácil. Nosso processo garante que a IA se adapte a você imediatamente.",
     "step1_title": "Abra o Web App",
-    "step1_desc": "Sem downloads ou lojas. Abra o <a href='https://mvp.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> direto no navegador para começar agora.",
-    "step2_title": "Treino Básico (MVP)",
+    "step1_desc": "Sem downloads ou lojas. Abra o <a href='https://alpha.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> direto no navegador para começar agora.",
+    "step2_title": "Treino Básico (Alpha)",
     "step2_desc": "Treine 5 frases predefinidas gravando várias amostras. Isso cria um modelo base robusto adaptado a você.",
     "step3_badge": "Em breve",
     "step3_title": "Expandir Vocabulário",

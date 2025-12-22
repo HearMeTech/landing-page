@@ -3,11 +3,13 @@
   <url>
     <loc>https://hearme.tech/</loc>
     <lastmod>2025-12-13</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://hearme.tech/pages/waitlist.html</loc>
     <lastmod>2025-12-13</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 </urlset>

@@ -12,16 +12,21 @@
     <meta property="og:url" content="https://hearme.tech/">
     <meta property="og:title" content="HearMe — Your Voice, Understood">
     <meta property="og:description" content="HearMe is a revolutionary AI-powered mobile app that provides personalized speech recognition for individuals with speech impairments.">
-    <meta property="og:image" content="https://hearme.tech/images/company_icon.png">
+    <meta property="og:image" content="https://hearme.tech/images/og-image.png">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://hearme.tech/">
     <meta name="twitter:title" content="HearMe — Your Voice, Understood">
     <meta name="twitter:description" content="HearMe is a revolutionary AI-powered mobile app that provides personalized speech recognition for individuals with speech impairments.">
-    <meta name="twitter:image" content="https://hearme.tech/images/company_icon.png">
+    <meta name="twitter:image" content="https://hearme.tech/images/og-image.png">
     <meta name="twitter:domain" content="hearme.tech">
 
-    <link rel="icon" href="/images/company_icon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="HearMe Site" />
+    <link rel="manifest" href="/images/site.webmanifest" />
 
     <script type="application/ld+json">
     {
@@ -29,11 +34,11 @@
       "@type": "SoftwareApplication",
       "name": "HearMe",
       "applicationCategory": "HealthApplication",
-      "operatingSystem": "iOS, Android",
+      "operatingSystem": "Web, iOS, Android",
       "description": "HearMe is a revolutionary AI-powered mobile app that provides personalized speech recognition for individuals with speech impairments (Cerebral Palsy, stroke, ALS).",
       "offers": {
         "@type": "Offer",
-        "price": "24.99",
+        "price": "0",
         "priceCurrency": "USD",
         "description": "Monthly subscription after a 1-month free trial."
       },
@@ -46,22 +51,10 @@
     }
     </script>
 
-    <script>
-        (function() {
-            try {
-                var lang = localStorage.getItem('app_lang');
-                if (lang && lang !== 'en') {
-                    document.documentElement.className += ' initial-loading';
-                    setTimeout(function() {
-                        document.documentElement.classList.remove('initial-loading');
-                    }, 1500);
-                }
-            } catch (e) {}
-        })();
-    </script>
+    <script src="/scripts/anti-fouc.js"></script>
 
     <link rel="stylesheet" href="/styles/tailwind.css?v=1765665186275">
-    <link rel="stylesheet" href="styles/style.css?v=1765665186275">
+    <link rel="stylesheet" href="/styles/style.css?v=1765665186275">
 </head>
 
 <body class="font-sans text-gray-800 antialiased">
@@ -81,7 +74,7 @@
                         <b>HearMe</b> is a revolutionary AI app that learns your unique speech patterns, giving you the power to communicate clearly and confidently.
                     </p>
                     <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-                        <a href="https://mvp.hearme.tech" target="_blank" rel="noopener noreferrer" class="bg-teal-700 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg flex items-center justify-center">
+                        <a href="https://alpha.hearme.tech" target="_blank" rel="noopener noreferrer" class="bg-teal-700 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg flex items-center justify-center">
                             <span data-i18n="hero.cta">Launch App</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -132,7 +125,13 @@
 
                     <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
                         <div class="w-12 h-12 bg-brand-teal/10 rounded-lg flex items-center justify-center mb-6">
-                            <svg class="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                            <svg class="w-8 h-8 text-brand-teal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <g fill="currentColor" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9.97,4.72s1.15-.58,1.78-.58c.44.02.87.17,1.24.41.79-.33,1.71-.36,2.51-.02.4.15.71.45,1.04.72.62.07,1.24.29,1.73.69.46.31.85.73,1.14,1.21.13.22.17.48.19.73.64.61,1.1,1.43,1.34,2.28.21.75.02,1.52-.16,2.27-.04.16.01.32.02.48.02.56.04,1.16-.28,1.65-.28.4-.67.7-1.08.96-.17.67-.72,1.16-1.29,1.5-.65.36-1.39.6-2.14.54v1.63c0,.3-.15.66-.49.71-.32.03-.64,0-.97.01-.2.02-.43-.07-.51-.27-.52-1.23-1.16-2.48-2.23-3.32-.56.01-1.12,0-1.68-.08-1.01-.1-2.05-.47-2.73-1.26-.2-.25-.38-.55-.42-.88-.95.26-2.04.22-2.89-.32-.57-.36-.94-.98-1.06-1.63-.18-.78.09-1.62.59-2.23.1-.99.51-1.95,1.18-2.68.33-.36.77-.58,1.22-.75.18-.32.43-.6.68-.87.63-.63,1.52-1.04,2.42-.99.29,0,.57.07.86.12M10.22,5.37s-.54-.05-.76-.08c-.46-.09-.95-.03-1.38.15-.7.3-1.25.9-1.55,1.6-.2.51.05,1.57.05,1.57,0,0,.02.26-.12.31-.18.08-.38-.04-.46-.19-.22-.45-.28-.95-.22-1.44-.22.11-.41.26-.57.45-.56.68-.88,1.55-.93,2.42-.11.17-.27.29-.35.48-.26.52-.34,1.14-.15,1.69.22.66.85,1.12,1.52,1.23.55.08,1.13.08,1.64-.16.02-.17.04-.35.09-.52.07-.16.24-.3.42-.26.16.06.31.24.28.42-.14.52-.09,1.12.25,1.55s.88.63,1.38.8c1.04.27,2.14.31,3.19.11.34-.06.66-.22.96-.4.04-.03.1-.04.15-.02.06.01.11.07.13.1.05.11.12.21.1.34,0,.17-.15.28-.29.34-.29.12-.58.23-.88.32.8.87,1.44,1.91,1.85,3.02h.75v-1.73c-.12-.06-.26-.11-.32-.25-.01-.12-.03-.26.07-.35.12-.14.31-.1.47-.07.43.09.88.1,1.31.05.41-.05.79-.24,1.14-.43.32-.19.55-.48.74-.79-.27-.03-.54-.06-.78-.17-.66-.27-1.1-.88-1.71-1.22-.46-.22-1.01-.22-1.47-.02-.18.08-.36.28-.58.18-.27-.1-.26-.51-.02-.64.29-.18.62-.28.95-.34.75-.09,1.51.17,2.09.65.33.28.64.6,1.04.77.33.12.72.15,1.05.03.41-.2.75-.59.84-1.04.08-.45,0-.91-.07-1.35.15-.34.28-.68.31-1.05.09-1.02-.29-2.06-.99-2.81-.13.56-.41,1.15-.96,1.4-.21.08-.5.17-.68-.01-.18-.15-.09-.47.12-.54.17-.06.37-.08.49-.22.31-.32.41-.78.44-1.21,0-.21.11-.44-.02-.63-.25-.42-.63-.74-1.03-1.01-.46-.29-.99-.49-1.53-.5-.66-.88-2-1.23-2.98-.68-.42.24-.59.73-.72,1.17-.09.37-.21.73-.23,1.11.51.04,1.03.14,1.47.4.21.14.19.53-.07.59-.17.08-.34-.04-.49-.1-.39-.19-.84-.23-1.27-.21-.98.03-1.89.53-2.57,1.2-.56.53-.94,1.22-1.32,1.89-.21.39-.62.66-1.07.72-.52.07-1.04-.11-1.48-.39-.26-.14-.19-.59.1-.65.26-.04.43.21.66.28.32.12.75.18,1.01-.1.29-.32.44-.73.67-1.09.3-.51.7-.95,1.12-1.35-.1-.25-.22-.51-.46-.67-.13-.11-.35-.18-.35-.39-.02-.24.26-.42.48-.32.41.18.7.55.91.93.58-.36,1.23-.61,1.9-.73.18-.88.32-1.83.89-2.55-.35-.18-.76-.21-1.15-.13-.43.12-.63.21-1,.45l-.08.06-.11.06h0"/>
+                                    <path d="M15.72,7.87c-.02-.27.34-.38.54-.25.13.09.13.26.14.4.09.99-.38,1.95-1.08,2.62.19.54.39,1.09.98,1.38.15.07.32.1.48.08.59-.08,1.04-.44,1.49-.77.19-.02.45.06.45.29.05.3-.27.42-.46.57-.58.43-1.34.74-2.06.5-.77-.2-1.23-.94-1.46-1.65-.48.23-1.03.32-1.56.25-.18-.04-.41-.17-.38-.39-.03-.15.1-.29.25-.3.18,0,.35.02.53.02.56.03,1.12-.23,1.46-.67.47-.57.78-1.32.68-2.07h0Z"/>
+                                    <path d="M9.65,12.85s-.21-.05-.27-.12c-.11-.18-.04-.47.17-.55l.22-.08c.48-.19.72-.37,1.2-.55.18-.08.45-.04.52.16.06.16.01.39-.16.46-.41.19-.84.33-1.24.53-.14.07-.27.12-.27.12,0,0-.12.04-.12.03,0,0-.04,0-.05,0Z"/>
+                                </g>
+                            </svg>
                         </div>
                         <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3" data-i18n="features.personal_title">Personalized AI Model</h3>
                         <p class="text-gray-600 hyphens-auto" data-i18n="features.personal_desc">The app trains on <b>your</b> specific voice patterns using advanced Machine Learning, becoming more accurate with every use.</p>
@@ -140,7 +139,12 @@
 
                     <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
                         <div class="w-12 h-12 bg-brand-teal/10 rounded-lg flex items-center justify-center mb-6">
-                            <svg class="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
+                            <svg class="w-8 h-8 text-brand-teal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <g fill="currentColor">
+                                    <path d="M10.26,4.46c1.33-.5,2.85-.49,4.17.04,1.78.69,3.14,2.31,3.56,4.17,1.09.2,2.11.83,2.73,1.76.65.9.87,2.06.67,3.15-.31,1.83-1.97,3.35-3.83,3.43-1.06.01-2.12.02-3.18,0,.01-.48-.04-.97.04-1.45.98.01,1.96,0,2.95,0,.49,0,.96-.16,1.37-.41.93-.56,1.43-1.71,1.25-2.77-.18-1.26-1.34-2.32-2.62-2.31-.37.05-.75-.21-.76-.6-.07-1.13-.65-2.2-1.52-2.92-1.15-.96-2.81-1.27-4.23-.77-1.06.34-1.97,1.14-2.45,2.15-.12.25-.19.53-.33.77-.17.23-.47.28-.74.25-1.47-.12-2.89.98-3.25,2.4-.48,1.61.46,3.48,2.02,4.09,1.08.47,2.28.2,3.42.27.02.48.01.96,0,1.44-.66,0-1.32,0-1.98,0-1.17.02-2.35-.38-3.23-1.14-1.14-.95-1.87-2.43-1.77-3.93.02-1.3.63-2.57,1.59-3.43.78-.72,1.83-1.1,2.89-1.17.63-1.37,1.79-2.51,3.23-3.01Z"/>
+                                    <path d="M11.57,9.69c.19-.24.59-.27.79-.02.96.98,1.91,1.97,2.88,2.93.11.11.28.26.17.43-.24.35-.51.68-.83.97-.63-.62-1.26-1.25-1.9-1.86,0,2.56-.01,5.13,0,7.69-.48.13-.98.04-1.47.07-.02-2.58-.01-5.17,0-7.75-.6.53-1.13,1.13-1.71,1.69-.08.06-.2.21-.3.1-.27-.27-.51-.57-.71-.9-.1-.17.06-.33.17-.44.98-.95,1.93-1.93,2.9-2.9Z"/>
+                                </g>
+                            </svg>
                         </div>
                         <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3" data-i18n="features.cloud_title">Cloud Powered</h3>
                         <p class="text-gray-600 hyphens-auto" data-i18n="features.cloud_desc">Built on Google Cloud infrastructure, ensuring enterprise-grade reliability, speed, and continuous availability of your voice model.</p>
@@ -156,10 +160,12 @@
 
                     <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
                         <div class="w-12 h-12 bg-brand-teal/10 rounded-lg flex items-center justify-center mb-6">
-                            <svg class="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+                            <svg class="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3" data-i18n="features.access_title">Accessible Everywhere</h3>
-                        <p class="text-gray-600 hyphens-auto" data-i18n="features.access_desc">Access your account and trained model from any device via our web application. Your voice travels with you.</p>
+                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3" data-i18n="features.fallback_title">Smart Fallback</h3>
+                        <p class="text-gray-600 hyphens-auto" data-i18n="features.fallback_desc">Recognition uncertain? Instantly select a saved phrase directly on screen. Speak, copy, or share it seamlessly—just like voice input.</p>
                     </div>
                 </div>
             </div>
@@ -186,7 +192,7 @@
                                 </div>
                                 <p class="text-gray-600" data-i18n="howItWorks.step1_desc">
                                     No downloads or app stores required. Simply open 
-                                    <a href="https://mvp.hearme.tech" target="_blank" rel="noopener noreferrer" class="text-teal-700 font-semibold hover:underline">HearMe</a> 
+                                    <a href="https://alpha.hearme.tech" target="_blank" rel="noopener noreferrer" class="text-teal-700 font-semibold hover:underline">HearMe</a> 
                                     directly in your browser to get started instantly on any device.
                                 </p>
                             </div>
@@ -201,7 +207,7 @@
                             <div class="relative z-10">
                                 <div class="flex flex-col md:flex-row items-center md:justify-start gap-3 mb-2">
                                     <span class="text-4xl md:text-5xl font-bold text-brand-teal/20 select-none order-1 md:order-2" aria-hidden="true">02</span>
-                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy m-0 order-2 md:order-1" data-i18n="howItWorks.step2_title">Core Training (MVP)</h3>
+                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy m-0 order-2 md:order-1" data-i18n="howItWorks.step2_title">Core Training (Alpha)</h3>
                                 </div>
                                 <p class="text-gray-600" data-i18n="howItWorks.step2_desc">
                                     Train 5 predefined phrases by recording multiple voice samples for each. This builds a robust baseline model tailored specifically to your speech patterns.
@@ -285,7 +291,7 @@
                         </ul>
 
                         <div class="mt-auto">
-                            <a href="https://mvp.hearme.tech" target="_blank" rel="noopener noreferrer" class="w-full bg-teal-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-brand-teal-dark transition duration-200 shadow-lg flex items-center justify-center">
+                            <a href="https://alpha.hearme.tech" target="_blank" rel="noopener noreferrer" class="w-full bg-teal-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-brand-teal-dark transition duration-200 shadow-lg flex items-center justify-center">
                                 <span data-i18n="pricing.cta_launch">Launch App</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
