@@ -66,10 +66,14 @@
         <section class="bg-white pt-16 pb-20 md:pt-24 md:pb-28">
             <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                 <div class="text-center md:text-left">
-                    <h1 class="text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-6" data-i18n="hero.title">
+                    <h1 id="hero-title-display" class="text-4xl lg:text-5xl font-bold text-brand-navy leading-tight mb-6">
                         Your Voice. Your Words.
                         <span class="text-teal-700">Finally Understood.</span>
                     </h1>
+                    <span id="hero-title-source" data-i18n="hero.title" style="display: none;" aria-hidden="true">
+                        Your Voice. Your Words.
+                        <span class="text-teal-700">Finally Understood.</span>
+                    </span>
                     <p class="text-lg lg:text-xl text-gray-600 mb-8" data-i18n="hero.subtitle">
                         <b>HearMe</b> is a revolutionary AI app that learns your unique speech patterns, giving you the power to communicate clearly and confidently.
                     </p>
@@ -184,7 +188,7 @@
                     <div class="hidden md:block absolute left-1/2 top-4 bottom-4 -translate-x-1/2 w-1 bg-gradient-to-b from-brand-teal/20 via-brand-teal/40 to-brand-teal/20 rounded-full"></div>
 
                     <div class="grid md:grid-cols-2 gap-8 items-center relative z-40">
-                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-right relative hover:-translate-y-1 transition duration-300">
+                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-right relative hover:-translate-y-1 transition duration-300 reveal">
                             <div class="relative z-10">
                                 <div class="flex flex-col md:flex-row items-center md:justify-end gap-3 mb-2">
                                     <span class="text-4xl md:text-5xl font-bold text-brand-teal/20 select-none" aria-hidden="true">01</span>
@@ -203,7 +207,7 @@
 
                     <div class="grid md:grid-cols-2 gap-8 items-center relative z-30 mt-8 md:-mt-12">
                         <div class="hidden md:block"></div>
-                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-left relative hover:-translate-y-1 transition duration-300">
+                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-left relative hover:-translate-y-1 transition duration-300 reveal">
                             <div class="relative z-10">
                                 <div class="flex flex-col md:flex-row items-center md:justify-start gap-3 mb-2">
                                     <span class="text-4xl md:text-5xl font-bold text-brand-teal/20 select-none order-1 md:order-2" aria-hidden="true">02</span>
@@ -218,7 +222,7 @@
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-8 items-center relative z-20 mt-8 md:-mt-12">
-                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-right relative hover:-translate-y-1 transition duration-300">
+                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-right relative hover:-translate-y-1 transition duration-300 reveal">
                             <div class="absolute top-0 left-0 md:left-0 md:right-auto bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-tl-xl rounded-br-lg uppercase tracking-wide border-r border-b border-gray-200 z-20" data-i18n="howItWorks.step3_badge">
                                 Coming Soon
                             </div>
@@ -239,7 +243,7 @@
 
                     <div class="grid md:grid-cols-2 gap-8 items-center relative z-10 mt-8 md:-mt-12">
                         <div class="hidden md:block"></div>
-                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-left relative hover:-translate-y-1 transition duration-300">
+                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-left relative hover:-translate-y-1 transition duration-300 reveal">
                             <div class="relative z-10">
                                 <div class="flex flex-col md:flex-row items-center md:justify-start gap-3 mb-2">
                                     <span class="text-4xl md:text-5xl font-bold text-brand-teal/20 select-none order-1 md:order-2" aria-hidden="true">04</span>

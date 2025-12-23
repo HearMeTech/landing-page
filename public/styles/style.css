@@ -85,3 +85,29 @@ section[id] {
     color: #0a9396 !important;
     font-weight: 600;
 }
+
+/* --- Scroll Reveal Animation --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 1s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Typewriter Cursor --- */
+#hero-title-display::after {
+    content: '|';
+    margin-left: 2px;
+    animation: blink 1s infinite;
+    color: #0a9396; /* Brand Teal */
+    font-weight: 400;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

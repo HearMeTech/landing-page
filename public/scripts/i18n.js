@@ -87,6 +87,8 @@ async function changeLanguage(newLang) {
 
     syncSwitchersUI();
 
+    window.dispatchEvent(new CustomEvent('language-changed'));
+
     // 6. Start Fade In sequence
     // Another RAF to ensure DOM updates are ready before revealing
     requestAnimationFrame(() => {
