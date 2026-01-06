@@ -177,3 +177,36 @@ section[id] {
     box-shadow: 0 0 25px rgb(10 147 150 / 25%);
     transform: translateY(-4px);
 }
+
+/* --- Hero Image Levitation Effect --- */
+
+@keyframes float-y {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes float-shadow {
+    0%, 100% {
+        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
+    }
+
+    50% {
+        box-shadow: 0 50px 60px -15px rgb(0 0 0 / 15%);
+    }
+}
+
+.hero-floating-img {
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.hero-floating-img:hover {
+    animation: 
+        float-y 4s ease-in-out infinite,
+        float-shadow 4s ease-in-out infinite;
+}
