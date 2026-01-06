@@ -111,3 +111,30 @@ section[id] {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
+
+/* --- Mesmerizing Gradient Animation for Basic Card --- */
+@keyframes shimmer-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.card-shimmer {
+    background: linear-gradient(
+        -45deg, 
+        rgb(255 255 255 / 2%), 
+        rgb(10 147 150 / 10%), 
+        rgb(255 255 255 / 8%), 
+        rgb(10 147 150 / 5%)
+    );
+    background-size: 300% 300%;
+    animation: shimmer-flow 12s ease infinite;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgb(255 255 255 / 10%);
+    transition: all 0.5s ease;
+}
+
+.card-shimmer:hover {
+    border-color: rgb(10 147 150 / 50%);
+    box-shadow: 0 0 30px rgb(10 147 150 / 15%);
+}
