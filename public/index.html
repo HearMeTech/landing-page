@@ -78,11 +78,15 @@
                         <b>HearMe</b> is a revolutionary AI app that learns your unique speech patterns, giving you the power to communicate clearly and confidently.
                     </p>
                     <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-                        <a href="https://alpha.hearme.tech" target="_blank" rel="noopener noreferrer" class="bg-teal-700 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg flex items-center justify-center">
+                        <a href="https://alpha.hearme.tech" target="_blank" rel="noopener noreferrer" class="btn-primary btn-ripple bg-teal-700 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg flex items-center justify-center group">
                             <span data-i18n="hero.cta">Launch App</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
+                            <div class="sound-wave-container" aria-hidden="true">
+                                <span class="sound-bar"></span>
+                                <span class="sound-bar"></span>
+                                <span class="sound-bar"></span>
+                                <span class="sound-bar"></span>
+                                <span class="sound-bar"></span>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -92,8 +96,8 @@
                         
                         <img 
                             src="images/hearme-hero-speech-communication.png" 
-                            alt="Woman using HearMe app, speech bubbles converting into puzzle pieces symbolizing clear communication" 
-                            class="w-full max-w-lg lg:max-w-2xl h-auto object-contain rounded-2xl shadow-2xl transition-transform duration-500 hero-floating-img"
+                            alt="Woman using HearMe app, puzzle pieces coming together to form a clear speech bubble, representing the reconstruction of speech"
+                            class="w-full max-w-lg lg:max-w-2xl h-auto object-contain rounded-2xl shadow-2xl hero-floating-img"
                             width="1200"
                             height="787"
                         >
@@ -191,7 +195,7 @@
                     <div class="hidden md:block absolute left-1/2 top-4 bottom-4 -translate-x-1/2 w-1 bg-gradient-to-b from-brand-teal/20 via-brand-teal/40 to-brand-teal/20 rounded-full"></div>
 
                     <div class="grid md:grid-cols-2 gap-8 items-center relative z-40">
-                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-right relative tilt-card transition duration-300 reveal">
+                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-right relative tilt-card reveal">
                             <div class="relative z-10">
                                 <div class="flex flex-col md:flex-row items-center md:justify-end gap-3 mb-2">
                                     <span class="text-4xl md:text-5xl font-bold text-brand-teal/20 select-none" aria-hidden="true">01</span>
@@ -210,7 +214,7 @@
 
                     <div class="grid md:grid-cols-2 gap-8 items-center relative z-30 mt-8 md:-mt-12">
                         <div class="hidden md:block"></div>
-                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-left relative tilt-card transition duration-300 reveal">
+                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-left relative tilt-card reveal">
                             <div class="relative z-10">
                                 <div class="flex flex-col md:flex-row items-center md:justify-start gap-3 mb-2">
                                     <span class="text-4xl md:text-5xl font-bold text-brand-teal/20 select-none order-1 md:order-2" aria-hidden="true">02</span>
@@ -225,7 +229,7 @@
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-8 items-center relative z-20 mt-8 md:-mt-12">
-                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-right relative tilt-card transition duration-300 reveal">
+                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-right relative tilt-card reveal">
                             <div class="absolute top-0 left-0 md:left-0 md:right-auto bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-tl-xl rounded-br-lg uppercase tracking-wide border-r border-b border-gray-200 z-20" data-i18n="howItWorks.step3_badge">
                                 Coming Soon
                             </div>
@@ -246,7 +250,7 @@
 
                     <div class="grid md:grid-cols-2 gap-8 items-center relative z-10 mt-8 md:-mt-12">
                         <div class="hidden md:block"></div>
-                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-left relative tilt-card transition duration-300 reveal">
+                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-left relative tilt-card reveal">
                             <div class="relative z-10">
                                 <div class="flex flex-col md:flex-row items-center md:justify-start gap-3 mb-2">
                                     <span class="text-4xl md:text-5xl font-bold text-brand-teal/20 select-none order-1 md:order-2" aria-hidden="true">04</span>
@@ -298,11 +302,15 @@
                         </ul>
 
                         <div class="mt-auto">
-                            <a href="https://alpha.hearme.tech" target="_blank" rel="noopener noreferrer" class="w-full bg-teal-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-brand-teal-dark transition duration-200 shadow-lg flex items-center justify-center">
+                            <a href="https://alpha.hearme.tech" target="_blank" rel="noopener noreferrer" class="w-full btn-primary btn-ripple bg-teal-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-brand-teal-dark transition duration-200 shadow-lg flex items-center justify-center group">
                                 <span data-i18n="pricing.cta_launch">Launch App</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                </svg>
+                                <div class="sound-wave-container" aria-hidden="true">
+                                    <span class="sound-bar"></span>
+                                    <span class="sound-bar"></span>
+                                    <span class="sound-bar"></span>
+                                    <span class="sound-bar"></span>
+                                    <span class="sound-bar"></span>
+                                </div>
                             </a>
                             <p class="text-center text-xs mt-3 opacity-0 select-none" aria-hidden="true" data-i18n="pricing.notify_text">
                                 Get notified when Full becomes available.
