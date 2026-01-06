@@ -143,3 +143,37 @@ section[id] {
     transform-style: preserve-3d;
     will-change: transform;
 }
+
+/* --- Roadmap Animations --- */
+
+@keyframes beacon-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgb(10 147 150 / 70%);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgb(10 147 150 / 0%);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgb(10 147 150 / 0%);
+    }
+}
+
+.roadmap-beacon {
+    position: relative;
+    animation: beacon-pulse 2s infinite;
+}
+
+.tech-card {
+    background-color: white;
+    border: 1px solid rgb(229 231 235 / 50%);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 5%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-card:hover {
+    border-color: rgb(10 147 150 / 80%);
+    box-shadow: 0 0 25px rgb(10 147 150 / 25%);
+    transform: translateY(-4px);
+}
