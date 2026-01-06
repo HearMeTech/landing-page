@@ -91,6 +91,37 @@ function triggerHeroAnimation() {
 }
 
 /**
+ * Adds a 3D tilt effect to cards on mousemove.
+ * Uses strict math to keep animations performant (60fps).
+ */
+function setupTiltEffect() {
+    const cards = document.querySelectorAll('.tilt-card');
+
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left; // Mouse X inside card
+            const y = e.clientY - rect.top;  // Mouse Y inside card
+
+            // Calculate rotation based on center (max +/- 10 degrees)
+            // Multipliers (20 and 10) control the intensity
+            const xPct = (x / rect.width - 0.5) * 20; 
+            const yPct = (y / rect.height - 0.5) * -20; // Invert Y axis
+
+            // Apply transform immediately (remove transition for instant follow)
+            card.style.transition = 'none';
+            card.style.transform = `perspective(1000px) rotateX(${yPct}deg) rotateY(${xPct}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            // Smoothly return to center
+            card.style.transition = 'transform 0.5s ease-out';
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+        });
+    });
+}
+
+/**
  * Main initialization function.
  */
 async function main() {
@@ -102,6 +133,7 @@ async function main() {
     await loadCommonElements();
     
     setupScrollReveal();
+    setupTiltEffect();
 
     setTimeout(() => triggerHeroAnimation(), 500);
 
