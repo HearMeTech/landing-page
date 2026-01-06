@@ -4,19 +4,21 @@
 
 import { loadCommonElements } from './common.js';
 
+// Configuration constant for typewriter speed (in milliseconds)
+// 150ms is slower/more accessible (approx. ~400 chars/minute reading speed)
+const HERO_TYPING_SPEED = 150;
+
 // Variable to track the active typewriter timer ID.
-// Used to cancel the previous animation when language changes.
 let activeTypewriterTimeout = null;
 
 /**
  * Initializes the Scroll Reveal animation using IntersectionObserver.
- * Elements with class '.reveal' will animate when they enter the viewport.
  */
 function setupScrollReveal() {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.7 // Trigger when 70% of the element is visible
+        threshold: 0.7
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -33,21 +35,15 @@ function setupScrollReveal() {
 
 /**
  * Simulates a typewriter effect while preserving HTML tags.
- * Includes logic to cancel any existing animation on the element.
- * * @param {HTMLElement} element - The visible element to type into.
- * @param {string} text - The HTML content to type.
- * @param {number} speed - Typing speed in ms (default: 30ms).
  */
 function typeWriterEffect(element, text, speed = 30) {
     if (!element || !text) return;
 
-    // 1. Cancel the previous typing loop if it exists
     if (activeTypewriterTimeout) {
         clearTimeout(activeTypewriterTimeout);
         activeTypewriterTimeout = null;
     }
 
-    // Clear content but maintain height using a non-breaking space
     element.innerHTML = '&nbsp;';
     
     let i = 0;
@@ -56,28 +52,24 @@ function typeWriterEffect(element, text, speed = 30) {
 
     function type() {
         if (i >= text.length) {
-            activeTypewriterTimeout = null; // Cleanup when done
+            activeTypewriterTimeout = null;
             return;
         }
 
         const char = text.charAt(i);
 
-        // Detect HTML tag start
         if (char === '<') isTag = true;
         
         currentHTML += char;
         element.innerHTML = currentHTML; 
         
-        // Detect HTML tag end
         if (char === '>') isTag = false;
 
         i++;
 
-        // Recursive call: Instant for HTML tags, delayed for regular text
         if (isTag) {
             type();
         } else {
-            // Store the timer ID so it can be cancelled later
             activeTypewriterTimeout = setTimeout(type, speed);
         }
     }
@@ -85,23 +77,15 @@ function typeWriterEffect(element, text, speed = 30) {
     type();
 }
 
-// Configuration constant for typewriter speed (in milliseconds)
-// 150ms is slower/more accessible (approx. ~400 chars/minute reading speed)
-const HERO_TYPING_SPEED = 150;
-
 /**
  * Synchronizes the visible hero title with the hidden source element.
- * This ensures the typewriter effect uses the latest translated text.
  */
 function triggerHeroAnimation() {
     const displayElement = document.getElementById('hero-title-display');
     const sourceElement = document.getElementById('hero-title-source');
 
     if (displayElement && sourceElement) {
-        // Retrieve the updated text from the hidden "ghost" element
         const textToType = sourceElement.innerHTML;
-        
-        // Use the constant here instead of a hardcoded number
         typeWriterEffect(displayElement, textToType, HERO_TYPING_SPEED);
     }
 }
@@ -110,19 +94,21 @@ function triggerHeroAnimation() {
  * Main initialization function.
  */
 async function main() {
+    const heroTitle = document.getElementById('hero-title-display');
+    if (heroTitle) {
+        heroTitle.innerHTML = '&nbsp;';
+    }
+
     await loadCommonElements();
+    
     setupScrollReveal();
 
-    // 1. Initial run: Trigger animation on page load
     setTimeout(() => triggerHeroAnimation(), 500);
 
-    // 2. Event Listener: Handle language changes dynamically
     window.addEventListener('language-changed', () => {
         const displayElement = document.getElementById('hero-title-display');
         
-        // Instantly clear the visible text (show placeholder) while i18n updates the source
         if (displayElement) {
-            // Also cancel any running timeout immediately to stop "ghost typing"
             if (activeTypewriterTimeout) {
                 clearTimeout(activeTypewriterTimeout);
                 activeTypewriterTimeout = null;
@@ -130,7 +116,6 @@ async function main() {
             displayElement.innerHTML = '&nbsp;';
         }
 
-        // Brief delay to allow i18n to update the source element before typing starts
         setTimeout(() => {
             triggerHeroAnimation();
         }, 100); 
