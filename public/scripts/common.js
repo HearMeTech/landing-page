@@ -26,11 +26,31 @@ async function loadCommonElements() {
 
     if (footerPlaceholder && footerResponse && footerResponse.ok) {
         footerPlaceholder.innerHTML = await footerResponse.text();
+        // Update year immediately after footer is injected
+        updateCopyrightYear();
     }
     
     await initI18n(); 
 
     setupScrollToTop();
+}
+
+/**
+ * Updates the copyright year in the footer dynamically.
+ * Handles ranges (e.g., "2025–2026") automatically.
+ */
+function updateCopyrightYear() {
+    const yearElement = document.getElementById('copyright-year');
+    
+    if (yearElement) {
+        const startYear = 2025;
+        const currentYear = new Date().getFullYear();
+        
+        // If current year is > 2025, show "2025–2026", else just "2025"
+        yearElement.textContent = currentYear > startYear 
+            ? `${startYear}–${currentYear}` 
+            : startYear.toString();
+    }
 }
 
 /**
