@@ -100,25 +100,28 @@ html.initial-loading body {
     font-weight: 400;
 }
 
-@keyframes float-y {
+@keyframes float-idle {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-10px); }
 }
 
-@keyframes float-shadow {
-    0%, 100% { box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%); }
-    50% { box-shadow: 0 50px 60px -15px rgb(0 0 0 / 15%); }
+.hero-wrapper {
+    display: block;
+    transition: transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hero-wrapper:hover {
+    transform: translateY(-20px);
 }
 
 .hero-floating-img {
-    transition: all 0.5s ease;
+    animation: float-idle 5s ease-in-out infinite;
+    transition: box-shadow 1.5s ease-out;
     cursor: pointer;
 }
 
-.hero-floating-img:hover {
-    animation: 
-        float-y 4s ease-in-out infinite,
-        float-shadow 4s ease-in-out infinite;
+.hero-wrapper:hover .hero-floating-img {
+    box-shadow: 0 50px 60px -15px rgb(0 0 0 / 20%);
 }
 
 /* =========================================
