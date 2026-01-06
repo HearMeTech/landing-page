@@ -1,3 +1,5 @@
+// public/scripts/anti-fouc.js
+
 (function() {
     try {
         var lang = localStorage.getItem('app_lang');

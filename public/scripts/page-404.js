@@ -1,3 +1,5 @@
+// public/scripts/page-404.js
+
 // This is the entry point for the 404 page.
 
 import { loadCommonElements } from './common.js';

@@ -1,5 +1,7 @@
 // public/scripts/i18n.js
 
+// Internationalization (i18n) module for handling multiple languages.
+
 const SUPPORTED_LANGUAGES = {
     en: "English",
     uk: "Українська",

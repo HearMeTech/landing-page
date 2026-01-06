@@ -1,3 +1,5 @@
+// public/scripts/firebase-init.js
+
 /*
  * This script handles the centralized initialization of Firebase services
  * and provides a simple, resolved export of the key variables.

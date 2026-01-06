@@ -1,3 +1,7 @@
+// public/scripts/page-waitlist.js
+
+// This is the entry point for the Waitlist page.
+
 import { loadCommonElements } from './common.js';
 import { db, authReadyPromise } from './firebase-init.js';
 import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";

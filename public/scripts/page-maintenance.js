@@ -1,3 +1,5 @@
+// public/scripts/page-maintenance.js
+
 // This is the entry point for the Maintenance page.
 // It does NOT load common elements (header/footer) as it's a standalone page.
 

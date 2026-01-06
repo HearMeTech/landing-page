@@ -1,6 +1,12 @@
-// This is the entry point for the Index (Home) page.
+// public/scripts/page-index.js
+
+// This is the entry point for the index (home) page.
 
 import { loadCommonElements } from './common.js';
+
+// Variable to track the active typewriter timer ID.
+// Used to cancel the previous animation when language changes.
+let activeTypewriterTimeout = null;
 
 /**
  * Initializes the Scroll Reveal animation using IntersectionObserver.
@@ -27,12 +33,19 @@ function setupScrollReveal() {
 
 /**
  * Simulates a typewriter effect while preserving HTML tags.
+ * Includes logic to cancel any existing animation on the element.
  * * @param {HTMLElement} element - The visible element to type into.
  * @param {string} text - The HTML content to type.
  * @param {number} speed - Typing speed in ms (default: 30ms).
  */
 function typeWriterEffect(element, text, speed = 30) {
     if (!element || !text) return;
+
+    // 1. Cancel the previous typing loop if it exists
+    if (activeTypewriterTimeout) {
+        clearTimeout(activeTypewriterTimeout);
+        activeTypewriterTimeout = null;
+    }
 
     // Clear content but maintain height using a non-breaking space
     element.innerHTML = '&nbsp;';
@@ -42,7 +55,10 @@ function typeWriterEffect(element, text, speed = 30) {
     let currentHTML = '';
 
     function type() {
-        if (i >= text.length) return;
+        if (i >= text.length) {
+            activeTypewriterTimeout = null; // Cleanup when done
+            return;
+        }
 
         const char = text.charAt(i);
 
@@ -61,12 +77,17 @@ function typeWriterEffect(element, text, speed = 30) {
         if (isTag) {
             type();
         } else {
-            setTimeout(type, speed);
+            // Store the timer ID so it can be cancelled later
+            activeTypewriterTimeout = setTimeout(type, speed);
         }
     }
 
     type();
 }
+
+// Configuration constant for typewriter speed (in milliseconds)
+// 150ms is slower/more accessible (approx. ~400 chars/minute reading speed)
+const HERO_TYPING_SPEED = 150;
 
 /**
  * Synchronizes the visible hero title with the hidden source element.
@@ -79,7 +100,9 @@ function triggerHeroAnimation() {
     if (displayElement && sourceElement) {
         // Retrieve the updated text from the hidden "ghost" element
         const textToType = sourceElement.innerHTML;
-        typeWriterEffect(displayElement, textToType, 160);
+        
+        // Use the constant here instead of a hardcoded number
+        typeWriterEffect(displayElement, textToType, HERO_TYPING_SPEED);
     }
 }
 
@@ -98,7 +121,14 @@ async function main() {
         const displayElement = document.getElementById('hero-title-display');
         
         // Instantly clear the visible text (show placeholder) while i18n updates the source
-        if (displayElement) displayElement.innerHTML = '&nbsp;';
+        if (displayElement) {
+            // Also cancel any running timeout immediately to stop "ghost typing"
+            if (activeTypewriterTimeout) {
+                clearTimeout(activeTypewriterTimeout);
+                activeTypewriterTimeout = null;
+            }
+            displayElement.innerHTML = '&nbsp;';
+        }
 
         // Brief delay to allow i18n to update the source element before typing starts
         setTimeout(() => {
