@@ -163,28 +163,68 @@ html.initial-loading body {
    6. Roadmap Section
    ========================================= */
 
-@keyframes beacon-pulse {
-    0% { box-shadow: 0 0 0 0 rgb(10 147 150 / 70%); }
-    70% { box-shadow: 0 0 0 10px rgb(10 147 150 / 0%); }
-    100% { box-shadow: 0 0 0 0 rgb(10 147 150 / 0%); }
+@keyframes breathing-sequence {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgb(10 147 150 / 0%);
+    }
+    
+    12.5% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px 5px rgb(10 147 150 / 80%);
+    }
+
+    25% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgb(10 147 150 / 0%);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgb(10 147 150 / 0%);
+    }
 }
 
-.roadmap-beacon {
-    position: relative;
-    animation: beacon-pulse 2s infinite;
+.step-badge {
+    animation: breathing-sequence 12s infinite ease-in-out;
+    transform-origin: center;
+    will-change: transform, box-shadow;
 }
+
+.tech-card:nth-child(1) .step-badge { animation-delay: 0s; }
+.tech-card:nth-child(2) .step-badge { animation-delay: 3s; }
+.tech-card:nth-child(3) .step-badge { animation-delay: 6s; }
+.tech-card:nth-child(4) .step-badge { animation-delay: 9s; }
 
 .tech-card {
     background-color: white;
     border: 1px solid rgb(229 231 235 / 50%);
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 5%);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    background-color: #0a9396;
+    transition: width 0.3s ease;
+    z-index: 10;
 }
 
 .tech-card:hover {
     border-color: rgb(10 147 150 / 80%);
     box-shadow: 0 0 25px rgb(10 147 150 / 25%);
     transform: translateY(-4px);
+}
+
+.tech-card:hover::before {
+    width: 12px; 
 }
 
 /* =========================================
