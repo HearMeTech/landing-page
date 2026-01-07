@@ -159,14 +159,15 @@ function setupActiveNavigation() {
     const observerCallback = (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Remove active class from all links
                 navLinks.forEach(link => link.classList.remove('nav-link-active'));
                 
-                // Add active class to corresponding link
                 const id = entry.target.getAttribute('id');
-                // Select links that point to this ID (handling /#id)
                 const activeLinks = document.querySelectorAll(`nav a[href*="#${id}"]`);
-                activeLinks.forEach(link => link.classList.add('nav-link-active'));
+                activeLinks.forEach(link => {
+                    if (!link.classList.contains('bg-brand-teal')) {
+                        link.classList.add('nav-link-active');
+                    }
+                });
             }
         });
     };

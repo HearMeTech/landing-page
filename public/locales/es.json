@@ -78,6 +78,19 @@
     "item4_title": "Traductor personal offline",
     "item4_desc": "Un futuro dispositivo wearable totalmente offline. Dice tus palabras claramente en cualquier idioma."
   },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "¿Tienes preguntas o sugerencias? Nos encantaría escucharte.",
+    "placeholder_name": "Tu nombre",
+    "placeholder_email": "Tu correo electrónico",
+    "placeholder_message": "¿Cómo podemos ayudarte?",
+    "btn_send": "Enviar mensaje",
+    "success_title": "¡Mensaje enviado!",
+    "success_desc": "Gracias por contactarnos. Te responderemos pronto.",
+    "error_generic": "No se pudo enviar el mensaje. Por favor, comprueba tu conexión.",
+    "btn_sending": "Enviando...",
+    "btn_new": "Enviar otro mensaje"
+  },
   "waitlist": {
     "meta_title": "HearMe — Lista de espera",
     "title": "Únete a la lista de espera",

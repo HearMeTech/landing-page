@@ -78,6 +78,19 @@
     "item4_title": "Offline Personal Translator",
     "item4_desc": "A future wearable device that works entirely offline. It speaks your words clearly in any language, serving as your personal voice bridge—speech-to-speech, anywhere."
   },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Have questions or suggestions? We'd love to hear from you.",
+    "placeholder_name": "Your Name",
+    "placeholder_email": "Your Email",
+    "placeholder_message": "How can we help?",
+    "btn_send": "Send Message",
+    "success_title": "Message Sent!",
+    "success_desc": "Thanks for reaching out. We'll get back to you shortly.",
+    "error_generic": "Failed to send message. Please check your connection.",
+    "btn_sending": "Sending...",
+    "btn_new": "Send another message"
+  },
   "waitlist": {
     "meta_title": "HearMe — Join the Waitlist",
     "title": "Join the Waitlist",

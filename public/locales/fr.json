@@ -78,6 +78,19 @@
     "item4_title": "Traducteur Offline",
     "item4_desc": "Un futur appareil portable totalement hors ligne. Il prononce vos mots clairement dans n'importe quelle langue."
   },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Des questions ou des suggestions ? Nous serions ravis de vous lire.",
+    "placeholder_name": "Votre nom",
+    "placeholder_email": "Votre e-mail",
+    "placeholder_message": "Comment pouvons-nous vous aider ?",
+    "btn_send": "Envoyer le message",
+    "success_title": "Message envoyé !",
+    "success_desc": "Merci de nous avoir contactés. Nous vous répondrons sous peu.",
+    "error_generic": "Impossible d'envoyer le message. Veuillez vérifier votre connexion.",
+    "btn_sending": "Envoi en cours...",
+    "btn_new": "Envoyer un autre message"
+  },
   "waitlist": {
     "meta_title": "HearMe — Liste d'attente",
     "title": "Rejoindre la liste d'attente",

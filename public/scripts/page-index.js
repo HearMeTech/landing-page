@@ -1,23 +1,21 @@
 // public/scripts/page-index.js
 
-// This is the entry point for the index (home) page.
-// It waits for common.js to emit 'hearme:ready' before initializing.
+// Imports for functionality
+import { db, authReadyPromise } from './firebase-init.js';
+import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-// Configuration constant for typewriter speed (in milliseconds)
-// 150ms is slower/more accessible (approx. ~400 chars/minute reading speed)
+// Configuration
 const HERO_TYPING_SPEED = 150;
-
-// Variable to track the active typewriter timer ID.
 let activeTypewriterTimeout = null;
 
 /**
- * Initializes the Scroll Reveal animation using IntersectionObserver.
+ * Initializes Scroll Reveal animation.
  */
 function setupScrollReveal() {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.7
+        threshold: 0.15 // Trigger a bit earlier for better feel
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -33,7 +31,7 @@ function setupScrollReveal() {
 }
 
 /**
- * Simulates a typewriter effect while preserving HTML tags.
+ * Typewriter effect logic.
  */
 function typeWriterEffect(element, text, speed = 30) {
     if (!element || !text) return;
@@ -56,14 +54,10 @@ function typeWriterEffect(element, text, speed = 30) {
         }
 
         const char = text.charAt(i);
-
         if (char === '<') isTag = true;
-        
         currentHTML += char;
         element.innerHTML = currentHTML; 
-        
         if (char === '>') isTag = false;
-
         i++;
 
         if (isTag) {
@@ -72,13 +66,9 @@ function typeWriterEffect(element, text, speed = 30) {
             activeTypewriterTimeout = setTimeout(type, speed);
         }
     }
-
     type();
 }
 
-/**
- * Synchronizes the visible hero title with the hidden source element.
- */
 function triggerHeroAnimation() {
     const displayElement = document.getElementById('hero-title-display');
     const sourceElement = document.getElementById('hero-title-source');
@@ -90,30 +80,21 @@ function triggerHeroAnimation() {
 }
 
 /**
- * Adds a 3D tilt effect to cards on mousemove.
- * Uses strict math to keep animations performant (60fps).
+ * Tilt effect for cards.
  */
 function setupTiltEffect() {
     const cards = document.querySelectorAll('.tilt-card');
-
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left; // Mouse X inside card
-            const y = e.clientY - rect.top;  // Mouse Y inside card
-
-            // Calculate rotation based on center (max +/- 10 degrees)
-            // Multipliers (20 and 10) control the intensity
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
             const xPct = (x / rect.width - 0.5) * 20; 
-            const yPct = (y / rect.height - 0.5) * -20; // Invert Y axis
-
-            // Apply transform immediately (remove transition for instant follow)
+            const yPct = (y / rect.height - 0.5) * -20; 
             card.style.transition = 'none';
             card.style.transform = `perspective(1000px) rotateX(${yPct}deg) rotateY(${xPct}deg) scale3d(1.02, 1.02, 1.02)`;
         });
-
         card.addEventListener('mouseleave', () => {
-            // Smoothly return to center
             card.style.transition = 'transform 0.5s ease-out';
             card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
         });
@@ -121,25 +102,134 @@ function setupTiltEffect() {
 }
 
 /**
- * Main initialization function.
- * Called only after common elements (Header/Footer/i18n) are ready.
+ * Validates email format.
+ */
+function isValidEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+/**
+ * Sets up the Contact Form logic (Firebase).
+ */
+function setupContactForm() {
+    const form = document.getElementById('contact-form');
+    const formContainer = document.getElementById('contact-form-container');
+    const successContainer = document.getElementById('contact-success');
+    const resetBtn = document.getElementById('contact-reset-btn');
+    const submitBtn = document.getElementById('contact-submit-btn');
+    
+    // Button text state elements
+    const btnTextDefault = document.getElementById('btn-text-default');
+    const btnTextLoading = document.getElementById('btn-text-loading');
+    
+    const spinner = document.getElementById('contact-spinner');
+    const errorMsg = document.getElementById('contact-error-msg');
+
+    if (!form) return;
+
+    // Helper to reset button UI to default state
+    function resetButtonState() {
+        submitBtn.disabled = false;
+        if (btnTextDefault) btnTextDefault.classList.remove('hidden');
+        if (btnTextLoading) btnTextLoading.classList.add('hidden');
+        if (spinner) spinner.classList.add('hidden');
+    }
+
+    // Helper to switch to Success View
+    function showSuccessState() {
+        formContainer.style.opacity = '0';
+        setTimeout(() => {
+            formContainer.classList.add('hidden');
+            successContainer.classList.remove('hidden');
+            // Reset button for next time (in case user clicks "Send another")
+            resetButtonState(); 
+        }, 500);
+    }
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        errorMsg.classList.add('hidden');
+
+        const honeyPot = document.getElementById('contact_hp');
+        if (honeyPot && honeyPot.value) {
+            showSuccessState();
+            return;
+        }
+
+        const email = document.getElementById('contact-email').value.trim();
+        if (!isValidEmail(email)) {
+            // Show error (text comes from HTML data-i18n)
+            errorMsg.classList.remove('hidden');
+            return;
+        }
+
+        // --- UI Loading State START ---
+        submitBtn.disabled = true;
+        
+        // Toggle button text: hide "Send", show "Sending..."
+        if (btnTextDefault) btnTextDefault.classList.add('hidden');
+        if (btnTextLoading) btnTextLoading.classList.remove('hidden');
+        
+        if (spinner) spinner.classList.remove('hidden');
+        // ------------------------------
+
+        const name = document.getElementById('contact-name').value.trim();
+        const message = document.getElementById('contact-message').value.trim();
+
+        try {
+            await authReadyPromise; 
+
+            await addDoc(collection(db, "messages"), {
+                name: name || "Anonymous",
+                email: email,
+                message: message,
+                createdAt: serverTimestamp(),
+                source: 'homepage_contact',
+                userAgent: navigator.userAgent
+            });
+
+            showSuccessState();
+
+        } catch (error) {
+            console.error("Error sending message:", error);
+            errorMsg.classList.remove('hidden');
+            
+            // Revert button state on error
+            resetButtonState();
+        } 
+    });
+
+    // Reset logic ("Send another message")
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            form.reset();
+            successContainer.classList.add('hidden');
+            
+            formContainer.classList.remove('hidden');
+            // Small delay to allow display:block to apply before opacity transition
+            requestAnimationFrame(() => {
+                formContainer.style.opacity = '1';
+            });
+        });
+    }
+}
+
+/**
+ * Main initialization.
  */
 function initPage() {
     const heroTitle = document.getElementById('hero-title-display');
-    if (heroTitle) {
-        heroTitle.innerHTML = '&nbsp;';
-    }
+    if (heroTitle) heroTitle.innerHTML = '&nbsp;';
 
-    // Common elements are already loaded by the event trigger
-    
     setupScrollReveal();
     setupTiltEffect();
+    setupContactForm(); // Initialize form
 
     setTimeout(() => triggerHeroAnimation(), 500);
 
     window.addEventListener('language-changed', () => {
         const displayElement = document.getElementById('hero-title-display');
-        
         if (displayElement) {
             if (activeTypewriterTimeout) {
                 clearTimeout(activeTypewriterTimeout);
@@ -147,16 +237,13 @@ function initPage() {
             }
             displayElement.innerHTML = '&nbsp;';
         }
-
-        setTimeout(() => {
-            triggerHeroAnimation();
-        }, 100); 
+        setTimeout(() => triggerHeroAnimation(), 100); 
     });
-    
+
     console.log("Index page initialized.");
 }
 
-// Initialize logic using the Custom Event pattern to handle dependencies
+// Event-driven init
 if (window.hearmeReady) {
     initPage();
 } else {

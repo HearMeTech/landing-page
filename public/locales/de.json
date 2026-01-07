@@ -78,6 +78,19 @@
     "item4_title": "Offline-Übersetzer",
     "item4_desc": "Ein zukünftiges Wearable, das komplett offline funktioniert. Es spricht deine Worte klar aus – überall."
   },
+  "contact": {
+    "title": "Kontaktieren Sie uns",
+    "subtitle": "Haben Sie Fragen oder Anregungen? Wir würden uns freuen, von Ihnen zu hören.",
+    "placeholder_name": "Ihr Name",
+    "placeholder_email": "Ihre E-Mail",
+    "placeholder_message": "Wie können wir Ihnen helfen?",
+    "btn_send": "Nachricht senden",
+    "success_title": "Nachricht gesendet!",
+    "success_desc": "Vielen Dank für Ihre Nachricht. Wir werden uns in Kürze bei Ihnen melden.",
+    "error_generic": "Nachricht konnte nicht gesendet werden. Bitte überprüfen Sie Ihre Verbindung.",
+    "btn_sending": "Wird gesendet...",
+    "btn_new": "Weitere Nachricht senden"
+  },
   "waitlist": {
     "meta_title": "HearMe — Warteliste",
     "title": "Auf die Warteliste",
