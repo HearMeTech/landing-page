@@ -15,9 +15,13 @@ async function setupWaitlistForm() {
     const container = document.getElementById('waitlist-container');
     const successMessage = document.getElementById('waitlist-success-message');
     const failureMessage = document.getElementById('waitlist-failure-message');
+    
     const submitBtn = document.getElementById('submit-btn');
     const loadingSpinner = document.getElementById('loading-spinner');
-    const btnText = submitBtn.querySelector('span');
+    
+    const btnTextDefault = document.getElementById('btn-text-default');
+    const btnTextLoading = document.getElementById('btn-text-loading');
+    
     const failureText = document.getElementById('failure-error-text');
 
     if (!form) return;
@@ -50,9 +54,11 @@ async function setupWaitlistForm() {
             return;
         }
 
-        // UI Loading State
         submitBtn.disabled = true;
-        btnText.textContent = "Joining...";
+        
+        if (btnTextDefault) btnTextDefault.classList.add('hidden');
+        if (btnTextLoading) btnTextLoading.classList.remove('hidden');
+        
         loadingSpinner.classList.remove('hidden');
 
         try {
@@ -69,16 +75,15 @@ async function setupWaitlistForm() {
                 userAgent: navigator.userAgent
             });
 
-            // Success UI
             showSuccessUI(container, successMessage);
 
         } catch (error) {
             console.error("Error adding to waitlist: ", error);
-            showError("Something went wrong. Please check your connection.", failureMessage, failureText);
             
-            // Reset Button
+            failureMessage.classList.remove('hidden');
             submitBtn.disabled = false;
-            btnText.textContent = "Join Now";
+            if (btnTextDefault) btnTextDefault.classList.remove('hidden');
+            if (btnTextLoading) btnTextLoading.classList.add('hidden');
             loadingSpinner.classList.add('hidden');
         }
     });
@@ -96,7 +101,7 @@ function showSuccessUI(container, successMessage) {
     }, 500);
 }
 
-// Helper to show error
+// Helper to show specific validation error
 function showError(msg, failureMessage, failureText) {
     failureMessage.classList.remove('hidden');
     failureText.textContent = msg;
