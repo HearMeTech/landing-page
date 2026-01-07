@@ -1,8 +1,7 @@
 // public/scripts/page-index.js
 
 // This is the entry point for the index (home) page.
-
-import { loadCommonElements } from './common.js';
+// It waits for common.js to emit 'hearme:ready' before initializing.
 
 // Configuration constant for typewriter speed (in milliseconds)
 // 150ms is slower/more accessible (approx. ~400 chars/minute reading speed)
@@ -123,14 +122,15 @@ function setupTiltEffect() {
 
 /**
  * Main initialization function.
+ * Called only after common elements (Header/Footer/i18n) are ready.
  */
-async function main() {
+function initPage() {
     const heroTitle = document.getElementById('hero-title-display');
     if (heroTitle) {
         heroTitle.innerHTML = '&nbsp;';
     }
 
-    await loadCommonElements();
+    // Common elements are already loaded by the event trigger
     
     setupScrollReveal();
     setupTiltEffect();
@@ -156,4 +156,9 @@ async function main() {
     console.log("Index page initialized.");
 }
 
-document.addEventListener('DOMContentLoaded', main);
+// Initialize logic using the Custom Event pattern to handle dependencies
+if (window.hearmeReady) {
+    initPage();
+} else {
+    document.addEventListener('hearme:ready', initPage);
+}

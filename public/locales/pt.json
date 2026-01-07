@@ -110,6 +110,8 @@
     "meta_title": "HearMe — Página não encontrada",
     "title": "Ops! Página não encontrada",
     "desc": "Não encontramos a página. Ela pode ter sido movida, excluída ou a URL está incorreta.",
-    "btn_home": "Voltar ao Início"
+    "btn_home": "Voltar ao Início",
+    "redirect_prefix": "Redirecionamento automático em",
+    "redirect_suffix": "segundos..."
   }
 }

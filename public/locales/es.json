@@ -110,6 +110,8 @@
     "meta_title": "HearMe — Página no encontrada",
     "title": "¡Vaya! Página no encontrada",
     "desc": "No encontramos la página que buscas. Puede que se haya movido, borrado o que la URL sea incorrecta.",
-    "btn_home": "Volver al inicio"
+    "btn_home": "Volver al inicio",
+    "redirect_prefix": "Redirección automática en",
+    "redirect_suffix": "segundos..."
   }
 }

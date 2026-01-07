@@ -29,7 +29,7 @@
     <meta name="apple-mobile-web-app-title" content="HearMe Site" />
     <link rel="manifest" href="/images/site.webmanifest" />
 
-    <script src="/scripts/anti-fouc.js"></script>    
+    <script src="/scripts/anti-fouc.js?v=1765665186275"></script>    
 
     <link rel="stylesheet" href="/styles/tailwind.css?v=1765665186275">
     <link rel="stylesheet" href="/styles/style.css?v=1765665186275">
@@ -60,6 +60,12 @@
                 Return to Homepage
             </a>
 
+            <p class="mt-6 text-sm text-gray-500">
+                <span data-i18n="error404.redirect_prefix">Automatic redirect in</span>
+                <span id="redirect-countdown" class="font-bold text-brand-teal mx-1">10</span>
+                <span data-i18n="error404.redirect_suffix">seconds...</span>
+            </p>
+
         </div>
     </main>
     
@@ -67,6 +73,7 @@
     <div id="footer-placeholder" class="min-h-[300px] bg-brand-navy"></div>
 
     <!-- Page-specific script -->
-    <script type="module" src="/scripts/page-404.js"></script>
+    <script src="/scripts/common.js?v=1765665186275" type="module"></script>
+    <script src="/scripts/page-404.js?v=1765665186275" type="module"></script>
 </body>
 </html>

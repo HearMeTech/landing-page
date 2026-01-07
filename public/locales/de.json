@@ -110,6 +110,8 @@
     "meta_title": "HearMe — Seite nicht gefunden",
     "title": "Seite nicht gefunden",
     "desc": "Wir können die Seite nicht finden. Vielleicht wurde sie verschoben, gelöscht oder die URL ist falsch.",
-    "btn_home": "Zur Startseite"
+    "btn_home": "Zur Startseite",
+    "redirect_prefix": "Automatische Weiterleitung in",
+    "redirect_suffix": "Sekunden..."
   }
 }

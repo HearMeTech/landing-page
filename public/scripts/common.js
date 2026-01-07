@@ -7,15 +7,19 @@ import { initI18n } from './i18n.js';
 
 /**
  * Loads header.html and footer.html into their respective placeholders.
+ * Dispatches 'hearme:ready' event when finished.
  */
 async function loadCommonElements() {
     const headerPlaceholder = document.getElementById('header-placeholder');
     const footerPlaceholder = document.getElementById('footer-placeholder');
 
+    // Add timestamp to prevent caching of HTML partials
+    const version = Date.now();
+
     // Parallel fetch for better performance
     const [headerResponse, footerResponse] = await Promise.all([
-        fetch('/components/header.html'),
-        fetch('/components/footer.html')
+        fetch(`/components/header.html?v=${version}`),
+        fetch(`/components/footer.html?v=${version}`)
     ]);
 
     if (headerPlaceholder && headerResponse && headerResponse.ok) {
@@ -33,6 +37,10 @@ async function loadCommonElements() {
     await initI18n(); 
 
     setupScrollToTop();
+
+    // Notify other scripts that common elements are loaded
+    window.hearmeReady = true;
+    document.dispatchEvent(new CustomEvent('hearme:ready'));
 }
 
 /**
@@ -65,7 +73,6 @@ function setupMobileMenu() {
             const isHidden = mobileMenu.classList.contains('hidden');
             if (isHidden) {
                 mobileMenu.classList.remove('hidden');
-                // Optional: Add simple fade-in logic here if needed via CSS classes
             } else {
                 mobileMenu.classList.add('hidden');
             }
@@ -168,5 +175,9 @@ function setupActiveNavigation() {
     sections.forEach(section => observer.observe(section));
 }
 
-// Export the functions to be used by page-specific scripts
-export { loadCommonElements };
+// Auto-initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadCommonElements);
+} else {
+    loadCommonElements();
+}
