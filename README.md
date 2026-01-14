@@ -76,8 +76,9 @@ To add a language, create a JSON file in `public/locales/` and update the `<sele
 ## **🚀 Deployment**
 
 ### **Automatic (Recommended)**
-Simply push your changes to the `main` branch.
-GitHub Actions will automatically:
+Run `npm run lint` to check your code, then simply commit your changes.
+
+After merging your changes to `main` branch GitHub Actions will automatically:
 1. Install dependencies.
 2. Build optimized CSS (`npm run build:css`).
 3. Update version timestamps (`npm run update-version`).

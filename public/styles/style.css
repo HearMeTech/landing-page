@@ -116,7 +116,6 @@ html.initial-loading body {
 
 .hero-floating-img {
     transition: transform 0.1s ease-out; 
-    cursor: pointer;
     will-change: transform;
 }
 
