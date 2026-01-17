@@ -18,18 +18,18 @@
   "features": {
     "title": "Libérez votre communication",
     "subtitle": "Conçu pour les troubles de la parole (PC, AVC, SLA). <b>HearMe</b> allie IA avancée et interface intuitive.",
+    "personal_title": "Modèle IA personnalisé",
+    "personal_desc": "L'app s'entraîne sur <b>vos</b> propres motifs vocaux grâce au Machine Learning, s'améliorant à chaque usage.",
     "recognition_title": "Reconnaissance temps réel",
     "recognition_desc": "Notre IA transcrit instantanément votre parole en texte avec une latence minimale, pour des échanges fluides.",
     "output_title": "Sortie vocale et textuelle",
     "output_desc": "Écoutez votre phrase avec une voix claire, copiez le texte ou envoyez-le directement vers d'autres applis.",
-    "personal_title": "Modèle IA personnalisé",
-    "personal_desc": "L'app s'entraîne sur <b>vos</b> propres motifs vocaux grâce au Machine Learning, s'améliorant à chaque usage.",
-    "cloud_title": "Puissance du Cloud",
-    "cloud_desc": "Basé sur Google Cloud, garantissant fiabilité, vitesse et disponibilité continue de votre modèle vocal.",
-    "secure_title": "Sécurisé et Privé",
-    "secure_desc": "Vos données vocales vous appartiennent. Nous utilisons un cryptage standard et l'auth Firebase sécurisée.",
     "fallback_title": "Relais Intelligent",
-    "fallback_desc": "Reconnaissance incertaine ? Sélectionnez instantanément une phrase sauvegardée à l'écran. Énoncez, copiez ou partagez-la sans heurts — tout comme votre voix."
+    "fallback_desc": "Reconnaissance incertaine ? Sélectionnez instantanément une phrase sauvegardée à l'écran. Énoncez, copiez ou partagez-la sans heurts — tout comme votre voix.",
+    "translation_title": "Traduction Instantanée",
+    "translation_desc": "Traduisez instantanément vos paroles pour communiquer sans effort dans des langues étrangères et briser les barrières.",
+    "secure_title": "Sécurisé et Privé",
+    "secure_desc": "Votre voix n'appartient qu'à vous. Nous appliquons le même niveau de cryptage et de sécurité que les applications bancaires modernes."
   },
   "howItWorks": {
     "title": "Votre parcours vers une voix claire",

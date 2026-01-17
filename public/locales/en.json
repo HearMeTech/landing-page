@@ -18,18 +18,18 @@
   "features": {
     "title": "Empowering Your Communication",
     "subtitle": "Designed for individuals with speech impairments from Cerebral Palsy, stroke, or ALS. <b>HearMe</b> combines advanced AI with an intuitive interface.",
+    "personal_title": "Personalized AI Model",
+    "personal_desc": "The app trains on <b>your</b> specific voice patterns using advanced Machine Learning, becoming more accurate with every use.",
     "recognition_title": "Real-Time Recognition",
     "recognition_desc": "Our AI instantly transcribes your speech into text with low latency, enabling seamless and natural conversation flows.",
     "output_title": "Voice & Text Output",
     "output_desc": "Play your recognized phrase aloud using clear synthesis, copy the text to clipboard, or send it directly to other apps.",
-    "personal_title": "Personalized AI Model",
-    "personal_desc": "The app trains on <b>your</b> specific voice patterns using advanced Machine Learning, becoming more accurate with every use.",
-    "cloud_title": "Cloud Powered",
-    "cloud_desc": "Built on Google Cloud infrastructure, ensuring enterprise-grade reliability, speed, and continuous availability of your voice model.",
-    "secure_title": "Secure & Private",
-    "secure_desc": "Your voice data is yours. We use industry-standard encryption and secure Firebase authentication to protect your privacy.",
     "fallback_title": "Smart Fallback",
-    "fallback_desc": "Recognition uncertain? Instantly select a saved phrase directly on screen. Speak, copy, or share it seamlessly—just like voice input."
+    "fallback_desc": "Recognition uncertain? Instantly select a saved phrase directly on screen. Speak, copy, or share it seamlessly—just like voice input.",
+    "translation_title": "Instant Translation",
+    "translation_desc": "Instantly translate your spoken words to communicate effortlessly in foreign languages, breaking down barriers.",
+    "secure_title": "Secure & Private",
+    "secure_desc": "Your voice is yours alone. We apply the same level of encryption and security used by modern banking apps."
   },
   "howItWorks": {
     "title": "Your Journey to Clear Speech",

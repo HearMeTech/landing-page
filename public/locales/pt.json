@@ -18,18 +18,18 @@
   "features": {
     "title": "Potencializando sua comunicação",
     "subtitle": "Projetado para pessoas com dificuldades de fala (PC, derrame, ELA). <b>HearMe</b> une IA avançada a uma interface intuitiva.",
+    "personal_title": "Modelo de IA Personalizado",
+    "personal_desc": "O app treina com <b>seus</b> padrões de voz específicos usando Machine Learning, ficando mais preciso a cada uso.",
     "recognition_title": "Reconhecimento em tempo real",
     "recognition_desc": "Nossa IA transcreve sua fala em texto instantaneamente com baixa latência, permitindo conversas naturais.",
     "output_title": "Saída de Voz e Texto",
     "output_desc": "Reproduza sua frase com voz sintética clara, copie o texto ou envie diretamente para outros aplicativos.",
-    "personal_title": "Modelo de IA Personalizado",
-    "personal_desc": "O app treina com <b>seus</b> padrões de voz específicos usando Machine Learning, ficando mais preciso a cada uso.",
-    "cloud_title": "Poder da Nuvem",
-    "cloud_desc": "Construído no Google Cloud, garantindo confiabilidade empresarial, velocidade e disponibilidade contínua do seu modelo.",
-    "secure_title": "Seguro e Privado",
-    "secure_desc": "Seus dados de voz são seus. Usamos criptografia padrão e autenticação segura do Firebase para sua proteção.",
     "fallback_title": "Alternativa Inteligente",
-    "fallback_desc": "Reconhecimento incerto? Selecione na hora uma frase salva na tela. Reproduza, copie ou compartilhe sem interrupções — igual à sua voz."
+    "fallback_desc": "Reconhecimento incerto? Selecione na hora uma frase salva na tela. Reproduza, copie ou compartilhe sem interrupções — igual à sua voz.",
+    "translation_title": "Tradução Instantânea",
+    "translation_desc": "Traduza instantaneamente suas palavras para se comunicar sem esforço em línguas estrangeiras, quebrando barreiras.",
+    "secure_title": "Seguro e Privado",
+    "secure_desc": "Sua voz pertence apenas a você. Aplicamos o mesmo nível de criptografia e segurança usado por aplicativos bancários modernos."
   },
   "howItWorks": {
     "title": "Sua jornada para a fala clara",

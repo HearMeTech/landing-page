@@ -18,18 +18,18 @@
   "features": {
     "title": "Stärke deine Kommunikation",
     "subtitle": "Für Menschen mit Sprachstörungen (z. B. durch CP, Schlaganfall oder ALS). <b>HearMe</b> vereint KI mit intuitiver Bedienung.",
+    "personal_title": "Personalisiertes KI-Modell",
+    "personal_desc": "Die App lernt durch Machine Learning deine <b>individuellen</b> Stimmmuster und wird mit jeder Nutzung präziser.",
     "recognition_title": "Echtzeiterkennung",
     "recognition_desc": "Unsere KI transkribiert deine Sprache sofort und fast ohne Verzögerung in Text – für natürliche Gespräche.",
     "output_title": "Sprach- & Textausgabe",
     "output_desc": "Lass Sätze mit klarer Stimme vorlesen, kopiere den Text oder sende ihn direkt an andere Apps.",
-    "personal_title": "Personalisiertes KI-Modell",
-    "personal_desc": "Die App lernt durch Machine Learning deine <b>individuellen</b> Stimmmuster und wird mit jeder Nutzung präziser.",
-    "cloud_title": "Cloud-Technologie",
-    "cloud_desc": "Basiert auf Google Cloud für höchste Zuverlässigkeit, Geschwindigkeit und ständige Verfügbarkeit deines Modells.",
-    "secure_title": "Sicher & Privat",
-    "secure_desc": "Deine Daten gehören dir. Wir nutzen Verschlüsselung nach Industriestandard und sichere Firebase-Auth.",
     "fallback_title": "Intelligente Alternative",
-    "fallback_desc": "Erkennung unsicher? Wähle blitzschnell eine gespeicherte Phrase direkt auf dem Bildschirm. Lass sie sprechen, kopiere oder teile sie – genau wie bei der Spracheingabe."
+    "fallback_desc": "Erkennung unsicher? Wähle blitzschnell eine gespeicherte Phrase direkt auf dem Bildschirm. Lass sie sprechen, kopiere oder teile sie – genau wie bei der Spracheingabe.",
+    "translation_title": "Sofortübersetzung",
+    "translation_desc": "Übersetze deine gesprochenen Worte sofort, um mühelos in Fremdsprachen zu kommunizieren und Barrieren abzubauen.",
+    "secure_title": "Sicher & Privat",
+    "secure_desc": "Deine Stimme gehört dir allein. Wir verwenden denselben Verschlüsselungs- und Sicherheitsstandard wie moderne Banking-Apps."
   },
   "howItWorks": {
     "title": "Dein Weg zur klaren Sprache",

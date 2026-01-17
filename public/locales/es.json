@@ -18,18 +18,18 @@
   "features": {
     "title": "Potenciando tu comunicación",
     "subtitle": "Diseñado para personas con dificultades del habla (PC, ictus, ELA). <b>HearMe</b> une IA avanzada con una interfaz intuitiva.",
+    "personal_title": "Modelo de IA personalizado",
+    "personal_desc": "La app entrena con <b>tus</b> patrones de voz específicos usando Machine Learning, mejorando con cada uso.",
     "recognition_title": "Reconocimiento en tiempo real",
     "recognition_desc": "Nuestra IA transcribe tu voz a texto al instante con baja latencia, permitiendo conversaciones fluidas y naturales.",
     "output_title": "Salida de voz y texto",
     "output_desc": "Reproduce tu frase con voz sintética clara, copia el texto o envíalo directamente a otras aplicaciones.",
-    "personal_title": "Modelo de IA personalizado",
-    "personal_desc": "La app entrena con <b>tus</b> patrones de voz específicos usando Machine Learning, mejorando con cada uso.",
-    "cloud_title": "Potencia en la nube",
-    "cloud_desc": "Construido sobre Google Cloud, garantizando fiabilidad empresarial, velocidad y disponibilidad continua de tu modelo.",
-    "secure_title": "Seguro y privado",
-    "secure_desc": "Tus datos de voz son tuyos. Usamos encriptación estándar y autenticación segura de Firebase para protegerte.",
     "fallback_title": "Respaldo Inteligente",
-    "fallback_desc": "¿Reconocimiento difícil? Selecciona al instante una frase guardada en pantalla. Reprodúcela, cópiala o compártela fluidamente, igual que con tu voz."
+    "fallback_desc": "¿Reconocimiento difícil? Selecciona al instante una frase guardada en pantalla. Reprodúcela, cópiala o compártela fluidamente, igual que con tu voz.",
+    "translation_title": "Traducción Instantánea",
+    "translation_desc": "Traduce al instante tus palabras para comunicarte sin esfuerzo en idiomas extranjeros, rompiendo barreras.",
+    "secure_title": "Seguro y Privado",
+    "secure_desc": "Tu voz es solo tuya. Aplicamos el mismo nivel de encriptación y seguridad que utilizan las aplicaciones bancarias modernas."
   },
   "howItWorks": {
     "title": "Tu camino hacia el habla clara",
