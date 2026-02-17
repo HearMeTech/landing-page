@@ -11,6 +11,10 @@
       {
         "source": "/invest",
         "destination": "/pages/investors.html"
+      },
+      {
+        "source": "/waitlist",
+        "destination": "/pages/waitlist.html"
       }
     ],
     "headers": [
