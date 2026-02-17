@@ -8,6 +8,7 @@
     "howItWorks": "How It Works",
     "pricing": "Pricing",
     "roadmap": "Roadmap",
+    "investors": "Investors",
     "contact": "Contact Us"
   },
   "hero": {
@@ -118,6 +119,16 @@
     "desc": "Sorry for the inconvenience. We're currently performing scheduled maintenance to improve our website. We'll be back online shortly.",
     "returning_in": "Returning in:",
     "signature": "<b>HearMe</b> — The Team"
+  },
+  "investors": {
+    "meta_title": "HearMe — Investor Relations",
+    "meta_desc": "HearMe Investor Relations. Pre-seed round opportunity for Edge AI speech restoration technology.",
+    "title": "Invest in the <span class='text-brand-teal'>Voice of the Future</span>",
+    "subtitle": "We are raising Pre-seed investment to accelerate R&D and expand our Edge AI speech restoration technology into Ukraine, Europe, and the USA.",
+    "dataroom_title": "Investor Data Room",
+    "dataroom_desc": "Access our full set of documents, including the Pitch Deck, financial models, and technical roadmap on Google Drive.",
+    "btn_open": "Open Data Room",
+    "access_note": "Access available upon request"
   },
   "error404": {
     "meta_title": "HearMe — Page Not Found",

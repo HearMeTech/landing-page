@@ -8,6 +8,7 @@
     "howItWorks": "Ablauf",
     "pricing": "Preise",
     "roadmap": "Roadmap",
+    "investors": "Investoren",
     "contact": "Kontakt"
   },
   "hero": {
@@ -118,6 +119,16 @@
     "desc": "Entschuldigung für die Umstände. Wir führen Wartungsarbeiten durch, um die Seite zu verbessern.",
     "returning_in": "Zurück in:",
     "signature": "<b>HearMe</b> — Das Team"
+  },
+  "investors": {
+    "meta_title": "HearMe — Investor Relations",
+    "meta_desc": "HearMe Investor Relations. Pre-Seed-Runde für Edge-AI-Sprachwiederherstellungstechnologie.",
+    "title": "Investieren Sie in die <span class='text-brand-teal'>Stimme der Zukunft</span>",
+    "subtitle": "Wir sammeln Pre-Seed-Investitionen, um Forschung & Entwicklung zu beschleunigen und unsere Edge-AI-Technologie in die Ukraine, Europa und die USA zu expandieren.",
+    "dataroom_title": "Investor Data Room",
+    "dataroom_desc": "Greifen Sie auf alle Dokumente zu, einschließlich Pitch Deck, Finanzmodellen und technischer Roadmap auf Google Drive.",
+    "btn_open": "Data Room öffnen",
+    "access_note": "Zugang auf Anfrage"
   },
   "error404": {
     "meta_title": "HearMe — Seite nicht gefunden",

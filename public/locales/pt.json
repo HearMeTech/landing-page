@@ -8,6 +8,7 @@
     "howItWorks": "Como funciona",
     "pricing": "Preços",
     "roadmap": "Roteiro",
+    "investors": "Investidores",
     "contact": "Contato"
   },
   "hero": {
@@ -118,6 +119,16 @@
     "desc": "Desculpe o transtorno. Estamos fazendo manutenção para melhorar nosso site. Voltaremos em breve.",
     "returning_in": "Voltamos em:",
     "signature": "<b>HearMe</b> — A Equipe"
+  },
+  "investors": {
+    "meta_title": "HearMe — Relações com Investidores",
+    "meta_desc": "Relações com Investidores HearMe. Rodada Pre-seed para tecnologia Edge AI de restauração da fala.",
+    "title": "Invista na <span class='text-brand-teal'>Voz do Futuro</span>",
+    "subtitle": "Estamos captando investimento Pre-seed para acelerar P&D e expandir nossa tecnologia Edge AI na Ucrânia, Europa e EUA.",
+    "dataroom_title": "Data Room para Investidores",
+    "dataroom_desc": "Acesse todos os documentos, incluindo Pitch Deck, modelos financeiros e roteiro técnico no Google Drive.",
+    "btn_open": "Abrir Data Room",
+    "access_note": "Acesso mediante solicitação"
   },
   "error404": {
     "meta_title": "HearMe — Página não encontrada",
