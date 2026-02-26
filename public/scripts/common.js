@@ -183,19 +183,3 @@ if (document.readyState === 'loading') {
     loadCommonElements();
 }
 
-// Initialization of Google Analytics
-function initAnalytics() {
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-DNHB9PR6QG';
-    document.head.appendChild(script);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){window.dataLayer.push(arguments);}
-    window.gtag = gtag;
-
-    gtag('js', new Date());
-    gtag('config', 'G-DNHB9PR6QG');
-}
-
-initAnalytics();
