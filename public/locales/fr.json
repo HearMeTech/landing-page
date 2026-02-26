@@ -79,6 +79,23 @@
     "item4_title": "Traducteur Offline",
     "item4_desc": "Un futur appareil portable totalement hors ligne. Il prononce vos mots clairement dans n'importe quelle langue."
   },
+  "culture": {
+    "title": "Notre Code Culturel",
+    "subtitle": "Les valeurs qui nous poussent à créer des technologies avec du sens et de la bienveillance.",
+    "val1_title": "Empathie",
+    "val1_li1": "<b>Pour nos clients :</b> nous travaillons avec un public profondément vulnérable où chaque mot compte.",
+    "val1_li2": "<b>Pour nos partenaires :</b> ils nous aident à étendre notre impact et à rendre le monde meilleur.",
+    "val1_li3": "<b>Pour nos collègues :</b> les meilleures idées naissent dans une atmosphère de respect mutuel et de soutien.",
+    "val2_title": "Passion",
+    "val2_li1": "<b>Pour la qualité :</b> nous ne faisons aucun compromis sur la précision de la reconnaissance et l'expérience utilisateur (UX).",
+    "val2_li2": "<b>Pour l'apprentissage :</b> le domaine de l'IA évolue rapidement et nous nous efforçons de garder une longueur d'avance.",
+    "val2_li3": "<b>Pour l'innovation :</b> nous relevons des défis extrêmes pour repousser les limites de la technologie vocale.",
+    "val3_title": "Responsabilité",
+    "val3_li1": "<b>Pour la confidentialité :</b> la protection absolue des données vocales est notre priorité absolue.",
+    "val3_li2": "<b>Pour l'accessibilité :</b> notre produit doit fonctionner parfaitement pour tout le monde.",
+    "val3_li3": "<b>Pour les résultats :</b> la capacité d'une personne à communiquer dépend de notre travail.",
+    "val3_li4": "<b>Pour la transparence :</b> nous communiquons honnêtement sur nos victoires comme sur nos difficultés."
+  },
   "contact": {
     "title": "Contactez-nous",
     "subtitle": "Des questions ou des suggestions ? Nous serions ravis de vous lire.",

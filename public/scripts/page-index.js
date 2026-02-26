@@ -116,6 +116,28 @@ function isValidEmail(email) {
 }
 
 /**
+ * Flip cards logic for mobile (Culture section)
+ */
+function setupFlipCards() {
+    const flipCards = document.querySelectorAll('.flip-card');
+    
+    flipCards.forEach(card => {
+        card.addEventListener('click', function() {
+            flipCards.forEach(c => {
+                if (c !== card) c.classList.remove('is-flipped');
+            });
+            card.classList.toggle('is-flipped');
+        });
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.flip-card')) {
+            flipCards.forEach(c => c.classList.remove('is-flipped'));
+        }
+    });
+}
+
+/**
  * Sets up the Contact Form logic (Firebase).
  */
 function setupContactForm() {
@@ -230,7 +252,8 @@ function initPage() {
 
     setupScrollReveal();
     setupTiltEffect();
-    setupContactForm(); // Initialize form
+    setupFlipCards();
+    setupContactForm();
 
     setTimeout(() => triggerHeroAnimation(), 500);
 

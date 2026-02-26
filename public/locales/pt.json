@@ -79,6 +79,23 @@
     "item4_title": "Tradutor Pessoal Offline",
     "item4_desc": "Um futuro dispositivo vestível totalmente offline. Ele fala suas palavras claramente em qualquer idioma."
   },
+  "culture": {
+    "title": "Nosso Código Cultural",
+    "subtitle": "Os valores que nos impulsionam a criar tecnologia com propósito e cuidado.",
+    "val1_title": "Empatia",
+    "val1_li1": "<b>Para nossos clientes:</b> trabalhamos com um público profundamente vulnerável, onde cada palavra importa.",
+    "val1_li2": "<b>Para nossos parceiros:</b> eles nos ajudam a escalar nosso impacto e a tornar o mundo um lugar melhor.",
+    "val1_li3": "<b>Para nossos colegas:</b> as melhores ideias nascem em um ambiente de respeito mútuo e apoio.",
+    "val2_title": "Paixão",
+    "val2_li1": "<b>Pela qualidade:</b> nunca fazemos concessões quando se trata de precisão de reconhecimento e UX.",
+    "val2_li2": "<b>Pelo aprendizado:</b> o campo da IA evolui rapidamente e nos esforçamos para ficar um passo à frente.",
+    "val2_li3": "<b>Pela inovação:</b> enfrentamos desafios extremos para expandir os limites da tecnologia de fala.",
+    "val3_title": "Responsabilidade",
+    "val3_li1": "<b>Pela privacidade:</b> a proteção absoluta dos dados de voz é a nossa principal prioridade.",
+    "val3_li2": "<b>Pela acessibilidade:</b> nosso produto deve funcionar perfeitamente para todos.",
+    "val3_li3": "<b>Pelos resultados:</b> a capacidade de uma pessoa se comunicar depende do nosso trabalho.",
+    "val3_li4": "<b>Pela transparência:</b> nos comunicamos honestamente sobre vitórias e dificuldades."
+  },
   "contact": {
     "title": "Entre em contato",
     "subtitle": "Tem perguntas ou sugestões? Adoraríamos ouvir você.",

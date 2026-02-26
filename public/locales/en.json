@@ -79,6 +79,23 @@
     "item4_title": "Offline Personal Translator",
     "item4_desc": "A future wearable device that works entirely offline. It speaks your words clearly in any language, serving as your personal voice bridge—speech-to-speech, anywhere."
   },
+  "culture": {
+    "title": "Our Cultural Code",
+    "subtitle": "The values that drive us to create technology with purpose and care.",
+    "val1_title": "Empathy",
+    "val1_li1": "<b>For our clients:</b> we work with a deeply vulnerable audience where every word matters.",
+    "val1_li2": "<b>For our partners:</b> they help us scale our impact and make the world a better place.",
+    "val1_li3": "<b>For our colleagues:</b> the best ideas are born in an atmosphere of mutual respect and support.",
+    "val2_title": "Passion",
+    "val2_li1": "<b>For quality:</b> we never compromise when it comes to recognition accuracy and UX.",
+    "val2_li2": "<b>For learning:</b> the AI field evolves rapidly, and we strive to stay one step ahead.",
+    "val2_li3": "<b>For innovation:</b> we tackle extreme challenges to push the boundaries of speech tech.",
+    "val3_title": "Responsibility",
+    "val3_li1": "<b>For privacy:</b> absolute protection of voice data is our top priority.",
+    "val3_li2": "<b>For accessibility:</b> our product must work flawlessly for everyone.",
+    "val3_li3": "<b>For outcomes:</b> a person's ability to communicate depends on our work.",
+    "val3_li4": "<b>For transparency:</b> we communicate honestly about both wins and struggles."
+  },
   "contact": {
     "title": "Get in Touch",
     "subtitle": "Have questions or suggestions? We'd love to hear from you.",

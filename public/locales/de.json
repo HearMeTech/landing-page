@@ -79,6 +79,23 @@
     "item4_title": "Offline-Übersetzer",
     "item4_desc": "Ein zukünftiges Wearable, das komplett offline funktioniert. Es spricht deine Worte klar aus – überall."
   },
+  "culture": {
+    "title": "Unser Kulturkodex",
+    "subtitle": "Die Werte, die uns antreiben, Technologie mit Sinn und Sorgfalt zu entwickeln.",
+    "val1_title": "Empathie",
+    "val1_li1": "<b>Für unsere Kunden:</b> Wir arbeiten mit einer sehr sensiblen Zielgruppe, bei der jedes Wort zählt.",
+    "val1_li2": "<b>Für unsere Partner:</b> Sie helfen uns, unseren Einfluss zu vergrößern und die Welt zu einem besseren Ort zu machen.",
+    "val1_li3": "<b>Für unsere Kollegen:</b> Die besten Ideen entstehen in einer Atmosphäre von gegenseitigem Respekt und Unterstützung.",
+    "val2_title": "Leidenschaft",
+    "val2_li1": "<b>Für Qualität:</b> Wir machen keine Kompromisse bei Erkennungsgenauigkeit und Benutzererfahrung (UX).",
+    "val2_li2": "<b>Fürs Lernen:</b> Der KI-Bereich entwickelt sich rasant, und wir streben danach, immer einen Schritt voraus zu sein.",
+    "val2_li3": "<b>Für Innovation:</b> Wir stellen uns extremen Herausforderungen, um die Grenzen der Sprachtechnologie zu verschieben.",
+    "val3_title": "Verantwortung",
+    "val3_li1": "<b>Für Datenschutz:</b> Der absolute Schutz von Sprachdaten ist unsere oberste Priorität.",
+    "val3_li2": "<b>Für Barrierefreiheit:</b> Unser Produkt muss für jeden einwandfrei funktionieren.",
+    "val3_li3": "<b>Für Ergebnisse:</b> Die Fähigkeit eines Menschen zu kommunizieren, hängt von unserer Arbeit ab.",
+    "val3_li4": "<b>Für Transparenz:</b> Wir kommunizieren ehrlich über Erfolge und auch über Schwierigkeiten."
+  },
   "contact": {
     "title": "Kontaktieren Sie uns",
     "subtitle": "Haben Sie Fragen oder Anregungen? Wir würden uns freuen, von Ihnen zu hören.",
