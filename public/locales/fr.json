@@ -8,8 +8,8 @@
     "howItWorks": "Comment ça marche",
     "pricing": "Tarifs",
     "roadmap": "Feuille de route",
-    "investors": "Investisseurs",
-    "contact": "Contact"
+    "culture": "Nos Valeurs",
+    "investors": "Investisseurs"
   },
   "hero": {
     "title": "Votre Voix. Vos Mots. <span class='text-brand-teal'>Enfin Compris.</span>",
@@ -129,7 +129,8 @@
   },
   "footer": {
       "desc": "Donner à chacun le pouvoir d'être entendu.",
-      "navigate": "Navigation",
+      "product": "Produit",
+      "about": "À propos",
       "connect": "Contact",
       "rights": "Tous droits réservés."
   },

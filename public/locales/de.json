@@ -8,8 +8,8 @@
     "howItWorks": "Ablauf",
     "pricing": "Preise",
     "roadmap": "Roadmap",
-    "investors": "Investoren",
-    "contact": "Kontakt"
+    "culture": "Unsere Werte",
+    "investors": "Investoren"
   },
   "hero": {
     "title": "Deine Stimme. Deine Worte. <span class='text-brand-teal'>Endlich verstanden.</span>",
@@ -129,7 +129,8 @@
   },
   "footer": {
       "desc": "Wir geben jedem die Kraft, gehört zu werden.",
-      "navigate": "Menü",
+      "product": "Produkt",
+      "about": "Über uns",
       "connect": "Kontakt",
       "rights": "Alle Rechte vorbehalten."
   },

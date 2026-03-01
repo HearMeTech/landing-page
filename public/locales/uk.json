@@ -8,8 +8,8 @@
     "howItWorks": "Як це працює",
     "pricing": "Тарифи",
     "roadmap": "План розвитку",
-    "investors": "Інвесторам",
-    "contact": "Контакти"
+    "culture": "Наші цінності",
+    "investors": "Інвесторам"
   },
   "hero": {
     "title": "Твій голос. Твої слова. <span class='text-brand-teal'>Нарешті почуті.</span>",
@@ -129,8 +129,9 @@
   },
   "footer": {
       "desc": "Даємо кожному силу бути почутим.",
-      "navigate": "Навігація",
-      "connect": "Зв'язок",
+      "product": "Продукт",
+      "about": "Про нас",
+      "connect": "Контакти",
       "rights": "Усі права захищено."
   },
   "maintenance": {

@@ -8,8 +8,8 @@
     "howItWorks": "How It Works",
     "pricing": "Pricing",
     "roadmap": "Roadmap",
-    "investors": "Investors",
-    "contact": "Contact Us"
+    "culture": "Our Culture",
+    "investors": "Investors"
   },
   "hero": {
     "title": "Your Voice. Your Words. <span class='text-brand-teal'>Finally Understood.</span>",
@@ -129,8 +129,9 @@
   },
   "footer": {
       "desc": "Giving everyone the power to be heard.",
-      "navigate": "Navigate",
-      "connect": "Connect",
+      "product": "Product",
+      "about": "About Us",
+      "connect": "Contacts",
       "rights": "All rights reserved."
   },
   "maintenance": {

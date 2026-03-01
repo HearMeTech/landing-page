@@ -8,8 +8,8 @@
     "howItWorks": "Como funciona",
     "pricing": "Preços",
     "roadmap": "Roteiro",
-    "investors": "Investidores",
-    "contact": "Contato"
+    "culture": "Nossos Valores",
+    "investors": "Investidores"
   },
   "hero": {
     "title": "Sua Voz. Suas Palavras. <span class='text-brand-teal'>Finalmente Entendidas.</span>",
@@ -129,8 +129,9 @@
   },
   "footer": {
       "desc": "Dando a todos o poder de serem ouvidos.",
-      "navigate": "Navegar",
-      "connect": "Conectar",
+      "product": "Produto",
+      "about": "Sobre nós",
+      "connect": "Contactos",
       "rights": "Todos os direitos reservados."
   },
   "maintenance": {
