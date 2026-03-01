@@ -8,7 +8,8 @@
     "howItWorks": "Comment ça marche",
     "pricing": "Tarifs",
     "roadmap": "Feuille de route",
-    "culture": "Nos Valeurs",
+    "values": "Nos Valeurs",
+    "team": "Notre Équipe",
     "investors": "Investisseurs"
   },
   "hero": {
@@ -98,6 +99,22 @@
     "val_r_li1": "<b>Pour la confidentialité :</b> la protection absolue des données vocales de nos utilisateurs est notre priorité inconditionnelle.",
     "val_r_li2": "<b>Pour l'accessibilité :</b> notre produit doit fonctionner parfaitement pour tout le monde.",
     "val_r_li3": "<b>Pour les résultats :</b> la capacité d'une personne à communiquer dépend de notre travail."
+  },
+  "team": {
+    "title": "Équipe et Conseillers",
+    "subtitle": "HearMe est soutenu par une équipe d'experts en Machine Learning, en médecine et en affaires, unis par un seul but : donner une voix à chacun.",
+    "founder_name": "Maksym Trineiev",
+    "founder_role": "Founder & CEO",
+    "founder_bio": "Fort d'une grande expertise en tant qu'Architecte Logiciel et spécialiste en ML, Maksym dirige la stratégie produit et la R&D. Son objectif principal est de relier l'IA avancée aux technologies d'assistance pour rendre la communication accessible à tous.",
+    "advisor_med_name": "Irina Oleynikova",
+    "advisor_med_role": "Medical Advisor",
+    "advisor_med_bio": "Experte en réadaptation, Irina s'assure que les algorithmes de HearMe répondent avec précision aux véritables besoins médicaux et quotidiens des utilisateurs souffrant de troubles de la parole.",
+    "advisor_biz_name": "Mykhailo Tkachenko",
+    "advisor_biz_role": "Business Advisor",
+    "advisor_biz_bio": "Spécialisé dans la mise à l'échelle de SaaS et la stratégie commerciale, Mykhailo aide HearMe à construire un modèle économique durable pour une expansion réussie sur les marchés internationaux.",
+    "advisor_tech_name": "Vitalii Rybalko",
+    "advisor_tech_role": "Technology & ML Advisor",
+    "advisor_tech_bio": "Fort de plusieurs années d'expérience en architecture IA, Vitalii conseille l'équipe sur l'optimisation des modèles complexes de Machine Learning afin de garantir une reconnaissance vocale instantanée à faible latence."
   },
   "contact": {
     "title": "Contactez-nous",

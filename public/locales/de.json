@@ -8,7 +8,8 @@
     "howItWorks": "Ablauf",
     "pricing": "Preise",
     "roadmap": "Roadmap",
-    "culture": "Unsere Werte",
+    "values": "Unsere Werte",
+    "team": "Unser Team",
     "investors": "Investoren"
   },
   "hero": {
@@ -98,6 +99,22 @@
     "val_r_li1": "<b>Für Datenschutz:</b> Der absolute Schutz der Sprachdaten unserer Nutzer hat für uns oberste Priorität.",
     "val_r_li2": "<b>Für Barrierefreiheit:</b> Unser Produkt muss für jeden einwandfrei funktionieren.",
     "val_r_li3": "<b>Für Ergebnisse:</b> Die Fähigkeit eines Menschen zu kommunizieren, hängt von unserer Arbeit ab."
+  },
+  "team": {
+    "title": "Team & Berater",
+    "subtitle": "HearMe wird von einem Expertenteam aus den Bereichen maschinelles Lernen, Medizin und Business unterstützt – vereint durch ein gemeinsames Ziel: Jedem eine Stimme zu geben.",
+    "founder_name": "Maksym Trineiev",
+    "founder_role": "Founder & CEO",
+    "founder_bio": "Mit seiner umfassenden Expertise als Software-Architekt und ML-Spezialist leitet Maksym die Produktstrategie und Forschung & Entwicklung. Sein Hauptaugenmerk liegt darauf, fortschrittliche KI mit unterstützenden Technologien zu verbinden, um Kommunikation für jeden zugänglich zu machen.",
+    "advisor_med_name": "Irina Oleynikova",
+    "advisor_med_role": "Medical Advisor",
+    "advisor_med_bio": "Als Expertin für Rehabilitation stellt Irina sicher, dass die Algorithmen von HearMe den tatsächlichen medizinischen und alltäglichen Bedürfnissen von Nutzern mit Sprachstörungen gerecht werden.",
+    "advisor_biz_name": "Mykhailo Tkachenko",
+    "advisor_biz_role": "Business Advisor",
+    "advisor_biz_bio": "Mykhailo ist spezialisiert auf SaaS-Skalierung und Geschäftsstrategien und hilft HearMe beim Aufbau eines nachhaltigen Geschäftsmodells für eine erfolgreiche Expansion in internationale Märkte.",
+    "advisor_tech_name": "Vitalii Rybalko",
+    "advisor_tech_role": "Technology & ML Advisor",
+    "advisor_tech_bio": "Mit jahrelanger Erfahrung in der KI-Architektur berät Vitalii das Team bei der Optimierung komplexer Machine-Learning-Modelle, um eine sofortige Spracherkennung mit geringer Latenz zu gewährleisten."
   },
   "contact": {
     "title": "Kontaktieren Sie uns",

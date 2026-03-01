@@ -8,7 +8,8 @@
     "howItWorks": "How It Works",
     "pricing": "Pricing",
     "roadmap": "Roadmap",
-    "culture": "Our Culture",
+    "values": "Our Culture",
+    "team": "Our Team",
     "investors": "Investors"
   },
   "hero": {
@@ -98,6 +99,22 @@
     "val_r_li1": "<b>For privacy:</b> the absolute protection of our users' voice data is our unconditional priority.",
     "val_r_li2": "<b>For accessibility:</b> we build a product that must work flawlessly for everyone, regardless of circumstances.",
     "val_r_li3": "<b>For outcomes:</b> we realize that a person's ability to communicate and connect depends on our work."
+  },
+  "team": {
+    "title": "Team & Advisors",
+    "subtitle": "HearMe is backed by a team of experts in Machine Learning, medicine, and business, united by a single goal — to give everyone a voice.",
+    "founder_name": "Maksym Trineiev",
+    "founder_role": "Founder & CEO",
+    "founder_bio": "With deep expertise as a Software Architect and ML specialist, Maksym leads product strategy and R&D. His core focus is bridging advanced AI with assistive technologies to make communication accessible to everyone.",
+    "advisor_med_name": "Irina Oleynikova",
+    "advisor_med_role": "Medical Advisor",
+    "advisor_med_bio": "An expert in rehabilitation, Irina ensures that HearMe's algorithms accurately address the real medical and daily needs of users with speech impairments.",
+    "advisor_biz_name": "Mykhailo Tkachenko",
+    "advisor_biz_role": "Business Advisor",
+    "advisor_biz_bio": "Specializing in SaaS scaling and business strategy, Mykhailo helps HearMe build a sustainable business model for successful expansion into international markets.",
+    "advisor_tech_name": "Vitalii Rybalko",
+    "advisor_tech_role": "Technology & ML Advisor",
+    "advisor_tech_bio": "Bringing years of experience in AI architecture, Vitalii advises the team on optimizing complex Machine Learning models to guarantee instant, low-latency speech recognition."
   },
   "contact": {
     "title": "Get in Touch",

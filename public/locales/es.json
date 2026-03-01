@@ -8,7 +8,8 @@
     "howItWorks": "Cómo funciona",
     "pricing": "Precios",
     "roadmap": "Hoja de ruta",
-    "culture": "Nuestros Valores",
+    "values": "Nuestros Valores",
+    "team": "Nuestro Equipo",
     "investors": "Inversores"
   },
   "hero": {
@@ -98,6 +99,22 @@
     "val_r_li1": "<b>Por la privacidad:</b> la protección absoluta de los datos de voz de nuestros usuarios es nuestra prioridad incondicional.",
     "val_r_li2": "<b>Por la accesibilidad:</b> nuestro producto debe funcionar perfectamente para todos.",
     "val_r_li3": "<b>Por los resultados:</b> la capacidad de comunicación de una persona depende de nuestro trabajo."
+  },
+  "team": {
+    "title": "Equipo y Asesores",
+    "subtitle": "HearMe cuenta con el respaldo de un equipo de expertos en Machine Learning, medicina y negocios, unidos por un único objetivo: dar voz a todos.",
+    "founder_name": "Maksym Trineiev",
+    "founder_role": "Founder & CEO",
+    "founder_bio": "Con una profunda experiencia como Arquitecto de Software y especialista en ML, Maksym lidera la estrategia de producto y el I+D. Su enfoque principal es unir la IA avanzada con las tecnologías de asistencia para hacer que la comunicación sea accesible para todos.",
+    "advisor_med_name": "Irina Oleynikova",
+    "advisor_med_role": "Medical Advisor",
+    "advisor_med_bio": "Como experta en rehabilitación, Irina se asegura de que los algoritmos de HearMe aborden con precisión las necesidades médicas y diarias reales de los usuarios con dificultades del habla.",
+    "advisor_biz_name": "Mykhailo Tkachenko",
+    "advisor_biz_role": "Business Advisor",
+    "advisor_biz_bio": "Especializado en el escalado de SaaS y estrategia empresarial, Mykhailo ayuda a HearMe a construir un modelo de negocio sostenible para una exitosa expansión en los mercados internacionales.",
+    "advisor_tech_name": "Vitalii Rybalko",
+    "advisor_tech_role": "Technology & ML Advisor",
+    "advisor_tech_bio": "Aportando años de experiencia en arquitectura de IA, Vitalii asesora al equipo en la optimización de modelos complejos de Machine Learning para garantizar un reconocimiento de voz instantáneo y de baja latencia."
   },
   "contact": {
     "title": "Contáctanos",
