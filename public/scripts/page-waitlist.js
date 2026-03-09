@@ -91,6 +91,15 @@ async function setupWaitlistForm() {
 
 // Helper to show success (used for both humans and bots)
 function showSuccessUI(container, successMessage) {
+    // Analytics event for waitlist signup
+    if (typeof window.gtag === 'function') {
+        window.gtag('event', 'generate_lead', {
+            'event_category': 'conversion',
+            'event_label': 'Waitlist Signup',
+            'value': 1.0
+        });
+    }
+
     container.style.opacity = '0';
     setTimeout(() => {
         container.classList.add('hidden'); 

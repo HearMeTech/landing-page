@@ -244,6 +244,29 @@ function setupContactForm() {
 }
 
 /**
+ * Analytics tracking for CTA clicks.
+ */
+function setupAnalytics() {
+    document.addEventListener('click', (e) => {
+        const launchTarget = e.target.closest('[data-analytics="launch-app"]');
+        if (launchTarget && typeof window.gtag === 'function') {
+            window.gtag('event', 'launch_app_click', {
+                'event_category': 'engagement',
+                'event_label': 'Global Launch Button'
+            });
+        }
+
+        const waitlistTarget = e.target.closest('[data-analytics="waitlist-click"]');
+        if (waitlistTarget && typeof window.gtag === 'function') {
+            window.gtag('event', 'join_waitlist_redirect', {
+                'event_category': 'engagement',
+                'event_label': 'Pricing Section Redirect'
+            });
+        }
+    });
+}
+
+/**
  * Main initialization.
  */
 function initPage() {
@@ -254,6 +277,7 @@ function initPage() {
     setupTiltEffect();
     setupFlipCards();
     setupContactForm();
+    setupAnalytics();
 
     setTimeout(() => triggerHeroAnimation(), 500);
 
