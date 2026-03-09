@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="meta.title">HearMe — Your Voice, Understood</title>
+    <title data-i18n="meta.title">HearMe — AI Speech Recognition for Speech Impairments</title>
     <meta name="description" content="HearMe is a revolutionary AI-powered mobile app that provides personalized speech recognition for individuals with speech impairments." data-i18n="meta.desc">
     
     <link rel="canonical" href="https://hearme.tech/" />
@@ -37,28 +37,92 @@
         gtag('config', 'G-DNHB9PR6QG');
     </script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "HearMe",
-      "applicationCategory": "HealthApplication",
-      "operatingSystem": "Web, iOS, Android",
-      "description": "HearMe is a revolutionary AI-powered mobile app that provides personalized speech recognition for individuals with speech impairments (Cerebral Palsy, stroke, ALS).",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "description": "Monthly subscription after a 1-month free trial."
-      },
-      "url": "https://hearme.tech/",
-      "publisher": {
-        "@type": "Organization",
-        "name": "HearMeTech",
-        "url": "https://hearme.tech/"
-      }
-    }
-    </script>
+<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "Organization",
+				"@id": "https://hearme.tech/#organization",
+				"name": "HearMeTech",
+				"url": "https://hearme.tech/",
+				"logo": "https://hearme.tech/images/logo-full.png",
+				"sameAs": [
+					"https://www.linkedin.com/company/hearmetech/"
+				]
+			},
+			{
+				"@type": "SoftwareApplication",
+				"@id": "https://hearme.tech/#software",
+				"name": "HearMe",
+				"alternateName": "HearMe AI Speech Recognition App",
+				"applicationCategory": "HealthApplication",
+				"operatingSystem": "Web, iOS, Android",
+				"description": "HearMe is a revolutionary AI-powered mobile app that provides personalized speech recognition for individuals with speech impairments (Cerebral Palsy, stroke, ALS).",
+				"url": "https://hearme.tech/",
+				"publisher": { "@id": "https://hearme.tech/#organization" },
+				"offers": [
+					{
+						"@type": "Offer",
+						"name": "Basic Plan",
+						"description": "Free plan with limited features.",
+						"price": "0",
+						"priceCurrency": "USD",
+						"availability": "https://schema.org/InStock"
+					},
+					{
+						"@type": "Offer",
+						"name": "Full Plan",
+						"description": "Monthly subscription after a 1-month free trial.",
+						"price": "24.99",
+						"priceCurrency": "USD",
+						"availability": "https://schema.org/InStock"
+					}
+				],
+				"featureList": [
+					"Personalized AI Voice Model",
+					"Real-Time Speech Recognition",
+					"Voice & Text Output",
+					"Instant Translation",
+					"Secure Firebase Authentication"
+				]
+			},
+			{
+				"@type": "Person",
+				"name": "Maksym Trineiev",
+				"jobTitle": "Founder & CEO",
+				"description": "Software Architect and ML specialist leading product strategy and R&D for assistive technologies.",
+				"url": "https://hearme.tech/",
+				"sameAs": ["https://www.linkedin.com/in/trineiev/"],
+				"worksFor": { "@id": "https://hearme.tech/#organization" }
+			},
+			{
+				"@type": "Person",
+				"name": "Irina Oleynikova",
+				"jobTitle": "Medical Advisor",
+				"description": "Former general practitioner with expertise in clinical medicine and geriatric care, ensuring medical accuracy of AI algorithms.",
+				"sameAs": ["https://www.linkedin.com/in/irina-oleynikova/"],
+				"affiliation": { "@id": "https://hearme.tech/#organization" }
+			},
+			{
+				"@type": "Person",
+				"name": "Mykhailo Tkachenko",
+				"jobTitle": "Business Advisor",
+				"description": "SaaS scaling and business strategy advisor for international markets.",
+				"sameAs": ["https://www.linkedin.com/in/mykhailo-tkachenko/"],
+				"affiliation": { "@id": "https://hearme.tech/#organization" }
+			},
+			{
+				"@type": "Person",
+				"name": "Vitalii Rybalko",
+				"jobTitle": "Technology & ML Advisor",
+				"description": "AI architecture expert advising on low-latency speech recognition models.",
+				"sameAs": ["https://www.linkedin.com/in/vitalii-rybalko/"],
+				"affiliation": { "@id": "https://hearme.tech/#organization" }
+			}
+		]
+	}
+</script>
 
     <script src="/scripts/anti-fouc.js?v=1765665186275"></script>
 
