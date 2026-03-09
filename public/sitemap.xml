@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://hearme.tech/</loc>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://hearme.tech/?lang=uk"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://hearme.tech/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hearme.tech/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hearme.tech/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://hearme.tech/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hearme.tech/"/>
     <lastmod>2026-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.00</priority>
@@ -10,12 +16,12 @@
     <loc>https://hearme.tech/invest</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.50</priority>
   </url>
   <url>
     <loc>https://hearme.tech/waitlist</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+    <priority>0.80</priority>
   </url>
 </urlset>

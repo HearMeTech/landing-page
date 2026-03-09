@@ -1,9 +1,8 @@
 User-agent: *
 Allow: /
 
-Disallow: /components/header.html
-Disallow: /components/footer.html
+Disallow: /components/
 Disallow: /pages/maintenance.html
 Disallow: /404.html
 
-Sitemap: https://www.google.com/search?q=https://hearme.tech/sitemap.xml
+Sitemap: https://hearme.tech/sitemap.xml
