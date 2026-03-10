@@ -37,6 +37,7 @@ async function loadCommonElements() {
     await initI18n(); 
 
     setupScrollToTop();
+    setupSmartHeader();
 
     // Notify other scripts that common elements are loaded
     window.hearmeReady = true;
@@ -176,10 +177,62 @@ function setupActiveNavigation() {
     sections.forEach(section => observer.observe(section));
 }
 
+/**
+ * Sets up the Smart Header (hides on scroll down, shows on scroll up, stays hidden over footer content)
+ */
+function setupSmartHeader() {
+    const header = document.querySelector('header');
+    const footerContent = document.querySelector('footer .grid');
+    
+    if (!header) return;
+
+    let lastScrollY = window.scrollY;
+    let isFooterVisible = false;
+    let ticking = false;
+
+    if (footerContent) {
+        const observer = new IntersectionObserver((entries) => {
+            isFooterVisible = entries[0].isIntersecting;
+            
+            if (isFooterVisible) {
+                header.classList.add('-translate-y-full');
+            } 
+            else if (window.scrollY < lastScrollY) {
+                header.classList.remove('-translate-y-full');
+            }
+        }, { threshold: 0 });
+        
+        observer.observe(footerContent);
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY <= 0) {
+                    header.classList.remove('-translate-y-full');
+                } 
+                else if (!isFooterVisible) {
+                    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                        header.classList.add('-translate-y-full');
+                    } 
+                    else if (currentScrollY < lastScrollY) {
+                        header.classList.remove('-translate-y-full');
+                    }
+                }
+                
+                lastScrollY = currentScrollY;
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+}
+
 // Auto-initialize when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadCommonElements);
 } else {
     loadCommonElements();
 }
-
