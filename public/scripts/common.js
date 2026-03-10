@@ -70,13 +70,9 @@ function setupMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
 
     if (menuButton && mobileMenu) {
+        // Toggle menu on button click
         menuButton.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.contains('hidden');
-            if (isHidden) {
-                mobileMenu.classList.remove('hidden');
-            } else {
-                mobileMenu.classList.add('hidden');
-            }
+            mobileMenu.classList.toggle('hidden');
         });
 
         // Close menu when a link inside it is clicked
@@ -85,6 +81,13 @@ function setupMobileMenu() {
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // Close menu automatically when user scrolls the page
+        window.addEventListener('scroll', () => {
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        }, { passive: true });
     }
 }
 
