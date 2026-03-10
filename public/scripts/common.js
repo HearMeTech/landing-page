@@ -199,8 +199,7 @@ function setupSmartHeader() {
             
             if (isFooterVisible) {
                 header.classList.add('-translate-y-full');
-            } 
-            else if (window.scrollY < lastScrollY) {
+            } else if (window.scrollY < lastScrollY && window.scrollY > 0) {
                 header.classList.remove('-translate-y-full');
             }
         }, { threshold: 0 });
@@ -216,11 +215,13 @@ function setupSmartHeader() {
                 if (currentScrollY <= 0) {
                     header.classList.remove('-translate-y-full');
                 } 
-                else if (!isFooterVisible) {
-                    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                else if (currentScrollY > lastScrollY) {
+                    if (currentScrollY > 80 || isFooterVisible) {
                         header.classList.add('-translate-y-full');
-                    } 
-                    else if (currentScrollY < lastScrollY) {
+                    }
+                } 
+                else if (currentScrollY < lastScrollY) {
+                    if (!isFooterVisible) {
                         header.classList.remove('-translate-y-full');
                     }
                 }
