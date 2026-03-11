@@ -9,7 +9,8 @@ const filesToUpdate = [
     path.join(__dirname, 'public', 'index.html'),
     path.join(__dirname, 'public', '404.html'),
     path.join(__dirname, 'public', 'pages', 'waitlist.html'),
-    path.join(__dirname, 'public', 'pages', 'maintenance.html')
+    path.join(__dirname, 'public', 'pages', 'maintenance.html'),
+    path.join(__dirname, 'public', 'pages', 'investors.html'),
 ];
 
 const newVersion = Date.now();
