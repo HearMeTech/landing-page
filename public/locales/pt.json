@@ -184,9 +184,8 @@
     "deck_expertise_title": "A Especialidade",
     "deck_expertise_desc": "Criado por um ex-EPAM Engineering Lead com forte base matemática e mais de 10 anos de experiência, apoiado por uma equipe de especialistas médicos, de negócios e de ML",
     "dataroom_title": "Data Room para Investidores",
-    "dataroom_desc": "Acesse todos os documentos, incluindo Pitch Deck, modelos financeiros e roteiro técnico no Google Drive.",
-    "btn_open": "Abrir",
-    "access_note": "Acesso mediante solicitação"
+    "dataroom_desc": "Acesse nosso conjunto completo de documentos, incluindo o Pitch Deck, modelos financeiros e roteiro técnico no Google Drive. O acesso está disponível sob solicitação.",
+    "btn_open": "Abrir"
   },
   "error404": {
     "meta_title": "HearMe — Página não encontrada",

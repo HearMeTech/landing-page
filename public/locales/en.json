@@ -184,9 +184,8 @@
     "deck_expertise_title": "The Expertise",
     "deck_expertise_desc": "Built by an ex-EPAM Engineering lead with a strong Math background and 10+ years of experience, backed by a team of medical, business, and ML experts",
     "dataroom_title": "Investor Data Room",
-    "dataroom_desc": "Access our full set of documents, including the Pitch Deck, financial models, and technical roadmap on Google Drive.",
-    "btn_open": "Open",
-    "access_note": "Access available upon request"
+    "dataroom_desc": "Access our full set of documents, including the Pitch Deck, financial models, and technical roadmap on Google Drive. Access available upon request.",
+    "btn_open": "Open"
   },
   "error404": {
     "meta_title": "HearMe — Page Not Found",
