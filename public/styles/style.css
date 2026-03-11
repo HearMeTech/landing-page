@@ -397,3 +397,15 @@ html[lang="uk"] #video-uk {
 html[lang="uk"] #video-placeholder { 
     display: none; 
 }
+
+/* =========================================
+   12. Hide Scrollbar (Pitch Deck Slider)
+   ========================================= */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
