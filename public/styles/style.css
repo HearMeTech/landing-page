@@ -377,3 +377,23 @@ html.initial-loading body {
 .flip-card.is-flipped .flip-card-inner {
     transform: rotateY(180deg);
 }
+
+/* =========================================
+   11. Localized Videos (Founder Pitch)
+   ========================================= */
+
+#video-uk { 
+    display: none; 
+}
+
+#video-placeholder { 
+    display: flex; 
+}
+
+html[lang="uk"] #video-uk { 
+    display: block; 
+}
+
+html[lang="uk"] #video-placeholder { 
+    display: none; 
+}
