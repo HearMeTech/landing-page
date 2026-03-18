@@ -7,20 +7,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
-    "lint:html": "htmlhint --config .github/linters/.htmlhintrc \"**/*.html\" --ignore \"public/components/**\"",
-    "lint:css": "stylelint \"**/*.css\"",
-    "lint:js": "eslint \"**/*.js\"",
-    "build": "npm run build:css",
-    "build:css": "npx tailwindcss -i ./src/input.css -o ./public/styles/tailwind.css --minify",
-    "update-version": "node update-version.js",
-    "deploy": "npm run build:css && npm run update-version && firebase deploy"
+    "lint:html": "htmlhint --config .github/linters/.htmlhintrc \"src/**/*.html\" --ignore \"src/components/**\"",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "lint:js": "eslint \"src/**/*.js\" \"build.js\"",
+    "build": "npm run build:js && npm run build:css",
+    "build:css": "tailwindcss -i ./src/styles/input.css -o ./public/css/tailwind.css --minify",
+    "build:js": "node build.js",
+    "deploy": "npm run build && firebase deploy"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HearMeTech/landing-page.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "HearMeTech",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/HearMeTech/landing-page/issues"
@@ -28,6 +28,7 @@
   "homepage": "https://github.com/HearMeTech/landing-page#readme",
   "devDependencies": {
     "@eslint/js": "^9.38.0",
+    "cheerio": "^1.2.0",
     "eslint": "^9.38.0",
     "globals": "^16.4.0",
     "htmlhint": "^1.7.1",
