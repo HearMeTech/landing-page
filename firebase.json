@@ -2,28 +2,45 @@
   "hosting": {
     "public": "public",
     "cleanUrls": true,
+    "trailingSlash": false,
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
+"rewrites": [
       {
-        "source": "/invest",
-        "destination": "/pages/investors.html"
+        "source": "/uk/**",
+        "destination": "/uk/404.html"
       },
       {
-        "source": "/waitlist",
-        "destination": "/pages/waitlist.html"
+        "source": "/de/**",
+        "destination": "/de/404.html"
+      },
+      {
+        "source": "/es/**",
+        "destination": "/es/404.html"
+      },
+      {
+        "source": "/fr/**",
+        "destination": "/fr/404.html"
+      },
+      {
+        "source": "/pt/**",
+        "destination": "/pt/404.html"
+      },
+      {
+        "source": "**",
+        "destination": "/404.html"
       }
     ],
     "headers": [
       {
-        "source": "**/*.@(jpg|jpeg|gif|png|webp|svg|woff|woff2)",
+        "source": "**/*.@(jpg|jpeg|gif|png|webp|svg|ico|woff|woff2|webmanifest)",
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "public, max-age=2592000"
+            "value": "public, max-age=31536000, immutable"
           }
         ]
       },
@@ -32,7 +49,7 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "public, max-age=604800"
+            "value": "public, max-age=31536000, immutable"
           }
         ]
       },

@@ -1,0 +1,86 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="error404.meta_title">HearMe — Page Not Found</title>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hearme.tech/404.html" />
+    
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hearme.tech/404.html">
+    <meta property="og:title" data-i18n="error404.meta_title" content="HearMe — Page Not Found">
+    <meta property="og:description" data-i18n="meta.desc" content="HearMe is a revolutionary AI-powered mobile app that provides personalized speech recognition for individuals with speech impairments.">
+    <meta property="og:image" content="https://hearme.tech/images/og-image.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hearme.tech/404.html">
+    <meta name="twitter:title" data-i18n="error404.meta_title" content="HearMe — Page Not Found">
+    <meta name="twitter:description" data-i18n="meta.desc" content="HearMe is a revolutionary AI-powered mobile app that provides personalized speech recognition for individuals with speech impairments.">
+    <meta name="twitter:image" content="https://hearme.tech/images/og-image.png">
+    <meta name="twitter:domain" content="hearme.tech">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="HearMe Site" />
+    <link rel="manifest" href="/images/site.webmanifest" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNHB9PR6QG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DNHB9PR6QG');
+    </script>
+
+    <link rel="stylesheet" href="/css/tailwind.css?v=1">
+    <link rel="stylesheet" href="/css/style.css?v=1">
+</head>
+
+<body class="font-sans text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- === HEADER === -->
+    <div id="header-placeholder" class="min-h-[72px] md:min-h-[80px] bg-white"></div>
+
+    <!-- === MAIN CONTENT === -->
+    <main class="flex-grow bg-gray-100 flex items-center justify-center p-4 pt-28 pb-28 md:pt-32 md:pb-32">
+        <div class="maintenance-container bg-white p-8 md:p-12 rounded-xl shadow-xl max-w-lg w-full text-center">
+            
+            <svg class="icon-gear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+
+            <h1 class="text-3xl md:text-4xl font-semibold text-gray-800 mb-4" data-i18n="error404.title">Oops! Page Not Found</h1>
+            <p class="text-gray-600 text-lg mb-8" data-i18n="error404.desc">
+                Sorry, we can't seem to find the page you're looking for. 
+                It might have been moved, deleted, or you just mistyped the URL.
+            </p>
+
+            <a href="/" class="inline-block bg-brand-teal text-white px-6 py-3 rounded-full font-semibold hover:bg-brand-teal-dark transition duration-200 shadow-lg" data-i18n="error404.btn_home">
+                Return to Homepage
+            </a>
+
+            <p class="mt-6 text-sm text-gray-500">
+                <span data-i18n="error404.redirect_prefix">Automatic redirect in</span>
+                <span id="redirect-countdown" class="font-bold text-brand-teal mx-1">10</span>
+                <span data-i18n="error404.redirect_suffix">seconds...</span>
+            </p>
+
+        </div>
+    </main>
+    
+    <!-- === FOOTER === -->
+    <div id="footer-placeholder" class="min-h-[300px] bg-brand-navy"></div>
+
+    <!-- Page-specific script -->
+    <script src="/js/common.js?v=1" type="module"></script>
+    <script src="/js/pages/404.js?v=1" type="module"></script>
+</body>
+</html>

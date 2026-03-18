@@ -1,8 +1,12 @@
 User-agent: *
 Allow: /
 
-Disallow: /components/
-Disallow: /pages/maintenance.html
 Disallow: /404.html
+Disallow: /maintenance.html
+Disallow: /uk/404.html
+Disallow: /de/404.html
+Disallow: /es/404.html
+Disallow: /fr/404.html
+Disallow: /pt/404.html
 
 Sitemap: https://hearme.tech/sitemap.xml

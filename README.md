@@ -2,114 +2,115 @@
 [![PR Linter & Preview](https://github.com/HearMeTech/landing-page/actions/workflows/firebase-hosting-pull-request.yml/badge.svg)](https://github.com/HearMeTech/landing-page/actions/workflows/firebase-hosting-pull-request.yml)
 [![Deploy to Live](https://github.com/HearMeTech/landing-page/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://github.com/HearMeTech/landing-page/actions/workflows/firebase-hosting-merge.yml)
 
-This is a simple static website that serves as the official landing page for the **HearMe** project.
+This is the official landing page for the **HearMe** project. 
 
-It is designed to be hosted on the **Firebase Hosting** platform and is built using **Tailwind CSS** (via CLI) for a modern, responsive design.
+It is built as a **Custom Static Site Generator (SSG)** using Node.js to provide lightning-fast performance, flawless Technical SEO, and true internationalization. It is designed to be hosted on **Firebase Hosting** and uses **Tailwind CSS** for styling.
 
 ## **🌟 Key Features**
 
-* **Home Page (`index.html`):** The primary page that introduces visitors to our project, vision, features, and roadmap.
-* **Waitlist Page (`pages/waitlist.html`):** A dedicated page with a form to capture emails, integrated with Firebase Firestore.
-* **Internationalization (i18n):** Client-side translation support. Automatically detects user language, saves preferences, and supports multiple languages (EN, UK, DE, ES, FR, PT).
-* **Automated CI/CD:** GitHub Actions pipeline automatically builds CSS, updates version timestamps (cache-busting), and deploys to Firebase.
-* **Optimized CSS:** Uses Tailwind CLI to generate a minified, production-ready CSS file.
+* **Custom SSG Architecture:** A custom Node.js build script (`build.js`) compiles source files into a production-ready `public/` directory.
+* **True Internationalization (i18n) & SEO:** * Translations are injected at build-time.
+  * Generates physical subdirectories for each language (e.g., `/uk/`, `/de/`) for perfect indexing.
+  * Automatically injects `hreflang` tags and localized `canonical` URLs into the `<head>`.
+* **Smart Routing:** Automatically detects the user's browser language or saved preferences and seamlessly redirects them to the appropriate localized page.
+* **Automated SEO Files:** Dynamically generates `sitemap.xml` (with current build dates for `lastmod`) and `robots.txt` based on the configured languages.
+* **Cache-Busting:** Native asset versioning to ensure users always receive the latest CSS and scripts.
+* **Config-Driven:** A single `config.json` acts as the source of truth for available languages across the entire app.
+* **Automated CI/CD:** GitHub Actions pipeline automatically lints the code, builds the static site, and deploys it to Firebase upon merging.
 
-## **🎨 Styling & CSS**
+## **🛠️ Development Workflow**
 
-We use **Tailwind CSS v3** via CLI.
-
-### **Development Workflow**
-The **GitHub Actions pipeline** handles the production build automatically. However, to see style changes while developing locally, you must run the build command.
-
-1. Make your changes to HTML/JS files or `tailwind.config.js`.
-2. Run the CSS build command to update local styles:
-   ```bash
-   npm run build:css
-   ```
-   *(This generates `public/styles/tailwind.css` based on your changes)*.
-
-## **🛠️ How to Test Locally**
+All development happens inside the `src/` directory. **Never edit files in the `public/` directory manually**, as they are overwritten during the build process.
 
 ### Prerequisites
 
-1. **Node.js and npm:** Required for building CSS and linting.
-2. **Firebase CLI:** `npm install -g firebase-tools`
+1. **Node.js and npm:** Required for the build script and linters.
+2. **Firebase CLI:** `npm install -g firebase-tools` (for local serving and manual deployment).
 
 ### Step 1: Install Dependencies
 
 ```bash
-npm install
+npm ci
 ```
 
-### Step 2: Build CSS
+### Step 2: Build the Project
 
-Before running the server, ensure styles are generated:
+To compile HTML templates, inject translations, generate SEO files, and build Tailwind CSS:
 ```bash
-npm run build:css
+npm run build
 ```
+*(This cleans the `public/` directory and regenerates the entire site from scratch).*
 
-### Step 3: Refresh Caching (Optional)
-
-If you want to test the versioning script locally:
-```bash
-npm run update-version
-```
-
-### Step 4: Run Local Server
+### Step 3: Test Locally
 
 ```bash
-firebase serve
+firebase serve --only hosting
 ```
-Open `http://localhost:5000` to see the site.
+Open `http://localhost:5000` to preview the compiled site.
+
+## **🔍 Code Quality (Linting)**
+
+We strictly enforce code quality using linters for HTML, CSS, and JS. 
+To check your code before committing:
+
+```bash
+npm run lint
+```
+*(The CI/CD pipeline will fail if there are any linting errors).*
 
 ## **🌍 Localization (i18n)**
 
-The project uses a lightweight client-side approach for translations.
+Adding or managing languages is centralized and highly automated.
 
-1.  **JSON Files:** Content is stored in `public/locales/{lang}.json` (e.g., `en.json`, `uk.json`).
-2.  **HTML Attributes:** Elements have `data-i18n="key.path"`.
-    * Example: `<h1 data-i18n="hero.title">Default Text</h1>`
-3.  **Language Detection:** `i18n.js` checks: URL param -> LocalStorage -> Browser -> Default (`en`).
-
-To add a language, create a JSON file in `public/locales/` and update the `<select>` in `header.html`.
+1. **Global Config:** The `config.json` in the root directory holds the `defaultLang` and `supportedLangs` array. 
+2. **Translation Files:** Content is stored in `src/locales/{lang}.json` (e.g., `en.json`, `uk.json`).
+3. **Usage in HTML:** Use the `data-i18n` attribute in your `src/*.html` files:
+   ```html
+   <h1 data-i18n="hero.title">Default Text</h1>
+   ```
+4. **Build Process:** When `npm run build` is executed, it reads `config.json`, iterates through all supported languages, translates the HTML, and generates localized directories in `public/`.
 
 ## **🚀 Deployment**
 
 ### **Automatic (Recommended)**
-Run `npm run lint` to check your code, then simply commit your changes.
+Direct pushes to the `main` branch are restricted. To deploy your changes, please follow the standard Pull Request (PR) workflow:
 
-After merging your changes to `main` branch GitHub Actions will automatically:
-1. Install dependencies.
-2. Build optimized CSS (`npm run build:css`).
-3. Update version timestamps (`npm run update-version`).
-4. Update Sitemap dates to current date.
-5. Deploy to Firebase Hosting.
+1. Create a new branch for your feature or fix.
+2. Commit and push your changes to your branch.
+3. Open a **Pull Request** against the `main` branch. *(This will trigger the PR Linter & Preview workflow to verify your code).*
+4. Once your PR is approved and merged into `main`, the GitHub Actions pipeline will automatically:
+   * Setup the environment and install dependencies (`npm ci`).
+   * Run Linters to ensure code quality (`npm run lint`).
+   * Build the project and generate the `public/` folder (`npm run build`).
+   * Deploy the compiled assets to Firebase Hosting.
 
 ### **Manual (Fallback)**
-To deploy manually from your machine:
-
+If you need to deploy manually from your local machine:
 ```bash
 npm run deploy
 ```
-*This command locally rebuilds CSS, updates the version timestamp, and deploys to Firebase.*
 
 ## **📁 File Structure**
 
-* `.github/`: CI/CD workflows.
-* `src/`: Source files for compilation.
-  * `input.css`: Tailwind entry point (`@tailwind` directives).
-* `public/`: Hosting root (static assets).
-  * `components/`: HTML partials (header, footer).
-  * `locales/`: Translation files (`en.json`, `uk.json`, etc.).
-  * `styles/`:
-    * `tailwind.css`: **Generated** Tailwind styles (do not edit manually).
-    * `style.css`: Custom animations (spinner, etc.).
-  * `scripts/`:
-    * `i18n.js`: Localization logic.
-    * `common.js`, `page-*.js`: Page logic.
-    * `firebase-init.js`: Firebase setup.
-  * `index.html`, `404.html`, `pages/`: Content pages.
-* `tailwind.config.js`: Tailwind configuration (colors, fonts).
-* `firebase.json`: Hosting config (caching rules).
-* `package.json`: Scripts and dependencies.
-* `update-version.js`: Versioning script for cache busting.
+```text
+├── .github/              # CI/CD workflows and linter configs
+├── src/                  # 🛠️ SOURCE FILES (Work Here)
+│   ├── assets/           # Images, icons, manifests
+│   ├── components/       # Reusable HTML partials (header.html, footer.html)
+│   ├── locales/          # Translation dictionaries (*.json)
+│   ├── scripts/          # JavaScript files (common.js, firebase-init.js, etc.)
+│   ├── styles/           # CSS files (input.css, style.css)
+│   ├── index.html        # Main landing page template
+│   ├── invest.html       # Investors page template
+│   ├── waitlist.html     # Waitlist page template
+│   ├── maintenance.html  # Maintenance page template
+│   └── 404.html          # Error page template
+├── public/               # 📦 COMPILED OUTPUT (Generated automatically, do not edit)
+├── build.js              # Custom Static Site Generator script
+├── config.json           # Global configuration (languages, etc.)
+├── tailwind.config.js    # Tailwind CSS configuration
+├── eslint.config.js      # ESLint configuration
+├── .stylelintrc.json     # Stylelint configuration
+├── firebase.json         # Firebase Hosting configuration (rewrites, headers)
+└── package.json          # NPM scripts and dependencies
+```
