@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "HearMe: Reconocimiento de voz por IA para trastornos del habla.",
-    "desc": "HearMe es una app revolucionaria de IA que ofrece reconocimiento de voz personalizado para personas con dificultades del habla."
+    "desc": "HearMe es una app revolucionaria de IA que ofrece reconocimiento de voz personalizado para personas con dificultades del habla.",
+    "ogImageAlt": "Interfaz de la aplicación móvil HearMe - Reconocimiento de voz por IA para personas con problemas del habla"
   },
   "schema": {
     "@context": "https://schema.org",
@@ -12,6 +13,7 @@
         "name": "HearMeTech",
         "url": "https://hearme.tech/",
         "logo": "https://hearme.tech/images/logo-full.png",
+        "image": "https://hearme.tech/images/og-image.png",
         "sameAs": [ "https://www.linkedin.com/company/hearmetech/" ]
       },
       {
@@ -19,6 +21,7 @@
         "@id": "https://hearme.tech/#software",
         "name": "HearMe",
         "alternateName": "App de Reconocimiento de Voz IA HearMe",
+        "image": "https://hearme.tech/images/og-image.png",
         "applicationCategory": "HealthApplication",
         "operatingSystem": "Web, iOS, Android",
         "description": "HearMe es una aplicación móvil revolucionaria impulsada por IA que ofrece reconocimiento de voz personalizado para personas con trastornos del habla.",

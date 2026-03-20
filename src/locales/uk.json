@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "HearMe — ШІ-розпізнавання мовлення для людей із порушеннями мови.",
-    "desc": "HearMe — революційний додаток зі штучним інтелектом, що забезпечує персоналізоване розпізнавання мовлення для людей з порушеннями мови."
+    "desc": "HearMe — революційний додаток зі штучним інтелектом, що забезпечує персоналізоване розпізнавання мовлення для людей з порушеннями мови.",
+    "ogImageAlt": "Інтерфейс мобільного додатка HearMe — штучний інтелект для розпізнавання мовлення людей з порушеннями дикції"
   },
   "schema": {
     "@context": "https://schema.org",
@@ -12,6 +13,7 @@
         "name": "HearMeTech",
         "url": "https://hearme.tech/",
         "logo": "https://hearme.tech/images/logo-full.png",
+        "image": "https://hearme.tech/images/og-image.png",
         "sameAs": [ "https://www.linkedin.com/company/hearmetech/" ]
       },
       {
@@ -19,6 +21,7 @@
         "@id": "https://hearme.tech/#software",
         "name": "HearMe",
         "alternateName": "Додаток HearMe для розпізнавання мовлення",
+        "image": "https://hearme.tech/images/og-image.png",
         "applicationCategory": "HealthApplication",
         "operatingSystem": "Web, iOS, Android",
         "description": "HearMe — це революційний мобільний додаток на базі ШІ, який забезпечує персоналізоване розпізнавання мовлення для людей із порушеннями мови (ДЦП, інсульт, БАС).",

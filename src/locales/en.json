@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "HearMe — AI Speech Recognition for Speech Impairments",
-    "desc": "HearMe is a revolutionary AI-powered mobile app that provides personalized speech recognition for individuals with speech impairments."
+    "desc": "HearMe is a revolutionary AI-powered mobile app that provides personalized speech recognition for individuals with speech impairments.",
+    "ogImageAlt": "HearMe mobile app interface - AI speech recognition for people with speech impairments"
   },
   "schema": {
     "@context": "https://schema.org",
@@ -12,6 +13,7 @@
         "name": "HearMeTech",
         "url": "https://hearme.tech/",
         "logo": "https://hearme.tech/images/logo-full.png",
+        "image": "https://hearme.tech/images/og-image.png",
         "sameAs": [ "https://www.linkedin.com/company/hearmetech/" ]
       },
       {
@@ -19,6 +21,7 @@
         "@id": "https://hearme.tech/#software",
         "name": "HearMe",
         "alternateName": "HearMe AI Speech Recognition App",
+        "image": "https://hearme.tech/images/og-image.png",
         "applicationCategory": "HealthApplication",
         "operatingSystem": "Web, iOS, Android",
         "description": "HearMe is a revolutionary AI-powered mobile app that provides personalized speech recognition for individuals with speech impairments (Cerebral Palsy, stroke, ALS).",

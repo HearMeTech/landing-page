@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "HearMe — KI-Spracherkennung für Menschen mit Sprachbehinderungen.",
-    "desc": "HearMe ist eine revolutionäre KI-App, die personalisierte Spracherkennung für Menschen mit Sprachstörungen bietet."
+    "desc": "HearMe ist eine revolutionäre KI-App, die personalisierte Spracherkennung für Menschen mit Sprachstörungen bietet.",
+    "ogImageAlt": "Benutzeroberfläche der HearMe-App - KI-Spracherkennung für Menschen mit Sprachstörungen"
   },
   "schema": {
     "@context": "https://schema.org",
@@ -12,6 +13,7 @@
         "name": "HearMeTech",
         "url": "https://hearme.tech/",
         "logo": "https://hearme.tech/images/logo-full.png",
+        "image": "https://hearme.tech/images/og-image.png",
         "sameAs": [ "https://www.linkedin.com/company/hearmetech/" ]
       },
       {
@@ -19,6 +21,7 @@
         "@id": "https://hearme.tech/#software",
         "name": "HearMe",
         "alternateName": "HearMe KI-Spracherkennungs-App",
+        "image": "https://hearme.tech/images/og-image.png",
         "applicationCategory": "HealthApplication",
         "operatingSystem": "Web, iOS, Android",
         "description": "HearMe ist eine revolutionäre KI-gestützte mobile App, die personalisierte Spracherkennung für Menschen mit Sprachstörungen (CP, Schlaganfall, ALS) bietet.",
