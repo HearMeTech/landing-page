@@ -24,10 +24,14 @@ const BUILD_VERSION = Date.now();
 // Global App Config from JSON
 const APP_CONFIG = JSON.parse(fs.readFileSync(path.join(__dirname, 'config.json'), 'utf8'));
 const SUPPORTED_LANGS = APP_CONFIG.supportedLangs;
+const SUPPORTED_LANG_CODES = Object.keys(SUPPORTED_LANGS);
 const DEFAULT_LANG = APP_CONFIG.defaultLang;
-const BASE_URL = 'https://hearme.tech';
+
+// DOM Selectors
+const LANG_SWITCHERS = ['#language-switcher', '#language-switcher-mobile'];
 
 // Project Pages & SEO Config
+const BASE_URL = 'https://hearme.tech';
 const PAGES_TO_BUILD = ['index.html', 'invest.html', 'waitlist.html', '404.html'];
 
 const SEO_PAGES = [
@@ -155,9 +159,16 @@ function translateHTML(html, translations, lang, components, pagePath) {
     if (components.header) $('#header-placeholder').replaceWith(components.header);
     if (components.footer) $('#footer-placeholder').replaceWith(components.footer);
 
-    // Remove obsolete SPA scripts
-    $('script[src*="anti-fouc.js"]').remove();
-    $('script[src*="i18n.js"]').remove();
+    // --- Language Switcher ---
+    const optionsHtml = SUPPORTED_LANG_CODES.map(code => {
+        const selected = code === lang ? 'selected' : '';
+        return `<option value="${code}" ${selected}>${SUPPORTED_LANGS[code]}</option>`;
+    }).join('\n                ');
+
+    LANG_SWITCHERS.forEach(selector => {
+        $(selector).html(`\n                ${optionsHtml}\n            `);
+    });
+    // ------------------------
 
     // Update Canonical and Open Graph URLs
     const pageUrl = getPageUrl(lang, pagePath);
@@ -167,7 +178,7 @@ function translateHTML(html, translations, lang, components, pagePath) {
 
     // Inject hreflang alternatives
     let hreflangTags = '\n    \n';
-    SUPPORTED_LANGS.forEach(altLang => {
+    SUPPORTED_LANG_CODES.forEach(altLang => {
         const altUrl = getPageUrl(altLang, pagePath);
         hreflangTags += `    <link rel="alternate" hreflang="${altLang}" href="${altUrl}" />\n`;
     });
@@ -240,7 +251,7 @@ function buildPages() {
             ? fs.readFileSync(path.join(COMPONENTS_DIR, 'footer.html'), 'utf8') : ''
     };
 
-    SUPPORTED_LANGS.forEach(lang => {
+    SUPPORTED_LANG_CODES.forEach(lang => {
         const localePath = path.join(LOCALES_DIR, `${lang}.json`);
         let translations = {};
         
@@ -282,7 +293,7 @@ function generateSEOFiles() {
     let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n`;
 
     SEO_PAGES.forEach(page => {
-        SUPPORTED_LANGS.forEach(lang => {
+        SUPPORTED_LANG_CODES.forEach(lang => {
             const pageUrl = getPageUrl(lang, page.path);
 
             sitemapContent += `  <url>\n`;
@@ -291,7 +302,7 @@ function generateSEOFiles() {
             sitemapContent += `    <changefreq>${page.changefreq}</changefreq>\n`;
             sitemapContent += `    <priority>${page.priority}</priority>\n`;
             
-            SUPPORTED_LANGS.forEach(altLang => {
+            SUPPORTED_LANG_CODES.forEach(altLang => {
                 const altUrl = getPageUrl(altLang, page.path);
                 sitemapContent += `    <xhtml:link rel="alternate" hreflang="${altLang}" href="${altUrl}" />\n`;
             });
@@ -307,7 +318,7 @@ function generateSEOFiles() {
 
     // Generate robots.txt
     const baseDisallowRules = ROBOTS_DISALLOW_PATHS.map(path => `Disallow: ${path}`).join('\n');
-    const localized404Rules = SUPPORTED_LANGS
+    const localized404Rules = SUPPORTED_LANG_CODES
         .filter(lang => lang !== DEFAULT_LANG)
         .map(lang => `Disallow: /${lang}/404.html`)
         .join('\n');

@@ -13,6 +13,8 @@
     "build": "npm run build:js && npm run build:css",
     "build:css": "BROWSERSLIST_IGNORE_OLD_DATA=true tailwindcss -i ./src/styles/input.css -o ./public/css/tailwind.css --minify",
     "build:js": "node build.js",
+    "serve": "firebase serve --only hosting",
+    "dev": "npm run build && npm run serve",
     "deploy": "npm run build && firebase deploy"
   },
   "repository": {

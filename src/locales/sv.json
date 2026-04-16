@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "title": "HearMe — AI-röstigenkänning för talsvårigheter",
+    "desc": "HearMe är en revolutionerande AI-driven mobilapp som erbjuder personlig röstigenkänning för personer med talsvårigheter.",
+    "ogImageAlt": "HearMe mobilapps gränssnitt - AI-röstigenkänning för personer med talsvårigheter"
+  },
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://hearme.tech/#organization",
+        "name": "HearMeTech",
+        "url": "https://hearme.tech/",
+        "logo": "https://hearme.tech/images/logo-full.png",
+        "image": "https://hearme.tech/images/og-image.png",
+        "sameAs": [ "https://www.linkedin.com/company/hearmetech/" ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://hearme.tech/#software",
+        "name": "HearMe",
+        "alternateName": "HearMe AI röstigenkänningsapp",
+        "image": "https://hearme.tech/images/og-image.png",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "description": "HearMe är en revolutionerande AI-driven mobilapp som erbjuder personlig röstigenkänning för personer med talsvårigheter (cerebral pares, stroke, ALS).",
+        "url": "https://hearme.tech/",
+        "installUrl": "https://alpha.hearme.tech",
+        "releaseNotes": "https://hearme.tech/#roadmap",
+        "publisher": { "@id": "https://hearme.tech/#organization" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "1" },
+        "offers": [
+          { "@type": "Offer", "name": "Basplan", "description": "Gratis plan med grundläggande funktioner.", "price": "0", "priceCurrency": "SEK", "availability": "https://schema.org/InStock" },
+          { "@type": "Offer", "name": "Fullständig plan", "description": "Månadsprenumeration efter en månads gratis provperiod.", "price": "229", "priceCurrency": "SEK", "availability": "https://schema.org/InStock" }
+        ],
+        "featureList": [
+          "Personlig AI-röstmodell",
+          "Röstigenkänning i realtid",
+          "Röst- och textutmatning",
+          "Snabböversättning",
+          "Säker Firebase-autentisering"
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Maksym Trineiev",
+        "jobTitle": "Grundare & VD",
+        "description": "Programvaruarkitekt och ML-specialist som leder produktstrategi och FoU för assisterande teknik.",
+        "url": "https://hearme.tech/",
+        "sameAs": ["https://www.linkedin.com/in/trineiev/"],
+        "worksFor": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Irina Oleynikova",
+        "jobTitle": "Medicinsk rådgivare",
+        "description": "Tidigare allmänläkare med expertis inom klinisk medicin och geriatrisk vård, säkerställer medicinsk noggrannhet i AI-algoritmer.",
+        "sameAs": ["https://www.linkedin.com/in/irina-oleynikova/"],
+        "affiliation": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Mykhailo Tkachenko",
+        "jobTitle": "Affärsrådgivare",
+        "description": "Rådgivare inom SaaS-skalning och affärsstrategi för internationella marknader.",
+        "sameAs": ["https://www.linkedin.com/in/mykhailo-tkachenko/"],
+        "affiliation": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Vitalii Rybalko",
+        "jobTitle": "Teknik- & ML-rådgivare",
+        "description": "Expert på AI-arkitektur som ger råd om röstigenkänningsmodeller med låg latens.",
+        "sameAs": ["https://www.linkedin.com/in/vitalii-rybalko/"],
+        "affiliation": { "@id": "https://hearme.tech/#organization" }
+      }
+    ]
+  },
+  "nav": {
+    "features": "Funktioner",
+    "howItWorks": "Så fungerar det",
+    "pricing": "Priser",
+    "roadmap": "Färdplan",
+    "values": "Vår kultur",
+    "team": "Vårt team",
+    "investors": "Investerare",
+    "contact": "Kontakta oss"
+  },
+  "hero": {
+    "title": "Din röst. Dina ord.<br><span class='text-brand-teal'>Äntligen förstådd.</span>",
+    "subtitle": "<b>HearMe</b> är en revolutionerande AI-app som lär sig dina unika talmönster, vilket ger dig kraften att kommunicera tydligt och med självförtroende.",
+    "cta": "Starta appen"
+  },
+  "features": {
+    "title": "Stärker din kommunikation",
+    "subtitle": "Designad för personer med talsvårigheter orsakade av cerebral pares, stroke eller ALS. <b>HearMe</b> kombinerar avancerad AI med ett intuitivt gränssnitt.",
+    "personal_title": "Personlig AI-modell",
+    "personal_desc": "Appen tränas på <b>dina</b> specifika talmönster med avancerad maskininlärning och blir mer exakt för varje användning.",
+    "recognition_title": "Iigenkänning i realtid",
+    "recognition_desc": "Vår AI transkriberar omedelbart ditt tal till text med låg latens, vilket möjliggör smidiga och naturliga konversationer.",
+    "output_title": "Röst- och textutmatning",
+    "output_desc": "Spela upp din fras högt med tydlig syntes, kopiera texten till urklipp eller skicka den direkt до andra appar.",
+    "fallback_title": "Smart reservlösning",
+    "fallback_desc": "Osäker igenkänning? Välj direkt en sparad fras på skärmen. Tala, kopiera eller dela den smidigt — precis som röstinmatning.",
+    "translation_title": "Snabböversättning",
+    "translation_desc": "Bryt språkbarriärer. Översätt omedelbart dina tankar för att kommunicera på de vanligaste utländska språken.",
+    "secure_title": "Säker och privat",
+    "secure_desc": "Din röst är din egen. Vi tillämpar samma nivå av kryptering och säkerhet som används av moderna bankappar."
+  },
+  "howItWorks": {
+    "title": "Din resa till tydligt tal",
+    "subtitle": "Det är enkelt att komma igång. Vår steg-för-steg-process säkerställer att AI:n anpassar sig до dig omedelbart.",
+    "step1_title": "Starta webbappen",
+    "step1_desc": "Inga nedladdningar krävs. Öppna helt enkelt <a href='https://alpha.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> direkt i din webbläsare på valfri enhet.",
+    "step2_title": "Grundläggande träning (Alfa)",
+    "step2_desc": "Träna 5 fördefinierade fraser genom att spela in flera röstprover för varje. Detta bygger en robust basmodell anpassad specifikt efter ditt tal.",
+    "step3_badge": "Kommer snart",
+    "step3_title": "Utöka ordförrådet",
+    "step3_desc": "I den fullständiga versionen kommer du att kunna lägga till egna fraser, vilket gör AI:n smartare och mer personlig.",
+    "step4_title": "Tala fritt",
+    "step4_desc": "Använd appen för att tala åt dig i realtid. Oavsett om det är text-till-tal eller textvisning, blir din röst äntligen förstådd."
+  },
+  "pricing": {
+    "title": "Prissättning",
+    "subtitle": "Välj den plan som passar dina behov. Börja gratis och uppgradera när du växer.",
+    "basic_title": "Bas",
+    "free_forever": "Gratis <span class='text-base font-normal text-gray-400'>/ för alltid</span>",
+    "basic_desc": "Perfekt för att komma igång med viktiga kommunikationsverktyg.",
+    "full_title": "Fullständig",
+    "full_price": "229 kr <span class='text-base font-normal text-gray-400'>/ månad</span>",
+    "full_desc": "Lås upp den fulla kraften av personlig AI-röstigenkänning.",
+    "coming_soon": "Kommer snart",
+    "cta_launch": "Starta appen",
+    "cta_waitlist": "Gå med i väntelistan",
+    "notify_text": "Få ett meddelande när den fullständiga versionen blir tillgänglig.",
+    "feat_library": "Viktiga förinställda fraser",
+    "feat_actions": "Tala, kopiera och dela utmatning",
+    "feat_langs": "Fullt stöd för 6 språk",
+    "feat_everything": "<b>Allt i Bas</b>",
+    "feat_custom": "Skapa och träna egna fraser",
+    "feat_model": "Fullständig träning av personlig AI-modell",
+    "feat_support": "Prioriterad support",
+    "feat_roadmap": "Tillgång till alla <a href='#roadmap' class='border-b border-gray-400 hover:border-brand-teal hover:text-brand-teal transition duration-200'>funktioner i färdplanen</a>"
+  },
+  "roadmap": {
+    "title": "HearMes framtid",
+    "subtitle": "Vårt uppdrag sträcker sig bortom skärmar. Vi arbetar för att integrera <b>HearMe</b> i alla delar av ditt liv.",
+    "item1_title": "Röstsamtal i appen",
+    "item1_desc": "Ring kristallklara samtal direkt i <b>HearMe</b>-appen. Vår AI ser до att din röst hörs perfekt hos mottagaren.",
+    "item2_title": "Tangentbordsintegration",
+    "item2_desc": "Använd din personliga röstmodell för att diktera text i vilken app som helst, direkt från systemets tangentbord.",
+    "item3_title": "Integration med röstassistenter",
+    "item3_desc": "Förbättra Siri eller Google Assistant med din personliga <b>HearMe</b>-modell. Styr ditt smarta hem på ett tillförlitligt sätt.",
+    "item4_title": "Personlig offline-översättare",
+    "item4_desc": "En framtida bärbar enhet som fungerar helt offline. Den förmedlar dina ord tydligt på alla språk, var du än är."
+  },
+  "culture": {
+    "title": "Vår kulturkod",
+    "subtitle": "Vi vägleds av <b>HEAR</b>-ramverket: fyra kärnvärden som driver vårt uppdrag att ge alla en röst.",
+    "val_h_title": "Ärlighet (Honesty)",
+    "val_h_li1": "<b>Mot användare:</b> vi är öppna med hur нашої AI fungerar, dess möjligheter och dess begränsningar.",
+    "val_h_li2": "<b>Inom teamet:</b> vi bygger en kultur av öppen feedback där den bästa idén vinner.",
+    "val_h_li3": "<b>Mot investerare:</b> vi kommunicerar ärligt om våra utmaningar, precis som om våra framgångar.",
+    "val_e_title": "Empati (Empathy)",
+    "val_e_li1": "<b>För våra kunder:</b> vi arbetar med en sårbar målgrupp där varje ord räknas.",
+    "val_e_li2": "<b>För våra partners:</b> de hjälper oss att skala vår påverkan och göra världen bättre.",
+    "val_e_li3": "<b>För våra kollegor:</b> de bästa idéerna föds i en atmosfär av ömsesidig respekt.",
+    "val_a_title": "Ambition (Ambition)",
+    "val_a_li1": "<b>För produktkvalitet:</b> vi kompromissar aldrig när det gäller precision och användarupplevelse.",
+    "val_a_li2": "<b>För lärande:</b> AI-fältet utvecklas snabbt, och vi strävar efter att alltid ligga steget före.",
+    "val_a_li3": "<b>För innovation:</b> vi tar oss an extrema utmaningar för att flytta gränserna för talteknologi.",
+    "val_r_title": "Ansvar (Responsibility)",
+    "val_r_li1": "<b>För integritet:</b> det absoluta skyddet av våra användares röstdata är vår högsta prioritet.",
+    "val_r_li2": "<b>För tillgänglighet:</b> vi bygger en produkt som måste fungera felfritt för alla, oavsett omständigheter.",
+    "val_r_li3": "<b>För resultat:</b> vi inser att en persons förmåga att kommunicera beror på vårt arbete."
+  },
+  "team": {
+    "title": "Team & rådgivare",
+    "subtitle": "HearMe backas upp av ett team av experter inom maskininlärning, medicin och affärer, förenade av ett mål — att ge alla en röst.",
+    "founder_name": "Maksym Trineiev",
+    "founder_role": "Grundare & VD",
+    "founder_bio": "Med djup expertis som programvaruarkitekt och ML-specialist leder Maksym produktstrategi och FoU. Hans fokus är att förena avancerad AI med assisterande teknik.",
+    "advisor_med_name": "Irina Oleynikova",
+    "advisor_med_role": "Medicinsk rådgivare",
+    "advisor_med_bio": "Med sin bakgrund som allmänläkare säkerställer Irina att våra algoritmer möter de medicinska behoven hos användare med talsvårigheter.",
+    "advisor_biz_name": "Mykhailo Tkachenko",
+    "advisor_biz_role": "Affärsrådgivare",
+    "advisor_biz_bio": "Specialiserad på SaaS-skalning och affärsstrategi hjälper Mykhailo HearMe att bygga en hållbar modell för internationell expansion.",
+    "advisor_tech_name": "Vitalii Rybalko",
+    "advisor_tech_role": "Teknik- & ML-rådgivare",
+    "advisor_tech_bio": "Med mångårig erfarenhet inom AI-arkitektur ger Vitalii råd om optimering av maskininlärningsmodeller для röstigenkänning i realtid."
+  },
+  "contact": {
+    "title": "Kontakta oss",
+    "subtitle": "Har du frågor eller förslag? Vi vill gärna höra från dig.",
+    "placeholder_name": "Ditt namn",
+    "placeholder_email": "Din e-post",
+    "placeholder_message": "Hur kan vi hjälpa till?",
+    "btn_send": "Skicka meddelande",
+    "success_title": "Meddelande skickat!",
+    "success_desc": "Tack för att du hörde av dig. Vi återkommer inom kort.",
+    "error_generic": "Misslyckades att skicka meddelandet. Kontrollera din anslutning.",
+    "btn_sending": "Skickar...",
+    "btn_new": "Skicka ett nytt meddelande"
+  },
+  "waitlist": {
+    "meta_title": "HearMe — Gå med i väntelistan",
+    "meta_desc": "Gå med i väntelistan för HearMe, en revolutionerande AI-driven mobilapp för personlig röstigenkänning.",
+    "title": "Gå med i väntelistan",
+    "subtitle": "Bli en av de första att uppleva personlig röstigenkänning. <br class='hidden md:inline'> Registrera dig för tidig åtkomst.",
+    "name_placeholder": "Ditt namn (valfritt)",
+    "email_placeholder": "Ange din e-postadress",
+    "comment_placeholder": "Önskemål eller kommentarer? (valfritt)",
+    "btn_join": "Gå med nu",
+    "btn_joining": "Går med...",
+    "privacy": "Vi respekterar din integritet. Ingen skräppost, någonsin.",
+    "success_title": "Du är med på listan!",
+    "success_desc": "Tack för att du valt <b>HearMe</b>. Vi hör av oss snart med din inbjudan.",
+    "btn_back": "Tillbaka до startsidan",
+    "error_title": "Något gick fel"
+  },
+  "footer": {
+      "desc": "Ger alla kraften att bli hörda.",
+      "product": "Produkt",
+      "about": "Om oss",
+      "connect": "Kontakt",
+      "rights": "Med ensamrätt."
+  },
+  "maintenance": {
+    "meta_title": "HearMe — Underhåll pågår",
+    "title": "Vi är snart tillbaka!",
+    "desc": "Vi utför planerat underhåll för att förbättra vår webbplats. Vi är snart online igen.",
+    "returning_in": "Återvänder om:",
+    "signature": "<b>HearMe</b> — Teamet"
+  },
+  "investors": {
+    "meta_title": "HearMe — Investerarrelationer",
+    "meta_desc": "Investera i framtidens tillgängliga tal. HearMe söker Pre-seed för att påskynda FoU och marknadsexpansion.",
+    "title": "Investera i <span class='text-brand-teal'>Framtidens Röst</span>",
+    "subtitle": "Vi söker Pre-seed-investeringar för att accelerera FoU och expandera vår AI-teknik до Ukraina, Europa och USA.",
+    "video_title": "Hälsning från grundaren",
+    "video_desc": "En kort översikt over HearMes mål, vårt uppdrag och varför det är rätt tid att investera nu.",
+    "video_placeholder": "Engelsk videopresentation kommer snart...",
+    "deck_title": "Höjdpunkter från Pitch Deck",
+    "deck_mission_title": "Uppdraget",
+    "deck_mission_desc": "70 miljoner människor lever i 'tyst isolering' på grund av talsvårigheter. Vi återställer deras mänskliga rättighet att bli förstådda.",
+    "deck_problem_title": "Problemet",
+    "deck_problem_b1": "Big Tech (Siri/Alexa) misslyckas med atypiska röster",
+    "deck_problem_b2": "Befintliga verktyg är dyra ($5k+), integritetskränkande eller långsamma",
+    "deck_solution_title": "Lösningen",
+    "deck_solution_desc": "Edge AI-mobilapp som översätter atypiskt tal i realtid",
+    "deck_solution_b1": "Total integritet",
+    "deck_solution_b2": "Noll latens",
+    "deck_market_title": "Marknadsvalidering",
+    "deck_market_b1": "10+ djupintervjuer",
+    "deck_market_b2": "3 aktiva testanvändare som bidrar med data",
+    "deck_market_b3": "Organiska leads med $0 i marknadsföringskostnad",
+    "deck_expertise_title": "Expertisen",
+    "deck_expertise_desc": "Byggt av en tidigare EPAM Engineering Lead med stark matematisk bakgrund, stödd av medicinska och ML-experter.",
+    "dataroom_title": "Investerardatarum",
+    "dataroom_desc": "Få tillgång до fullständig dokumentation via Google Drive. Åtkomst ges på begäran.",
+    "btn_open": "Öppna"
+  },
+  "error404": {
+    "meta_title": "HearMe — Sidan hittades inte",
+    "title": "Hoppsan! Sidan hittades inte",
+    "desc": "Tyvärr kan vi inte hitta sidan du letar efter. Den kan ha flyttats або raderats.",
+    "btn_home": "Tillbaka до startsidan",
+    "redirect_prefix": "Automatisk omdirigering om",
+    "redirect_suffix": "sekunder..."
+  }
+}

@@ -1,4 +1,12 @@
 {
   "defaultLang": "en",
-  "supportedLangs": ["en", "uk", "de", "es", "fr", "pt"]
+  "supportedLangs": {
+    "en": "English",
+    "uk": "Українська",
+    "de": "Deutsch",
+    "es": "Español",
+    "fr": "Français",
+    "pt": "Português",
+    "sv": "Svenska"
+  }
 }

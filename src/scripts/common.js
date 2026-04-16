@@ -1,7 +1,7 @@
 // public/js/common.js
 
 // Dynamically create a regex to match language prefixes in URLs (e.g., /uk/, /de/, etc.)
-const altLangs = window.APP_CONFIG.supportedLangs.filter(lang => lang !== window.APP_CONFIG.defaultLang);
+const altLangs = Object.keys(window.APP_CONFIG.supportedLangs).filter(lang => lang !== window.APP_CONFIG.defaultLang);
 window.APP_CONFIG.langPrefixRegex = new RegExp(`^\\/(${altLangs.join('|')})(\\/|$)`);
 
 /**
@@ -21,7 +21,7 @@ window.APP_CONFIG.langPrefixRegex = new RegExp(`^\\/(${altLangs.join('|')})(\\/|
 
     if (!targetLang) {
         const browserLang = (navigator.language || navigator.userLanguage || '').split('-')[0].toLowerCase();
-        targetLang = window.APP_CONFIG.supportedLangs.includes(browserLang) ? browserLang : window.APP_CONFIG.defaultLang;
+        targetLang = Object.keys(window.APP_CONFIG.supportedLangs).includes(browserLang) ? browserLang : window.APP_CONFIG.defaultLang;
         localStorage.setItem('app_lang', targetLang);
     }
 
