@@ -125,14 +125,14 @@
   "roadmap": {
     "title": "O Futuro do HearMe",
     "subtitle": "Nossa missão vai além das telas. Trabalhamos para integrar o <b>HearMe</b> em sua vida, removendo barreiras.",
-    "item1_title": "Chamadas no App",
-    "item1_desc": "Faça chamadas nítidas direto no <b>HearMe</b>. Conecte-se com amigos e família; nossa IA garante que você seja ouvido.",
-    "item2_title": "Integração de Teclado",
-    "item2_desc": "Use seu modelo de voz personalizado para ditar texto em qualquer app diretamente do teclado do sistema.",
-    "item3_title": "Assistentes de Voz",
-    "item3_desc": "Melhore a Siri ou Google Assistant com seu modelo <b>HearMe</b>. Controle sua casa inteligente de forma confiável.",
-    "item4_title": "Tradutor Pessoal Offline",
-    "item4_desc": "Um futuro dispositivo vestível totalmente offline. Ele fala suas palavras claramente em qualquer idioma."
+    "item1_title": "Integração de Teclado",
+    "item1_desc": "Use seu modelo de voz personalizado para ditar texto em qualquer app diretamente do teclado do sistema.",
+    "item2_title": "Chamadas no App",
+    "item2_desc": "Faça chamadas nítidas direto no <b>HearMe</b>. Conecte-se com amigos e família; nossa IA garante que você seja ouvido.",
+    "item3_title": "API B2B para Empresas",
+    "item3_desc": "Lançamento de uma API segura e de alto desempenho que permite a serviços de terceiros – como assistentes de voz bancários, bots de atendimento ao cliente e dispositivos inteligentes – reconhecer e integrar com precisão padrõees de fala atípicos.",
+    "item4_title": "Assistentes de Voz",
+    "item4_desc": "Melhore a Siri ou Google Assistant com seu modelo <b>HearMe</b>. Controle sua casa inteligente de forma confiável."
   },
   "culture": {
     "title": "Nosso Código Cultural",

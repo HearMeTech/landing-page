@@ -125,14 +125,14 @@
   "roadmap": {
     "title": "Die Zukunft von HearMe",
     "subtitle": "Wir wollen mehr. Wir integrieren <b>HearMe</b> in deinen Alltag, um Barrieren digital und physisch abzubauen.",
-    "item1_title": "In-App Anrufe",
-    "item1_desc": "Führe klare Anrufe direkt in der <b>HearMe</b> App. Verbinde dich mühelos mit Freunden – unsere KI sorgt für Verständlichkeit.",
-    "item2_title": "Tastatur-Integration",
-    "item2_desc": "Nutze dein Sprachmodell, um Text in jeder beliebigen App direkt über die Systemtastatur zu diktieren.",
-    "item3_title": "Sprachassistenten",
-    "item3_desc": "Optimiere Siri oder Google Assistant mit deinem <b>HearMe</b> Modell. Steuere dein Smart Home zuverlässig mit deiner Stimme.",
-    "item4_title": "Offline-Übersetzer",
-    "item4_desc": "Ein zukünftiges Wearable, das komplett offline funktioniert. Es spricht deine Worte klar aus – überall."
+    "item1_title": "Tastatur-Integration",
+    "item1_desc": "Nutze dein Sprachmodell, um Text in jeder beliebigen App direkt über die Systemtastatur zu diktieren.",
+    "item2_title": "In-App Anrufe",
+    "item2_desc": "Führe klare Anrufe direkt in der <b>HearMe</b> App. Verbinde dich mühelos mit Freunden – unsere KI sorgt für Verständlichkeit.",
+    "item3_title": "Enterprise B2B API",
+    "item3_desc": "Einführung einer sicheren, leistungsstarken API, die es Drittanbieter-Diensten – wie Banken-Sprachassistenten, Kundenservice-Bots und Smart-Geräten – ermöglicht, atypische Sprachmuster präzise zu erkennen und zu integrieren.",
+    "item4_title": "Sprachassistenten",
+    "item4_desc": "Optimiere Siri oder Google Assistant mit deinem <b>HearMe</b> Modell. Steuere dein Smart Home zuverlässig mit deiner Stimme."
   },
   "culture": {
     "title": "Unser Kulturkodex",

@@ -146,14 +146,14 @@
   "roadmap": {
     "title": "The Future of HearMe",
     "subtitle": "Our mission goes beyond screens. We are working to integrate <b>HearMe</b> into every aspect of your life, removing barriers in both the digital and physical worlds.",
-    "item1_title": "In-App Voice Calls",
-    "item1_desc": "Make crystal-clear calls directly within the <b>HearMe</b> app. Connect with friends and family effortlessly, with our AI ensuring your voice is heard perfectly on the other end.",
-    "item2_title": "Keyboard Integration",
-    "item2_desc": "Use your personalized voice model to dictate text in any app, directly from your system keyboard.",
-    "item3_title": "Voice Assistant Integration",
-    "item3_desc": "Enhance Siri or Google Assistant with your personalized <b>HearMe</b> model. Control your smart home and devices reliably using the assistants you already know.",
-    "item4_title": "Offline Personal Translator",
-    "item4_desc": "A future wearable device that works entirely offline. It speaks your words clearly in any language, serving as your personal voice bridge—speech-to-speech, anywhere."
+    "item1_title": "Keyboard Integration",
+    "item1_desc": "Use your personalized voice model to dictate text in any app, directly from your system keyboard.",
+    "item2_title": "In-App Voice Calls",
+    "item2_desc": "Make crystal-clear calls directly within the <b>HearMe</b> app. Connect with friends and family effortlessly, with our AI ensuring your voice is heard perfectly on the other end.",
+    "item3_title": "Enterprise B2B API",
+    "item3_desc": "Launch of a secure, high-performance API enabling third-party services — such as banking voice assistants, customer service bots, and smart devices — to accurately recognize and integrate atypical speech patterns.",
+    "item4_title": "Voice Assistant Integration",
+    "item4_desc": "Enhance Siri or Google Assistant with your personalized <b>HearMe</b> model. Control your smart home and devices reliably using the assistants you already know."
   },
   "culture": {
     "title": "Our Cultural Code",

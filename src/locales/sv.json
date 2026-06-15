@@ -146,14 +146,14 @@
   "roadmap": {
     "title": "HearMes framtid",
     "subtitle": "Vårt uppdrag sträcker sig bortom skärmar. Vi arbetar för att integrera <b>HearMe</b> i alla delar av ditt liv.",
-    "item1_title": "Röstsamtal i appen",
-    "item1_desc": "Ring kristallklara samtal direkt i <b>HearMe</b>-appen. Vår AI ser до att din röst hörs perfekt hos mottagaren.",
-    "item2_title": "Tangentbordsintegration",
-    "item2_desc": "Använd din personliga röstmodell för att diktera text i vilken app som helst, direkt från systemets tangentbord.",
-    "item3_title": "Integration med röstassistenter",
-    "item3_desc": "Förbättra Siri eller Google Assistant med din personliga <b>HearMe</b>-modell. Styr ditt smarta hem på ett tillförlitligt sätt.",
-    "item4_title": "Personlig offline-översättare",
-    "item4_desc": "En framtida bärbar enhet som fungerar helt offline. Den förmedlar dina ord tydligt på alla språk, var du än är."
+    "item1_title": "Tangentbordsintegration",
+    "item1_desc": "Använd din personliga röstmodell för att diktera text i vilken app som helst, direkt från systemets tangentbord.",
+    "item2_title": "Röstsamtal i appen",
+    "item2_desc": "Ring kristallklara samtal direkt i <b>HearMe</b>-appen. Vår AI ser до att din röst hörs perfekt hos mottagaren.",
+    "item3_title": "Enterprise B2B API",
+    "item3_desc": "Lansering av ett säkert och högpresterande API som gör det möjligt för tredjepartstjänster – såsom bankröstassistenter, kundtjänstbottar och smarta enheter – att exakt känna igen och integrera atypiska talmönster.",
+    "item4_title": "Integration med röstassistenter",
+    "item4_desc": "Förbättra Siri eller Google Assistant med din personliga <b>HearMe</b>-modell. Styr ditt smarta hem på ett tillförlitligt sätt."
   },
   "culture": {
     "title": "Vår kulturkod",
