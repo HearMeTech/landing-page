@@ -204,6 +204,8 @@ function translateHTML(html, translations, lang, components, pagePath) {
                 $(el).attr('content', text);
             } else if (tagName === 'title') {
                 $(el).text(text);
+            } else if (tagName === 'iframe') {
+                $(el).attr('src', text);
             } else if (tagName === 'script') {
                 $(el).html(typeof text === 'object' ? JSON.stringify(text, null, 2) : text);
             } else {
