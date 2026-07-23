@@ -85,12 +85,14 @@
     "values": "Nossa cultura",
     "team": "Equipa",
     "investors": "Investidores",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "testing": "Testes Alpha"
   },
   "hero": {
     "title": "Sua voz. Suas palavras.<br><span class='text-brand-teal'>Finalmente compreendidas.</span>",
     "subtitle": "O <b>HearMe</b> é uma aplicação de IA revolucionária que aprende os seus padrões de fala únicos, capacitando-o a comunicar de forma clara e confiante.",
-    "cta": "Experimentar o HearMe"
+    "cta": "Experimentar o HearMe",
+    "testing_btn": "Tornar-se um testador"
   },
   "features": {
     "title": "Comunicação sem barreiras",
@@ -202,6 +204,12 @@
     "advisor_4_role": "Consultor de Tecnologia e ML",
     "advisor_4_bio": "Com uma sólida trajetória em arquitetura de IA, o Vitalii assessora a equipa na otimização de modelos complexos de Machine Learning para garantir um reconhecimento de voz com latência ultrabaixa."
   },
+  "test_section": {
+    "badge": "Alpha Aberto",
+    "title": "Ajude-nos a dar voz a todos",
+    "desc": "Junte-se aos testes dos nossos novos modelos de IA. Dê a sua opinião sobre a precisão do reconhecimento de voz e obtenha acesso premium vitalício à aplicação HearMe de forma totalmente gratuita.",
+    "btn": "Saber mais e aderir"
+  },
   "contact": {
     "title": "Entre em contacto",
     "subtitle": "Tem dúvidas ou sugestões? Adoraríamos ouvi-lo.",
@@ -273,6 +281,28 @@
     "dataroom_title": "Investor Data Room",
     "dataroom_desc": "Aceda ao nosso conjunto completo de documentos no Google Drive, incluindo o Pitch Deck, modelos financeiros e plano de desenvolvimento técnico. Disponível mediante pedido.",
     "btn_open": "Abrir"
+  },
+  "testing": {
+    "meta_title": "HearMe — Testes Alpha",
+    "meta_desc": "Participe dos testes alpha abertos do HearMe. Ajude-nos a melhorar o nosso reconhecimento de voz com IA e obtenha acesso premium vitalício.",
+    "hero_title": "Participe dos <span class=\"text-teal-600\">Testes Alpha</span> abertos do HearMe",
+    "hero_subtitle": "Estamos a criar tecnologia que ajuda pessoas com paralisia cerebral, sequelas de AVC e outros desafios de fala a comunicarem de forma mais livre. Junte-se aos testes da nossa primeira versão web (PWA) e ajude-nos a melhorar os nossos algoritmos de reconhecimento de voz individual.",
+    "benefits_title": "O que recebe como testador",
+    "benefit_1_title": "Acesso gratuito vitalício",
+    "benefit_1_desc": "Todos os participantes ativos que partilharem feedback receberão acesso premium gratuito às futuras aplicações nativas para sempre após o lançamento oficial.",
+    "benefit_2_title": "Acesso antecipado",
+    "benefit_2_desc": "Pode configurar hoje mesmo as suas primeiras frases do dia a dia ou frases personalizadas adaptadas às especificidades da sua voz.",
+    "benefit_3_title": "Segurança e Privacidade",
+    "benefit_3_desc": "Recolhemos dados mínimos (apenas conta Google ou e-mail). As suas amostras de voz são usadas exclusivamente para treinar o seu modelo pessoal e podem ser apagadas a qualquer momento a pedido.",
+    "steps_title": "Apenas 3 passos simples",
+    "step_1_title": "Preencha o formulário",
+    "step_1_desc": "Clique no botão abaixo e responda a um breve questionário no Google Forms (demora cerca de 3 minutos).",
+    "step_2_title": "Obtenha a ligação",
+    "step_2_desc": "Enviaremos instruções sobre como instalar a aplicação PWA para o seu e-mail assim que o seu pedido for processado.",
+    "step_3_title": "Treine a IA e comunique",
+    "step_3_desc": "Grave frases, verifique a precisão do reconhecimento, desfrute de todos os benefícios e ajude-nos a melhorar.",
+    "cta_button": "Tornar-se um testador HearMe",
+    "form_url": "https://forms.gle/4PLdFytNjGW52muB9"
   },
   "error404": {
     "meta_title": "HearMe — Página não encontrada",

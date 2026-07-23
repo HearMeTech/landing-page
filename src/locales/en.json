@@ -85,12 +85,14 @@
     "values": "Our Culture",
     "team": "Our Team",
     "investors": "Investors",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "testing": "Alpha Testing"
   },
   "hero": {
     "title": "Your Voice. Your Words.<br><span class='text-brand-teal'>Finally Understood.</span>",
     "subtitle": "<b>HearMe</b> is a revolutionary AI app that learns your unique speech patterns, empowering you to communicate clearly and confidently.",
-    "cta": "Launch App"
+    "cta": "Launch App",
+    "testing_btn": "Become a Tester"
   },
   "features": {
     "title": "Empowering Seamless Communication",
@@ -202,6 +204,12 @@
     "advisor_4_role": "Technology & ML Advisor",
     "advisor_4_bio": "Bringing deep experience in AI architecture, Vitalii advises the team on optimizing complex Machine Learning models to guarantee ultra-low-latency speech recognition."
   },
+  "test_section": {
+    "badge": "Open Alpha",
+    "title": "Help Us Give Voice to Everyone",
+    "desc": "Join the testing of our new AI models. Provide feedback on speech recognition accuracy and get lifetime premium access to the HearMe app absolutely free.",
+    "btn": "Learn More & Join"
+  },
   "contact": {
     "title": "Get in Touch",
     "subtitle": "Have questions or suggestions? We'd love to hear from you.",
@@ -273,6 +281,28 @@
     "dataroom_title": "Investor Data Room",
     "dataroom_desc": "Access our full suite of documents, including the Pitch Deck, financial models, and technical roadmap. Available upon request.",
     "btn_open": "Open"
+  },
+  "testing": {
+    "meta_title": "HearMe — Alpha Testing",
+    "meta_desc": "Join the open alpha testing of HearMe. Help us improve our AI speech recognition and get lifetime premium access.",
+    "hero_title": "Join the HearMe Open <span class=\"text-teal-600\">Alpha Testing</span>",
+    "hero_subtitle": "We are building technology that helps people with CP, stroke consequences, and other speech challenges communicate more freely. Join the testing of our first web version (PWA) and help us improve our individual speech recognition algorithms.",
+    "benefits_title": "What you get as a tester",
+    "benefit_1_title": "Free Lifetime Access",
+    "benefit_1_desc": "All active participants who share feedback will receive free premium access to future native apps forever after the official release.",
+    "benefit_2_title": "Early Access",
+    "benefit_2_desc": "You can configure your first everyday phrases or custom phrases tailored to the specifics of your voice today.",
+    "benefit_3_title": "Security & Privacy",
+    "benefit_3_desc": "We collect minimal data (only Google account or Email). Your voice samples are used exclusively to train your personal model and can be deleted at any time upon request.",
+    "steps_title": "Just 3 Simple Steps",
+    "step_1_title": "Fill out the form",
+    "step_1_desc": "Click the button below and take a short survey in Google Forms (it takes up to 3 minutes).",
+    "step_2_title": "Get the link",
+    "step_2_desc": "We will send instructions on how to install the PWA app to your email once your application is processed.",
+    "step_3_title": "Train AI & Communicate",
+    "step_3_desc": "Record phrases, check the recognition accuracy, enjoy all the benefits, and help us get better.",
+    "cta_button": "Become a HearMe Tester",
+    "form_url": "https://forms.gle/4PLdFytNjGW52muB9"
   },
   "error404": {
     "meta_title": "HearMe — Page Not Found",

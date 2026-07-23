@@ -85,12 +85,14 @@
     "values": "Vår kultur",
     "team": "Vårt team",
     "investors": "Investerare",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "testing": "Alfatestning"
   },
   "hero": {
     "title": "Din röst. Dina ord.<br><span class='text-brand-teal'>Äntligen förstådda.</span>",
     "subtitle": "<b>HearMe</b> är en revolutionerande AI-app som lär sig dina unika talmönster och ger dig kraften att kommunicera tydligt och säkert.",
-    "cta": "Snabba HearMe"
+    "cta": "Snabba HearMe",
+    "testing_btn": "Bli en testare"
   },
   "features": {
     "title": "Kommunikation utan gränser",
@@ -202,6 +204,12 @@
     "advisor_4_role": "Teknologi- & ML-rådgivare",
     "advisor_4_bio": "Med mångårig erfarenhet inom AI-arkitektur ger Vitalii råd till teamet om att optimera komplexa maskininlärningsmodeller för att garantera taligenkänning med ultralåg fördröjning."
   },
+  "test_section": {
+    "badge": "Öppen Alfa",
+    "title": "Hjälp oss att ge alla en röst",
+    "desc": "Delta i testerna av våra nya AI-modeller. Ge feedback om röstigenkänningens noggrannhet och få livstids premiumåtkomst till HearMe-appen helt gratis.",
+    "btn": "Läs mer & gå med"
+  },
   "contact": {
     "title": "Kontakta oss",
     "subtitle": "Har du frågor eller förslag? Vi vill gärna höra från dig.",
@@ -273,6 +281,28 @@
     "dataroom_title": "Investor Data Room",
     "dataroom_desc": "Få tillgång till hela vår dokumentation på Google Drive, inklusive Pitch Deck, finansiella modeller och teknisk färdplan. Tillgänglig på begäran.",
     "btn_open": "Öppna"
+  },
+  "testing": {
+    "meta_title": "HearMe — Alfatestning",
+    "meta_desc": "Gå med i den öppna alfatestningen av HearMe. Hjälp oss att förbättra vår AI-röstigenkänning och få premiumåtkomst på livstid.",
+    "hero_title": "Gå med i HearMes öppna <span class=\"text-teal-600\">Alfatestning</span>",
+    "hero_subtitle": "Vi bygger teknik som hjälper personer med CP, stroke-konsekvenser och andra talsvårigheter att kommunicera friare. Delta i testningen av vår första webbversion (PWA) och hjälp oss att förbättra våra individuella röstigenkänningsalgoritmer.",
+    "benefits_title": "Vad Ni får som testare",
+    "benefit_1_title": "Gratis livstidsåtkomst",
+    "benefit_1_desc": "Alla aktiva deltagare som delar med sig av feedback kommer att få gratis premiumåtkomst till framtida inbyggda appar för alltid efter den officiella lanseringen.",
+    "benefit_2_title": "Tidig åtkomst",
+    "benefit_2_desc": "Ni kan redan idag konfigurera Era första vardagsfraser eller anpassade fraser skräddarsydda efter Er specifika röst.",
+    "benefit_3_title": "Säkerhet & Sekretess",
+    "benefit_3_desc": "Vi samlar in minimalt med data (endast Google-konto eller e-post). Era röstprover används uteslutande för att träna Er personliga modell och kan när som helst raderas på begäran.",
+    "steps_title": "Bara 3 enkla steg",
+    "step_1_title": "Fyll i formuläret",
+    "step_1_desc": "Klicka på knappen nedan och svara på en kort enkät i Google Forms (det tar cirka 3 minuter).",
+    "step_2_title": "Få länken",
+    "step_2_desc": "Vi skickar instruktioner om hur Ni installerar PWA-appen till Er e-postadress när Er ansökan har behandlats.",
+    "step_3_title": "Träna AI & kommunicera",
+    "step_3_desc": "Spela in fraser, kontrollera igenkänningsnoggrannheten, njut av alla fördelar och hjälp oss att bli bättre.",
+    "cta_button": "Bli en HearMe-testare",
+    "form_url": "https://forms.gle/4PLdFytNjGW52muB9"
   },
   "error404": {
     "meta_title": "HearMe — Sidan hittades inte",

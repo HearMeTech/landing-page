@@ -32,12 +32,19 @@ const LANG_SWITCHERS = ['#language-switcher', '#language-switcher-mobile'];
 
 // Project Pages & SEO Config
 const BASE_URL = 'https://hearme.tech';
-const PAGES_TO_BUILD = ['index.html', 'invest.html', 'waitlist.html', '404.html'];
+const PAGES_TO_BUILD = [
+    'index.html',
+    'invest.html',
+    'waitlist.html',
+    'testing.html',
+    '404.html'
+];
 
 const SEO_PAGES = [
     { file: 'index.html', path: '', priority: '1.00', changefreq: 'weekly' },
     { file: 'invest.html', path: 'invest', priority: '0.80', changefreq: 'monthly' },
-    { file: 'waitlist.html', path: 'waitlist', priority: '0.20', changefreq: 'monthly' }
+    { file: 'waitlist.html', path: 'waitlist', priority: '0.20', changefreq: 'monthly' },
+    { file: 'testing.html', path: 'testing.html', priority: '0.90', changefreq: 'monthly' }
 ];
 
 // Exclusions
@@ -215,6 +222,15 @@ function translateHTML(html, translations, lang, components, pagePath) {
             $(el).removeAttr('data-i18n');
         } else {
             console.warn(`⚠️ Missing translation: [${key}] for language [${lang}]`);
+        }
+    });
+
+    $('[data-i18n-href]').each((i, el) => {
+        const key = $(el).attr('data-i18n-href');
+        const link = getNestedValue(translations, key);
+        if (link) {
+            $(el).attr('href', link);
+            $(el).removeAttr('data-i18n-href');
         }
     });
 

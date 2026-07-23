@@ -85,12 +85,14 @@
     "values": "Unsere Kultur",
     "team": "Unser Team",
     "investors": "Investoren",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "testing": "Alpha-Tests"
   },
   "hero": {
     "title": "Ihre Stimme. Ihre Worte.<br><span class='text-brand-teal'>Endlich verstanden.</span>",
     "subtitle": "<b>HearMe</b> ist eine revolutionäre KI-App, die Ihre einzigartigen Sprachmuster lernt und Ihnen hilft, klar und selbstbewusst zu kommunizieren.",
-    "cta": "HearMe ausprobieren"
+    "cta": "HearMe ausprobieren",
+    "testing_btn": "Tester werden"
   },
   "features": {
     "title": "Barrierefreie Kommunikation",
@@ -202,6 +204,12 @@
     "advisor_4_role": "Technologie- & ML-Berater",
     "advisor_4_bio": "Dank jahrelanger Erfahrung im Bereich KI-Architektur berät Vitalii das Team bei der Optimierung komplexer Machine-Learning-Modelle für eine garantierte, latenzfreie Spracherkennung."
   },
+  "test_section": {
+    "badge": "Offene Alpha",
+    "title": "Helfen Sie uns, jedem eine Stimme zu geben",
+    "desc": "Nehmen Sie an den Tests unserer neuen KI-Modelle teil. Geben Sie Feedback zur Genauigkeit der Spracherkennung und erhalten Sie absolut kostenlos lebenslangen Premium-Zugang zur HearMe-App.",
+    "btn": "Mehr erfahren & teilnehmen"
+  },
   "contact": {
     "title": "Kontaktieren Sie uns",
     "subtitle": "Haben Sie Fragen oder Vorschläge? Wir freuen uns auf Ihre Nachricht.",
@@ -273,6 +281,28 @@
     "dataroom_title": "Investor Data Room",
     "dataroom_desc": "Erhalten Sie Zugriff auf unsere vollständigen Dokumente via Google Drive, einschließlich Pitch Deck, Finanzmodellen und technischer Roadmap. Zugang auf Anfrage.",
     "btn_open": "Öffnen"
+  },
+  "testing": {
+    "meta_title": "HearMe — Alpha-Tests",
+    "meta_desc": "Nehmen Sie an den offenen Alpha-Tests von HearMe teil. Helfen Sie uns, unsere KI-Spracherkennung zu verbessern, und erhalten Sie lebenslangen Premium-Zugang.",
+    "hero_title": "Nehmen Sie an den offenen <span class=\"text-teal-600\">Alpha-Tests</span> von HearMe teil",
+    "hero_subtitle": "Wir entwickeln eine Technologie, die Menschen mit Zerebralparese, Schlaganfallfolgen und anderen Sprachstörungen hilft, freier zu kommunizieren. Nehmen Sie an den Tests unserer ersten Webversion (PWA) teil und helfen Sie uns, unsere Algorithmen zur individuellen Spracherkennung zu verbessern.",
+    "benefits_title": "Was Sie als Tester erhalten",
+    "benefit_1_title": "Lebenslanger kostenloser Zugang",
+    "benefit_1_desc": "Alle aktiven Teilnehmer, die Feedback geben, erhalten nach der offiziellen Veröffentlichung für immer kostenlosen Premium-Zugang zu zukünftigen nativen Apps.",
+    "benefit_2_title": "Frühzeitiger Zugang",
+    "benefit_2_desc": "Sie können schon heute Ihre ersten Alltagsphrasen oder benutzerdefinierten Phrasen konfigurieren, die auf die Besonderheiten Ihrer Stimme zugeschnitten sind.",
+    "benefit_3_title": "Sicherheit & Datenschutz",
+    "benefit_3_desc": "Wir erfassen nur minimale Daten (nur Google-Konto oder E-Mail). Ihre Sprachproben werden ausschließlich zum Trainieren Ihres persönlichen Modells verwendet und können auf Anfrage jederzeit gelöscht werden.",
+    "steps_title": "Nur 3 einfache Schritte",
+    "step_1_title": "Füllen Sie das Formular aus",
+    "step_1_desc": "Klicken Sie auf die Schaltfläche unten und nehmen Sie an einer kurzen Umfrage in Google Forms teil (dauert ca. 3 Minuten).",
+    "step_2_title": "Erhalten Sie den Link",
+    "step_2_desc": "Wir senden Ihnen Anweisungen zur Installation der PWA-App an Ihre E-Mail-Adresse, sobald Ihre Bewerbung bearbeitet wurde.",
+    "step_3_title": "KI trainieren & kommunizieren",
+    "step_3_desc": "Nehmen Sie Phrasen auf, überprüfen Sie die Erkennungsgenauigkeit, genießen Sie alle Vorteile und helfen Sie uns, besser zu werden.",
+    "cta_button": "HearMe-Tester werden",
+    "form_url": "https://forms.gle/4PLdFytNjGW52muB9"
   },
   "error404": {
     "meta_title": "HearMe — Seite nicht gefunden",

@@ -30,6 +30,10 @@
         "destination": "/pt/404.html"
       },
       {
+        "source": "/sv/**",
+        "destination": "/sv/404.html"
+      },
+      {
         "source": "**",
         "destination": "/404.html"
       }
