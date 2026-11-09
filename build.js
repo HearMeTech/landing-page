@@ -256,6 +256,20 @@ function translateHTML(html, translations, lang, components, pagePath) {
         }
     });
 
+    // Automatically append the current language parameter to all alpha.hearme.tech links
+    $('a[href^="https://alpha.hearme.tech"]').each((i, el) => {
+        const rawHref = $(el).attr('href');
+        if (!rawHref) return;
+
+        try {
+            const targetUrl = new URL(rawHref);
+            targetUrl.searchParams.set('lang', lang);
+            $(el).attr('href', targetUrl.toString());
+        } catch {
+            // If URL parsing fails, leave the original link unchanged
+        }
+    });
+
     // Inject BreadcrumbList JSON-LD for secondary pages
     if (pagePath !== '') {
         const pageTitle = $('title').text() || pagePath;
