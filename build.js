@@ -48,7 +48,7 @@ const SEO_PAGES = [
     { file: 'index.html', path: '', priority: '1.00', changefreq: 'weekly' },
     { file: 'invest.html', path: 'invest', priority: '0.80', changefreq: 'monthly' },
     { file: 'waitlist.html', path: 'waitlist', priority: '0.20', changefreq: 'monthly' },
-    { file: 'testing.html', path: 'testing.html', priority: '0.90', changefreq: 'monthly' }
+    { file: 'testing.html', path: 'testing', priority: '0.90', changefreq: 'monthly' }
 ];
 
 // Exclusions
@@ -85,8 +85,7 @@ function getPagePath(pageFileName) {
  * Constructs the absolute localized URL for a given page and language.
  */
 function getPageUrl(lang, pagePath) {
-    const langPart = lang === DEFAULT_LANG ? '' : `${lang}/`;
-    return pagePath === '' ? `${BASE_URL}/${langPart}` : `${BASE_URL}/${langPart}${pagePath}`;
+    return pagePath === '' ? `${BASE_URL}/${lang}/` : `${BASE_URL}/${lang}/${pagePath}`;
 }
 
 /**
@@ -193,7 +192,7 @@ function translateHTML(html, translations, lang, components, pagePath) {
         const altUrl = getPageUrl(altLang, pagePath);
         hreflangTags += `    <link rel="alternate" hreflang="${altLang}" href="${altUrl}" />\n`;
     });
-    const defaultUrl = getPageUrl(DEFAULT_LANG, pagePath);
+    const defaultUrl = `${BASE_URL}/en/${pagePath ? pagePath : ''}`;
     hreflangTags += `    <link rel="alternate" hreflang="x-default" href="${defaultUrl}" />\n`;
     $('head').append(hreflangTags);
 
@@ -239,13 +238,13 @@ function translateHTML(html, translations, lang, components, pagePath) {
     });
 
     // Update internal links for localization and anchor behavior
-    const langPrefix = lang === 'en' ? '' : `/${lang}`;
+    const langPrefix = `/${lang}`;
     $('a[href^="/"]').each((i, el) => {
         const href = $(el).attr('href');
         if (href.startsWith('//')) return; // Ignore external protocol-relative links
 
         if (href === '/') {
-            $(el).attr('href', langPrefix === '' ? '/' : `${langPrefix}/`);
+            $(el).attr('href', `${langPrefix}/`);
         } else if (href.startsWith('/#')) {
             if (pagePath === '') {
                 $(el).attr('href', href.substring(1)); // Convert to pure anchor on home page
@@ -257,7 +256,111 @@ function translateHTML(html, translations, lang, components, pagePath) {
         }
     });
 
+    // Inject BreadcrumbList JSON-LD for secondary pages
+    if (pagePath !== '') {
+        const pageTitle = $('title').text() || pagePath;
+        const breadcrumbs = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "HearMe",
+                    "item": `${BASE_URL}/${lang}/`
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": pageTitle,
+                    "item": pageUrl
+                }
+            ]
+        };
+        $('head').append(`\n    <script type="application/ld+json">\n${JSON.stringify(breadcrumbs, null, 2)}\n    </script>\n`);
+    }
+    
+
     return $.html();
+}
+
+/**
+ * Generates a zero-flicker root redirector index.html in the public directory.
+ */
+function generateRootRedirector() {
+    const defaultLocalePath = path.join(LOCALES_DIR, `${DEFAULT_LANG}.json`);
+    const enTranslations = fs.existsSync(defaultLocalePath)
+        ? JSON.parse(fs.readFileSync(defaultLocalePath, 'utf8'))
+        : {};
+
+    const title = getNestedValue(enTranslations, 'meta.title') || 'HearMe — AI Speech Recognition';
+    const desc = getNestedValue(enTranslations, 'meta.desc') || 'HearMe provides personalized speech recognition for individuals with speech impairments.';
+    const ogImageAlt = getNestedValue(enTranslations, 'meta.ogImageAlt') || 'HearMe mobile app interface';
+    const ogImage = `${BASE_URL}/images/og-image.png`;
+    const schemaData = enTranslations.schema || {};
+
+    const supportedCodes = JSON.stringify(SUPPORTED_LANG_CODES);
+
+    let hreflangTags = '';
+    SUPPORTED_LANG_CODES.forEach(lang => {
+        hreflangTags += `    <link rel="alternate" hreflang="${lang}" href="${BASE_URL}/${lang}/" />\n`;
+    });
+    hreflangTags += `    <link rel="alternate" hreflang="x-default" href="${BASE_URL}/en/" />\n`;
+
+    const rootHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${title}</title>
+    <meta name="description" content="${desc}">
+    <link rel="canonical" href="${BASE_URL}/" />
+${hreflangTags}
+    <!-- Open Graph / Facebook / Telegram / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="HearMe">
+    <meta property="og:url" content="${BASE_URL}/">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${desc}">
+    <meta property="og:image" content="${ogImage}">
+    <meta property="og:image:alt" content="${ogImageAlt}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="${BASE_URL}/">
+    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:description" content="${desc}">
+    <meta name="twitter:image" content="${ogImage}">
+    <meta name="twitter:image:alt" content="${ogImageAlt}">
+    <meta name="twitter:domain" content="hearme.tech">
+
+<script type="application/ld+json">${JSON.stringify(schemaData, null, 2)}</script>
+
+    <script>
+        (function() {
+            var supported = ${supportedCodes};
+            var defaultLang = "${DEFAULT_LANG}";
+            var targetLang = null;
+            try {
+                targetLang = localStorage.getItem('app_lang');
+            } catch (e) {}
+            if (!targetLang || supported.indexOf(targetLang) === -1) {
+                var navLang = (navigator.language || navigator.userLanguage || '').split('-')[0].toLowerCase();
+                targetLang = supported.indexOf(navLang) !== -1 ? navLang : defaultLang;
+            }
+            var destination = '/' + targetLang + '/' + location.search + location.hash;
+            location.replace(destination);
+        })();
+    </script>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=/en/">
+    </noscript>
+</head>
+<body style="background-color:#0d1117;margin:0;"></body>
+</html>`;
+
+    fs.writeFileSync(path.join(PUBLIC_DIR, 'index.html'), rootHtml, 'utf8');
+    console.log('✅ Root zero-flicker index.html generated!');
 }
 
 /**
@@ -281,7 +384,7 @@ function buildPages() {
             translations = JSON.parse(fs.readFileSync(localePath, 'utf8'));
         }
 
-        const outputDir = lang === DEFAULT_LANG ? PUBLIC_DIR : path.join(PUBLIC_DIR, lang);
+        const outputDir = path.join(PUBLIC_DIR, lang);
         ensureDirExists(outputDir);
 
         PAGES_TO_BUILD.forEach(page => {
@@ -302,6 +405,35 @@ function buildPages() {
                 console.warn(`⚠️ Template not found: ${templatePath}`);
             }
         });
+
+        // Fallback: Copy English 404 to root /404.html for Firebase rewrite handling
+        if (lang === DEFAULT_LANG && fs.existsSync(path.join(outputDir, '404.html'))) {
+            let root404Html = fs.readFileSync(path.join(outputDir, '404.html'), 'utf8');
+            
+            // Inject an instant redirect script at the top of <head>
+            const supportedCodes = JSON.stringify(SUPPORTED_LANG_CODES);
+            const smart404Script = `
+    <script>
+        (function() {
+            var supported = ${supportedCodes};
+            var defaultLang = "${DEFAULT_LANG}";
+            var targetLang = defaultLang;
+            try {
+                var saved = localStorage.getItem('app_lang');
+                if (saved && supported.indexOf(saved) !== -1) {
+                    targetLang = saved;
+                }
+            } catch (e) {}
+            if (targetLang !== defaultLang) {
+                location.replace('/' + targetLang + '/404');
+           }
+        })();
+    </script>`;
+            
+            root404Html = root404Html.replace('<head>', '<head>' + smart404Script);
+            fs.writeFileSync(path.join(PUBLIC_DIR, '404.html'), root404Html, 'utf8');
+            console.log('✅ Fallback /404.html created in root public directory');
+        }
     });
 }
 
@@ -313,6 +445,20 @@ function generateSEOFiles() {
     
     const today = new Date().toISOString().split('T')[0];
     let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n`;
+
+    // Root domain entry pointing to language alternatives
+    sitemapContent += `  <url>\n`;
+    sitemapContent += `    <loc>${BASE_URL}/</loc>\n`;
+    sitemapContent += `    <lastmod>${today}</lastmod>\n`;
+    sitemapContent += `    <changefreq>weekly</changefreq>\n`;
+    sitemapContent += `    <priority>1.00</priority>\n`;
+    SUPPORTED_LANG_CODES.forEach(altLang => {
+        const altUrl = getPageUrl(altLang, '');
+        sitemapContent += `    <xhtml:link rel="alternate" hreflang="${altLang}" href="${altUrl}" />\n`;
+    });
+    sitemapContent += `    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/en/" />\n`;
+    sitemapContent += `  </url>\n`;
+    
 
     SEO_PAGES.forEach(page => {
         SUPPORTED_LANG_CODES.forEach(lang => {
@@ -341,7 +487,6 @@ function generateSEOFiles() {
     // Generate robots.txt
     const baseDisallowRules = ROBOTS_DISALLOW_PATHS.map(path => `Disallow: ${path}`).join('\n');
     const localized404Rules = SUPPORTED_LANG_CODES
-        .filter(lang => lang !== DEFAULT_LANG)
         .map(lang => `Disallow: /${lang}/404.html`)
         .join('\n');
 
@@ -394,6 +539,7 @@ try {
     cleanPublicDir();
     copyAssets();
     buildPages();
+    generateRootRedirector();
     generateSEOFiles();
     generateHealthFile();
     console.log('🎉 Build completed successfully!');

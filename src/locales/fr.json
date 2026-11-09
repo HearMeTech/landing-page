@@ -11,6 +11,7 @@
         "@type": "Organization",
         "@id": "https://hearme.tech/#organization",
         "name": "HearMeTech",
+        "legalName": "SARL „HearMeTech“",
         "url": "https://hearme.tech/",
         "logo": "https://hearme.tech/images/logo-full.png",
         "image": "https://hearme.tech/images/og-image.png",
@@ -24,7 +25,7 @@
         "image": "https://hearme.tech/images/og-image.png",
         "applicationCategory": "HealthApplication",
         "operatingSystem": "Web, iOS, Android",
-        "description": "HearMe est une application mobile révolutionnaire propulsée par l'IA, offrant une reconnaissance vocale personalizada pour les personnes ayant des troubles de la parole (infirmité motrice cérébrale, AVC, SLA).",
+        "description": "HearMe est une application mobile révolutionnaire propulsée par l'IA, offrant une reconnaissance vocale personnalisée pour les personnes ayant des troubles de la parole (infirmité motrice cérébrale, AVC, SLA).",
         "url": "https://hearme.tech/",
         "installUrl": "https://alpha.hearme.tech",
         "releaseNotes": "https://hearme.tech/#roadmap",
@@ -36,7 +37,7 @@
         ],
         "featureList": [
           "Modèle vocal IA personnalisé",
-          "Reconnaissance vocale en temps real",
+          "Reconnaissance vocale en temps réel",
           "Sortie vocale et textuelle",
           "Traduction instantanée",
           "Authentification Firebase sécurisée"
@@ -48,23 +49,55 @@
         "jobTitle": "Fondateur & CEO",
         "description": "Architecte logiciel et spécialiste en ML, dirige la stratégie produit et la R&D pour les technologies d'assistance.",
         "url": "https://hearme.tech/",
-        "sameAs": ["https://www.linkedin.com/in/trineiev/"],
+        "sameAs": ["https://www.linkedin.com/in/mtrineiev/"],
+        "worksFor": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Anastasiia Tsaruk",
+        "jobTitle": "Cofondatrice & Directrice des Partenariats",
+        "description": "Spécialiste des programmes d'innovation européens et partenariats stratégiques pour la levée de fonds.",
+        "sameAs": ["https://www.linkedin.com/in/anastasiia-tsaruk/"],
         "worksFor": { "@id": "https://hearme.tech/#organization" }
       },
       {
         "@type": "Person",
         "name": "Irina Oleynikova",
-        "jobTitle": "Conseillère Médicale",
+        "jobTitle": "Co-fondatrice et Conseillère Médicale",
         "description": "Ancienne omnipraticienne spécialisée en médecine clinique et soins gériatriques, garantissant la précision médicale des algorithmes d'IA.",
-        "sameAs": ["https://www.linkedin.com/in/irina-oleynikova/"],
+        "sameAs": ["https://www.linkedin.com/in/irina-oleynikova-27a89971/"],
         "affiliation": { "@id": "https://hearme.tech/#organization" }
       },
       {
         "@type": "Person",
         "name": "Mykhailo Tkachenko",
-        "jobTitle": "Conseiller Commercial",
+        "jobTitle": "Co-fondateur et Chef d'Entreprise",
         "description": "Conseiller en mise à l'échelle SaaS et stratégie d'entreprise pour les marchés internationaux.",
-        "sameAs": ["https://www.linkedin.com/in/mykhailo-tkachenko/"],
+        "sameAs": ["https://www.linkedin.com/in/mykhailo-tkachenko-5114991a2/"],
+        "affiliation": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Evgenia Zavela-Averhed",
+        "jobTitle": "Conseillère Stratégique en Levée de Fonds",
+        "description": "Experte en financement européen de l'innovation et croissance durable.",
+        "sameAs": ["https://www.linkedin.com/in/evgenia-zavela-21335033/"],
+        "affiliation": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Dmytro Lebedynets",
+        "jobTitle": "Conseiller Clinique",
+        "description": "Chef du centre des AVC de l'hôpital Feofaniya, expert en rééducation neurologique.",
+        "sameAs": ["https://www.linkedin.com/in/dmytrolebedynets/"],
+        "affiliation": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Kateryna Martynova",
+        "jobTitle": "Conseillère en Communication",
+        "description": "Conseillère en communications stratégiques et narration de marque.",
+        "sameAs": ["https://www.linkedin.com/in/katerynamartynova/"],
         "affiliation": { "@id": "https://hearme.tech/#organization" }
       },
       {
@@ -72,7 +105,7 @@
         "name": "Vitalii Rybalko",
         "jobTitle": "Conseiller Technologie & ML",
         "description": "Expert en architecture IA, conseillant sur les modèles de reconnaissance vocale à faible latence.",
-        "sameAs": ["https://www.linkedin.com/in/vitalii-rybalko/"],
+        "sameAs": ["https://www.linkedin.com/in/vitalii-rybalko-9593a7a9/"],
         "affiliation": { "@id": "https://hearme.tech/#organization" }
       }
     ]

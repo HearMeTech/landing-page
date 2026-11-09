@@ -11,6 +11,7 @@
         "@type": "Organization",
         "@id": "https://hearme.tech/#organization",
         "name": "HearMeTech",
+        "legalName": "LLC \"HearMeTech\"",
         "url": "https://hearme.tech/",
         "logo": "https://hearme.tech/images/logo-full.png",
         "image": "https://hearme.tech/images/og-image.png",
@@ -48,23 +49,55 @@
         "jobTitle": "Fundador y CEO",
         "description": "Arquitecto de software y especialista en ML, lidera la estrategia de producto e I+D en tecnologías asistivas.",
         "url": "https://hearme.tech/",
-        "sameAs": ["https://www.linkedin.com/in/trineiev/"],
+        "sameAs": ["https://www.linkedin.com/in/mtrineiev/"],
+        "worksFor": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Anastasiia Tsaruk",
+        "jobTitle": "Cofundadora y Directora de Alianzas",
+        "description": "Especialista en programas de innovación europeos y alianzas estratégicas para captación de fondos.",
+        "sameAs": ["https://www.linkedin.com/in/anastasiia-tsaruk/"],
         "worksFor": { "@id": "https://hearme.tech/#organization" }
       },
       {
         "@type": "Person",
         "name": "Irina Oleynikova",
-        "jobTitle": "Asesora Médica",
+        "jobTitle": "Cofundadora y Asesora Médica",
         "description": "Exmédica de cabecera con experiencia en medicina clínica y atención geriátrica, garantizando la precisión médica de los algoritmos de IA.",
-        "sameAs": ["https://www.linkedin.com/in/irina-oleynikova/"],
+        "sameAs": ["https://www.linkedin.com/in/irina-oleynikova-27a89971/"],
         "affiliation": { "@id": "https://hearme.tech/#organization" }
       },
       {
         "@type": "Person",
         "name": "Mykhailo Tkachenko",
-        "jobTitle": "Asesor de Negocios",
+        "jobTitle": "Cofundador y Líder de Negocios",
         "description": "Asesor de escalado SaaS y estrategia comercial para mercados internacionales.",
-        "sameAs": ["https://www.linkedin.com/in/mykhailo-tkachenko/"],
+        "sameAs": ["https://www.linkedin.com/in/mykhailo-tkachenko-5114991a2/"],
+        "affiliation": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Evgenia Zavela-Averhed",
+        "jobTitle": "Asesora Estratégica de Recaudación de Fondos",
+        "description": "Experta en recaudación de fondos y financiación europea de la innovación.",
+        "sameAs": ["https://www.linkedin.com/in/evgenia-zavela-21335033/"],
+        "affiliation": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Dmytro Lebedynets",
+        "jobTitle": "Asesor Clínico",
+        "description": "Jefe del Centro de Ictus del Hospital Feofaniya, experto en rehabilitación neurológica.",
+        "sameAs": ["https://www.linkedin.com/in/dmytrolebedynets/"],
+        "affiliation": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Kateryna Martynova",
+        "jobTitle": "Asesora de Comunicaciones",
+        "description": "Asesora de comunicaciones estratégicas y posicionamiento de marca.",
+        "sameAs": ["https://www.linkedin.com/in/katerynamartynova/"],
         "affiliation": { "@id": "https://hearme.tech/#organization" }
       },
       {
@@ -72,7 +105,7 @@
         "name": "Vitalii Rybalko",
         "jobTitle": "Asesor de Tecnología y ML",
         "description": "Experto en arquitectura de IA, asesora en modelos de reconocimiento de voz de baja latencia.",
-        "sameAs": ["https://www.linkedin.com/in/vitalii-rybalko/"],
+        "sameAs": ["https://www.linkedin.com/in/vitalii-rybalko-9593a7a9/"],
         "affiliation": { "@id": "https://hearme.tech/#organization" }
       }
     ]

@@ -1,19 +1,25 @@
-// public/js/pages/404.js
+// src/scripts/pages/404.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    const storedLang = localStorage.getItem('app_lang');
-    const currentPath = window.location.pathname;
-
-    const isLocalizedPath = /^\/(uk|de|es|fr|pt)\//.test(currentPath);
-
-    if (storedLang && storedLang !== 'en' && !isLocalizedPath) {
-        window.location.href = `/${storedLang}/404`;
-        return;
-    }
-
+    updateHomeButtonLink();
     startRedirectTimer();
 });
 
+/**
+ * Updates the homepage button link to match the active page language.
+ */
+function updateHomeButtonLink() {
+    const currentLang = document.documentElement.lang || 'en';
+    const homeButton = document.querySelector('a[data-i18n="error404.btn_home"]');
+
+    if (homeButton) {
+        homeButton.setAttribute('href', `/${currentLang}/`);
+    }
+}
+
+/**
+ * Counts down from 10 seconds and redirects to the current language homepage.
+ */
 function startRedirectTimer() {
     const countdownElement = document.getElementById('redirect-countdown');
     let secondsLeft = 10;
@@ -22,15 +28,14 @@ function startRedirectTimer() {
         secondsLeft--;
 
         if (countdownElement) {
-            countdownElement.textContent = secondsLeft;
+            countdownElement.textContent = String(secondsLeft);
         }
 
         if (secondsLeft <= 0) {
             clearInterval(timerInterval);
-            
+
             const currentLang = document.documentElement.lang || 'en';
-            
-            window.location.href = currentLang === 'en' ? '/' : `/${currentLang}/`;
+            window.location.replace(`/${currentLang}/`);
         }
     }, 1000);
 }

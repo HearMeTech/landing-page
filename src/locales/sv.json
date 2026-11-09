@@ -11,6 +11,7 @@
         "@type": "Organization",
         "@id": "https://hearme.tech/#organization",
         "name": "HearMeTech",
+        "legalName": "AB „HearMeTech“",
         "url": "https://hearme.tech/",
         "logo": "https://hearme.tech/images/logo-full.png",
         "image": "https://hearme.tech/images/og-image.png",
@@ -48,23 +49,55 @@
         "jobTitle": "Grundare & CEO",
         "description": "Mjukvaruarkitekt och ML-specialist som leder produktstrategi och FoU inom välfärdsteknologi.",
         "url": "https://hearme.tech/",
-        "sameAs": ["https://www.linkedin.com/in/trineiev/"],
+        "sameAs": ["https://www.linkedin.com/in/mtrineiev/"],
+        "worksFor": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Anastasiia Tsaruk",
+        "jobTitle": "Medgrundare & Partnerships Lead",
+        "description": "Expert på europeiska innovationsprogram och strategiska partnerskap för finansiering av storskaliga projekt.",
+        "sameAs": ["https://www.linkedin.com/in/anastasiia-tsaruk/"],
         "worksFor": { "@id": "https://hearme.tech/#organization" }
       },
       {
         "@type": "Person",
         "name": "Irina Oleynikova",
-        "jobTitle": "Medicinsk rådgivare",
+        "jobTitle": "Medgrundare & Medicinsk Rådgivare",
         "description": "Tidigare allmänläkare med expertis inom klinisk medicin och geriatrik, vilket säkerställer AI-algoritmernas medicinska noggrannhet.",
-        "sameAs": ["https://www.linkedin.com/in/irina-oleynikova/"],
+        "sameAs": ["https://www.linkedin.com/in/irina-oleynikova-27a89971/"],
         "affiliation": { "@id": "https://hearme.tech/#organization" }
       },
       {
         "@type": "Person",
         "name": "Mykhailo Tkachenko",
-        "jobTitle": "Affärsrådgivare",
-        "description": "Rådgivare inom SaaS-skalning och affärsstrategi för internationella marknader.",
-        "sameAs": ["https://www.linkedin.com/in/mykhailo-tkachenko/"],
+        "jobTitle": "Medgrundare & Affärsledare",
+        "description": "Specialist på SaaS-skalning och affärsstrategi för internationell marknadsexpansion.",
+        "sameAs": ["https://www.linkedin.com/in/mykhailo-tkachenko-5114991a2/"],
+        "affiliation": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Evgenia Zavela-Averhed",
+        "jobTitle": "Strategisk Insamlingsrådgivare",
+        "description": "Expert på strategisk insamling och hållbar tillväxt genom europeisk innovationsfinansiering.",
+        "sameAs": ["https://www.linkedin.com/in/evgenia-zavela-21335033/"],
+        "affiliation": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Dmytro Lebedynets",
+        "jobTitle": "Klinisk Rådgivare",
+        "description": "Chef för strokecentret på Feofaniya Hospital med erfarenhet av strokehantering och neurologisk rehabilitering.",
+        "sameAs": ["https://www.linkedin.com/in/dmytrolebedynets/"],
+        "affiliation": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Kateryna Martynova",
+        "jobTitle": "Kommunikationsrådgivare",
+        "description": "Rådgivare inom strategisk kommunikation och varumärkesberättelse.",
+        "sameAs": ["https://www.linkedin.com/in/katerynamartynova/"],
         "affiliation": { "@id": "https://hearme.tech/#organization" }
       },
       {
@@ -72,7 +105,7 @@
         "name": "Vitalii Rybalko",
         "jobTitle": "Teknologi- & ML-rådgivare",
         "description": "Expert på AI-arkitektur som ger råd om taligenkänningsmodeller med låg latens.",
-        "sameAs": ["https://www.linkedin.com/in/vitalii-rybalko/"],
+        "sameAs": ["https://www.linkedin.com/in/vitalii-rybalko-9593a7a9/"],
         "affiliation": { "@id": "https://hearme.tech/#organization" }
       }
     ]

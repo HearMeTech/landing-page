@@ -11,6 +11,7 @@
         "@type": "Organization",
         "@id": "https://hearme.tech/#organization",
         "name": "HearMeTech",
+        "legalName": "ТОВ «ХірМіТех»",
         "url": "https://hearme.tech/",
         "logo": "https://hearme.tech/images/logo-full.png",
         "image": "https://hearme.tech/images/og-image.png",
@@ -48,23 +49,55 @@
         "jobTitle": "Засновник та СЕО",
         "description": "Архітектор програмного забезпечення та ML-спеціаліст, який керує стратегією продукту та R&D у сфері асистивних технологій.",
         "url": "https://hearme.tech/",
-        "sameAs": ["https://www.linkedin.com/in/trineiev/"],
+        "sameAs": ["https://www.linkedin.com/in/mtrineiev/"],
+        "worksFor": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Анастасія Царук",
+        "jobTitle": "Співзасновниця та керівниця напряму партнерств",
+        "description": "Спеціалізується на європейських інноваційних програмах та стратегічних партнерствах, залученні фінансування та консорціумах.",
+        "sameAs": ["https://www.linkedin.com/in/anastasiia-tsaruk/"],
         "worksFor": { "@id": "https://hearme.tech/#organization" }
       },
       {
         "@type": "Person",
         "name": "Ірина Олейнікова",
-        "jobTitle": "Медичний радник",
+        "jobTitle": "Співзасновниця та медична радниця",
         "description": "Лікар загальної практики з досвідом у клінічній медицині та геріатричному догляді, що забезпечує медичну точність алгоритмів ШІ.",
-        "sameAs": ["https://www.linkedin.com/in/irina-oleynikova/"],
+        "sameAs": ["https://www.linkedin.com/in/irina-oleynikova-27a89971/"],
         "affiliation": { "@id": "https://hearme.tech/#organization" }
       },
       {
         "@type": "Person",
         "name": "Михайло Ткаченко",
-        "jobTitle": "Бізнес-радник",
+        "jobTitle": "Співзасновник та керівник з розвитку бізнесу",
         "description": "Експерт із масштабування SaaS та бізнес-стратегії на міжнародних ринках.",
-        "sameAs": ["https://www.linkedin.com/in/mykhailo-tkachenko/"],
+        "sameAs": ["https://www.linkedin.com/in/mykhailo-tkachenko-5114991a2/"],
+        "affiliation": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Євгенія Завела-Аверхед",
+        "jobTitle": "Радниця зі стратегічного фандрейзингу",
+        "description": "Експертка зі стратегічного фандрейзингу, яка сприяє сталому зростанню завдяки європейському фінансуванню інновацій.",
+        "sameAs": ["https://www.linkedin.com/in/evgenia-zavela-21335033/"],
+        "affiliation": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Дмитро Лебединець",
+        "jobTitle": "Клінічний радник",
+        "description": "Керівник Інсультного центру лікарні «Феофанія», експерт у лікуванні інсультів та неврологічній реабілітації.",
+        "sameAs": ["https://www.linkedin.com/in/dmytrolebedynets/"],
+        "affiliation": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Катерина Мартинова",
+        "jobTitle": "Радниця з комунікацій",
+        "description": "Експертка зі стратегічних комунікацій та позиціонування місії бренду.",
+        "sameAs": ["https://www.linkedin.com/in/katerynamartynova/"],
         "affiliation": { "@id": "https://hearme.tech/#organization" }
       },
       {
@@ -72,7 +105,7 @@
         "name": "Віталій Рибалко",
         "jobTitle": "Радник із технологій та ML",
         "description": "Експерт з архітектури ШІ, який консультує щодо моделей розпізнавання мовлення з низькою затримкою.",
-        "sameAs": ["https://www.linkedin.com/in/vitalii-rybalko/"],
+        "sameAs": ["https://www.linkedin.com/in/vitalii-rybalko-9593a7a9/"],
         "affiliation": { "@id": "https://hearme.tech/#organization" }
       }
     ]

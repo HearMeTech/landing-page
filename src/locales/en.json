@@ -11,10 +11,13 @@
         "@type": "Organization",
         "@id": "https://hearme.tech/#organization",
         "name": "HearMeTech",
+        "legalName": "LLC \"HearMeTech\"",
         "url": "https://hearme.tech/",
         "logo": "https://hearme.tech/images/logo-full.png",
         "image": "https://hearme.tech/images/og-image.png",
-        "sameAs": [ "https://www.linkedin.com/company/hearmetech/" ]
+        "sameAs": [
+          "https://www.linkedin.com/company/hearmetech/"
+        ]
       },
       {
         "@type": "SoftwareApplication",
@@ -46,25 +49,57 @@
         "@type": "Person",
         "name": "Maksym Trineiev",
         "jobTitle": "Founder & CEO",
-        "description": "Software Architect and ML specialist leading product strategy and R&D for assistive technologies.",
+        "description": "Software Architect and product visionary leading product strategy and R&D for assistive technologies.",
         "url": "https://hearme.tech/",
-        "sameAs": ["https://www.linkedin.com/in/trineiev/"],
+        "sameAs": ["https://www.linkedin.com/in/mtrineiev/"],
+        "worksFor": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Anastasiia Tsaruk",
+        "jobTitle": "Co-Founder & Partnerships Lead",
+        "description": "Specialist in European innovation programs and strategic partnerships for high-impact projects.",
+        "sameAs": ["https://www.linkedin.com/in/anastasiia-tsaruk/"],
         "worksFor": { "@id": "https://hearme.tech/#organization" }
       },
       {
         "@type": "Person",
         "name": "Irina Oleynikova",
-        "jobTitle": "Medical Advisor",
-        "description": "Former general practitioner specializing in clinical medicine and geriatric care, ensuring the medical accuracy of AI algorithms.",
-        "sameAs": ["https://www.linkedin.com/in/irina-oleynikova/"],
+        "jobTitle": "Co-Founder & Medical Advisor",
+        "description": "General practitioner experienced in clinical medicine and geriatric care, ensuring algorithm relevance.",
+        "sameAs": ["https://www.linkedin.com/in/irina-oleynikova-27a89971/"],
         "affiliation": { "@id": "https://hearme.tech/#organization" }
       },
       {
         "@type": "Person",
         "name": "Mykhailo Tkachenko",
-        "jobTitle": "Business Advisor",
-        "description": "SaaS scaling and business strategy advisor for international markets.",
-        "sameAs": ["https://www.linkedin.com/in/mykhailo-tkachenko/"],
+        "jobTitle": "Co-Founder & Business Lead",
+        "description": "SaaS scaling and business strategy specialist driving sustainable growth for international markets.",
+        "sameAs": ["https://www.linkedin.com/in/mykhailo-tkachenko-5114991a2/"],
+        "affiliation": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Evgenia Zavela-Averhed",
+        "jobTitle": "Strategic Fundraising Advisor",
+        "description": "Expert in sustainable growth through European innovation funding.",
+        "sameAs": ["https://www.linkedin.com/in/evgenia-zavela-21335033/"],
+        "affiliation": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Dmytro Lebedynets",
+        "jobTitle": "Clinical Advisor",
+        "description": "Head of Stroke Center at Feofaniya Hospital with extensive experience in stroke management and neurological rehab.",
+        "sameAs": ["https://www.linkedin.com/in/dmytrolebedynets/"],
+        "affiliation": { "@id": "https://hearme.tech/#organization" }
+      },
+      {
+        "@type": "Person",
+        "name": "Kateryna Martynova",
+        "jobTitle": "Communications Advisor",
+        "description": "Strategic communications specialist ensuring brand mission resonance.",
+        "sameAs": ["https://www.linkedin.com/in/katerynamartynova/"],
         "affiliation": { "@id": "https://hearme.tech/#organization" }
       },
       {
@@ -72,7 +107,7 @@
         "name": "Vitalii Rybalko",
         "jobTitle": "Technology & ML Advisor",
         "description": "AI architecture expert advising on low-latency speech recognition models.",
-        "sameAs": ["https://www.linkedin.com/in/vitalii-rybalko/"],
+        "sameAs": ["https://www.linkedin.com/in/vitalii-rybalko-9593a7a9/"],
         "affiliation": { "@id": "https://hearme.tech/#organization" }
       }
     ]

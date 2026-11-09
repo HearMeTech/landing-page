@@ -10,6 +10,10 @@
     ],
 "rewrites": [
       {
+        "source": "/en/**",
+        "destination": "/en/404.html"
+      },
+      {
         "source": "/uk/**",
         "destination": "/uk/404.html"
       },

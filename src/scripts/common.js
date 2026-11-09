@@ -1,39 +1,25 @@
 // public/js/common.js
 
-// Dynamically create a regex to match language prefixes in URLs (e.g., /uk/, /de/, etc.)
-const altLangs = Object.keys(window.APP_CONFIG.supportedLangs).filter(lang => lang !== window.APP_CONFIG.defaultLang);
-window.APP_CONFIG.langPrefixRegex = new RegExp(`^\\/(${altLangs.join('|')})(\\/|$)`);
+// Regex to match all language prefixes in URLs (/en/, /uk/, /de/, etc.)
+const allLangs = Object.keys(window.APP_CONFIG.supportedLangs);
+window.APP_CONFIG.langPrefixRegex = new RegExp(`^\\/(${allLangs.join('|')})(\\/|$)`);
 
 /**
- * Auto Language Router (Runs immediately)
- * Detects browser language or saved preference and redirects if necessary.
+ * Sync active language to localStorage
  */
-(function autoRouteLanguage() {
-    const currentPath = window.location.pathname;
-    const currentLang = document.documentElement.lang || window.APP_CONFIG.defaultLang;
-
-    if (currentLang !== window.APP_CONFIG.defaultLang) {
-        localStorage.setItem('app_lang', currentLang);
+(function syncCurrentLanguage() {
+    const isNotFoundPage = window.location.pathname.includes('404');
+    if (isNotFoundPage) {
         return;
     }
 
-    let targetLang = localStorage.getItem('app_lang');
-
-    if (!targetLang) {
-        const browserLang = (navigator.language || navigator.userLanguage || '').split('-')[0].toLowerCase();
-        targetLang = Object.keys(window.APP_CONFIG.supportedLangs).includes(browserLang) ? browserLang : window.APP_CONFIG.defaultLang;
-        localStorage.setItem('app_lang', targetLang);
-    }
-
-    if (targetLang && targetLang !== window.APP_CONFIG.defaultLang) {
-        let cleanPath = currentPath.replace(/\/index\.html$/, '/');
-        if (!cleanPath.startsWith('/')) cleanPath = '/' + cleanPath;
-        
-        let newPath = `/${targetLang}${cleanPath}`;
-        newPath = newPath.replace(/\/+/g, '/');
-        newPath += window.location.search + window.location.hash;
-
-        window.location.replace(newPath);
+    const currentLang = document.documentElement.lang;
+    if (currentLang) {
+        try {
+            localStorage.setItem('app_lang', currentLang);
+        } catch {
+            // Intentionally silent: ignore localStorage quota or access restrictions
+        }
     }
 })();
 
@@ -100,7 +86,7 @@ function setupLanguageSwitchers() {
             
             if (!cleanPath.startsWith('/')) cleanPath = '/' + cleanPath;
             
-            let newPath = newLang === window.APP_CONFIG.defaultLang ? cleanPath : `/${newLang}${cleanPath}`;
+            let newPath = `/${newLang}${cleanPath}`;
             
             newPath = newPath.replace(/\/+/g, '/');
             newPath += window.location.search + window.location.hash;
