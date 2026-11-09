@@ -114,7 +114,7 @@ If you need to deploy manually from your local machine:
 npm run deploy
 ```
 
-## **📁 File Structure**
+## **📁 Helicopter view file Structure**
 
 ```text
 ├── .github/              # CI/CD workflows and linter configs
@@ -138,3 +138,5 @@ npm run deploy
 ├── firebase.json         # Firebase Hosting configuration (rewrites, headers)
 └── package.json          # NPM scripts and dependencies
 ```
+
+Full progect structure you can find here [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md)
