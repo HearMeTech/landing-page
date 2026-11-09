@@ -1,6 +1,6 @@
 {
   "name": "landing",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "description": "This is a simple static website that serves as the official landing page for the \"HearMe\" project.",
   "type": "module",
   "main": "index.js",

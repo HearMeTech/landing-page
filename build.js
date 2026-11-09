@@ -21,6 +21,10 @@ const COMPONENTS_DIR = path.join(SRC_DIR, 'components');
 // Build hash for cache-busting
 const BUILD_VERSION = Date.now();
 
+// Load package metadata
+const PACKAGE_JSON = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'), 'utf8'));
+const APP_VERSION = PACKAGE_JSON.version || '2.0.0';
+
 // Global App Config from JSON
 const APP_CONFIG = JSON.parse(fs.readFileSync(path.join(__dirname, 'config.json'), 'utf8'));
 const SUPPORTED_LANGS = APP_CONFIG.supportedLangs;
@@ -354,9 +358,34 @@ Sitemap: ${BASE_URL}/sitemap.xml
     console.log('✅ sitemap.xml and robots.txt generated successfully!');
 }
 
-
 /**
- * ==========================================
+ * Generates health.json with deployment and build metadata.
+ */
+function generateHealthFile() {
+    console.log('🩺 Generating health.json...');
+    
+    const now = new Date();
+    const year = now.getUTCFullYear();
+    const month = String(now.getUTCMonth() + 1).padStart(2, '0');
+    const day = String(now.getUTCDate()).padStart(2, '0');
+    const hours = String(now.getUTCHours()).padStart(2, '0');
+    const minutes = String(now.getUTCMinutes()).padStart(2, '0');
+
+    const buildTimeFormatted = `${year}-${month}-${day} ${hours}:${minutes} UTC`;
+
+    const healthData = {
+        name: 'hearme-landing-page',
+        status: 'ok',
+        version: `${APP_VERSION} (build time: ${buildTimeFormatted})`,
+        environment: 'production'
+    };
+
+    ensureDirExists(PUBLIC_DIR);
+    fs.writeFileSync(path.join(PUBLIC_DIR, 'health.json'), JSON.stringify(healthData, null, 2) + '\n', 'utf8');
+    console.log('✅ health.json generated successfully!');
+}
+
+/** 
  * EXECUTION PIPELINE
  * ==========================================
  */
@@ -366,6 +395,7 @@ try {
     copyAssets();
     buildPages();
     generateSEOFiles();
+    generateHealthFile();
     console.log('🎉 Build completed successfully!');
 } catch (error) {
     console.error('❌ Build failed:', error);
