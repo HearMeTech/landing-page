@@ -171,7 +171,7 @@
     "notify_text": "Få ett meddelande så snart den fullständiga planen blir tillgänglig.",
     "feat_library": "Viktiga färdiga standardfraser",
     "feat_actions": "Läs upp, kopiera & dela utmatning",
-    "feat_langs": "Fullt stöd för 6 språk",
+    "feat_langs": "Fullt stöd för 7 språk",
     "feat_everything": "<b>Allt som ingår i Bas</b>",
     "feat_custom": "Skapa & träna egna frases",
     "feat_model": "Fullständig träning av din personliga AI-modell",
@@ -337,8 +337,7 @@
     "step_2_desc": "Vi skickar instruktioner om hur Ni installerar PWA-appen till Er e-postadress när Er ansökan har behandlats.",
     "step_3_title": "Träna AI & kommunicera",
     "step_3_desc": "Spela in fraser, kontrollera igenkänningsnoggrannheten, njut av alla fördelar och hjälp oss att bli bättre.",
-    "cta_button": "Bli en HearMe-testare",
-    "form_url": "https://forms.gle/4PLdFytNjGW52muB9"
+    "cta_button": "Bli en HearMe-testare"
   },
   "error404": {
     "meta_title": "HearMe — Sidan hittades inte",

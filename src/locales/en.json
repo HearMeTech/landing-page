@@ -173,7 +173,7 @@
     "notify_text": "Get notified as soon as the Full plan becomes available.",
     "feat_library": "Essential Preset Phrases",
     "feat_actions": "Speak, Copy & Share output",
-    "feat_langs": "Full support for 6 languages",
+    "feat_langs": "Full support for 7 languages",
     "feat_everything": "<b>Everything in Basic</b>",
     "feat_custom": "Create & train custom phrases",
     "feat_model": "Full Personalized AI Model training",
@@ -339,8 +339,7 @@
     "step_2_desc": "We will send instructions on how to install the PWA app to your email once your application is processed.",
     "step_3_title": "Train AI & Communicate",
     "step_3_desc": "Record phrases, check the recognition accuracy, enjoy all the benefits, and help us get better.",
-    "cta_button": "Become a HearMe Tester",
-    "form_url": "https://forms.gle/4PLdFytNjGW52muB9"
+    "cta_button": "Become a HearMe Tester"
   },
   "error404": {
     "meta_title": "HearMe — Page Not Found",

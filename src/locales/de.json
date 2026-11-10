@@ -171,7 +171,7 @@
     "notify_text": "Erfahren Sie sofort, wenn die Vollversion verfügbar ist.",
     "feat_library": "Wichtigste Standardphrasen",
     "feat_actions": "Ausgabe vorlesen, kopieren & teilen",
-    "feat_langs": "Volle Unterstützung für 6 Sprachen",
+    "feat_langs": "Volle Unterstützung für 7 Sprachen",
     "feat_everything": "<b>Alles aus dem Basis-Paket</b>",
     "feat_custom": "Eigene Phrasen erstellen & trainieren",
     "feat_model": "Volles Training Ihres individuellen KI-Modells",
@@ -337,8 +337,7 @@
     "step_2_desc": "Wir senden Ihnen Anweisungen zur Installation der PWA-App an Ihre E-Mail-Adresse, sobald Ihre Bewerbung bearbeitet wurde.",
     "step_3_title": "KI trainieren & kommunizieren",
     "step_3_desc": "Nehmen Sie Phrasen auf, überprüfen Sie die Erkennungsgenauigkeit, genießen Sie alle Vorteile und helfen Sie uns, besser zu werden.",
-    "cta_button": "HearMe-Tester werden",
-    "form_url": "https://forms.gle/4PLdFytNjGW52muB9"
+    "cta_button": "HearMe-Tester werden"
   },
   "error404": {
     "meta_title": "HearMe — Seite nicht gefunden",

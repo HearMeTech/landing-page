@@ -171,7 +171,7 @@
     "notify_text": "Reciba una notificación en cuanto el Plan Completo esté disponible.",
     "feat_library": "Frases preestablecidas esenciales",
     "feat_actions": "Opciones de hablar, copiar y compartir",
-    "feat_langs": "Soporte completo para 6 idiomas",
+    "feat_langs": "Soporte completo para 7 idiomas",
     "feat_everything": "<b>Todo lo incluido en el Plan Básico</b>",
     "feat_custom": "Creación y entrenamiento de frases personalizadas",
     "feat_model": "Entrenamiento completo del modelo de IA personalizado",
@@ -337,8 +337,7 @@
     "step_2_desc": "Le enviaremos las instrucciones sobre cómo instalar la aplicación PWA a su correo electrónico una vez que se procese su solicitud.",
     "step_3_title": "Entrene a la IA y comuníquese",
     "step_3_desc": "Gabe frases, compruebe la precisión del reconocimiento, disfrute de todas las ventajas y ayúdenos a mejorar.",
-    "cta_button": "Convertirse en evaluador de HearMe",
-    "form_url": "https://forms.gle/4PLdFytNjGW52muB9"
+    "cta_button": "Convertirse en evaluador de HearMe"
   },
   "error404": {
     "meta_title": "HearMe — Página no encontrada",
