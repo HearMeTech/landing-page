@@ -147,7 +147,7 @@
     "title": "Votre chemin vers une parole plus claire",
     "subtitle": "Commencer est très simple. Notre processus guidé permet à l'IA de s'adapter immédiatement à votre voix.",
     "step1_title": "Lancez l'application web",
-    "step1_desc": "Aucun téléchargement requis. Ouvrez <a href='https://alpha.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> directement dans votre navigateur pour démarrer instantanément sur tout appareil.",
+    "step1_desc": "Aucun téléchargement requis. Ouvrez <a href='https://alpha.hearme.tech/login' class='text-brand-teal font-semibold hover:underline'>HearMe</a> directement dans votre navigateur pour démarrer instantanément sur tout appareil.",
     "step2_title": "Entraînement de base (Alpha)",
     "step2_desc": "Configurez 5 phrases clés en enregistrant quelques échantillons vocaux pour chacune. Cela crée un modèle de base robuste adapté à votre voix.",
     "step3_badge": "Bientôt disponible",

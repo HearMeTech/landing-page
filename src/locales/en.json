@@ -149,7 +149,7 @@
     "title": "Your Journey to Clearer Speech",
     "subtitle": "Getting started is simple. Our streamlined onboarding ensures the AI adapts to your voice right away.",
     "step1_title": "Launch the Web App",
-    "step1_desc": "No downloads or app stores required. Open <a href='https://alpha.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> directly in your browser to start instantly on any device.",
+    "step1_desc": "No downloads or app stores required. Open <a href='https://alpha.hearme.tech/login' class='text-brand-teal font-semibold hover:underline'>HearMe</a> directly in your browser to start instantly on any device.",
     "step2_title": "Core Training (Alpha)",
     "step2_desc": "Train 5 core phrases by recording a few voice samples for each. This builds a robust baseline model tailored specifically to your voice.",
     "step3_badge": "Coming Soon",

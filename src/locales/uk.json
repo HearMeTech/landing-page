@@ -147,7 +147,7 @@
     "title": "Ваш шлях до чіткого мовлення",
     "subtitle": "Почати роботу дуже просто. Наш покроковий процес забезпечує миттєву адаптацію ШІ до вашого голосу.",
     "step1_title": "Запустіть вебзастосунок",
-    "step1_desc": "Не потрібно нічого завантажувати. Просто відкрийте <a href='https://alpha.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> у браузері на будь-якому пристрої.",
+    "step1_desc": "Не потрібно нічого завантажувати. Просто відкрийте <a href='https://alpha.hearme.tech/login' class='text-brand-teal font-semibold hover:underline'>HearMe</a> у браузері на будь-якому пристрої.",
     "step2_title": "Базове навчання (Альфа)",
     "step2_desc": "Налаштуйте 5 основних фраз, записавши кілька зразків голосу для кожної. Це створить надійну модель під ваш унікальний голос.",
     "step3_badge": "Незабаром",

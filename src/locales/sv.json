@@ -147,7 +147,7 @@
     "title": "Din väg till ett tydligare tal",
     "subtitle": "Det är enkelt att komma igång. Vår guidade process säkerställer att vår AI anpassar sig till din röst direkt.",
     "step1_title": "Starta webbappen",
-    "step1_desc": "Inga nedladdningar krävs. Öppna enkelt <a href='https://alpha.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> direkt i din webbläsare på valfri enhet.",
+    "step1_desc": "Inga nedladdningar krävs. Öppna enkelt <a href='https://alpha.hearme.tech/login' class='text-brand-teal font-semibold hover:underline'>HearMe</a> direkt i din webbläsare på valfri enhet.",
     "step2_title": "Grundläggande träning (Alpha)",
     "step2_desc": "Träna 5 kärnfraser genom att spela in några röstprover för varje. Detta skapar en stabil basmodell anpassad för din röst.",
     "step3_badge": "Kommer snart",

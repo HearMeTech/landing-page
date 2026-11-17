@@ -147,7 +147,7 @@
     "title": "Ihr Weg zu klarer Verständigung",
     "subtitle": "Der Einstieg ist unkompliziert. Unser geführter Prozess sorgt dafür, dass sich die KI sofort auf Ihre Stimme einstellt.",
     "step1_title": "Web-App öffnen",
-    "step1_desc": "Kein Download nötig. Öffnen Sie <a href='https://alpha.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> einfach direkt im Browser Ihres bevorzugten Geräts.",
+    "step1_desc": "Kein Download nötig. Öffnen Sie <a href='https://alpha.hearme.tech/login' class='text-brand-teal font-semibold hover:underline'>HearMe</a> einfach direkt im Browser Ihres bevorzugten Geräts.",
     "step2_title": "Basis-Training (Alpha)",
     "step2_desc": "Sprechen Sie 5 Standardphrasen mehrfach ein. Daraus erstellen wir ein verlässliches, auf Ihre Stimme maßgeschneidertes Grundmodell.",
     "step3_badge": "Demnächst",

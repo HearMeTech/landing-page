@@ -147,7 +147,7 @@
     "title": "Su camino hacia un habla más clara",
     "subtitle": "Comenzar es muy sencillo. Nuestro proceso guiado garantiza que la IA se adapte a su voz de inmediato.",
     "step1_title": "Inicie la aplicación web",
-    "step1_desc": "Sin descargas ni tiendas de aplicaciones. Abra <a href='https://alpha.hearme.tech' target='_blank' rel='noopener noreferrer' class='text-brand-teal font-semibold hover:underline'>HearMe</a> en su navegador para empezar al instante en cualquier dispositivo.",
+    "step1_desc": "Sin descargas ni tiendas de aplicaciones. Abra <a href='https://alpha.hearme.tech/login' class='text-brand-teal font-semibold hover:underline'>HearMe</a> en su navegador para empezar al instante en cualquier dispositivo.",
     "step2_title": "Entrenamiento básico (Alfa)",
     "step2_desc": "Entrene 5 frases clave grabando algunas muestras de voz para cada una. Esto creará un modelo base sólido y adaptado a su voz.",
     "step3_badge": "Próximamente",
