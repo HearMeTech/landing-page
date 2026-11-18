@@ -81,14 +81,12 @@ async function initializeFirebaseAndAuth() {
         onAuthStateChanged(auth, async (user) => {
             if (user) {
                 // User is signed in.
-                console.log("Firebase Auth: User is signed in.", user.uid);
                 if (!isAuthReady) {
                     isAuthReady = true;
                     authResolve({ db, auth, appId });
                 }
             } else {
                 // User is signed out. Try to sign in.
-                console.log("Firebase Auth: No user found, attempting sign-in...");
                 await attemptSignIn();
             }
         });
@@ -109,10 +107,8 @@ async function initializeFirebaseAndAuth() {
 async function attemptSignIn() {
     try {
         if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-            console.log("Attempting sign-in with custom token...");
             await signInWithCustomToken(auth, __initial_auth_token);
         } else {
-            console.log("Attempting anonymous sign-in...");
             await signInAnonymously(auth);
         }
     } catch (error) {

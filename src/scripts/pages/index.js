@@ -281,8 +281,6 @@ function initPage() {
     setupAnalytics();
 
     setTimeout(() => triggerHeroAnimation(), 500);
-
-    console.log("Index page initialized.");
 }
 
 // Event-driven init

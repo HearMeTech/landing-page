@@ -200,6 +200,23 @@ function translateHTML(html, translations, lang, components, pagePath) {
     const configScript = `\n    \n    <script>window.APP_CONFIG = ${JSON.stringify(APP_CONFIG)};</script>\n`;
     $('head').prepend(configScript);
 
+    // Inject synchronous theme initializer at the top of <head> to prevent FOUC
+    const themeInitScript = `
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('theme');
+                var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>`;
+    $('head').prepend(themeInitScript);
+
     // Translate contents based on data-i18n attributes
     $('[data-i18n]').each((i, el) => {
         const key = $(el).attr('data-i18n');

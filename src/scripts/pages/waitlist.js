@@ -62,10 +62,8 @@ async function setupWaitlistForm() {
         loadingSpinner.classList.remove('hidden');
 
         try {
-            console.log("Waiting for Firebase Auth...");
             await authReadyPromise; 
 
-            console.log("Writing to Firestore...");
             await addDoc(collection(db, "waitlist"), {
                 email: email,
                 name: name || null,

@@ -226,6 +226,99 @@ function setupSmartHeader() {
 }
 
 /**
+ * Initializes Light/Dark theme toggling and OS theme change listener.
+ */
+function initThemeToggle() {
+    const toggleButtons = document.querySelectorAll('[data-theme-toggle]');
+    const rootElement = document.documentElement;
+
+    toggleButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const isCurrentlyDark = rootElement.classList.contains('dark');
+            const nextTheme = isCurrentlyDark ? 'light' : 'dark';
+
+            rootElement.classList.toggle('dark', nextTheme === 'dark');
+
+            try {
+                localStorage.setItem('theme', nextTheme);
+            } catch {
+                // Ignore localStorage restrictions
+            }
+        });
+    });
+
+    // Listen to OS color scheme changes if the user hasn't manually overridden the theme
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    mediaQuery.addEventListener('change', (event) => {
+        try {
+            if (!localStorage.getItem('theme')) {
+                rootElement.classList.toggle('dark', event.matches);
+            }
+        } catch {
+            rootElement.classList.toggle('dark', event.matches);
+        }
+    });
+}
+
+/**
+ * Prints a styled Easter egg message for developers inspecting the browser console.
+ */
+function printDeveloperEasterEgg() {
+    if (window.__hearmeConsoleReady) {
+        return;
+    }
+    window.__hearmeConsoleReady = true;
+
+    const badgeStyle = [
+        'background: linear-gradient(135deg, #001219 0%, #005f73 55%, #0a9396 100%)',
+        'color: #ffffff',
+        'font-family: Montserrat, sans-serif',
+        'font-size: 16px',
+        'font-weight: 700',
+        'padding: 10px 18px',
+        'border-radius: 8px',
+        'border: 1px solid #94d2bd'
+    ].join(';');
+
+    const titleStyle = [
+        'color: #0a9396',
+        'font-family: Montserrat, sans-serif',
+        'font-size: 14px',
+        'font-weight: 700',
+        'margin-top: 6px'
+    ].join(';');
+
+    const textStyle = [
+        'color: #64748b',
+        'font-family: Montserrat, sans-serif',
+        'font-size: 12px',
+        'line-height: 1.6'
+    ].join(';');
+
+    const linkStyle = [
+        'color: #0a9396',
+        'font-weight: 600',
+        'text-decoration: underline'
+    ].join(';');
+
+    console.log('%c🎙️ HearMe — Giving everyone the power to be heard.', badgeStyle);
+    console.log('%cHey there, curious developer! 👋', titleStyle);
+    console.log(
+        '%cLove clean code, Edge AI, and building assistive tech that truly matters?\n' +
+        'We are always looking for passionate engineers, researchers, and collaborators.\n\n' +
+        '📩 Drop us a line: %cinfo@hearme.tech%c\n' +
+        '🤖 Say hi via Telegram: %chttps://t.me/HearMeTechBot%c\n' +
+        '💻 Explore our GitHub: %chttps://github.com/HearMeTech',
+        textStyle,
+        linkStyle,
+        textStyle,
+        linkStyle,
+        textStyle,
+        linkStyle
+    );
+}
+
+/**
  * Main Initialization
  */
 function initCommonElements() {
@@ -243,6 +336,8 @@ function initCommonElements() {
     setupActiveNavigation();
     setupScrollToTop();
     setupSmartHeader();
+    initThemeToggle();
+    printDeveloperEasterEgg();
 
     window.hearmeReady = true;
     document.dispatchEvent(new CustomEvent('hearme:ready'));

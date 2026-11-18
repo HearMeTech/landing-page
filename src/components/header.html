@@ -1,63 +1,89 @@
-<header class="fixed w-full top-0 left-0 z-50 bg-white/95 backdrop-blur-lg shadow-md shadow-brand-teal/10 border-b border-brand-teal/10 transition-transform duration-300 transform-gpu">
+<header class="fixed w-full top-0 left-0 z-50 bg-white/95 dark:bg-brand-navy/95 backdrop-blur-lg shadow-md shadow-brand-teal/10 border-b border-brand-teal/10 dark:border-white/10 transition-colors duration-300 transform-gpu">
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="/" class="flex items-center space-x-2 shrink-0 logo-sheen rounded-md" aria-label="Go to homepage">
-            <img src="/images/logo-text-only.png" alt="HearMe Text Logo" class="h-10 lg:h-12 w-auto rounded-md">
+        <a href="/" class="flex items-center space-x-2 shrink-0 logo-sheen rounded-xl dark:bg-white/95 dark:px-2.5 dark:py-1 transition-all" aria-label="Go to homepage">
+            <img src="/images/logo-text-only.png" alt="HearMe Text Logo" class="h-10 lg:h-11 w-auto rounded-md">
         </a>
 
-        <div class="hidden lg:flex lg:space-x-5 xl:space-x-8 items-center">
-            <a href="/#features" class="text-gray-600 hover:text-brand-teal transition duration-200 text-sm xl:text-base" data-i18n="nav.features">Features</a>
-            <a href="/#how-it-works" class="text-gray-600 hover:text-brand-teal transition duration-200 text-sm xl:text-base" data-i18n="nav.howItWorks">How It Works</a>
-            <a href="/#pricing" class="text-gray-600 hover:text-brand-teal transition duration-200 text-sm xl:text-base" data-i18n="nav.pricing">Pricing</a>
-            <a href="/#roadmap" class="text-gray-600 hover:text-brand-teal transition duration-200 text-sm xl:text-base" data-i18n="nav.roadmap">Roadmap</a>
+        <div class="hidden lg:flex lg:space-x-5 xl:space-x-7 items-center">
+            <a href="/#features" class="text-gray-600 dark:text-gray-300 hover:text-brand-teal dark:hover:text-brand-teal-light transition duration-200 text-sm xl:text-base" data-i18n="nav.features">Features</a>
+            <a href="/#how-it-works" class="text-gray-600 dark:text-gray-300 hover:text-brand-teal dark:hover:text-brand-teal-light transition duration-200 text-sm xl:text-base" data-i18n="nav.howItWorks">How It Works</a>
+            <a href="/#pricing" class="text-gray-600 dark:text-gray-300 hover:text-brand-teal dark:hover:text-brand-teal-light transition duration-200 text-sm xl:text-base" data-i18n="nav.pricing">Pricing</a>
+            <a href="/#roadmap" class="text-gray-600 dark:text-gray-300 hover:text-brand-teal dark:hover:text-brand-teal-light transition duration-200 text-sm xl:text-base" data-i18n="nav.roadmap">Roadmap</a>
 
+            <!-- Language Switcher -->
             <div class="relative group">
-                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 group-hover:text-brand-teal transition-colors">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 dark:text-gray-400 group-hover:text-brand-teal transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                 </div>
 
-                <select id="language-switcher" aria-label="Select language" class="appearance-none bg-gray-50 border border-gray-200 text-gray-700 py-2 pl-9 pr-8 rounded-full focus:outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/20 text-sm font-medium cursor-pointer hover:border-gray-300 transition-all shadow-sm">
+                <select id="language-switcher" aria-label="Select language" class="appearance-none bg-gray-50 dark:bg-slate-800/80 border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-gray-200 py-2 pl-9 pr-8 rounded-full focus:outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/20 text-sm font-medium cursor-pointer hover:border-gray-300 dark:hover:border-slate-600 transition-all shadow-sm">
                 </select>
                 
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
-                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500 dark:text-gray-400">
+                    <svg class="fill-current h-4 w-4" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
                 </div>
             </div>
+
+            <!-- Theme Toggle Button (Desktop) -->
+            <button type="button" data-theme-toggle aria-label="Toggle color theme" class="p-2.5 rounded-full bg-gray-50 dark:bg-slate-800/80 border border-gray-200 dark:border-slate-700 text-gray-600 dark:text-amber-300 hover:text-brand-teal dark:hover:text-amber-200 hover:border-gray-300 dark:hover:border-slate-600 transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-teal/20">
+                <!-- Moon icon (shown in light mode) -->
+                <svg class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+                <!-- Sun icon (shown in dark mode) -->
+                <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+            </button>
 
             <a href="/#contact" class="bg-brand-teal text-white px-4 py-2 xl:px-5 rounded-full font-semibold hover:bg-brand-teal-dark transition duration-200 shadow-sm text-sm xl:text-base whitespace-nowrap" data-i18n="nav.contact">Contact Us</a>
         </div>
 
-        <button id="mobile-menu-button" class="lg:hidden text-gray-700 outline-none p-2" aria-label="Toggle mobile menu">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-        </button>
+        <!-- Mobile Controls -->
+        <div class="flex items-center space-x-2 lg:hidden">
+            <!-- Theme Toggle Button (Mobile) -->
+            <button type="button" data-theme-toggle aria-label="Toggle color theme" class="p-2 rounded-full bg-gray-50 dark:bg-slate-800/80 border border-gray-200 dark:border-slate-700 text-gray-600 dark:text-amber-300 hover:text-brand-teal transition-colors">
+                <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+                <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+            </button>
+
+            <button id="mobile-menu-button" class="text-gray-700 dark:text-gray-200 outline-none p-2" aria-label="Toggle mobile menu">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
     </nav>
 
-    <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-lg absolute top-full left-0 right-0 z-40 border-t border-gray-100 max-h-[85vh] overflow-y-auto">
-        <a href="/#features" class="block px-6 py-3 text-gray-600 hover:bg-gray-50" data-i18n="nav.features">Features</a>
-        <a href="/#how-it-works" class="block px-6 py-3 text-gray-600 hover:bg-gray-50" data-i18n="nav.howItWorks">How It Works</a>
-        <a href="/#pricing" class="block px-6 py-3 text-gray-600 hover:bg-gray-50" data-i18n="nav.pricing">Pricing</a>
-        <a href="/#roadmap" class="block px-6 py-3 text-gray-600 hover:bg-gray-50" data-i18n="nav.roadmap">Roadmap</a>
+    <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-brand-navy shadow-lg absolute top-full left-0 right-0 z-40 border-t border-gray-100 dark:border-slate-800 max-h-[85vh] overflow-y-auto">
+        <a href="/#features" class="block px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800/50" data-i18n="nav.features">Features</a>
+        <a href="/#how-it-works" class="block px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800/50" data-i18n="nav.howItWorks">How It Works</a>
+        <a href="/#pricing" class="block px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800/50" data-i18n="nav.pricing">Pricing</a>
+        <a href="/#roadmap" class="block px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800/50" data-i18n="nav.roadmap">Roadmap</a>
 
-        <div class="bg-gray-50 mx-4 rounded-xl p-3 flex items-center justify-between mt-2 mb-4">
-            <div class="flex items-center text-gray-600">
-                <svg class="w-5 h-5 mr-2 text-brand-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <div class="bg-gray-50 dark:bg-slate-800/60 mx-4 rounded-xl p-3 flex items-center justify-between mt-2 mb-4">
+            <div class="flex items-center text-gray-600 dark:text-gray-300">
+                <svg class="w-5 h-5 mr-2 text-brand-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 <span class="font-medium text-sm">Language</span>
             </div>
             
             <div class="relative">
-                <select id="language-switcher-mobile" aria-label="Select language" class="appearance-none bg-white border border-gray-200 text-gray-700 py-1.5 pl-3 pr-8 rounded-lg text-sm font-medium focus:outline-none focus:border-brand-teal focus:ring-1 focus:ring-brand-teal/20 cursor-pointer">
+                <select id="language-switcher-mobile" aria-label="Select language" class="appearance-none bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-gray-200 py-1.5 pl-3 pr-8 rounded-lg text-sm font-medium focus:outline-none focus:border-brand-teal focus:ring-1 focus:ring-brand-teal/20 cursor-pointer">
                 </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
-                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500 dark:text-gray-400">
+                    <svg class="fill-current h-4 w-4" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
                 </div>
             </div>
         </div>
 
-        <a href="/#contact" class="block px-6 py-4 bg-brand-teal/10 text-brand-teal-dark font-semibold text-center mx-4 mb-4 rounded-xl" data-i18n="nav.contact">Contact Us</a>
+        <a href="/#contact" class="block px-6 py-4 bg-brand-teal/10 dark:bg-brand-teal/20 text-brand-teal-dark dark:text-brand-teal-light font-semibold text-center mx-4 mb-4 rounded-xl" data-i18n="nav.contact">Contact Us</a>
     </div>
 </header>

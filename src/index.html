@@ -44,24 +44,25 @@
         gtag('config', 'G-DNHB9PR6QG');
     </script>
 
-<script type="application/ld+json" data-i18n="schema">
-    {}
-</script>
+    <script type="application/ld+json" data-i18n="schema">
+        {}
+    </script>
 
     <link rel="stylesheet" href="/css/tailwind.css?v=1">
     <link rel="stylesheet" href="/css/style.css?v=1">
 </head>
 
-<body class="font-sans text-gray-800 antialiased">
+<body class="font-sans text-gray-800 dark:text-gray-200 bg-white dark:bg-brand-navy antialiased transition-colors duration-300">
 
-    <div id="header-placeholder" class="min-h-[72px] lg:min-h-[80px] bg-white"></div>
+    <div id="header-placeholder" class="min-h-[72px] lg:min-h-[80px] bg-white dark:bg-brand-navy"></div>
 
     <main>
 
-        <section class="bg-white pt-32 pb-12 md:pt-40 md:pb-28 lg:pt-48">
+        <!-- Hero Section -->
+        <section class="bg-white dark:bg-brand-navy pt-32 pb-12 md:pt-40 md:pb-28 lg:pt-48 transition-colors duration-300">
             <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                 <div class="text-center md:text-left">
-                    <h1 class="relative text-4xl lg:text-5xl font-bold text-brand-navy leading-tight lg:leading-snug mb-6">
+                    <h1 class="relative text-4xl lg:text-5xl font-bold text-brand-navy dark:text-white leading-tight lg:leading-snug mb-6">
     
                         <span id="hero-title-source" class="invisible pr-4" data-i18n="hero.title">
                             Your Voice. Your Words.<br>
@@ -70,7 +71,7 @@
                         
                         <span id="hero-title-display" class="absolute inset-0" aria-hidden="true"></span>
                     </h1>
-                    <p class="text-lg lg:text-xl text-gray-600 mb-8" data-i18n="hero.subtitle">
+                    <p class="text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-8" data-i18n="hero.subtitle">
                         <b>HearMe</b> is a revolutionary AI app that learns your unique speech patterns, giving you the power to communicate clearly and confidently.
                     </p>
                     <div class="flex flex-col md:flex-row gap-8 justify-center md:justify-start">
@@ -84,7 +85,7 @@
                                 <span class="sound-bar"></span>
                             </div>
                         </a>
-                        <a href="/testing" class="inline-flex items-center justify-center bg-transparent border-2 border-brand-teal text-brand-teal px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-teal/5 transition duration-300 shadow-sm hover:shadow-md">
+                        <a href="/testing" class="inline-flex items-center justify-center bg-transparent border-2 border-brand-teal text-brand-teal dark:text-brand-teal-light dark:border-brand-teal-light px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-teal/5 dark:hover:bg-brand-teal/15 transition duration-300 shadow-sm hover:shadow-md">
                             <span data-i18n="hero.testing_btn">Become a Tester</span>
                         </a>
                     </div>
@@ -96,7 +97,7 @@
                         <img 
                             src="images/hearme-hero-speech-communication.png" 
                             alt="Woman using HearMe app, puzzle pieces coming together to form a clear speech bubble, representing the reconstruction of speech"
-                            class="w-full max-w-lg lg:max-w-2xl h-auto object-contain rounded-2xl hero-floating-img tilt-card transition-all duration-500 ease-out hover:shadow-2xl hover:-translate-y-2 cursor-default"
+                            class="w-full max-w-lg lg:max-w-2xl h-auto object-contain rounded-2xl dark:bg-white/95 dark:p-3 dark:ring-1 dark:ring-white/20 dark:shadow-[0_0_50px_-12px_rgba(10,147,150,0.35)] hero-floating-img tilt-card transition-all duration-500 ease-out hover:shadow-2xl hover:-translate-y-2 cursor-default"
                             data-tilt-strength="5"
                             width="1200"
                             height="787"
@@ -106,18 +107,19 @@
             </div>
         </section>
 
-        <section id="features" class="bg-teal-50 py-20 md:py-24">
+        <!-- Features Section -->
+        <section id="features" class="bg-teal-50 dark:bg-slate-900 py-20 md:py-24 transition-colors duration-300">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4" data-i18n="features.title">Empowering Your Communication</h2>
-                    <p class="text-lg text-gray-600" data-i18n="features.subtitle">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy dark:text-white mb-4" data-i18n="features.title">Empowering Your Communication</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300" data-i18n="features.subtitle">
                         Designed for individuals with speech impairments from Cerebral Palsy, stroke, or ALS. <b>HearMe</b> combines advanced AI with an intuitive interface.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     
-                    <div class="tilt-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300 reveal">
+                    <div class="tilt-card bg-white dark:bg-slate-800/80 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition duration-300 reveal">
                         <div class="w-12 h-12 bg-brand-teal/20 rounded-lg flex items-center justify-center mb-6">
                             <svg class="w-8 h-8 text-brand-teal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <g fill="currentColor" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round">
@@ -127,38 +129,38 @@
                                 </g>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3" data-i18n="features.personal_title">Personalized AI Model</h3>
-                        <p class="text-gray-600 hyphens-auto" data-i18n="features.personal_desc">The app trains on <b>your</b> specific voice patterns using advanced Machine Learning, becoming more accurate with every use.</p>
+                        <h3 class="text-2xl font-semibold text-brand-teal-dark dark:text-brand-teal-light mb-3" data-i18n="features.personal_title">Personalized AI Model</h3>
+                        <p class="text-gray-600 dark:text-gray-300 hyphens-auto" data-i18n="features.personal_desc">The app trains on <b>your</b> specific voice patterns using advanced Machine Learning, becoming more accurate with every use.</p>
                     </div>
 
-                    <div class="tilt-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300 reveal" style="transition-delay: 100ms;">
+                    <div class="tilt-card bg-white dark:bg-slate-800/80 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition duration-300 reveal" style="transition-delay: 100ms;">
                         <div class="w-12 h-12 bg-brand-teal/20 rounded-lg flex items-center justify-center mb-6">
                             <svg class="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3" data-i18n="features.recognition_title">Real-Time Recognition</h3>
-                        <p class="text-gray-600 hyphens-auto" data-i18n="features.recognition_desc">Our AI instantly transcribes your speech into text with low latency, enabling seamless and natural conversation flows.</p>
+                        <h3 class="text-2xl font-semibold text-brand-teal-dark dark:text-brand-teal-light mb-3" data-i18n="features.recognition_title">Real-Time Recognition</h3>
+                        <p class="text-gray-600 dark:text-gray-300 hyphens-auto" data-i18n="features.recognition_desc">Our AI instantly transcribes your speech into text with low latency, enabling seamless and natural conversation flows.</p>
                     </div>
 
-                    <div class="tilt-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300 reveal" style="transition-delay: 200ms;">
+                    <div class="tilt-card bg-white dark:bg-slate-800/80 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition duration-300 reveal" style="transition-delay: 200ms;">
                         <div class="w-12 h-12 bg-brand-teal/20 rounded-lg flex items-center justify-center mb-6">
                             <svg class="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" /></svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3" data-i18n="features.output_title">Voice &amp; Text Output</h3>
-                        <p class="text-gray-600 hyphens-auto" data-i18n="features.output_desc">Play your recognized phrase aloud using clear synthesis, copy the text to clipboard, or send it directly to other apps.</p>
+                        <h3 class="text-2xl font-semibold text-brand-teal-dark dark:text-brand-teal-light mb-3" data-i18n="features.output_title">Voice &amp; Text Output</h3>
+                        <p class="text-gray-600 dark:text-gray-300 hyphens-auto" data-i18n="features.output_desc">Play your recognized phrase aloud using clear synthesis, copy the text to clipboard, or send it directly to other apps.</p>
                     </div>
 
-                    <div class="tilt-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300 reveal" style="transition-delay: 300ms;">
+                    <div class="tilt-card bg-white dark:bg-slate-800/80 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition duration-300 reveal" style="transition-delay: 300ms;">
                         <div class="w-12 h-12 bg-brand-teal/20 rounded-lg flex items-center justify-center mb-6">
                             <svg class="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="11" cy="11" r="8" />
                                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3" data-i18n="features.fallback_title">Smart Fallback</h3>
-                        <p class="text-gray-600 hyphens-auto" data-i18n="features.fallback_desc">Recognition uncertain? Instantly select a saved phrase directly on screen. Speak, copy, or share it seamlessly—just like voice input.</p>
+                        <h3 class="text-2xl font-semibold text-brand-teal-dark dark:text-brand-teal-light mb-3" data-i18n="features.fallback_title">Smart Fallback</h3>
+                        <p class="text-gray-600 dark:text-gray-300 hyphens-auto" data-i18n="features.fallback_desc">Recognition uncertain? Instantly select a saved phrase directly on screen. Speak, copy, or share it seamlessly—just like voice input.</p>
                     </div>
                     
-                    <div class="tilt-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300 reveal" style="transition-delay: 400ms;">
+                    <div class="tilt-card bg-white dark:bg-slate-800/80 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition duration-300 reveal" style="transition-delay: 400ms;">
                         <div class="w-12 h-12 bg-brand-teal/20 rounded-lg flex items-center justify-center mb-6">
                             <svg class="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="10" />
@@ -166,27 +168,28 @@
                                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3" data-i18n="features.translation_title">Instant Translation</h3>
-                        <p class="text-gray-600 hyphens-auto" data-i18n="features.translation_desc">Instantly translate your spoken words to communicate effortlessly in foreign languages, breaking down barriers.</p>
+                        <h3 class="text-2xl font-semibold text-brand-teal-dark dark:text-brand-teal-light mb-3" data-i18n="features.translation_title">Instant Translation</h3>
+                        <p class="text-gray-600 dark:text-gray-300 hyphens-auto" data-i18n="features.translation_desc">Instantly translate your spoken words to communicate effortlessly in foreign languages, breaking down barriers.</p>
                     </div>
 
-                    <div class="tilt-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300 reveal" style="transition-delay: 500ms;">
+                    <div class="tilt-card bg-white dark:bg-slate-800/80 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition duration-300 reveal" style="transition-delay: 500ms;">
                         <div class="w-12 h-12 bg-brand-teal/20 rounded-lg flex items-center justify-center mb-6">
                             <svg class="w-6 h-6 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-brand-teal-dark mb-3" data-i18n="features.secure_title">Secure &amp; Private</h3>
-                        <p class="text-gray-600 hyphens-auto" data-i18n="features.secure_desc">Your data is safe on Google Cloud infrastructure. We use industry-standard encryption and secure Firebase authentication.</p>
+                        <h3 class="text-2xl font-semibold text-brand-teal-dark dark:text-brand-teal-light mb-3" data-i18n="features.secure_title">Secure &amp; Private</h3>
+                        <p class="text-gray-600 dark:text-gray-300 hyphens-auto" data-i18n="features.secure_desc">Your data is safe on Google Cloud infrastructure. We use industry-standard encryption and secure Firebase authentication.</p>
                     </div>
 
                 </div>
             </div>
         </section>
 
-        <section id="how-it-works" class="py-20 bg-white md:py-20 relative overflow-hidden">
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-20 bg-white dark:bg-brand-navy md:py-20 relative overflow-hidden transition-colors duration-300">
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4" data-i18n="howItWorks.title">Your Journey to Clear Speech</h2>
-                    <p class="text-lg text-gray-600" data-i18n="howItWorks.subtitle">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy dark:text-white mb-4" data-i18n="howItWorks.title">Your Journey to Clear Speech</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300" data-i18n="howItWorks.subtitle">
                         Getting started is easy. Our step-by-step process ensures the AI adapts to you immediately.
                     </p>
                 </div>
@@ -194,73 +197,77 @@
                 <div class="relative max-w-5xl mx-auto">
                     <div class="hidden md:block absolute left-1/2 top-4 bottom-4 -translate-x-1/2 w-1 bg-gradient-to-b from-brand-teal/20 via-brand-teal/40 to-brand-teal/20 rounded-full"></div>
 
+                    <!-- Step 01 -->
                     <div class="grid md:grid-cols-2 gap-8 items-center relative z-40">
-                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-right relative tilt-card reveal">
+                        <div class="bg-white dark:bg-slate-800/80 p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 dark:border-slate-700 text-center md:text-right relative tilt-card reveal">
                             <div class="relative z-10">
                                 <div class="flex flex-col md:flex-row items-center md:justify-end gap-3 mb-2">
                                     <span class="text-4xl md:text-5xl font-bold text-brand-teal/20 select-none" aria-hidden="true">01</span>
-                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy m-0" data-i18n="howItWorks.step1_title">Launch the Web App</h3>
+                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy dark:text-white m-0" data-i18n="howItWorks.step1_title">Launch the Web App</h3>
                                 </div>
-                                <p class="text-gray-600" data-i18n="howItWorks.step1_desc">
+                                <p class="text-gray-600 dark:text-gray-300" data-i18n="howItWorks.step1_desc">
                                     No downloads or app stores required. Simply open 
-                                    <a href="https://alpha.hearme.tech/login" data-analytics="launch-app" class="text-teal-700 font-semibold hover:underline">HearMe</a> 
+                                    <a href="https://alpha.hearme.tech/login" data-analytics="launch-app" class="text-teal-700 dark:text-brand-teal-light font-semibold hover:underline">HearMe</a> 
                                     directly in your browser to get started instantly on any device.
                                 </p>
                             </div>
-                            <div class="hidden md:block absolute top-1/2 -right-[calc(2rem+5px)] w-5 h-5 bg-brand-teal rounded-full border-4 border-white shadow-sm z-20 transform -translate-y-1/2"></div>
+                            <div class="hidden md:block absolute top-1/2 -right-[calc(2rem+5px)] w-5 h-5 bg-brand-teal rounded-full border-4 border-white dark:border-brand-navy shadow-sm z-20 transform -translate-y-1/2"></div>
                         </div>
                         <div class="hidden md:block"></div>
                     </div>
 
+                    <!-- Step 02 -->
                     <div class="grid md:grid-cols-2 gap-8 items-center relative z-30 mt-8 md:-mt-12">
                         <div class="hidden md:block"></div>
-                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-left relative tilt-card reveal">
+                        <div class="bg-white dark:bg-slate-800/80 p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 dark:border-slate-700 text-center md:text-left relative tilt-card reveal">
                             <div class="relative z-10">
                                 <div class="flex flex-col md:flex-row items-center md:justify-start gap-3 mb-2">
                                     <span class="text-4xl md:text-5xl font-bold text-brand-teal/20 select-none order-1 md:order-2" aria-hidden="true">02</span>
-                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy m-0 order-2 md:order-1" data-i18n="howItWorks.step2_title">Core Training (Alpha)</h3>
+                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy dark:text-white m-0 order-2 md:order-1" data-i18n="howItWorks.step2_title">Core Training (Alpha)</h3>
                                 </div>
-                                <p class="text-gray-600" data-i18n="howItWorks.step2_desc">
+                                <p class="text-gray-600 dark:text-gray-300" data-i18n="howItWorks.step2_desc">
                                     Train 5 predefined phrases by recording multiple voice samples for each. This builds a robust baseline model tailored specifically to your speech patterns.
                                 </p>
                             </div>
-                            <div class="hidden md:block absolute top-1/2 -left-[calc(2rem+5px)] w-5 h-5 bg-brand-teal rounded-full border-4 border-white shadow-sm z-20 transform -translate-y-1/2"></div>
+                            <div class="hidden md:block absolute top-1/2 -left-[calc(2rem+5px)] w-5 h-5 bg-brand-teal rounded-full border-4 border-white dark:border-brand-navy shadow-sm z-20 transform -translate-y-1/2"></div>
                         </div>
                     </div>
 
+                    <!-- Step 03 -->
                     <div class="grid md:grid-cols-2 gap-8 items-center relative z-20 mt-8 md:-mt-12">
-                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-right relative tilt-card reveal">
-                            <div class="absolute top-0 left-0 md:left-0 md:right-auto bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-tl-xl rounded-br-lg uppercase tracking-wide border-r border-b border-gray-200 z-20" data-i18n="howItWorks.step3_badge">
+                        <div class="bg-white dark:bg-slate-800/80 p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 dark:border-slate-700 text-center md:text-right relative tilt-card reveal">
+                            <div class="absolute top-0 left-0 md:left-0 md:right-auto bg-gray-100 dark:bg-slate-700 text-gray-500 dark:text-gray-300 text-xs font-bold px-3 py-1 rounded-tl-xl rounded-br-lg uppercase tracking-wide border-r border-b border-gray-200 dark:border-slate-600 z-20" data-i18n="howItWorks.step3_badge">
                                 Coming Soon
                             </div>
 
                             <div class="relative z-10">
                                 <div class="flex flex-col md:flex-row items-center md:justify-end gap-3 mb-2">
-                                    <span class="text-4xl md:text-5xl font-bold text-gray-200 select-none" aria-hidden="true">03</span>
-                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy m-0 opacity-90" data-i18n="howItWorks.step3_title">Expand Vocabulary</h3>
+                                    <span class="text-4xl md:text-5xl font-bold text-gray-200 dark:text-slate-600 select-none" aria-hidden="true">03</span>
+                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy dark:text-white m-0 opacity-90" data-i18n="howItWorks.step3_title">Expand Vocabulary</h3>
                                 </div>
-                                <p class="text-gray-500" data-i18n="howItWorks.step3_desc">
+                                <p class="text-gray-500 dark:text-gray-400" data-i18n="howItWorks.step3_desc">
                                     In the full version, you will be able to add custom phrases specific to your life, making the AI smarter and more personalized.
                                 </p>
                             </div>
-                            <div class="hidden md:block absolute top-1/2 -right-[calc(2rem+5px)] w-5 h-5 bg-gray-300 rounded-full border-4 border-white shadow-sm z-20 transform -translate-y-1/2"></div>
+                            <div class="hidden md:block absolute top-1/2 -right-[calc(2rem+5px)] w-5 h-5 bg-gray-300 dark:bg-slate-600 rounded-full border-4 border-white dark:border-brand-navy shadow-sm z-20 transform -translate-y-1/2"></div>
                         </div>
                         <div class="hidden md:block"></div>
                     </div>
 
+                    <!-- Step 04 -->
                     <div class="grid md:grid-cols-2 gap-8 items-center relative z-10 mt-8 md:-mt-12">
                         <div class="hidden md:block"></div>
-                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 text-center md:text-left relative tilt-card reveal">
+                        <div class="bg-white dark:bg-slate-800/80 p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 dark:border-slate-700 text-center md:text-left relative tilt-card reveal">
                             <div class="relative z-10">
                                 <div class="flex flex-col md:flex-row items-center md:justify-start gap-3 mb-2">
                                     <span class="text-4xl md:text-5xl font-bold text-brand-teal/20 select-none order-1 md:order-2" aria-hidden="true">04</span>
-                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy m-0 order-2 md:order-1" data-i18n="howItWorks.step4_title">Speak Freely</h3>
+                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy dark:text-white m-0 order-2 md:order-1" data-i18n="howItWorks.step4_title">Speak Freely</h3>
                                 </div>
-                                <p class="text-gray-600" data-i18n="howItWorks.step4_desc">
+                                <p class="text-gray-600 dark:text-gray-300" data-i18n="howItWorks.step4_desc">
                                     Use the app to speak for you in real-time. Whether text-to-speech or text display, your voice is finally understood.
                                 </p>
                             </div>
-                            <div class="hidden md:block absolute top-1/2 -left-[calc(2rem+5px)] w-5 h-5 bg-brand-teal rounded-full border-4 border-white shadow-sm z-20 transform -translate-y-1/2"></div>
+                            <div class="hidden md:block absolute top-1/2 -left-[calc(2rem+5px)] w-5 h-5 bg-brand-teal rounded-full border-4 border-white dark:border-brand-navy shadow-sm z-20 transform -translate-y-1/2"></div>
                         </div>
                     </div>
 
@@ -268,7 +275,8 @@
             </div>
         </section>
 
-        <section id="pricing" class="bg-brand-navy text-white py-20 md:py-24">
+        <!-- Pricing Section -->
+        <section id="pricing" class="bg-brand-navy dark:bg-slate-950 text-white py-20 md:py-24 border-y border-transparent dark:border-slate-800/80 transition-colors duration-300">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="pricing.title">Pricing</h2>
@@ -318,7 +326,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-gradient-to-b from-brand-teal/10 to-brand-navy border border-gray-700 rounded-2xl p-8 flex flex-col relative reveal" style="transition-delay: 150ms;">
+                    <div class="bg-gradient-to-b from-brand-teal/10 to-brand-navy dark:to-slate-900 border border-gray-700 rounded-2xl p-8 flex flex-col relative reveal" style="transition-delay: 150ms;">
                         <div class="absolute top-0 right-0 bg-gray-700 text-gray-300 text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wide border-l border-b border-gray-600" data-i18n="pricing.coming_soon">
                             Coming Soon
                         </div>
@@ -371,11 +379,12 @@
             </div>
         </section>
 
-        <section id="roadmap" class="py-20 bg-gray-50 md:py-24">
+        <!-- Roadmap Section -->
+        <section id="roadmap" class="py-20 bg-gray-50 dark:bg-slate-900 md:py-24 transition-colors duration-300">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4" data-i18n="roadmap.title">The Future of HearMe</h2>
-                    <p class="text-lg text-gray-600" data-i18n="roadmap.subtitle">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy dark:text-white mb-4" data-i18n="roadmap.title">The Future of HearMe</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300" data-i18n="roadmap.subtitle">
                         Our mission goes beyond screens. We are working to integrate <b>HearMe</b> into every aspect of your life, removing barriers in both the digital and physical worlds.
                     </p>
                 </div>
@@ -384,8 +393,8 @@
                     <div class="tech-card flex items-start space-x-6 p-6 mb-6 rounded-xl relative overflow-hidden group reveal">
                         <div class="step-badge bg-teal-700 text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center font-bold text-xl z-10">1</div>
                         <div class="z-10">
-                            <h3 class="text-2xl font-semibold text-brand-navy mb-2 group-hover:text-teal-700 transition-colors" data-i18n="roadmap.item1_title">In-App Voice Calls</h3>
-                            <p class="text-gray-600" data-i18n="roadmap.item1_desc">
+                            <h3 class="text-2xl font-semibold text-brand-navy dark:text-white mb-2 group-hover:text-teal-700 dark:group-hover:text-brand-teal-light transition-colors" data-i18n="roadmap.item1_title">In-App Voice Calls</h3>
+                            <p class="text-gray-600 dark:text-gray-300" data-i18n="roadmap.item1_desc">
                                 Make crystal-clear calls directly within the <b>HearMe</b> app. Connect with friends and family effortlessly, with our AI ensuring your voice is heard perfectly on the other end.
                             </p>
                         </div>
@@ -395,8 +404,8 @@
                     <div class="tech-card flex items-start space-x-6 p-6 mb-6 rounded-xl relative overflow-hidden group reveal" style="transition-delay: 100ms;">
                         <div class="step-badge bg-teal-700 text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center font-bold text-xl z-10">2</div>
                         <div class="z-10">
-                            <h3 class="text-2xl font-semibold text-brand-navy mb-2 group-hover:text-teal-700 transition-colors" data-i18n="roadmap.item2_title">Keyboard Integration</h3>
-                            <p class="text-gray-600" data-i18n="roadmap.item2_desc">Use your personalized voice model to dictate text in any app, directly from your system keyboard.</p>
+                            <h3 class="text-2xl font-semibold text-brand-navy dark:text-white mb-2 group-hover:text-teal-700 dark:group-hover:text-brand-teal-light transition-colors" data-i18n="roadmap.item2_title">Keyboard Integration</h3>
+                            <p class="text-gray-600 dark:text-gray-300" data-i18n="roadmap.item2_desc">Use your personalized voice model to dictate text in any app, directly from your system keyboard.</p>
                         </div>
                         <div class="absolute inset-0 bg-brand-teal/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                     </div>
@@ -404,8 +413,8 @@
                     <div class="tech-card flex items-start space-x-6 p-6 mb-6 rounded-xl relative overflow-hidden group reveal" style="transition-delay: 200ms;">
                         <div class="step-badge bg-teal-700 text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center font-bold text-xl z-10">3</div>
                         <div class="z-10">
-                            <h3 class="text-2xl font-semibold text-brand-navy mb-2 group-hover:text-teal-700 transition-colors" data-i18n="roadmap.item3_title">Voice Assistant Integration</h3>
-                            <p class="text-gray-600" data-i18n="roadmap.item3_desc">
+                            <h3 class="text-2xl font-semibold text-brand-navy dark:text-white mb-2 group-hover:text-teal-700 dark:group-hover:text-brand-teal-light transition-colors" data-i18n="roadmap.item3_title">Voice Assistant Integration</h3>
+                            <p class="text-gray-600 dark:text-gray-300" data-i18n="roadmap.item3_desc">
                                 Enhance Siri or Google Assistant with your personalized <b>HearMe</b> model. Control your smart home and devices reliably using the assistants you already know.
                             </p>
                         </div>
@@ -415,8 +424,8 @@
                     <div class="tech-card flex items-start space-x-6 p-6 rounded-xl relative overflow-hidden group reveal" style="transition-delay: 300ms;">
                         <div class="step-badge bg-teal-700 text-white rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center font-bold text-xl z-10">4</div>
                         <div class="z-10">
-                            <h3 class="text-2xl font-semibold text-brand-navy mb-2 group-hover:text-teal-700 transition-colors" data-i18n="roadmap.item4_title">Offline Personal Translator</h3>
-                            <p class="text-gray-600" data-i18n="roadmap.item4_desc">
+                            <h3 class="text-2xl font-semibold text-brand-navy dark:text-white mb-2 group-hover:text-teal-700 dark:group-hover:text-brand-teal-light transition-colors" data-i18n="roadmap.item4_title">Offline Personal Translator</h3>
+                            <p class="text-gray-600 dark:text-gray-300" data-i18n="roadmap.item4_desc">
                                 A future wearable device that works entirely offline. It speaks your words clearly in any language, serving as your personal voice bridge—speech-to-speech, anywhere.
                             </p>
                         </div>
@@ -426,11 +435,12 @@
             </div>
         </section>
 
-        <section id="culture" class="py-20 bg-white md:py-24">
+        <!-- Culture Section -->
+        <section id="culture" class="py-20 bg-white dark:bg-brand-navy md:py-24 transition-colors duration-300">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4" data-i18n="culture.title">Our Cultural Code</h2>
-                    <p class="text-lg text-gray-600" data-i18n="culture.subtitle">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy dark:text-white mb-4" data-i18n="culture.title">Our Cultural Code</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300" data-i18n="culture.subtitle">
                         We are guided by the <b>HEAR</b> framework: four core values that drive our mission to give everyone a voice.
                     </p>
                 </div>
@@ -445,9 +455,9 @@
                                 </svg>
                                 <h3 class="text-3xl font-bold" data-i18n="culture.val_h_title">Honesty</h3>
                             </div>
-                            <div class="flip-card-back absolute w-full h-full backface-hidden bg-white border border-gray-100 rounded-2xl shadow-xl p-8 rotate-y-180 flex flex-col justify-center">
-                                <h3 class="text-2xl font-bold text-brand-teal mb-4 border-b border-gray-100 pb-3" data-i18n="culture.val_h_title">Honesty</h3>
-                                <ul class="space-y-4 text-sm text-gray-600">
+                            <div class="flip-card-back absolute w-full h-full backface-hidden bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-2xl shadow-xl p-8 rotate-y-180 flex flex-col justify-center">
+                                <h3 class="text-2xl font-bold text-brand-teal dark:text-brand-teal-light mb-4 border-b border-gray-100 dark:border-slate-700 pb-3" data-i18n="culture.val_h_title">Honesty</h3>
+                                <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-300">
                                     <li class="flex items-start"><svg class="w-5 h-5 text-brand-teal mr-2 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="culture.val_h_li1"><b>With users:</b> we are transparent about how our AI works, its capabilities, and its limitations.</span></li>
                                     <li class="flex items-start"><svg class="w-5 h-5 text-brand-teal mr-2 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="culture.val_h_li2"><b>With our team:</b> we build a culture of open feedback where the best idea wins.</span></li>
                                     <li class="flex items-start"><svg class="w-5 h-5 text-brand-teal mr-2 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="culture.val_h_li3"><b>With investors:</b> we communicate honestly about our challenges and struggles.</span></li>
@@ -464,9 +474,9 @@
                                 </svg>
                                 <h3 class="text-3xl font-bold" data-i18n="culture.val_e_title">Empathy</h3>
                             </div>
-                            <div class="flip-card-back absolute w-full h-full backface-hidden bg-white border border-gray-100 rounded-2xl shadow-xl p-8 rotate-y-180 flex flex-col justify-center">
-                                <h3 class="text-2xl font-bold text-brand-teal mb-4 border-b border-gray-100 pb-3" data-i18n="culture.val_e_title">Empathy</h3>
-                                <ul class="space-y-4 text-sm text-gray-600">
+                            <div class="flip-card-back absolute w-full h-full backface-hidden bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-2xl shadow-xl p-8 rotate-y-180 flex flex-col justify-center">
+                                <h3 class="text-2xl font-bold text-brand-teal dark:text-brand-teal-light mb-4 border-b border-gray-100 dark:border-slate-700 pb-3" data-i18n="culture.val_e_title">Empathy</h3>
+                                <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-300">
                                     <li class="flex items-start"><svg class="w-5 h-5 text-brand-teal mr-2 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="culture.val_e_li1"><b>For our clients:</b> we work with a deeply vulnerable audience where every word matters.</span></li>
                                     <li class="flex items-start"><svg class="w-5 h-5 text-brand-teal mr-2 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="culture.val_e_li2"><b>For our partners:</b> they help us scale our impact and make the world a better place.</span></li>
                                     <li class="flex items-start"><svg class="w-5 h-5 text-brand-teal mr-2 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="culture.val_e_li3"><b>For our colleagues:</b> the best ideas are born in an atmosphere of mutual respect.</span></li>
@@ -483,9 +493,9 @@
                                 </svg>
                                 <h3 class="text-3xl font-bold" data-i18n="culture.val_a_title">Ambition</h3>
                             </div>
-                            <div class="flip-card-back absolute w-full h-full backface-hidden bg-white border border-gray-100 rounded-2xl shadow-xl p-8 rotate-y-180 flex flex-col justify-center">
-                                <h3 class="text-2xl font-bold text-brand-teal mb-4 border-b border-gray-100 pb-3" data-i18n="culture.val_a_title">Ambition</h3>
-                                <ul class="space-y-4 text-sm text-gray-600">
+                            <div class="flip-card-back absolute w-full h-full backface-hidden bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-2xl shadow-xl p-8 rotate-y-180 flex flex-col justify-center">
+                                <h3 class="text-2xl font-bold text-brand-teal dark:text-brand-teal-light mb-4 border-b border-gray-100 dark:border-slate-700 pb-3" data-i18n="culture.val_a_title">Ambition</h3>
+                                <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-300">
                                     <li class="flex items-start"><svg class="w-5 h-5 text-brand-teal mr-2 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="culture.val_a_li1"><b>For product quality:</b> we never compromise when it comes to recognition accuracy and UX.</span></li>
                                     <li class="flex items-start"><svg class="w-5 h-5 text-brand-teal mr-2 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="culture.val_a_li2"><b>For learning:</b> the AI field evolves rapidly, and we strive to stay one step ahead.</span></li>
                                     <li class="flex items-start"><svg class="w-5 h-5 text-brand-teal mr-2 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="culture.val_a_li3"><b>For innovation:</b> we tackle extreme challenges to push the boundaries of speech technology.</span></li>
@@ -502,9 +512,9 @@
                                 </svg>
                                 <h3 class="text-3xl font-bold text-center" data-i18n="culture.val_r_title">Responsibility</h3>
                             </div>
-                            <div class="flip-card-back absolute w-full h-full backface-hidden bg-white border border-gray-100 rounded-2xl shadow-xl p-8 rotate-y-180 flex flex-col justify-center">
-                                <h3 class="text-2xl font-bold text-brand-teal mb-4 border-b border-gray-100 pb-3" data-i18n="culture.val_r_title">Responsibility</h3>
-                                <ul class="space-y-4 text-sm text-gray-600">
+                            <div class="flip-card-back absolute w-full h-full backface-hidden bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-2xl shadow-xl p-8 rotate-y-180 flex flex-col justify-center">
+                                <h3 class="text-2xl font-bold text-brand-teal dark:text-brand-teal-light mb-4 border-b border-gray-100 dark:border-slate-700 pb-3" data-i18n="culture.val_r_title">Responsibility</h3>
+                                <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-300">
                                     <li class="flex items-start"><svg class="w-5 h-5 text-brand-teal mr-2 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="culture.val_r_li1"><b>For privacy:</b> the absolute protection of our users' voice data is our unconditional priority.</span></li>
                                     <li class="flex items-start"><svg class="w-5 h-5 text-brand-teal mr-2 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="culture.val_r_li2"><b>For accessibility:</b> we build a product that must work flawlessly for everyone.</span></li>
                                     <li class="flex items-start"><svg class="w-5 h-5 text-brand-teal mr-2 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span data-i18n="culture.val_r_li3"><b>For outcomes:</b> we realize that a person's ability to communicate depends on our work.</span></li>
@@ -517,43 +527,44 @@
             </div>
         </section>
 
-        <section id="team" class="py-20 md:py-24 relative overflow-hidden bg-gray-50/50">
+        <!-- Team & Advisors Section -->
+        <section id="team" class="py-20 md:py-24 relative overflow-hidden bg-gray-50/50 dark:bg-slate-900 transition-colors duration-300">
             <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
                 <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-brand-teal/20 rounded-full blur-[100px]"></div>
                 <div class="absolute bottom-[10%] -right-[10%] w-[30%] h-[40%] bg-blue-400/10 rounded-full blur-[100px]"></div>
             </div>
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4" data-i18n="team.title">Leadership & Advisors</h2>
-                    <p class="text-lg text-gray-600" data-i18n="team.subtitle">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy dark:text-white mb-4" data-i18n="team.title">Leadership & Advisors</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300" data-i18n="team.subtitle">
                         HearMe is backed by a team of experts in Machine Learning, medicine, and business, united by a single goal – to give everyone a voice.
                     </p>
                 </div>
 
                 <!-- Founders Section -->
                 <div class="mb-8">
-                    <h3 class="text-2xl md:text-3xl font-bold text-brand-navy text-center" data-i18n="team.founders_heading">Founders</h3>
+                    <h3 class="text-2xl md:text-3xl font-bold text-brand-navy dark:text-white text-center" data-i18n="team.founders_heading">Founders</h3>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 2xl:gap-6 max-w-4xl 2xl:max-w-[1536px] mx-auto">
                     
                     <!-- Founder 1: Maksym -->
                     <div class="relative group mt-8 reveal">
-                        <div class="h-full bg-white/60 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_20px_40px_rgb(10,147,150,0.1)] rounded-2xl pt-14 pb-8 px-6 flex flex-col items-center text-center transition-all duration-500 group-hover:-translate-y-2">
+                        <div class="h-full bg-white/60 dark:bg-slate-800/80 backdrop-blur-md border border-white dark:border-slate-700 shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_20px_40px_rgb(10,147,150,0.1)] rounded-2xl pt-14 pb-8 px-6 flex flex-col items-center text-center transition-all duration-500 group-hover:-translate-y-2">
                             <div class="absolute -top-12 left-1/2 -translate-x-1/2 transition-transform duration-500 group-hover:-translate-y-1">
-                                <div class="w-24 h-24 rounded-full border-4 border-white shadow-md overflow-hidden bg-gray-100">
+                                <div class="w-24 h-24 rounded-full border-4 border-white dark:border-slate-800 shadow-md overflow-hidden bg-gray-100">
                                     <picture>
                                         <source srcset="images/team/maksym-trineiev.webp?v=1" type="image/webp">
                                         <img src="images/team/maksym-trineiev.jpg?v=1" alt="Maksym Trineiev" class="w-full h-full object-cover">
                                     </picture>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-bold text-brand-navy mb-1" data-i18n="team.founder_1_name">Maksym Trineiev</h3>
-                            <span class="inline-block px-3 py-1 bg-brand-teal/10 text-brand-teal-dark border border-brand-teal/20 rounded-full text-xs font-semibold mb-4" data-i18n="team.founder_1_role">Founder & CEO</span>
-                            <p class="text-sm text-gray-600 mb-6 flex-grow" data-i18n="team.founder_1_bio">
+                            <h3 class="text-xl font-bold text-brand-navy dark:text-white mb-1" data-i18n="team.founder_1_name">Maksym Trineiev</h3>
+                            <span class="inline-block px-3 py-1 bg-brand-teal/10 dark:bg-brand-teal/20 text-brand-teal-dark dark:text-brand-teal-light border border-brand-teal/20 dark:border-brand-teal/30 rounded-full text-xs font-semibold mb-4" data-i18n="team.founder_1_role">Founder & CEO</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-6 flex-grow" data-i18n="team.founder_1_bio">
                                 As a Software Architect and product visionary, Maksym leads product strategy and R&D. His core focus is bridging advanced AI with assistive technologies to make communication accessible to everyone.
                             </p>
                             <div class="h-8 flex items-end justify-center overflow-hidden w-full">
-                                <a href="https://www.linkedin.com/in/mtrineiev/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-teal font-semibold hover:text-brand-teal-dark opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out" aria-label="LinkedIn Profile">
+                                <a href="https://www.linkedin.com/in/mtrineiev/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-teal dark:text-brand-teal-light font-semibold hover:text-brand-teal-dark opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out" aria-label="LinkedIn Profile">
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
                                     <span class="text-sm">LinkedIn</span>
                                 </a>
@@ -563,22 +574,22 @@
 
                     <!-- Founder 2: Anastasiia -->
                     <div class="relative group mt-8 reveal" style="transition-delay: 100ms;">
-                        <div class="h-full bg-white/60 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_20px_40px_rgb(10,147,150,0.1)] rounded-2xl pt-14 pb-8 px-6 flex flex-col items-center text-center transition-all duration-500 group-hover:-translate-y-2">
+                        <div class="h-full bg-white/60 dark:bg-slate-800/80 backdrop-blur-md border border-white dark:border-slate-700 shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_20px_40px_rgb(10,147,150,0.1)] rounded-2xl pt-14 pb-8 px-6 flex flex-col items-center text-center transition-all duration-500 group-hover:-translate-y-2">
                             <div class="absolute -top-12 left-1/2 -translate-x-1/2 transition-transform duration-500 group-hover:-translate-y-1">
-                                <div class="w-24 h-24 rounded-full border-4 border-white shadow-md overflow-hidden bg-gray-100">
+                                <div class="w-24 h-24 rounded-full border-4 border-white dark:border-slate-800 shadow-md overflow-hidden bg-gray-100">
                                     <picture>
                                         <source srcset="images/team/anastasiia-tsaruk.webp" type="image/webp">
                                         <img src="images/team/anastasiia-tsaruk.jpg" alt="Anastasiia Tsaruk" class="w-full h-full object-cover">
                                     </picture>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-bold text-brand-navy mb-1" data-i18n="team.founder_2_name">Anastasiia Tsaruk</h3>
-                            <span class="inline-block px-3 py-1 bg-brand-teal/10 text-brand-teal-dark border border-brand-teal/20 rounded-full text-xs font-semibold mb-4" data-i18n="team.founder_2_role">Co-Founder & Partnerships Lead</span>
-                            <p class="text-sm text-gray-600 mb-6 flex-grow" data-i18n="team.founder_2_bio">
+                            <h3 class="text-xl font-bold text-brand-navy dark:text-white mb-1" data-i18n="team.founder_2_name">Anastasiia Tsaruk</h3>
+                            <span class="inline-block px-3 py-1 bg-brand-teal/10 dark:bg-brand-teal/20 text-brand-teal-dark dark:text-brand-teal-light border border-brand-teal/20 dark:border-brand-teal/30 rounded-full text-xs font-semibold mb-4" data-i18n="team.founder_2_role">Co-Founder & Partnerships Lead</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-6 flex-grow" data-i18n="team.founder_2_bio">
                                 Anastasiia is an expert in European innovation programs and strategic partnerships. She specializes in securing funding and building international consortiums to transform ambitious ideas into scalable, impactful projects.
                             </p>
                             <div class="h-8 flex items-end justify-center overflow-hidden w-full">
-                                <a href="https://www.linkedin.com/in/anastasiia-tsaruk/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-teal font-semibold hover:text-brand-teal-dark opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out" aria-label="LinkedIn Profile">
+                                <a href="https://www.linkedin.com/in/anastasiia-tsaruk/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-teal dark:text-brand-teal-light font-semibold hover:text-brand-teal-dark opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out" aria-label="LinkedIn Profile">
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
                                     <span class="text-sm">LinkedIn</span>
                                 </a>
@@ -588,22 +599,22 @@
 
                     <!-- Founder 3: Iryna -->
                     <div class="relative group mt-8 reveal" style="transition-delay: 100ms;">
-                        <div class="h-full bg-white/60 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_20px_40px_rgb(10,147,150,0.1)] rounded-2xl pt-14 pb-8 px-6 flex flex-col items-center text-center transition-all duration-500 group-hover:-translate-y-2">
+                        <div class="h-full bg-white/60 dark:bg-slate-800/80 backdrop-blur-md border border-white dark:border-slate-700 shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_20px_40px_rgb(10,147,150,0.1)] rounded-2xl pt-14 pb-8 px-6 flex flex-col items-center text-center transition-all duration-500 group-hover:-translate-y-2">
                             <div class="absolute -top-12 left-1/2 -translate-x-1/2 transition-transform duration-500 group-hover:-translate-y-1">
-                                <div class="w-24 h-24 rounded-full border-4 border-white shadow-md overflow-hidden bg-gray-100">
+                                <div class="w-24 h-24 rounded-full border-4 border-white dark:border-slate-800 shadow-md overflow-hidden bg-gray-100">
                                     <picture>
                                         <source srcset="images/team/irina-oleynikova.webp" type="image/webp">
                                         <img src="images/team/irina-oleynikova.jpg" alt="Irina Oleynikova" class="w-full h-full object-cover">
                                     </picture>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-bold text-brand-navy mb-1" data-i18n="team.founder_3_name">Irina Oleynikova</h3>
-                            <span class="inline-block px-3 py-1 bg-brand-teal/10 text-brand-teal-dark border border-brand-teal/20 rounded-full text-xs font-semibold mb-4" data-i18n="team.founder_3_role">Co-Founder & Medical Advisor</span>
-                            <p class="text-sm text-gray-600 mb-6 flex-grow" data-i18n="team.founder_3_bio">
+                            <h3 class="text-xl font-bold text-brand-navy dark:text-white mb-1" data-i18n="team.founder_3_name">Irina Oleynikova</h3>
+                            <span class="inline-block px-3 py-1 bg-brand-teal/10 dark:bg-brand-teal/20 text-brand-teal-dark dark:text-brand-teal-light border border-brand-teal/20 dark:border-brand-teal/30 rounded-full text-xs font-semibold mb-4" data-i18n="team.founder_3_role">Co-Founder & Medical Advisor</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-6 flex-grow" data-i18n="team.founder_3_bio">
                                 With a background as a general practitioner experienced in clinical medicine and long-term geriatric care, Irina ensures our algorithms address the daily needs of users with speech challenges.
                             </p>
                             <div class="h-8 flex items-end justify-center overflow-hidden w-full">
-                                <a href="https://www.linkedin.com/in/irina-oleynikova-27a89971/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-teal font-semibold hover:text-brand-teal-dark opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out" aria-label="LinkedIn Profile">
+                                <a href="https://www.linkedin.com/in/irina-oleynikova-27a89971/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-teal dark:text-brand-teal-light font-semibold hover:text-brand-teal-dark opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out" aria-label="LinkedIn Profile">
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
                                     <span class="text-sm">LinkedIn</span>
                                 </a>
@@ -613,22 +624,22 @@
 
                     <!-- Founder 4: Mykhailo -->
                     <div class="relative group mt-8 reveal" style="transition-delay: 200ms;">
-                        <div class="h-full bg-white/60 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_20px_40px_rgb(10,147,150,0.1)] rounded-2xl pt-14 pb-8 px-6 flex flex-col items-center text-center transition-all duration-500 group-hover:-translate-y-2">
+                        <div class="h-full bg-white/60 dark:bg-slate-800/80 backdrop-blur-md border border-white dark:border-slate-700 shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_20px_40px_rgb(10,147,150,0.1)] rounded-2xl pt-14 pb-8 px-6 flex flex-col items-center text-center transition-all duration-500 group-hover:-translate-y-2">
                             <div class="absolute -top-12 left-1/2 -translate-x-1/2 transition-transform duration-500 group-hover:-translate-y-1">
-                                <div class="w-24 h-24 rounded-full border-4 border-white shadow-md overflow-hidden bg-gray-100">
+                                <div class="w-24 h-24 rounded-full border-4 border-white dark:border-slate-800 shadow-md overflow-hidden bg-gray-100">
                                     <picture>
                                         <source srcset="images/team/mykhailo-tkachenko.webp" type="image/webp">
                                         <img src="images/team/mykhailo-tkachenko.jpg" alt="Mykhailo Tkachenko" class="w-full h-full object-cover">
                                     </picture>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-bold text-brand-navy mb-1" data-i18n="team.founder_4_name">Mykhailo Tkachenko</h3>
-                            <span class="inline-block px-3 py-1 bg-brand-teal/10 text-brand-teal-dark border border-brand-teal/20 rounded-full text-xs font-semibold mb-4" data-i18n="team.founder_4_role">Co-Founder & Business Lead</span>
-                            <p class="text-sm text-gray-600 mb-6 flex-grow" data-i18n="team.founder_4_bio">
+                            <h3 class="text-xl font-bold text-brand-navy dark:text-white mb-1" data-i18n="team.founder_4_name">Mykhailo Tkachenko</h3>
+                            <span class="inline-block px-3 py-1 bg-brand-teal/10 dark:bg-brand-teal/20 text-brand-teal-dark dark:text-brand-teal-light border border-brand-teal/20 dark:border-brand-teal/30 rounded-full text-xs font-semibold mb-4" data-i18n="team.founder_4_role">Co-Founder & Business Lead</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-6 flex-grow" data-i18n="team.founder_4_bio">
                                 Specializing in SaaS scaling and business strategy, Mykhailo helps HearMe build a sustainable business model for successful expansion into international markets.
                             </p>
                             <div class="h-8 flex items-end justify-center overflow-hidden w-full">
-                                <a href="https://www.linkedin.com/in/mykhailo-tkachenko-5114991a2/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-teal font-semibold hover:text-brand-teal-dark opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out" aria-label="LinkedIn Profile">
+                                <a href="https://www.linkedin.com/in/mykhailo-tkachenko-5114991a2/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-teal dark:text-brand-teal-light font-semibold hover:text-brand-teal-dark opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out" aria-label="LinkedIn Profile">
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
                                     <span class="text-sm">LinkedIn</span>
                                 </a>
@@ -639,28 +650,28 @@
 
                 <!-- Advisors Section -->
                 <div class="mt-24 mb-8">
-                    <h3 class="text-2xl md:text-3xl font-bold text-brand-navy text-center" data-i18n="team.advisors_heading">Advisors</h3>
+                    <h3 class="text-2xl md:text-3xl font-bold text-brand-navy dark:text-white text-center" data-i18n="team.advisors_heading">Advisors</h3>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 2xl:gap-6 max-w-4xl 2xl:max-w-[1536px] mx-auto">
                     
                     <!-- Advisor 1: Evgenia -->
                     <div class="relative group mt-8 reveal">
-                        <div class="h-full bg-white/60 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_20px_40px_rgb(10,147,150,0.1)] rounded-2xl pt-14 pb-8 px-6 flex flex-col items-center text-center transition-all duration-500 group-hover:-translate-y-2">
+                        <div class="h-full bg-white/60 dark:bg-slate-800/80 backdrop-blur-md border border-white dark:border-slate-700 shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_20px_40px_rgb(10,147,150,0.1)] rounded-2xl pt-14 pb-8 px-6 flex flex-col items-center text-center transition-all duration-500 group-hover:-translate-y-2">
                             <div class="absolute -top-12 left-1/2 -translate-x-1/2 transition-transform duration-500 group-hover:-translate-y-1">
-                                <div class="w-24 h-24 rounded-full border-4 border-white shadow-md overflow-hidden bg-gray-100">
+                                <div class="w-24 h-24 rounded-full border-4 border-white dark:border-slate-800 shadow-md overflow-hidden bg-gray-100">
                                     <picture>
                                         <source srcset="images/team/evgenia-zavela-averhed.webp" type="image/webp">
                                         <img src="images/team/evgenia-zavela-averhed.jpg" alt="Evgenia Zavela-Averhed" class="w-full h-full object-cover">
                                     </picture>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-bold text-brand-navy mb-1" data-i18n="team.advisor_1_name">Evgenia Zavela-Averhed</h3>
-                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 border border-gray-200 rounded-full text-xs font-semibold mb-4" data-i18n="team.advisor_1_role">Strategic Fundraising Advisor</span>
-                            <p class="text-sm text-gray-600 mb-6 flex-grow" data-i18n="team.advisor_1_bio">
+                            <h3 class="text-xl font-bold text-brand-navy dark:text-white mb-1" data-i18n="team.advisor_1_name">Evgenia Zavela-Averhed</h3>
+                            <span class="inline-block px-3 py-1 bg-gray-100 dark:bg-slate-700/60 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-slate-600 rounded-full text-xs font-semibold mb-4" data-i18n="team.advisor_1_role">Strategic Fundraising Advisor</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-6 flex-grow" data-i18n="team.advisor_1_bio">
                                 Evgenia is a strategic fundraiser and expert in sustainable growth through European innovation funding. She helps organizations transform impactful ideas into sustainable international initiatives.
                             </p>
                             <div class="h-8 flex items-end justify-center overflow-hidden w-full">
-                                <a href="https://www.linkedin.com/in/evgenia-zavela-21335033/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-teal font-semibold hover:text-brand-teal-dark opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out" aria-label="LinkedIn Profile">
+                                <a href="https://www.linkedin.com/in/evgenia-zavela-21335033/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-teal dark:text-brand-teal-light font-semibold hover:text-brand-teal-dark opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out" aria-label="LinkedIn Profile">
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
                                     <span class="text-sm">LinkedIn</span>
                                 </a>
@@ -670,22 +681,22 @@
 
                     <!-- Advisor 2: Dmytro -->
                     <div class="relative group mt-8 reveal" style="transition-delay: 200ms;">
-                        <div class="h-full bg-white/60 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_20px_40px_rgb(10,147,150,0.1)] rounded-2xl pt-14 pb-8 px-6 flex flex-col items-center text-center transition-all duration-500 group-hover:-translate-y-2">
+                        <div class="h-full bg-white/60 dark:bg-slate-800/80 backdrop-blur-md border border-white dark:border-slate-700 shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_20px_40px_rgb(10,147,150,0.1)] rounded-2xl pt-14 pb-8 px-6 flex flex-col items-center text-center transition-all duration-500 group-hover:-translate-y-2">
                             <div class="absolute -top-12 left-1/2 -translate-x-1/2 transition-transform duration-500 group-hover:-translate-y-1">
-                                <div class="w-24 h-24 rounded-full border-4 border-white shadow-md overflow-hidden bg-gray-100">
+                                <div class="w-24 h-24 rounded-full border-4 border-white dark:border-slate-800 shadow-md overflow-hidden bg-gray-100">
                                     <picture>
                                         <source srcset="images/team/dmytro-lebedynets.webp" type="image/webp">
                                         <img src="images/team/dmytro-lebedynets.jpg" alt="Dmytro Lebedynets" class="w-full h-full object-cover">
                                     </picture>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-bold text-brand-navy mb-1" data-i18n="team.advisor_2_name">Dmytro Lebedynets</h3>
-                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 border border-gray-200 rounded-full text-xs font-semibold mb-4" data-i18n="team.advisor_2_role">Clinical Advisor</span>
-                            <p class="text-sm text-gray-600 mb-6 flex-grow" data-i18n="team.advisor_2_bio">
+                            <h3 class="text-xl font-bold text-brand-navy dark:text-white mb-1" data-i18n="team.advisor_2_name">Dmytro Lebedynets</h3>
+                            <span class="inline-block px-3 py-1 bg-gray-100 dark:bg-slate-700/60 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-slate-600 rounded-full text-xs font-semibold mb-4" data-i18n="team.advisor_2_role">Clinical Advisor</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-6 flex-grow" data-i18n="team.advisor_2_bio">
                                 As the Head of the Stroke Center at Feofaniya Hospital, Dmytro brings extensive clinical experience in stroke management and neurological rehabilitation, ensuring our solutions align with real clinical workflows.
                             </p>
                             <div class="h-8 flex items-end justify-center overflow-hidden w-full">
-                                <a href="https://www.linkedin.com/in/dmytrolebedynets/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-teal font-semibold hover:text-brand-teal-dark opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out" aria-label="LinkedIn Profile">
+                                <a href="https://www.linkedin.com/in/dmytrolebedynets/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-teal dark:text-brand-teal-light font-semibold hover:text-brand-teal-dark opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out" aria-label="LinkedIn Profile">
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
                                     <span class="text-sm">LinkedIn</span>
                                 </a>
@@ -695,22 +706,22 @@
 
                     <!-- Advisor 3: Kateryna -->
                     <div class="relative group mt-8 reveal" style="transition-delay: 100ms;">
-                        <div class="h-full bg-white/60 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_20px_40px_rgb(10,147,150,0.1)] rounded-2xl pt-14 pb-8 px-6 flex flex-col items-center text-center transition-all duration-500 group-hover:-translate-y-2">
+                        <div class="h-full bg-white/60 dark:bg-slate-800/80 backdrop-blur-md border border-white dark:border-slate-700 shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_20px_40px_rgb(10,147,150,0.1)] rounded-2xl pt-14 pb-8 px-6 flex flex-col items-center text-center transition-all duration-500 group-hover:-translate-y-2">
                             <div class="absolute -top-12 left-1/2 -translate-x-1/2 transition-transform duration-500 group-hover:-translate-y-1">
-                                <div class="w-24 h-24 rounded-full border-4 border-white shadow-md overflow-hidden bg-gray-100">
+                                <div class="w-24 h-24 rounded-full border-4 border-white dark:border-slate-800 shadow-md overflow-hidden bg-gray-100">
                                     <picture>
                                         <source srcset="images/team/kateryna-martynova.webp" type="image/webp">
                                         <img src="images/team/kateryna-martynova.jpg" alt="Kateryna Martynova" class="w-full h-full object-cover">
                                     </picture>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-bold text-brand-navy mb-1" data-i18n="team.advisor_3_name">Kateryna Martynova</h3>
-                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 border border-gray-200 rounded-full text-xs font-semibold mb-4" data-i18n="team.advisor_3_role">Communications Advisor</span>
-                            <p class="text-sm text-gray-600 mb-6 flex-grow" data-i18n="team.advisor_3_bio">
+                            <h3 class="text-xl font-bold text-brand-navy dark:text-white mb-1" data-i18n="team.advisor_3_name">Kateryna Martynova</h3>
+                            <span class="inline-block px-3 py-1 bg-gray-100 dark:bg-slate-700/60 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-slate-600 rounded-full text-xs font-semibold mb-4" data-i18n="team.advisor_3_role">Communications Advisor</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-6 flex-grow" data-i18n="team.advisor_3_bio">
                                 Kateryna helps HearMe tell its story through clear messaging and strategic communications. She ensures our mission resonates with users, partners, and investors alike.
                             </p>
                             <div class="h-8 flex items-end justify-center overflow-hidden w-full">
-                                <a href="https://www.linkedin.com/in/katerynamartynova/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-teal font-semibold hover:text-brand-teal-dark opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out" aria-label="LinkedIn Profile">
+                                <a href="https://www.linkedin.com/in/katerynamartynova/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-teal dark:text-brand-teal-light font-semibold hover:text-brand-teal-dark opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out" aria-label="LinkedIn Profile">
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
                                     <span class="text-sm">LinkedIn</span>
                                 </a>
@@ -720,22 +731,22 @@
 
                     <!-- Advisor 4: Vitalii -->
                     <div class="relative group mt-8 reveal" style="transition-delay: 300ms;">
-                        <div class="h-full bg-white/60 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_20px_40px_rgb(10,147,150,0.1)] rounded-2xl pt-14 pb-8 px-6 flex flex-col items-center text-center transition-all duration-500 group-hover:-translate-y-2">
+                        <div class="h-full bg-white/60 dark:bg-slate-800/80 backdrop-blur-md border border-white dark:border-slate-700 shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_20px_40px_rgb(10,147,150,0.1)] rounded-2xl pt-14 pb-8 px-6 flex flex-col items-center text-center transition-all duration-500 group-hover:-translate-y-2">
                             <div class="absolute -top-12 left-1/2 -translate-x-1/2 transition-transform duration-500 group-hover:-translate-y-1">
-                                <div class="w-24 h-24 rounded-full border-4 border-white shadow-md overflow-hidden bg-gray-100">
+                                <div class="w-24 h-24 rounded-full border-4 border-white dark:border-slate-800 shadow-md overflow-hidden bg-gray-100">
                                     <picture>
                                         <source srcset="images/team/vitalii-rybalko.webp" type="image/webp">
                                         <img src="images/team/vitalii-rybalko.jpg" alt="Vitalii Rybalko" class="w-full h-full object-cover">
                                     </picture>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-bold text-brand-navy mb-1" data-i18n="team.advisor_4_name">Vitalii Rybalko</h3>
-                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 border border-gray-200 rounded-full text-xs font-semibold mb-4" data-i18n="team.advisor_4_role">Technology & ML Advisor</span>
-                            <p class="text-sm text-gray-600 mb-6 flex-grow" data-i18n="team.advisor_4_bio">
+                            <h3 class="text-xl font-bold text-brand-navy dark:text-white mb-1" data-i18n="team.advisor_4_name">Vitalii Rybalko</h3>
+                            <span class="inline-block px-3 py-1 bg-gray-100 dark:bg-slate-700/60 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-slate-600 rounded-full text-xs font-semibold mb-4" data-i18n="team.advisor_4_role">Technology & ML Advisor</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-6 flex-grow" data-i18n="team.advisor_4_bio">
                                 Bringing years of experience in AI architecture, Vitalii advises the team on optimizing complex Machine Learning models to guarantee instant, low-latency speech recognition.
                             </p>
                             <div class="h-8 flex items-end justify-center overflow-hidden w-full">
-                                <a href="https://www.linkedin.com/in/vitalii-rybalko-9593a7a9/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-teal font-semibold hover:text-brand-teal-dark opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out" aria-label="LinkedIn Profile">
+                                <a href="https://www.linkedin.com/in/vitalii-rybalko-9593a7a9/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-teal dark:text-brand-teal-light font-semibold hover:text-brand-teal-dark opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out" aria-label="LinkedIn Profile">
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
                                     <span class="text-sm">LinkedIn</span>
                                 </a>
@@ -747,15 +758,16 @@
             </div>
         </section>
 
-        <section id="testing" class="py-16 md:py-20 bg-white border-t border-b border-gray-200 relative overflow-hidden">
+        <!-- Open Alpha Testing Section -->
+        <section id="testing" class="py-16 md:py-20 bg-white dark:bg-brand-navy border-t border-b border-gray-200 dark:border-slate-800 relative overflow-hidden transition-colors duration-300">
             <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-brand-teal/10 rounded-full blur-3xl"></div>
             
             <div class="container mx-auto px-6 relative z-10 text-center max-w-4xl">
-                <span class="inline-block py-1 px-3 rounded-full bg-teal-100 text-teal-800 font-semibold text-sm mb-4" data-i18n="test_section.badge">Open Alpha</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6" data-i18n="test_section.title">
+                <span class="inline-block py-1 px-3 rounded-full bg-teal-100 dark:bg-brand-teal/20 text-teal-800 dark:text-brand-teal-light font-semibold text-sm mb-4" data-i18n="test_section.badge">Open Alpha</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-navy dark:text-white mb-6" data-i18n="test_section.title">
                     Help Us Give Voice to Everyone
                 </h2>
-                <p class="text-lg text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto" data-i18n="test_section.desc">
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto" data-i18n="test_section.desc">
                     Join the closed testing of our new AI models. Provide feedback on speech recognition accuracy and get lifetime premium access to the app absolutely free.
                 </p>
                 <a href="/testing" class="inline-flex items-center justify-center bg-brand-teal text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-teal-dark transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
@@ -764,33 +776,34 @@
             </div>
         </section>
 
-        <section id="contact" class="py-20 bg-teal-50 md:py-24">
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-teal-50 dark:bg-slate-900 md:py-24 transition-colors duration-300">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4" data-i18n="contact.title">Get in Touch</h2>
-                    <p class="text-lg text-gray-600" data-i18n="contact.subtitle">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy dark:text-white mb-4" data-i18n="contact.title">Get in Touch</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300" data-i18n="contact.subtitle">
                         Have questions or suggestions? We'd love to hear from you.
                     </p>
                 </div>
 
-                <div class="max-w-xl mx-auto bg-white p-8 md:p-10 rounded-2xl shadow-xl relative">
+                <div class="max-w-xl mx-auto bg-white dark:bg-slate-800/90 border border-transparent dark:border-slate-700 p-8 md:p-10 rounded-2xl shadow-xl relative">
                     
                     <div id="contact-form-container" class="transition-all duration-500 ease-in-out">
                         <form id="contact-form" class="space-y-6">
                             
                             <div>
                                 <label for="contact-name" class="sr-only">Name</label>
-                                <input type="text" id="contact-name" name="name" autocomplete="name" placeholder="Your Name" class="w-full px-6 py-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-brand-teal focus:ring-4 focus:ring-brand-teal/10 outline-none transition duration-200" data-i18n="contact.placeholder_name">
+                                <input type="text" id="contact-name" name="name" autocomplete="name" placeholder="Your Name" class="w-full px-6 py-4 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-900/70 text-gray-800 dark:text-white placeholder-gray-400 focus:bg-white dark:focus:bg-slate-900 focus:border-brand-teal focus:ring-4 focus:ring-brand-teal/10 outline-none transition duration-200" data-i18n="contact.placeholder_name">
                             </div>
 
                             <div>
                                 <label for="contact-email" class="sr-only">Email</label>
-                                <input type="email" id="contact-email" name="email" autocomplete="email" placeholder="Your Email" required class="w-full px-6 py-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-brand-teal focus:ring-4 focus:ring-brand-teal/10 outline-none transition duration-200" data-i18n="contact.placeholder_email">
+                                <input type="email" id="contact-email" name="email" autocomplete="email" placeholder="Your Email" required class="w-full px-6 py-4 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-900/70 text-gray-800 dark:text-white placeholder-gray-400 focus:bg-white dark:focus:bg-slate-900 focus:border-brand-teal focus:ring-4 focus:ring-brand-teal/10 outline-none transition duration-200" data-i18n="contact.placeholder_email">
                             </div>
 
                             <div>
                                 <label for="contact-message" class="sr-only">Message</label>
-                                <textarea id="contact-message" name="message" rows="4" placeholder="How can we help?" required class="w-full px-6 py-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-brand-teal focus:ring-4 focus:ring-brand-teal/10 outline-none transition duration-200 resize-none" data-i18n="contact.placeholder_message"></textarea>
+                                <textarea id="contact-message" name="message" rows="4" placeholder="How can we help?" required class="w-full px-6 py-4 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-900/70 text-gray-800 dark:text-white placeholder-gray-400 focus:bg-white dark:focus:bg-slate-900 focus:border-brand-teal focus:ring-4 focus:ring-brand-teal/10 outline-none transition duration-200 resize-none" data-i18n="contact.placeholder_message"></textarea>
                             </div>
 
                             <div class="absolute opacity-0 -z-10 w-0 h-0 overflow-hidden" aria-hidden="true">
@@ -814,26 +827,26 @@
                             </button>
                         </form>
                         
-                        <p id="contact-error-msg" role="alert" class="hidden text-red-600 text-sm text-center mt-4" data-i18n="contact.error_generic">
+                        <p id="contact-error-msg" role="alert" class="hidden text-red-600 dark:text-red-400 text-sm text-center mt-4" data-i18n="contact.error_generic">
                             Failed to send message. Please check your connection.
                         </p>
                     </div>
 
                     <div id="contact-success" class="hidden flex flex-col items-center justify-center py-12 text-center animate-fade-in">
                         
-                        <div class="w-24 h-24 bg-teal-50 rounded-full flex items-center justify-center mb-6 ring-8 ring-teal-50/50">
+                        <div class="w-24 h-24 bg-teal-50 dark:bg-brand-teal/20 rounded-full flex items-center justify-center mb-6 ring-8 ring-teal-50/50 dark:ring-brand-teal/10">
                             <svg class="w-12 h-12 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                             </svg>
                         </div>
 
-                        <h3 class="text-3xl font-bold text-brand-navy mb-4" data-i18n="contact.success_title">Message Sent!</h3>
+                        <h3 class="text-3xl font-bold text-brand-navy dark:text-white mb-4" data-i18n="contact.success_title">Message Sent!</h3>
                         
-                        <p class="text-lg text-gray-600 max-w-sm mx-auto mb-8 leading-relaxed" data-i18n="contact.success_desc">
+                        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-sm mx-auto mb-8 leading-relaxed" data-i18n="contact.success_desc">
                             Thanks for reaching out. We'll get back to you shortly.
                         </p>
 
-                        <button id="contact-reset-btn" class="text-brand-teal font-bold hover:text-brand-teal-dark hover:underline transition-colors flex items-center gap-2" data-i18n="contact.btn_new">
+                        <button id="contact-reset-btn" class="text-brand-teal dark:text-brand-teal-light font-bold hover:text-brand-teal-dark hover:underline transition-colors flex items-center gap-2" data-i18n="contact.btn_new">
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                             </svg>

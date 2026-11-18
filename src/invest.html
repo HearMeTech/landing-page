@@ -46,35 +46,35 @@
     <link rel="stylesheet" href="/css/style.css?v=1">
 </head>
 
-<body class="font-sans text-gray-800 antialiased flex flex-col min-h-screen bg-gray-50">
+<body class="font-sans text-gray-800 dark:text-gray-200 antialiased flex flex-col min-h-screen bg-gray-50 dark:bg-brand-navy transition-colors duration-300">
 
-    <div id="header-placeholder" class="min-h-[72px] md:min-h-[80px] bg-white"></div>
+    <div id="header-placeholder" class="min-h-[72px] md:min-h-[80px] bg-white dark:bg-brand-navy"></div>
 
     <main class="flex-grow">
         
-        <section class="bg-white pt-32 md:pt-40 lg:pt-48 pb-16 md:pb-24">
+        <section class="bg-white dark:bg-brand-navy pt-32 md:pt-40 lg:pt-48 pb-16 md:pb-24 transition-colors duration-300">
             <div class="container mx-auto px-6 text-center max-w-4xl">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-8 leading-tight" data-i18n="investors.title">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-navy dark:text-white mb-8 leading-tight" data-i18n="investors.title">
                     Invest in the <span class="text-teal-600">Voice of the Future</span>
                 </h1>
-                <p class="text-xl text-gray-600 mb-4 leading-relaxed" data-i18n="investors.subtitle">
+                <p class="text-xl text-gray-600 dark:text-gray-300 mb-4 leading-relaxed" data-i18n="investors.subtitle">
                     We are raising Pre-seed investment to accelerate R&D and expand our Edge AI speech restoration technology into Ukraine, Europe, and the USA.
                 </p>
             </div>
         </section>
 
-        <section id="founder-video-section" class="bg-gray-50 py-16 md:py-24 relative overflow-hidden">
+        <section id="founder-video-section" class="bg-gray-50 dark:bg-slate-900 py-16 md:py-24 relative overflow-hidden transition-colors duration-300">
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-gradient-to-b from-brand-teal/5 to-transparent blur-3xl -z-10"></div>
 
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4" data-i18n="investors.video_title">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-navy dark:text-white mb-4" data-i18n="investors.video_title">
                     Founder's Message
                 </h2>
-                <p class="text-gray-600 mb-10 max-w-xl mx-auto" data-i18n="investors.video_desc">
+                <p class="text-gray-600 dark:text-gray-300 mb-10 max-w-xl mx-auto" data-i18n="investors.video_desc">
                     A brief overview of HearMe's main goals, our mission, and why now is the perfect time to invest.
                 </p>
                 
-                <div class="max-w-[320px] mx-auto bg-white p-3 rounded-[2.5rem] shadow-2xl shadow-brand-teal/15 border border-gray-100 transform transition-transform hover:-translate-y-2 duration-500">
+                <div class="max-w-[320px] mx-auto bg-white dark:bg-slate-800 p-3 rounded-[2.5rem] shadow-2xl shadow-brand-teal/15 border border-gray-100 dark:border-slate-700 transform transition-transform hover:-translate-y-2 duration-500">
                     <div class="relative w-full pb-[177.77%] rounded-[2rem] overflow-hidden bg-gray-900 shadow-inner">
                         
                         <iframe 
@@ -92,96 +92,96 @@
             </div>
         </section>
 
-        <section class="bg-white py-16 md:py-24 overflow-hidden">
+        <section class="bg-white dark:bg-brand-navy py-16 md:py-24 overflow-hidden transition-colors duration-300">
             <div class="container mx-auto px-6 max-w-[1500px]">
                 
                 <div class="mb-6 md:mb-10">
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy text-center" data-i18n="investors.deck_title">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy dark:text-white text-center" data-i18n="investors.deck_title">
                         Pitch Deck Highlights
                     </h2>
                 </div>
 
                 <div class="relative w-full">
                     
-                    <div class="hidden md:block absolute left-0 top-0 bottom-0 w-6 lg:w-7 bg-white z-10"></div>
+                    <div class="hidden md:block absolute left-0 top-0 bottom-0 w-6 lg:w-7 bg-white dark:bg-brand-navy z-10 transition-colors duration-300"></div>
                     
-                    <button id="slider-prev" class="hidden md:flex absolute left-0 top-2 bottom-2 z-20 shrink-0 w-12 lg:w-14 flex-col items-center justify-center bg-white border border-gray-100 rounded-[2rem] text-brand-teal hover:bg-teal-50 hover:border-teal-200 transition-all duration-300 shadow-[4px_0_15px_rgba(0,0,0,0.05)] disabled:bg-white disabled:text-gray-200 disabled:border-transparent disabled:shadow-none disabled:cursor-not-allowed group" aria-label="Previous slide">
+                    <button id="slider-prev" class="hidden md:flex absolute left-0 top-2 bottom-2 z-20 shrink-0 w-12 lg:w-14 flex-col items-center justify-center bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-[2rem] text-brand-teal dark:text-brand-teal-light hover:bg-teal-50 dark:hover:bg-slate-700 hover:border-teal-200 dark:hover:border-slate-600 transition-all duration-300 shadow-[4px_0_15px_rgba(0,0,0,0.05)] disabled:bg-white dark:disabled:bg-slate-900 disabled:text-gray-200 dark:disabled:text-slate-700 disabled:border-transparent disabled:shadow-none disabled:cursor-not-allowed group" aria-label="Previous slide">
                         <svg class="w-6 h-6 transform group-active:scale-90 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
                     </button>
 
                     <div class="-mx-6 md:mx-0">
                         <div id="deck-slider" class="flex overflow-x-auto snap-x snap-mandatory md:snap-none hide-scrollbar gap-6 items-stretch py-8 px-6 md:px-16 lg:px-20 scroll-pl-6 md:scroll-pl-16 lg:scroll-pl-20 w-full">
                             
-                            <div class="snap-start shrink-0 w-[85%] sm:w-[320px] md:w-[340px] lg:w-[380px] flex flex-col bg-white border border-gray-200 rounded-[2rem] shadow-sm hover:shadow-xl hover:ring-2 hover:ring-brand-teal hover:border-transparent p-6 md:p-8 transition-all duration-300 whitespace-normal break-words">
-                                <div class="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center mb-6 text-brand-teal shrink-0">
+                            <div class="snap-start shrink-0 w-[85%] sm:w-[320px] md:w-[340px] lg:w-[380px] flex flex-col bg-white dark:bg-slate-800/80 border border-gray-200 dark:border-slate-700 rounded-[2rem] shadow-sm hover:shadow-xl hover:ring-2 hover:ring-brand-teal hover:border-transparent p-6 md:p-8 transition-all duration-300 whitespace-normal break-words">
+                                <div class="w-12 h-12 bg-teal-50 dark:bg-brand-teal/20 rounded-xl flex items-center justify-center mb-6 text-brand-teal shrink-0">
                                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                 </div>
-                                <h3 class="text-2xl font-bold text-brand-navy mb-3 shrink-0" data-i18n="investors.deck_mission_title">The Mission</h3>
-                                <p class="text-gray-600 text-[15px] md:text-base leading-relaxed" data-i18n="investors.deck_mission_desc">70M+ people live in 'silent isolation' due to severe speech impairments from CP, stroke, or ALS. We are restoring their fundamental human right to be understood</p>
+                                <h3 class="text-2xl font-bold text-brand-navy dark:text-white mb-3 shrink-0" data-i18n="investors.deck_mission_title">The Mission</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-[15px] md:text-base leading-relaxed" data-i18n="investors.deck_mission_desc">70M+ people live in 'silent isolation' due to severe speech impairments from CP, stroke, or ALS. We are restoring their fundamental human right to be understood</p>
                             </div>
 
-                            <div class="snap-start shrink-0 w-[85%] sm:w-[320px] md:w-[340px] lg:w-[380px] flex flex-col bg-white border border-gray-200 rounded-[2rem] shadow-sm hover:shadow-xl hover:ring-2 hover:ring-brand-teal hover:border-transparent p-6 md:p-8 transition-all duration-300 whitespace-normal break-words">
-                                <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-6 text-red-500 shrink-0">
+                            <div class="snap-start shrink-0 w-[85%] sm:w-[320px] md:w-[340px] lg:w-[380px] flex flex-col bg-white dark:bg-slate-800/80 border border-gray-200 dark:border-slate-700 rounded-[2rem] shadow-sm hover:shadow-xl hover:ring-2 hover:ring-brand-teal hover:border-transparent p-6 md:p-8 transition-all duration-300 whitespace-normal break-words">
+                                <div class="w-12 h-12 bg-red-50 dark:bg-red-500/20 rounded-xl flex items-center justify-center mb-6 text-red-500 dark:text-red-400 shrink-0">
                                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
                                 </div>
-                                <h3 class="text-2xl font-bold text-brand-navy mb-4 shrink-0" data-i18n="investors.deck_problem_title">The Problem</h3>
+                                <h3 class="text-2xl font-bold text-brand-navy dark:text-white mb-4 shrink-0" data-i18n="investors.deck_problem_title">The Problem</h3>
                                 <ul class="space-y-4">
-                                    <li class="flex items-start gap-3 text-gray-600">
+                                    <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300">
                                         <span class="w-2 h-2 rounded-full bg-red-400 mt-2 shrink-0"></span>
                                         <span class="text-[15px] md:text-base leading-snug" data-i18n="investors.deck_problem_b1">Big Tech (Siri/Alexa) fails atypical voices</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-gray-600">
+                                    <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300">
                                         <span class="w-2 h-2 rounded-full bg-red-400 mt-2 shrink-0"></span>
                                         <span class="text-[15px] md:text-base leading-snug" data-i18n="investors.deck_problem_b2">Existing assistive tools are $5k+ hardware, privacy-invasive, or too laggy</span>
                                     </li>
                                 </ul>
                             </div>
 
-                            <div class="snap-start shrink-0 w-[85%] sm:w-[320px] md:w-[340px] lg:w-[380px] flex flex-col bg-white border border-gray-200 rounded-[2rem] shadow-sm hover:shadow-xl hover:ring-2 hover:ring-brand-teal hover:border-transparent p-6 md:p-8 transition-all duration-300 whitespace-normal break-words">
-                                <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-6 text-green-500 shrink-0">
+                            <div class="snap-start shrink-0 w-[85%] sm:w-[320px] md:w-[340px] lg:w-[380px] flex flex-col bg-white dark:bg-slate-800/80 border border-gray-200 dark:border-slate-700 rounded-[2rem] shadow-sm hover:shadow-xl hover:ring-2 hover:ring-brand-teal hover:border-transparent p-6 md:p-8 transition-all duration-300 whitespace-normal break-words">
+                                <div class="w-12 h-12 bg-green-50 dark:bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6 text-green-500 dark:text-emerald-400 shrink-0">
                                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.956 11.956 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                                 </div>
-                                <h3 class="text-2xl font-bold text-brand-navy mb-3 shrink-0" data-i18n="investors.deck_solution_title">The Solution</h3>
-                                <p class="text-gray-600 text-[15px] md:text-base leading-relaxed mb-4 shrink-0" data-i18n="investors.deck_solution_desc">Edge AI mobile app translates atypical speech in real-time</p>
+                                <h3 class="text-2xl font-bold text-brand-navy dark:text-white mb-3 shrink-0" data-i18n="investors.deck_solution_title">The Solution</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-[15px] md:text-base leading-relaxed mb-4 shrink-0" data-i18n="investors.deck_solution_desc">Edge AI mobile app translates atypical speech in real-time</p>
                                 <ul class="space-y-3">
-                                    <li class="flex items-start gap-3 text-gray-600">
+                                    <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300">
                                         <span class="w-2 h-2 rounded-full bg-brand-teal mt-1.5 shrink-0"></span>
                                         <span class="text-[15px] md:text-base" data-i18n="investors.deck_solution_b1">Total Privacy</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-gray-600">
+                                    <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300">
                                         <span class="w-2 h-2 rounded-full bg-brand-teal mt-1.5 shrink-0"></span>
                                         <span class="text-[15px] md:text-base" data-i18n="investors.deck_solution_b2">Zero Latency</span>
                                     </li>
                                 </ul>
                             </div>
 
-                            <div class="snap-start shrink-0 w-[85%] sm:w-[320px] md:w-[340px] lg:w-[380px] flex flex-col bg-white border border-gray-200 rounded-[2rem] shadow-sm hover:shadow-xl hover:ring-2 hover:ring-brand-teal hover:border-transparent p-6 md:p-8 transition-all duration-300 whitespace-normal break-words">
-                                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-blue-500 shrink-0">
+                            <div class="snap-start shrink-0 w-[85%] sm:w-[320px] md:w-[340px] lg:w-[380px] flex flex-col bg-white dark:bg-slate-800/80 border border-gray-200 dark:border-slate-700 rounded-[2rem] shadow-sm hover:shadow-xl hover:ring-2 hover:ring-brand-teal hover:border-transparent p-6 md:p-8 transition-all duration-300 whitespace-normal break-words">
+                                <div class="w-12 h-12 bg-blue-50 dark:bg-blue-500/20 rounded-xl flex items-center justify-center mb-6 text-blue-500 dark:text-blue-400 shrink-0">
                                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
                                 </div>
-                                <h3 class="text-2xl font-bold text-brand-navy mb-4 shrink-0" data-i18n="investors.deck_market_title">Market Validation</h3>
+                                <h3 class="text-2xl font-bold text-brand-navy dark:text-white mb-4 shrink-0" data-i18n="investors.deck_market_title">Market Validation</h3>
                                 <ul class="space-y-3">
-                                    <li class="flex items-start gap-3 text-gray-600">
+                                    <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300">
                                         <span class="w-2 h-2 rounded-full bg-blue-400 mt-2 shrink-0"></span>
                                         <span class="text-[15px] md:text-base leading-snug" data-i18n="investors.deck_market_b1">10+ Deep qualitative interviews</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-gray-600">
+                                    <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300">
                                         <span class="w-2 h-2 rounded-full bg-blue-400 mt-2 shrink-0"></span>
                                         <span class="text-[15px] md:text-base leading-snug" data-i18n="investors.deck_market_b2">3 Active power-users providing data</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-gray-600">
+                                    <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300">
                                         <span class="w-2 h-2 rounded-full bg-blue-400 mt-2 shrink-0"></span>
                                         <span class="text-[15px] md:text-base leading-snug" data-i18n="investors.deck_market_b3">Organic Signal leads with $0 marketing spend</span>
                                     </li>
                                 </ul>
                             </div>
 
-                            <div class="snap-start shrink-0 w-[85%] sm:w-[320px] md:w-[340px] lg:w-[380px] flex flex-col bg-white border border-gray-200 rounded-[2rem] shadow-sm hover:shadow-xl hover:ring-2 hover:ring-brand-teal hover:border-transparent p-6 md:p-8 transition-all duration-300 whitespace-normal break-words">
-                                <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-6 text-purple-500 shrink-0">
+                            <div class="snap-start shrink-0 w-[85%] sm:w-[320px] md:w-[340px] lg:w-[380px] flex flex-col bg-white dark:bg-slate-800/80 border border-gray-200 dark:border-slate-700 rounded-[2rem] shadow-sm hover:shadow-xl hover:ring-2 hover:ring-brand-teal hover:border-transparent p-6 md:p-8 transition-all duration-300 whitespace-normal break-words">
+                                <div class="w-12 h-12 bg-purple-50 dark:bg-purple-500/20 rounded-xl flex items-center justify-center mb-6 text-purple-500 dark:text-purple-400 shrink-0">
                                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
                                 </div>
-                                <h3 class="text-2xl font-bold text-brand-navy mb-3 shrink-0" data-i18n="investors.deck_expertise_title">The Expertise</h3>
-                                <p class="text-gray-600 text-[15px] md:text-base leading-relaxed" data-i18n="investors.deck_expertise_desc">Built by an ex-EPAM Engineering lead with a strong Math background and 10+ years of experience, backed by a team of medical, business, and ML experts</p>
+                                <h3 class="text-2xl font-bold text-brand-navy dark:text-white mb-3 shrink-0" data-i18n="investors.deck_expertise_title">The Expertise</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-[15px] md:text-base leading-relaxed" data-i18n="investors.deck_expertise_desc">Built by an ex-EPAM Engineering lead with a strong Math background and 10+ years of experience, backed by a team of medical, business, and ML experts</p>
                             </div>
                             
                             <div class="snap-start shrink-0 w-1 md:w-16 lg:w-20"></div>
@@ -189,9 +189,9 @@
                         </div>
                     </div>
 
-                    <div class="hidden md:block absolute right-0 top-0 bottom-0 w-6 lg:w-7 bg-white z-10"></div>
+                    <div class="hidden md:block absolute right-0 top-0 bottom-0 w-6 lg:w-7 bg-white dark:bg-brand-navy z-10 transition-colors duration-300"></div>
                     
-                    <button id="slider-next" class="hidden md:flex absolute right-0 top-2 bottom-2 z-20 shrink-0 w-12 lg:w-14 flex-col items-center justify-center bg-white border border-gray-100 rounded-[2rem] text-brand-teal hover:bg-teal-50 hover:border-teal-200 transition-all duration-300 shadow-[-4px_0_15px_rgba(0,0,0,0.05)] disabled:bg-white disabled:text-gray-200 disabled:border-transparent disabled:shadow-none disabled:cursor-not-allowed group" aria-label="Next slide">
+                    <button id="slider-next" class="hidden md:flex absolute right-0 top-2 bottom-2 z-20 shrink-0 w-12 lg:w-14 flex-col items-center justify-center bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-[2rem] text-brand-teal dark:text-brand-teal-light hover:bg-teal-50 dark:hover:bg-slate-700 hover:border-teal-200 dark:hover:border-slate-600 transition-all duration-300 shadow-[-4px_0_15px_rgba(0,0,0,0.05)] disabled:bg-white dark:disabled:bg-slate-900 disabled:text-gray-200 dark:disabled:text-slate-700 disabled:border-transparent disabled:shadow-none disabled:cursor-not-allowed group" aria-label="Next slide">
                         <svg class="w-6 h-6 transform group-active:scale-90 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
                     </button>
 
@@ -199,20 +199,20 @@
             </div>
         </section>
 
-        <section class="bg-gray-50 py-16 md:py-24">
+        <section class="bg-gray-50 dark:bg-slate-900 py-16 md:py-24 transition-colors duration-300">
             <div class="container mx-auto px-6">
                 
-                <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden relative group">
+                <div class="max-w-3xl mx-auto bg-white dark:bg-slate-800/90 rounded-2xl shadow-xl border border-gray-100 dark:border-slate-700 overflow-hidden relative group">
                     
                     <div class="absolute top-0 right-0 -mt-16 -mr-16 w-64 h-64 bg-brand-teal/5 rounded-full blur-3xl group-hover:bg-brand-teal/10 transition-colors duration-500"></div>
 
                     <div class="p-8 md:p-12 text-center relative z-10">
 
-                        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mb-4" data-i18n="investors.dataroom_title">
+                        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy dark:text-white mb-4" data-i18n="investors.dataroom_title">
                             Investor Data Room
                         </h2>
                         
-                        <p class="text-gray-600 mb-8 max-w-xl mx-auto leading-relaxed" data-i18n="investors.dataroom_desc">
+                        <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto leading-relaxed" data-i18n="investors.dataroom_desc">
                             Access our full set of documents, including the Pitch Deck, financial models, and technical roadmap on Google Drive. Access is available upon request.
                         </p>
 
