@@ -91,18 +91,37 @@
                     </div>
                 </div>
                 <div class="flex justify-center items-center relative z-10 mt-10 md:mt-0">
-                    <picture class="hero-wrapper">
-                        <source srcset="images/hearme-hero-speech-communication.webp" type="image/webp">
-                        
-                        <img 
-                            src="images/hearme-hero-speech-communication.png" 
-                            alt="Woman using HearMe app, puzzle pieces coming together to form a clear speech bubble, representing the reconstruction of speech"
-                            class="w-full max-w-lg lg:max-w-2xl h-auto object-contain rounded-2xl dark:bg-white/95 dark:p-3 dark:ring-1 dark:ring-white/20 dark:shadow-[0_0_50px_-12px_rgba(10,147,150,0.35)] hero-floating-img tilt-card transition-all duration-500 ease-out hover:shadow-2xl hover:-translate-y-2 cursor-default"
-                            data-tilt-strength="5"
-                            width="1200"
-                            height="787"
-                        >
-                    </picture>
+                    <!-- Light Theme Hero Illustration -->
+                    <div class="block dark:hidden w-full max-w-lg lg:max-w-2xl">
+                        <picture class="hero-wrapper">
+                            <source srcset="images/hearme-hero-speech-communication.webp" type="image/webp">
+                            
+                            <img 
+                                src="images/hearme-hero-speech-communication.png" 
+                                alt="Woman using HearMe app, puzzle pieces coming together to form a clear speech bubble, representing the reconstruction of speech"
+                                class="w-full h-auto object-contain rounded-2xl hero-floating-img tilt-card transition-all duration-500 ease-out hover:shadow-2xl hover:-translate-y-2 cursor-default"
+                                data-tilt-strength="5"
+                                width="1200"
+                                height="787"
+                            >
+                        </picture>
+                    </div>
+
+                    <!-- Dark Theme Hero Illustration -->
+                    <div class="hidden dark:block w-full max-w-lg lg:max-w-2xl">
+                        <picture class="hero-wrapper">
+                            <source srcset="images/hearme-hero-speech-communication-dark.webp" type="image/webp">
+                            
+                            <img 
+                                src="images/hearme-hero-speech-communication-dark.png" 
+                                alt="Woman using HearMe app, puzzle pieces coming together to form a clear speech bubble, representing the reconstruction of speech"
+                                class="w-full h-auto object-contain rounded-2xl hero-floating-img tilt-card transition-all duration-500 ease-out hover:shadow-2xl hover:-translate-y-2 cursor-default"
+                                data-tilt-strength="5"
+                                width="1200"
+                                height="787"
+                            >
+                        </picture>
+                    </div>
                 </div>
             </div>
         </section>
@@ -223,10 +242,10 @@
                             <div class="relative z-10">
                                 <div class="flex flex-col md:flex-row items-center md:justify-start gap-3 mb-2">
                                     <span class="text-4xl md:text-5xl font-bold text-brand-teal/20 select-none order-1 md:order-2" aria-hidden="true">02</span>
-                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy dark:text-white m-0 order-2 md:order-1" data-i18n="howItWorks.step2_title">Core Training (Alpha)</h3>
+                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy dark:text-white m-0 order-2 md:order-1" data-i18n="howItWorks.step2_title">Core Training</h3>
                                 </div>
                                 <p class="text-gray-600 dark:text-gray-300" data-i18n="howItWorks.step2_desc">
-                                    Train 5 predefined phrases by recording multiple voice samples for each. This builds a robust baseline model tailored specifically to your speech patterns.
+                                    Train a set of core phrases by recording a few voice samples for each. This builds a robust baseline model tailored specifically to your voice.
                                 </p>
                             </div>
                             <div class="hidden md:block absolute top-1/2 -left-[calc(2rem+5px)] w-5 h-5 bg-brand-teal rounded-full border-4 border-white dark:border-brand-navy shadow-sm z-20 transform -translate-y-1/2"></div>
@@ -236,20 +255,20 @@
                     <!-- Step 03 -->
                     <div class="grid md:grid-cols-2 gap-8 items-center relative z-20 mt-8 md:-mt-12">
                         <div class="bg-white dark:bg-slate-800/80 p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 dark:border-slate-700 text-center md:text-right relative tilt-card reveal">
-                            <div class="absolute top-0 left-0 md:left-0 md:right-auto bg-gray-100 dark:bg-slate-700 text-gray-500 dark:text-gray-300 text-xs font-bold px-3 py-1 rounded-tl-xl rounded-br-lg uppercase tracking-wide border-r border-b border-gray-200 dark:border-slate-600 z-20" data-i18n="howItWorks.step3_badge">
-                                Coming Soon
+                            <div class="absolute top-0 left-0 bg-teal-50 dark:bg-brand-teal/20 text-brand-teal-dark dark:text-brand-teal-light text-xs font-bold px-3 py-1 rounded-tl-xl rounded-br-lg uppercase tracking-wide border-r border-b border-brand-teal/20 dark:border-brand-teal/30 z-20" data-i18n="howItWorks.badge">
+                                Testers only
                             </div>
 
                             <div class="relative z-10">
                                 <div class="flex flex-col md:flex-row items-center md:justify-end gap-3 mb-2">
-                                    <span class="text-4xl md:text-5xl font-bold text-gray-200 dark:text-slate-600 select-none" aria-hidden="true">03</span>
-                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy dark:text-white m-0 opacity-90" data-i18n="howItWorks.step3_title">Expand Vocabulary</h3>
+                                    <span class="text-4xl md:text-5xl font-bold text-brand-teal/20 select-none" aria-hidden="true">03</span>
+                                    <h3 class="text-xl md:text-2xl font-semibold text-brand-navy dark:text-white m-0" data-i18n="howItWorks.step3_title">Expand Vocabulary</h3>
                                 </div>
-                                <p class="text-gray-500 dark:text-gray-400" data-i18n="howItWorks.step3_desc">
-                                    In the full version, you will be able to add custom phrases specific to your life, making the AI smarter and more personalized.
+                                <p class="text-gray-600 dark:text-gray-300" data-i18n="howItWorks.step3_desc">
+                                    Add custom phrases unique to your daily routine to make the AI more personalized
                                 </p>
                             </div>
-                            <div class="hidden md:block absolute top-1/2 -right-[calc(2rem+5px)] w-5 h-5 bg-gray-300 dark:bg-slate-600 rounded-full border-4 border-white dark:border-brand-navy shadow-sm z-20 transform -translate-y-1/2"></div>
+                            <div class="hidden md:block absolute top-1/2 -right-[calc(2rem+5px)] w-5 h-5 bg-brand-teal rounded-full border-4 border-white dark:border-brand-navy shadow-sm z-20 transform -translate-y-1/2"></div>
                         </div>
                         <div class="hidden md:block"></div>
                     </div>

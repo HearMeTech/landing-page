@@ -146,13 +146,13 @@
   "howItWorks": {
     "title": "Su camino hacia un habla más clara",
     "subtitle": "Comenzar es muy sencillo. Nuestro proceso guiado garantiza que la IA se adapte a su voz de inmediato.",
+    "badge": "Solo para testers",
     "step1_title": "Inicie la aplicación web",
     "step1_desc": "Sin descargas ni tiendas de aplicaciones. Abra <a href='https://alpha.hearme.tech/login' class='text-brand-teal font-semibold hover:underline'>HearMe</a> en su navegador para empezar al instante en cualquier dispositivo.",
-    "step2_title": "Entrenamiento básico (Alfa)",
-    "step2_desc": "Entrene 5 frases clave grabando algunas muestras de voz para cada una. Esto creará un modelo base sólido y adaptado a su voz.",
-    "step3_badge": "Próximamente",
+    "step2_title": "Entrenamiento básico",
+    "step2_desc": "Entrena un conjunto de frases básicas grabando unas pocas muestras de voz para cada una. Esto crea un modelo base sólido adaptado específicamente a tu voz.",
     "step3_title": "Amplíe su vocabulario",
-    "step3_desc": "In la futura versión completa, podrá añadir frases personalizadas según su rutina diaria, haciendo que la IA sea aún más inteligente.",
+    "step3_desc": "Añade frases personalizadas propias de tu día a día para hacer la IA más personalizada.",
     "step4_title": "Hable libremente",
     "step4_desc": "Deje que la aplicación hable por usted en tiempo real. Mediante síntesis de voz o texto en pantalla, sus palabras por fin se entenderán."
   },
@@ -276,7 +276,7 @@
     "error_title": "Algo salió mal"
   },
   "footer": {
-      "desc": "Dando a todos el poder de ser escuchados.",
+      "desc": "Dando a todos el poder de ser escuchados",
       "product": "Producto",
       "about": "Nosotros",
       "connect": "Contacto",

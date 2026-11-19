@@ -146,13 +146,13 @@
   "howItWorks": {
     "title": "Din väg till ett tydligare tal",
     "subtitle": "Det är enkelt att komma igång. Vår guidade process säkerställer att vår AI anpassar sig till din röst direkt.",
+    "badge": "Endast för testare",
     "step1_title": "Starta webbappen",
     "step1_desc": "Inga nedladdningar krävs. Öppna enkelt <a href='https://alpha.hearme.tech/login' class='text-brand-teal font-semibold hover:underline'>HearMe</a> direkt i din webbläsare på valfri enhet.",
-    "step2_title": "Grundläggande träning (Alpha)",
-    "step2_desc": "Träna 5 kärnfraser genom att spela in några röstprover för varje. Detta skapar en stabil basmodell anpassad för din röst.",
-    "step3_badge": "Kommer snart",
+    "step2_title": "Grundläggande träning",
+    "step2_desc": "Träna en uppsättning kärnfraser genom att spela in några röstprover för varje fras. Detta bygger en robust basmodell som är skräddarsydd specifikt för din röst.",
     "step3_title": "Utöka ditt ordförråd",
-    "step3_desc": "I den kommande fullständiga versionen kan du lägga till egna fraser anpassade efter din vardag, vilket gör din AI ännu smartare.",
+    "step3_desc": "Lägg till egna fraser som är unika för din vardag för att göra AI:n mer personlig.",
     "step4_title": "Tala fritt",
     "step4_desc": "Låt appen tala för dig i realtid. Oavsett om det sker via röstsyntes eller text på skärmen blir dina ord äntligen förstådda."
   },
@@ -276,7 +276,7 @@
     "error_title": "Något gick fel"
   },
   "footer": {
-      "desc": "Ge alla kraften att bli hörda.",
+      "desc": "Ge alla kraften att bli hörda",
       "product": "Produkt",
       "about": "Om oss",
       "connect": "Kontakt",

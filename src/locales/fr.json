@@ -146,13 +146,13 @@
   "howItWorks": {
     "title": "Votre chemin vers une parole plus claire",
     "subtitle": "Commencer est très simple. Notre processus guidé permet à l'IA de s'adapter immédiatement à votre voix.",
+    "badge": "Testeurs uniquement",
     "step1_title": "Lancez l'application web",
     "step1_desc": "Aucun téléchargement requis. Ouvrez <a href='https://alpha.hearme.tech/login' class='text-brand-teal font-semibold hover:underline'>HearMe</a> directement dans votre navigateur pour démarrer instantanément sur tout appareil.",
-    "step2_title": "Entraînement de base (Alpha)",
-    "step2_desc": "Configurez 5 phrases clés en enregistrant quelques échantillons vocaux pour chacune. Cela crée un modèle de base robuste adapté à votre voix.",
-    "step3_badge": "Bientôt disponible",
+    "step2_title": "Entraînement de base",
+    "step2_desc": "Entraînez un ensemble de phrases de base en enregistrant quelques échantillons vocaux pour chacune. Cela crée un modèle de base robuste spécialement adapté à votre voix.",
     "step3_title": "Enrichissez votre vocabulaire",
-    "step3_desc": "Dans la future version complète, vous pourrez ajouter des phrases personnalisées adaptées à votre quotidien, rendant l'IA encore plus intelligente.",
+    "step3_desc": "Ajoutez des phrases personnalisées propres à votre quotidien pour rendre l'IA plus personnalisée.",
     "step4_title": "Parlez librement",
     "step4_desc": "Laissez l'application s'exprimer pour vous en temps réel. Par synthèse vocale ou affichage textuel, vos mots sont enfin compris."
   },
@@ -276,7 +276,7 @@
     "error_title": "Une erreur est survenue"
   },
   "footer": {
-      "desc": "Donner à chacun le pouvoir de se faire entendre.",
+      "desc": "Donner à chacun le pouvoir de se faire entendre",
       "product": "Produit",
       "about": "À propos",
       "connect": "Contact",

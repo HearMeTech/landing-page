@@ -147,14 +147,14 @@
   },
   "howItWorks": {
     "title": "Your Journey to Clearer Speech",
+    "badge": "Testers only",
     "subtitle": "Getting started is simple. Our streamlined onboarding ensures the AI adapts to your voice right away.",
     "step1_title": "Launch the Web App",
     "step1_desc": "No downloads or app stores required. Open <a href='https://alpha.hearme.tech/login' class='text-brand-teal font-semibold hover:underline'>HearMe</a> directly in your browser to start instantly on any device.",
-    "step2_title": "Core Training (Alpha)",
-    "step2_desc": "Train 5 core phrases by recording a few voice samples for each. This builds a robust baseline model tailored specifically to your voice.",
-    "step3_badge": "Coming Soon",
+    "step2_title": "Core Training",
+    "step2_desc": "Train a set of core phrases by recording a few voice samples for each. This builds a robust baseline model tailored specifically to your voice.",
     "step3_title": "Expand Your Vocabulary",
-    "step3_desc": "In the upcoming full version, you can add custom phrases unique to your daily routine, making the AI even smarter.",
+    "step3_desc": "Add custom phrases unique to your daily routine to make the AI more personalized.",
     "step4_title": "Speak Freely",
     "step4_desc": "Let the app speak for you in real time. Through voice synthesis or text display, your words are finally understood."
   },
@@ -278,7 +278,7 @@
     "error_title": "Something went wrong"
   },
   "footer": {
-      "desc": "Giving everyone the power to be heard.",
+      "desc": "Giving everyone the power to be heard",
       "product": "Product",
       "about": "About Us",
       "connect": "Contacts",

@@ -146,13 +146,13 @@
   "howItWorks": {
     "title": "Ihr Weg zu klarer Verständigung",
     "subtitle": "Der Einstieg ist unkompliziert. Unser geführter Prozess sorgt dafür, dass sich die KI sofort auf Ihre Stimme einstellt.",
+    "badge": "Nur für Tester",
     "step1_title": "Web-App öffnen",
     "step1_desc": "Kein Download nötig. Öffnen Sie <a href='https://alpha.hearme.tech/login' class='text-brand-teal font-semibold hover:underline'>HearMe</a> einfach direkt im Browser Ihres bevorzugten Geräts.",
-    "step2_title": "Basis-Training (Alpha)",
-    "step2_desc": "Sprechen Sie 5 Standardphrasen mehrfach ein. Daraus erstellen wir ein verlässliches, auf Ihre Stimme maßgeschneidertes Grundmodell.",
-    "step3_badge": "Demnächst",
+    "step2_title": "Basis-Training",
+    "step2_desc": "Trainieren Sie eine Reihe von Kernphrasen, indem Sie jeweils ein paar Sprachproben aufnehmen. So entsteht ein robustes Basismodell, das speziell auf Ihre Stimme zugeschnitten ist.",
     "step3_title": "Wortschatz erweitern",
-    "step3_desc": "In der späteren Vollversion können Sie eigene Phrasen für Ihren Alltag hinzufügen, wodurch die KI noch smarter auf Sie eingeht.",
+    "step3_desc": "Fügen Sie eigene Sätze aus Ihrem Alltag hinzu, um die KI noch stärker zu personalisieren.",
     "step4_title": "Frei sprechen",
     "step4_desc": "Nutzen Sie die App als Ihr Sprachrohr. Ob via Sprachausgabe oder Textbildschirm: Ihre Worte werden endlich verstanden."
   },
@@ -276,7 +276,7 @@
     "error_title": "Etwas ist schiefgelaufen"
   },
   "footer": {
-      "desc": "Jedem Menschen die Kraft geben, gehört zu werden.",
+      "desc": "Jedem Menschen die Kraft geben, gehört zu werden",
       "product": "Produkt",
       "about": "Über uns",
       "connect": "Kontakt",
