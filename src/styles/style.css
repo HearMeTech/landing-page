@@ -114,13 +114,52 @@ html.initial-loading body {
     display: block;
 }
 
+@keyframes hero-breathe-glow {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 8px rgb(10 147 150 / 12%));
+    }
+
+    50% {
+        transform: scale(1.04);
+        filter: drop-shadow(0 12px 28px rgb(10 147 150 / 32%));
+    }
+}
+
 .hero-floating-img {
-    transition: transform 0.1s ease-out; 
-    will-change: transform;
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgb(10 147 150 / 0%));
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.6s ease-out;
+    will-change: transform, filter;
 }
 
 .hero-wrapper:hover .hero-floating-img {
-    box-shadow: 0 50px 60px -15px rgb(0 0 0 / 20%);
+    animation: hero-breathe-glow 3.6s ease-in-out infinite;
+}
+
+/* Slightly richer glow in dark mode for extra depth */
+html.dark .hero-wrapper:hover .hero-floating-img {
+    animation-name: hero-breathe-glow-dark;
+}
+
+@keyframes hero-breathe-glow-dark {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 12px rgb(10 147 150 / 18%));
+    }
+    
+    50% {
+        transform: scale(1.04);
+        filter: drop-shadow(0 14px 34px rgb(10 147 150 / 45%));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-wrapper:hover .hero-floating-img,
+    html.dark .hero-wrapper:hover .hero-floating-img {
+        animation: none;
+        transform: scale(1.02);
+    }
 }
 
 /* =========================================
