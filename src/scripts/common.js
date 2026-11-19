@@ -226,11 +226,37 @@ function setupSmartHeader() {
 }
 
 /**
- * Initializes Light/Dark theme toggling and OS theme change listener.
+ * Updates all outbound links to alpha.hearme.tech with the current active theme ('dark' | 'light').
+ */
+function syncAppLinksTheme() {
+    const isDark = document.documentElement.classList.contains('dark');
+    const activeTheme = isDark ? 'dark' : 'light';
+    const appLinks = document.querySelectorAll('a[href^="https://alpha.hearme.tech"]');
+
+    appLinks.forEach((link) => {
+        const rawHref = link.getAttribute('href');
+        if (!rawHref) return;
+
+        try {
+            const url = new URL(rawHref);
+            url.searchParams.set('theme', activeTheme);
+            link.setAttribute('href', url.toString());
+        } catch {
+            // Ignore malformed URLs
+        }
+    });
+}
+
+/**
+ * Initializes Light/Dark theme toggling, OS theme change listener,
+ * and dynamic theme query synchronization for web app links.
  */
 function initThemeToggle() {
     const toggleButtons = document.querySelectorAll('[data-theme-toggle]');
     const rootElement = document.documentElement;
+
+    // Sync links on initial load
+    syncAppLinksTheme();
 
     toggleButtons.forEach((btn) => {
         btn.addEventListener('click', () => {
@@ -238,6 +264,7 @@ function initThemeToggle() {
             const nextTheme = isCurrentlyDark ? 'light' : 'dark';
 
             rootElement.classList.toggle('dark', nextTheme === 'dark');
+            syncAppLinksTheme();
 
             try {
                 localStorage.setItem('theme', nextTheme);
@@ -253,9 +280,11 @@ function initThemeToggle() {
         try {
             if (!localStorage.getItem('theme')) {
                 rootElement.classList.toggle('dark', event.matches);
+                syncAppLinksTheme();
             }
         } catch {
             rootElement.classList.toggle('dark', event.matches);
+            syncAppLinksTheme();
         }
     });
 }
