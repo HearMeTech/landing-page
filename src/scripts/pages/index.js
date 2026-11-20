@@ -268,6 +268,76 @@ function setupAnalytics() {
 }
 
 /**
+ * Loads the external Hero SVG inline, assigns staggered delays to each puzzle
+ * and word layer, and triggers playback on initial load, hover, and click.
+ */
+async function initHeroSvgAnimation() {
+    const stage = document.getElementById('hero-svg-container');
+    if (!stage) return;
+
+    const svgUrl = stage.getAttribute('data-svg-src');
+    if (!svgUrl) return;
+
+    try {
+        const response = await fetch(svgUrl);
+        if (!response.ok) return;
+
+        const svgMarkup = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(svgMarkup, 'image/svg+xml');
+        const svgElement = doc.querySelector('svg');
+
+        if (!svgElement) return;
+
+        // Clean fixed width/height attributes so CSS controls responsive scaling cleanly
+        svgElement.removeAttribute('width');
+        svgElement.removeAttribute('height');
+
+        // Assign staggered delays to puzzles (mouth -> phone)
+        const puzzles = svgElement.querySelectorAll('#puzzles > g');
+        const puzzleStartDelay = 0.15;
+        const puzzleStep = 0.22;
+        const puzzleDuration = 0.85;
+
+        puzzles.forEach((puzzle, index) => {
+            const delay = puzzleStartDelay + index * puzzleStep;
+            puzzle.style.setProperty('--delay', `${delay.toFixed(2)}s`);
+        });
+
+        // Calculate when the last puzzle lands, add a 0.45s pause, then stagger words
+        const lastPuzzleEnd = puzzleStartDelay + Math.max(0, puzzles.length - 1) * puzzleStep + puzzleDuration;
+        const pauseBetweenStages = 0.45;
+        const wordsStartDelay = lastPuzzleEnd + pauseBetweenStages;
+        const wordStep = 0.13;
+
+        const words = svgElement.querySelectorAll('#words > g');
+        words.forEach((word, index) => {
+            const delay = wordsStartDelay + index * wordStep;
+            word.style.setProperty('--delay', `${delay.toFixed(2)}s`);
+        });
+
+        stage.innerHTML = '';
+        stage.appendChild(svgElement);
+
+        const playAnimation = () => {
+            stage.classList.remove('is-playing');
+            // Force browser reflow to cleanly restart CSS keyframe animations
+            void stage.offsetWidth;
+            stage.classList.add('is-playing');
+        };
+
+        // 1. Play once automatically shortly after page load
+        setTimeout(playAnimation, 350);
+
+        // 2. Replay on mouse enter (desktop) and tap/click (mobile & desktop)
+        stage.addEventListener('mouseenter', playAnimation);
+        stage.addEventListener('click', playAnimation);
+    } catch {
+        // Fail silently if SVG cannot be fetched
+    }
+}
+
+/**
  * Main initialization.
  */
 function initPage() {
@@ -279,6 +349,7 @@ function initPage() {
     setupFlipCards();
     setupContactForm();
     setupAnalytics();
+    initHeroSvgAnimation();
 
     setTimeout(() => triggerHeroAnimation(), 500);
 }

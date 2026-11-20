@@ -162,6 +162,95 @@ html.dark .hero-wrapper:hover .hero-floating-img {
     }
 }
 
+/* ==========================================================================
+   4. Hero Section (Interactive SVG Story Animation)
+   ========================================================================== */
+
+.hero-svg-stage svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+}
+
+/* Enhance dark hair outline visibility against #001219 background in dark theme */
+html.dark .hero-svg-stage #girl .hair {
+    stroke: #568ca8;
+    stroke-width: 4.5;
+    transition: stroke 0.3s ease;
+}
+
+/* Initial hidden state for puzzles and words before animation starts */
+.hero-svg-stage #puzzles > g,
+.hero-svg-stage #words > g {
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+/* Keyframes: puzzle piece flies out from smile toward phone */
+@keyframes hero-puzzle-fly {
+    0% {
+        opacity: 0;
+        transform: translate(55px, 18px) scale(0.55) rotate(-14deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translate(-4px, -2px) scale(1.04) rotate(2deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+}
+
+/* Keyframes: recognized word pops up from phone screen */
+@keyframes hero-word-pop {
+    0% {
+        opacity: 0;
+        transform: translate(24px, 28px) scale(0.72);
+    }
+
+    75% {
+        opacity: 1;
+        transform: translate(-2px, -3px) scale(1.05);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+/* Active playback state — uses per-element --delay assigned via JS */
+.hero-svg-stage.is-playing #puzzles > g {
+    animation-name: hero-puzzle-fly;
+    animation-duration: 0.85s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    animation-fill-mode: forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+.hero-svg-stage.is-playing #words > g {
+    animation-name: hero-word-pop;
+    animation-duration: 0.75s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    animation-fill-mode: forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+/* Accessibility: show full static illustration immediately if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .hero-svg-stage #puzzles > g,
+    .hero-svg-stage #words > g {
+        opacity: 1 !important;
+        animation: none !important;
+        transform: none !important;
+    }
+}
+
 /* =========================================
    5. Cards & Visual Effects (Features/Pricing)
    ========================================= */
