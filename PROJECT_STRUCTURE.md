@@ -1,9 +1,9 @@
 # Project Structure
 
-![Directories](https://img.shields.io/badge/directories-12-blue?style=flat-square) ![Files](https://img.shields.io/badge/files-70-success?style=flat-square) ![Depth](https://img.shields.io/badge/depth-Full%20depth-lightgrey?style=flat-square)
+![Directories](https://img.shields.io/badge/directories-13-blue?style=flat-square) ![Files](https://img.shields.io/badge/files-74-success?style=flat-square) ![Depth](https://img.shields.io/badge/depth-Full%20depth-lightgrey?style=flat-square)
 
-> Automatically generated on: 2026-11-09 16:52:36 UTC  
-> Total: **12 directories**, **70 files**  
+> Automatically generated on: 2026-11-20 15:08:27 UTC  
+> Total: **13 directories**, **74 files**  
 > Settings: Full depth | Names only | Exclusions parsed from `.gitignore`
 
 <!-- prettier-ignore -->
@@ -39,8 +39,7 @@ landing-page/
 │   │   ├── favicon-96x96.png
 │   │   ├── favicon.ico
 │   │   ├── favicon.svg
-│   │   ├── hearme-hero-speech-communication.png
-│   │   ├── hearme-hero-speech-communication.webp
+│   │   ├── hearme-hero-speech-communication.svg
 │   │   ├── logo-full.png
 │   │   ├── logo-only.png
 │   │   ├── logo-text-only.png
@@ -48,6 +47,11 @@ landing-page/
 │   │   ├── site.webmanifest
 │   │   ├── web-app-manifest-192x192.png
 │   │   └── web-app-manifest-512x512.png
+│   ├── assets_old
+│   │   ├── hearme-hero-speech-communication-dark.png
+│   │   ├── hearme-hero-speech-communication-dark.webp
+│   │   ├── hearme-hero-speech-communication.png
+│   │   └── hearme-hero-speech-communication.webp
 │   ├── components
 │   │   ├── footer.html
 │   │   └── header.html
@@ -89,6 +93,7 @@ landing-page/
 ├── firebase.json
 ├── package-lock.json
 ├── package.json
+├── PROJECT_STRUCTURE.md
 ├── README.md
 └── tailwind.config.js
 ```

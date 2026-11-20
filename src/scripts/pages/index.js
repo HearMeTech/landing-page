@@ -4,9 +4,32 @@
 import { db, authReadyPromise } from '../firebase-init.js';
 import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-// Configuration
-const HERO_TYPING_SPEED = 150;
+// ============================================================================
+// Hero Animation Configuration (Single Control Panel)
+// ============================================================================
+const HERO_ANIMATION_CONFIG = {
+    // Typewriter settings (ms)
+    TYPING_BASE_SPEED_MS: 150,
+    INITIAL_TYPING_DELAY_MS: 500,
+
+    // Pause between the last typed character and the start of SVG animation (ms)
+    DELAY_AFTER_TYPING_MS: 900,
+
+    // SVG Puzzle stage settings (seconds — must match CSS duration)
+    PUZZLE_START_DELAY_S: 0.10,
+    PUZZLE_STEP_S: 0.22,
+    PUZZLE_DURATION_S: 0.85,
+
+    // Pause between the last puzzle landing in phone and first word appearing (seconds)
+    PAUSE_BETWEEN_STAGES_S: 0.45,
+
+    // SVG Words stage settings (seconds — must match CSS duration)
+    WORD_STEP_S: 0.13,
+    WORD_DURATION_S: 0.75
+};
+
 let activeTypewriterTimeout = null;
+let isTypewriterFinished = false;
 
 /**
  * Initializes Scroll Reveal animation.
@@ -32,8 +55,9 @@ function setupScrollReveal() {
 
 /**
  * Typewriter effect logic.
+ * Dispatches 'hero:typewriter-done' once the full phrase is rendered.
  */
-function typeWriterEffect(element, text, baseSpeed = 30) {
+function typeWriterEffect(element, text, baseSpeed = HERO_ANIMATION_CONFIG.TYPING_BASE_SPEED_MS) {
     if (!element || !text) return;
 
     if (activeTypewriterTimeout) {
@@ -41,6 +65,7 @@ function typeWriterEffect(element, text, baseSpeed = 30) {
         activeTypewriterTimeout = null;
     }
 
+    isTypewriterFinished = false;
     element.innerHTML = '';
     
     let i = 0;
@@ -50,6 +75,8 @@ function typeWriterEffect(element, text, baseSpeed = 30) {
     function type() {
         if (i >= text.length) {
             activeTypewriterTimeout = null;
+            isTypewriterFinished = true;
+            document.dispatchEvent(new CustomEvent('hero:typewriter-done'));
             return;
         }
 
@@ -76,12 +103,12 @@ function triggerHeroAnimation() {
 
     if (displayElement && sourceElement) {
         const textToType = sourceElement.innerHTML;
-        typeWriterEffect(displayElement, textToType, HERO_TYPING_SPEED);
+        typeWriterEffect(displayElement, textToType, HERO_ANIMATION_CONFIG.TYPING_BASE_SPEED_MS);
     }
 }
 
 /**
- * Tilt effect for cards and Hero image.
+ * Tilt effect for cards.
  */
 function setupTiltEffect() {
     const cards = document.querySelectorAll('.tilt-card');
@@ -268,8 +295,8 @@ function setupAnalytics() {
 }
 
 /**
- * Loads the external Hero SVG inline, assigns staggered delays to each puzzle
- * and word layer, and triggers playback on initial load, hover, and click.
+ * Loads the external Hero SVG inline, waits for the typewriter phrase to finish,
+ * plays the multi-stage animation, and prevents replay interruption until complete.
  */
 async function initHeroSvgAnimation() {
     const stage = document.getElementById('hero-svg-container');
@@ -293,43 +320,76 @@ async function initHeroSvgAnimation() {
         svgElement.removeAttribute('width');
         svgElement.removeAttribute('height');
 
-        // Assign staggered delays to puzzles (mouth -> phone)
-        const puzzles = svgElement.querySelectorAll('#puzzles > g');
-        const puzzleStartDelay = 0.15;
-        const puzzleStep = 0.22;
-        const puzzleDuration = 0.85;
+        const {
+            DELAY_AFTER_TYPING_MS,
+            PUZZLE_START_DELAY_S,
+            PUZZLE_STEP_S,
+            PUZZLE_DURATION_S,
+            PAUSE_BETWEEN_STAGES_S,
+            WORD_STEP_S,
+            WORD_DURATION_S
+        } = HERO_ANIMATION_CONFIG;
 
+        // 1. Assign staggered delays to puzzles (mouth -> phone)
+        const puzzles = svgElement.querySelectorAll('#puzzles > g');
         puzzles.forEach((puzzle, index) => {
-            const delay = puzzleStartDelay + index * puzzleStep;
+            const delay = PUZZLE_START_DELAY_S + index * PUZZLE_STEP_S;
             puzzle.style.setProperty('--delay', `${delay.toFixed(2)}s`);
         });
 
-        // Calculate when the last puzzle lands, add a 0.45s pause, then stagger words
-        const lastPuzzleEnd = puzzleStartDelay + Math.max(0, puzzles.length - 1) * puzzleStep + puzzleDuration;
-        const pauseBetweenStages = 0.45;
-        const wordsStartDelay = lastPuzzleEnd + pauseBetweenStages;
-        const wordStep = 0.13;
+        // 2. Calculate pause after last puzzle lands, then stagger words
+        const lastPuzzleEnd = puzzles.length > 0
+            ? PUZZLE_START_DELAY_S + (puzzles.length - 1) * PUZZLE_STEP_S + PUZZLE_DURATION_S
+            : 0;
+        const wordsStartDelay = lastPuzzleEnd + PAUSE_BETWEEN_STAGES_S;
 
         const words = svgElement.querySelectorAll('#words > g');
         words.forEach((word, index) => {
-            const delay = wordsStartDelay + index * wordStep;
+            const delay = wordsStartDelay + index * WORD_STEP_S;
             word.style.setProperty('--delay', `${delay.toFixed(2)}s`);
         });
+
+        // 3. Total duration of the entire SVG sequence (in ms) for lock protection
+        const totalSequenceSeconds = words.length > 0
+            ? wordsStartDelay + (words.length - 1) * WORD_STEP_S + WORD_DURATION_S
+            : lastPuzzleEnd;
+        const totalSequenceMs = Math.ceil(totalSequenceSeconds * 1000) + 50;
 
         stage.innerHTML = '';
         stage.appendChild(svgElement);
 
+        let isSvgAnimating = false;
+        let unlockTimeout = null;
+
         const playAnimation = () => {
+            // Do not interrupt if the animation is currently in progress
+            if (isSvgAnimating) return;
+
+            isSvgAnimating = true;
             stage.classList.remove('is-playing');
             // Force browser reflow to cleanly restart CSS keyframe animations
             void stage.offsetWidth;
             stage.classList.add('is-playing');
+
+            if (unlockTimeout) clearTimeout(unlockTimeout);
+            unlockTimeout = setTimeout(() => {
+                isSvgAnimating = false;
+                unlockTimeout = null;
+            }, totalSequenceMs);
         };
 
-        // 1. Play once automatically shortly after page load
-        setTimeout(playAnimation, 350);
+        const scheduleStartAfterTyping = () => {
+            setTimeout(playAnimation, DELAY_AFTER_TYPING_MS);
+        };
 
-        // 2. Replay on mouse enter (desktop) and tap/click (mobile & desktop)
+        // Start after typewriter finishes (handles both normal order and slow SVG fetch)
+        if (isTypewriterFinished) {
+            scheduleStartAfterTyping();
+        } else {
+            document.addEventListener('hero:typewriter-done', scheduleStartAfterTyping, { once: true });
+        }
+
+        // Replay on mouse enter (desktop) and tap/click (mobile & desktop) when idle
         stage.addEventListener('mouseenter', playAnimation);
         stage.addEventListener('click', playAnimation);
     } catch {
@@ -342,7 +402,7 @@ async function initHeroSvgAnimation() {
  */
 function initPage() {
     const heroTitle = document.getElementById('hero-title-display');
-    if (heroTitle) heroTitle.innerHTML = '&nbsp;';
+    if (heroTitle) heroTitle.innerHTML = ' ';
 
     setupScrollReveal();
     setupTiltEffect();
@@ -351,7 +411,7 @@ function initPage() {
     setupAnalytics();
     initHeroSvgAnimation();
 
-    setTimeout(() => triggerHeroAnimation(), 500);
+    setTimeout(() => triggerHeroAnimation(), HERO_ANIMATION_CONFIG.INITIAL_TYPING_DELAY_MS);
 }
 
 // Event-driven init
