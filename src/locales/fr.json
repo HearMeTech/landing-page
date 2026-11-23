@@ -122,7 +122,7 @@
     "testing": "Tests Alpha"
   },
   "hero": {
-    "title": "Votre voix. Vos mots.<br><span class='text-brand-teal'>Enfin compris.</span>",
+    "title": "Votre voix.<br>Vos mots.<br><span class='text-brand-teal'>Enfin compris.</span>",
     "subtitle": "<b>HearMe</b> est une application IA révolutionnaire qui apprend vos schémas vocaux uniques, vous donnant les moyens de communiquer clairement et en toute confiance.",
     "cta": "Essayer HearMe",
     "testing_btn": "Devenir testeur"

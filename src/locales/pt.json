@@ -122,7 +122,7 @@
     "testing": "Testes Alpha"
   },
   "hero": {
-    "title": "Sua voz. Suas palavras.<br><span class='text-brand-teal'>Finalmente compreendidas.</span>",
+    "title": "Sua voz.<br>Suas palavras.<br><span class='text-brand-teal'>Finalmente compreendidas.</span>",
     "subtitle": "O <b>HearMe</b> é uma aplicação de IA revolucionária que aprende os seus padrões de fala únicos, capacitando-o a comunicar de forma clara e confiante.",
     "cta": "Experimentar o HearMe",
     "testing_btn": "Tornar-se um testador"

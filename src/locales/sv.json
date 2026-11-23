@@ -122,7 +122,7 @@
     "testing": "Alfatestning"
   },
   "hero": {
-    "title": "Din röst. Dina ord.<br><span class='text-brand-teal'>Äntligen förstådda.</span>",
+    "title": "Din röst.<br>Dina ord.<br><span class='text-brand-teal'>Äntligen förstådda.</span>",
     "subtitle": "<b>HearMe</b> är en revolutionerande AI-app som lär sig dina unika talmönster och ger dig kraften att kommunicera tydligt och säkert.",
     "cta": "Snabba HearMe",
     "testing_btn": "Bli en testare"
