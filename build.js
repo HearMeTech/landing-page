@@ -1,8 +1,9 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import * as cheerio from 'cheerio';
+import crypto from 'node:crypto';
+import fs from 'node:fs';
+import path from 'node:path';
 import process from 'node:process';
+import { fileURLToPath } from 'node:url';
+import * as cheerio from 'cheerio';
 
 /**
  * ==========================================
@@ -18,8 +19,19 @@ const PUBLIC_DIR = path.join(__dirname, 'public');
 const LOCALES_DIR = path.join(SRC_DIR, 'locales');
 const COMPONENTS_DIR = path.join(SRC_DIR, 'components');
 
-// Build hash for cache-busting
-const BUILD_VERSION = Date.now();
+// Build timestamp fallback for assets generated after this script (e.g., tailwind.css)
+const BUILD_VERSION = String(Date.now());
+
+// In-memory cache of SHA-256 content hashes (canonicalPath -> 8-char hex digest)
+const ASSET_HASH_CACHE = new Map();
+
+// Tracks referenced local assets that do not exist in `public/` (causes build failure)
+const MISSING_ASSETS = new Set();
+
+// Assets generated after `build.js` completes (e.g., Tailwind CLI step in `npm run build`)
+const POST_BUILD_ASSETS = new Set([
+    '/css/tailwind.css'
+]);
 
 // Load package metadata
 const PACKAGE_JSON = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'), 'utf8'));
@@ -56,6 +68,15 @@ const EXCLUDED_SCRIPTS = ['maintenance.js'];
 const EXCLUDED_STYLES = ['input.css'];
 const ROBOTS_DISALLOW_PATHS = ['/404.html', '/maintenance.html'];
 
+// Selectors for local static assets that should receive automatic `?v=<hash>` versioning
+const VERSIONED_LINK_SELECTOR = [
+    'link[rel="stylesheet"][href]',
+    'link[rel="icon"][href]',
+    'link[rel="shortcut icon"][href]',
+    'link[rel="apple-touch-icon"][href]',
+    'link[rel="manifest"][href]'
+].join(', ');
+
 
 /**
  * ==========================================
@@ -72,6 +93,8 @@ function cleanPublicDir() {
         fs.rmSync(PUBLIC_DIR, { recursive: true, force: true });
         console.log('✅ Public directory cleaned.');
     }
+    ASSET_HASH_CACHE.clear();
+    MISSING_ASSETS.clear();
 }
 
 /**
@@ -98,25 +121,154 @@ function ensureDirExists(dirPath) {
 }
 
 /**
- * Appends the current build version to asset queries to bust browser cache.
+ * Returns an 8-character SHA-256 content hash for a built file in `public/`.
+ * Falls back to `BUILD_VERSION` only for whitelisted post-build assets (e.g., tailwind.css).
+ * Records any other missing local asset so the build fails loudly.
+ *
+ * @param {string} rootRelativePath - e.g. '/images/logo-full.png'
+ * @returns {string}
  */
-function applyCacheBusting(htmlContent) {
-    return htmlContent.replace(/(\?v=)[^"']+/g, `$1${BUILD_VERSION}`);
+function getAssetVersion(rootRelativePath) {
+    const normalizedPath = rootRelativePath.replace(/^\/+/, '');
+    const canonicalPath = `/${normalizedPath}`;
+
+    if (ASSET_HASH_CACHE.has(canonicalPath)) {
+        return ASSET_HASH_CACHE.get(canonicalPath);
+    }
+
+    const fullPath = path.join(PUBLIC_DIR, normalizedPath);
+    let version = BUILD_VERSION;
+
+    if (fs.existsSync(fullPath) && fs.statSync(fullPath).isFile()) {
+        const fileBuffer = fs.readFileSync(fullPath);
+        version = crypto.createHash('sha256').update(fileBuffer).digest('hex').slice(0, 8);
+    } else if (!POST_BUILD_ASSETS.has(canonicalPath)) {
+        MISSING_ASSETS.add(canonicalPath);
+    }
+
+    ASSET_HASH_CACHE.set(canonicalPath, version);
+    return version;
+}
+
+/**
+ * Throws a consolidated error if any HTML template referenced a missing local asset.
+ */
+function assertNoMissingAssets() {
+    if (MISSING_ASSETS.size === 0) return;
+
+    const missingList = Array.from(MISSING_ASSETS)
+        .sort()
+        .map((assetPath) => `  - ${assetPath}`)
+        .join('\n');
+
+    throw new Error(`Missing static assets referenced in HTML templates:\n${missingList}`);
+}
+
+/**
+ * Appends or replaces the `?v=` query parameter on a root-relative asset URL.
+ * External URLs, protocol-relative URLs, data URIs, and relative paths are untouched.
+ *
+ * @param {string} rawUrl
+ * @returns {string}
+ */
+function versionAssetUrl(rawUrl) {
+    if (!rawUrl || !rawUrl.startsWith('/') || rawUrl.startsWith('//')) {
+        return rawUrl;
+    }
+
+    let parsed;
+    try {
+        parsed = new URL(rawUrl, 'http://local.build');
+    } catch {
+        return rawUrl;
+    }
+
+    const version = getAssetVersion(parsed.pathname);
+    parsed.searchParams.set('v', version);
+    return `${parsed.pathname}${parsed.search}${parsed.hash}`;
+}
+
+/**
+ * Versions every URL inside an HTML `srcset` attribute while preserving descriptors (e.g., 1x, 2x, 480w).
+ *
+ * @param {string} srcsetValue
+ * @returns {string}
+ */
+function versionSrcset(srcsetValue) {
+    if (!srcsetValue) return srcsetValue;
+
+    return srcsetValue
+        .split(',')
+        .map((candidate) => {
+            const parts = candidate.trim().split(/\s+/);
+            if (parts.length === 0 || !parts[0]) return candidate;
+            parts[0] = versionAssetUrl(parts[0]);
+            return parts.join(' ');
+        })
+        .join(', ');
+}
+
+/**
+ * Automatically applies content-hash cache-busting to all local static assets in the DOM.
+ * Eliminates the need for manual `?v=1` query strings in source HTML templates.
+ *
+ * @param {import('cheerio').CheerioAPI} $
+ */
+function applyAssetVersioning($) {
+    $('script[src]').each((_, el) => {
+        const src = $(el).attr('src');
+        if (src) $(el).attr('src', versionAssetUrl(src));
+    });
+
+    $(VERSIONED_LINK_SELECTOR).each((_, el) => {
+        const href = $(el).attr('href');
+        if (href) $(el).attr('href', versionAssetUrl(href));
+    });
+
+    $('img[src]').each((_, el) => {
+        const src = $(el).attr('src');
+        if (src) $(el).attr('src', versionAssetUrl(src));
+    });
+
+    $('source[srcset]').each((_, el) => {
+        const srcset = $(el).attr('srcset');
+        if (srcset) $(el).attr('srcset', versionSrcset(srcset));
+    });
+
+    $('[data-svg-src]').each((_, el) => {
+        const svgSrc = $(el).attr('data-svg-src');
+        if (svgSrc) $(el).attr('data-svg-src', versionAssetUrl(svgSrc));
+    });
+}
+
+/**
+ * Appends the current build version to relative local ES module imports inside JS files
+ * (e.g., `from './firebase-init.js'` -> `from './firebase-init.js?v=...'`).
+ * External CDN imports (https://...) remain untouched.
+ */
+function applyJsImportCacheBusting(jsContent) {
+    // Handles static imports/re-exports (`from './...'`, `import './...'`) and dynamic `import('./...')`
+    return jsContent.replace(
+        /(\b(?:from|import)\s*\(?\s*['"])(\.\.?\/[^'"?]+\.js)(?:\?v=[^'"]*)?(['"])/g,
+        `$1$2?v=${BUILD_VERSION}$3`
+    );
 }
 
 /**
  * Safely retrieves a nested value from an object using a dot-notation path.
  */
-function getNestedValue(obj, path) {
-    return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+function getNestedValue(obj, keyPath) {
+    return keyPath.split('.').reduce((acc, part) => acc && acc[part], obj);
 }
 
 /**
  * Recursively copies a directory, skipping files listed in the exclude array.
+ * Optionally applies cache-busting to local ES module imports inside `.js` files.
  */
-function copyDirectory(src, dest, exclude = []) {
+function copyDirectory(src, dest, exclude = [], options = {}) {
     if (!fs.existsSync(src)) return;
-    
+
+    const { versionJsImports = false } = options;
     ensureDirExists(dest);
     const entries = fs.readdirSync(src, { withFileTypes: true });
 
@@ -127,7 +279,11 @@ function copyDirectory(src, dest, exclude = []) {
         const destPath = path.join(dest, entry.name);
 
         if (entry.isDirectory()) {
-            copyDirectory(srcPath, destPath, exclude);
+            copyDirectory(srcPath, destPath, exclude, options);
+        } else if (versionJsImports && entry.name.endsWith('.js')) {
+            const rawJs = fs.readFileSync(srcPath, 'utf8');
+            const versionedJs = applyJsImportCacheBusting(rawJs);
+            fs.writeFileSync(destPath, versionedJs, 'utf8');
         } else {
             fs.copyFileSync(srcPath, destPath);
         }
@@ -146,9 +302,14 @@ function copyDirectory(src, dest, exclude = []) {
  */
 function copyAssets() {
     console.log('📦 Copying assets...');
-    
-    copyDirectory(path.join(SRC_DIR, 'scripts'), path.join(PUBLIC_DIR, 'js'), EXCLUDED_SCRIPTS);
-    console.log(`✅ Scripts copied to /js (excluded: ${EXCLUDED_SCRIPTS.join(', ')})`);
+
+    copyDirectory(
+        path.join(SRC_DIR, 'scripts'),
+        path.join(PUBLIC_DIR, 'js'),
+        EXCLUDED_SCRIPTS,
+        { versionJsImports: true }
+    );
+    console.log(`✅ Scripts copied to /js with versioned ES imports (excluded: ${EXCLUDED_SCRIPTS.join(', ')})`);
 
     copyDirectory(path.join(SRC_DIR, 'assets'), path.join(PUBLIC_DIR, 'images'));
     console.log('✅ Assets copied to /images');
@@ -158,7 +319,7 @@ function copyAssets() {
 }
 
 /**
- * Processes HTML: injects components, translations, SEO metadata, and updates links.
+ * Processes HTML: injects components, translations, SEO metadata, links, and asset hashes.
  */
 function translateHTML(html, translations, lang, components, pagePath) {
     const $ = cheerio.load(html);
@@ -170,12 +331,12 @@ function translateHTML(html, translations, lang, components, pagePath) {
     if (components.footer) $('#footer-placeholder').replaceWith(components.footer);
 
     // --- Language Switcher ---
-    const optionsHtml = SUPPORTED_LANG_CODES.map(code => {
+    const optionsHtml = SUPPORTED_LANG_CODES.map((code) => {
         const selected = code === lang ? 'selected' : '';
         return `<option value="${code}" ${selected}>${SUPPORTED_LANGS[code]}</option>`;
     }).join('\n                ');
 
-    LANG_SWITCHERS.forEach(selector => {
+    LANG_SWITCHERS.forEach((selector) => {
         $(selector).html(`\n                ${optionsHtml}\n            `);
     });
     // ------------------------
@@ -188,7 +349,7 @@ function translateHTML(html, translations, lang, components, pagePath) {
 
     // Inject hreflang alternatives
     let hreflangTags = '\n    \n';
-    SUPPORTED_LANG_CODES.forEach(altLang => {
+    SUPPORTED_LANG_CODES.forEach((altLang) => {
         const altUrl = getPageUrl(altLang, pagePath);
         hreflangTags += `    <link rel="alternate" hreflang="${altLang}" href="${altUrl}" />\n`;
     });
@@ -218,7 +379,7 @@ function translateHTML(html, translations, lang, components, pagePath) {
     $('head').prepend(themeInitScript);
 
     // Translate contents based on data-i18n attributes
-    $('[data-i18n]').each((i, el) => {
+    $('[data-i18n]').each((_, el) => {
         const key = $(el).attr('data-i18n');
         const text = getNestedValue(translations, key);
 
@@ -238,14 +399,14 @@ function translateHTML(html, translations, lang, components, pagePath) {
             } else {
                 $(el).html(text);
             }
-            
+
             $(el).removeAttr('data-i18n');
         } else {
             console.warn(`⚠️ Missing translation: [${key}] for language [${lang}]`);
         }
     });
 
-    $('[data-i18n-href]').each((i, el) => {
+    $('[data-i18n-href]').each((_, el) => {
         const key = $(el).attr('data-i18n-href');
         const link = getNestedValue(translations, key);
         if (link) {
@@ -256,7 +417,7 @@ function translateHTML(html, translations, lang, components, pagePath) {
 
     // Update internal links for localization and anchor behavior
     const langPrefix = `/${lang}`;
-    $('a[href^="/"]').each((i, el) => {
+    $('a[href^="/"]').each((_, el) => {
         const href = $(el).attr('href');
         if (href.startsWith('//')) return; // Ignore external protocol-relative links
 
@@ -274,7 +435,7 @@ function translateHTML(html, translations, lang, components, pagePath) {
     });
 
     // Automatically append the current language parameter to all alpha.hearme.tech links
-    $('a[href^="https://alpha.hearme.tech"]').each((i, el) => {
+    $('a[href^="https://alpha.hearme.tech"]').each((_, el) => {
         const rawHref = $(el).attr('href');
         if (!rawHref) return;
 
@@ -291,26 +452,28 @@ function translateHTML(html, translations, lang, components, pagePath) {
     if (pagePath !== '') {
         const pageTitle = $('title').text() || pagePath;
         const breadcrumbs = {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
                 {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "HearMe",
-                    "item": `${BASE_URL}/${lang}/`
+                    '@type': 'ListItem',
+                    position: 1,
+                    name: 'HearMe',
+                    item: `${BASE_URL}/${lang}/`
                 },
                 {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": pageTitle,
-                    "item": pageUrl
+                    '@type': 'ListItem',
+                    position: 2,
+                    name: pageTitle,
+                    item: pageUrl
                 }
             ]
         };
         $('head').append(`\n    <script type="application/ld+json">\n${JSON.stringify(breadcrumbs, null, 2)}\n    </script>\n`);
     }
-    
+
+    // Apply SHA-256 content-hash versioning to all local static assets (including partials)
+    applyAssetVersioning($);
 
     return $.html();
 }
@@ -333,7 +496,7 @@ function generateRootRedirector() {
     const supportedCodes = JSON.stringify(SUPPORTED_LANG_CODES);
 
     let hreflangTags = '';
-    SUPPORTED_LANG_CODES.forEach(lang => {
+    SUPPORTED_LANG_CODES.forEach((lang) => {
         hreflangTags += `    <link rel="alternate" hreflang="${lang}" href="${BASE_URL}/${lang}/" />\n`;
     });
     hreflangTags += `    <link rel="alternate" hreflang="x-default" href="${BASE_URL}/en/" />\n`;
@@ -401,16 +564,16 @@ function buildPages() {
     ensureDirExists(PUBLIC_DIR);
 
     const components = {
-        header: fs.existsSync(path.join(COMPONENTS_DIR, 'header.html')) 
+        header: fs.existsSync(path.join(COMPONENTS_DIR, 'header.html'))
             ? fs.readFileSync(path.join(COMPONENTS_DIR, 'header.html'), 'utf8') : '',
-        footer: fs.existsSync(path.join(COMPONENTS_DIR, 'footer.html')) 
+        footer: fs.existsSync(path.join(COMPONENTS_DIR, 'footer.html'))
             ? fs.readFileSync(path.join(COMPONENTS_DIR, 'footer.html'), 'utf8') : ''
     };
 
-    SUPPORTED_LANG_CODES.forEach(lang => {
+    SUPPORTED_LANG_CODES.forEach((lang) => {
         const localePath = path.join(LOCALES_DIR, `${lang}.json`);
         let translations = {};
-        
+
         if (fs.existsSync(localePath)) {
             translations = JSON.parse(fs.readFileSync(localePath, 'utf8'));
         }
@@ -418,19 +581,18 @@ function buildPages() {
         const outputDir = path.join(PUBLIC_DIR, lang);
         ensureDirExists(outputDir);
 
-        PAGES_TO_BUILD.forEach(page => {
+        PAGES_TO_BUILD.forEach((page) => {
             const templatePath = path.join(SRC_DIR, page);
-            
+
             if (fs.existsSync(templatePath)) {
                 let html = fs.readFileSync(templatePath, 'utf8');
                 const pagePath = getPagePath(page);
 
                 html = translateHTML(html, translations, lang, components, pagePath);
-                html = applyCacheBusting(html);
 
                 const outputPath = path.join(outputDir, page);
                 fs.writeFileSync(outputPath, html, 'utf8');
-                
+
                 console.log(`✅ Generated: /${path.relative(PUBLIC_DIR, outputPath)}`);
             } else {
                 console.warn(`⚠️ Template not found: ${templatePath}`);
@@ -440,7 +602,7 @@ function buildPages() {
         // Fallback: Copy English 404 to root /404.html for Firebase rewrite handling
         if (lang === DEFAULT_LANG && fs.existsSync(path.join(outputDir, '404.html'))) {
             let root404Html = fs.readFileSync(path.join(outputDir, '404.html'), 'utf8');
-            
+
             // Inject an instant redirect script at the top of <head>
             const supportedCodes = JSON.stringify(SUPPORTED_LANG_CODES);
             const smart404Script = `
@@ -457,11 +619,11 @@ function buildPages() {
             } catch (e) {}
             if (targetLang !== defaultLang) {
                 location.replace('/' + targetLang + '/404');
-           }
+            }
         })();
     </script>`;
-            
-            root404Html = root404Html.replace('<head>', '<head>' + smart404Script);
+
+            root404Html = root404Html.replace('<head>', `<head>${smart404Script}`);
             fs.writeFileSync(path.join(PUBLIC_DIR, '404.html'), root404Html, 'utf8');
             console.log('✅ Fallback /404.html created in root public directory');
         }
@@ -473,7 +635,7 @@ function buildPages() {
  */
 function generateSEOFiles() {
     console.log('🗺️ Generating sitemap.xml and robots.txt...');
-    
+
     const today = new Date().toISOString().split('T')[0];
     let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n`;
 
@@ -483,16 +645,15 @@ function generateSEOFiles() {
     sitemapContent += `    <lastmod>${today}</lastmod>\n`;
     sitemapContent += `    <changefreq>weekly</changefreq>\n`;
     sitemapContent += `    <priority>1.00</priority>\n`;
-    SUPPORTED_LANG_CODES.forEach(altLang => {
+    SUPPORTED_LANG_CODES.forEach((altLang) => {
         const altUrl = getPageUrl(altLang, '');
         sitemapContent += `    <xhtml:link rel="alternate" hreflang="${altLang}" href="${altUrl}" />\n`;
     });
     sitemapContent += `    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/en/" />\n`;
     sitemapContent += `  </url>\n`;
-    
 
-    SEO_PAGES.forEach(page => {
-        SUPPORTED_LANG_CODES.forEach(lang => {
+    SEO_PAGES.forEach((page) => {
+        SUPPORTED_LANG_CODES.forEach((lang) => {
             const pageUrl = getPageUrl(lang, page.path);
 
             sitemapContent += `  <url>\n`;
@@ -500,12 +661,12 @@ function generateSEOFiles() {
             sitemapContent += `    <lastmod>${today}</lastmod>\n`;
             sitemapContent += `    <changefreq>${page.changefreq}</changefreq>\n`;
             sitemapContent += `    <priority>${page.priority}</priority>\n`;
-            
-            SUPPORTED_LANG_CODES.forEach(altLang => {
+
+            SUPPORTED_LANG_CODES.forEach((altLang) => {
                 const altUrl = getPageUrl(altLang, page.path);
                 sitemapContent += `    <xhtml:link rel="alternate" hreflang="${altLang}" href="${altUrl}" />\n`;
             });
-            
+
             const defaultUrl = getPageUrl(DEFAULT_LANG, page.path);
             sitemapContent += `    <xhtml:link rel="alternate" hreflang="x-default" href="${defaultUrl}" />\n`;
             sitemapContent += `  </url>\n`;
@@ -516,9 +677,11 @@ function generateSEOFiles() {
     fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), sitemapContent, 'utf8');
 
     // Generate robots.txt
-    const baseDisallowRules = ROBOTS_DISALLOW_PATHS.map(path => `Disallow: ${path}`).join('\n');
+    const baseDisallowRules = ROBOTS_DISALLOW_PATHS
+        .map((disallowPath) => `Disallow: ${disallowPath}`)
+        .join('\n');
     const localized404Rules = SUPPORTED_LANG_CODES
-        .map(lang => `Disallow: /${lang}/404.html`)
+        .map((lang) => `Disallow: /${lang}/404.html`)
         .join('\n');
 
     const robotsContent = `User-agent: *
@@ -529,8 +692,8 @@ ${localized404Rules}
 
 Sitemap: ${BASE_URL}/sitemap.xml
 `;
-    
-    fs.writeFileSync(path.join(PUBLIC_DIR, 'robots.txt'), robotsContent.trim() + '\n', 'utf8');
+
+    fs.writeFileSync(path.join(PUBLIC_DIR, 'robots.txt'), `${robotsContent.trim()}\n`, 'utf8');
     console.log('✅ sitemap.xml and robots.txt generated successfully!');
 }
 
@@ -539,7 +702,7 @@ Sitemap: ${BASE_URL}/sitemap.xml
  */
 function generateHealthFile() {
     console.log('🩺 Generating health.json...');
-    
+
     const now = new Date();
     const year = now.getUTCFullYear();
     const month = String(now.getUTCMonth() + 1).padStart(2, '0');
@@ -557,11 +720,11 @@ function generateHealthFile() {
     };
 
     ensureDirExists(PUBLIC_DIR);
-    fs.writeFileSync(path.join(PUBLIC_DIR, 'health.json'), JSON.stringify(healthData, null, 2) + '\n', 'utf8');
+    fs.writeFileSync(path.join(PUBLIC_DIR, 'health.json'), `${JSON.stringify(healthData, null, 2)}\n`, 'utf8');
     console.log('✅ health.json generated successfully!');
 }
 
-/** 
+/**
  * EXECUTION PIPELINE
  * ==========================================
  */
@@ -570,10 +733,11 @@ try {
     cleanPublicDir();
     copyAssets();
     buildPages();
+    assertNoMissingAssets();
     generateRootRedirector();
     generateSEOFiles();
     generateHealthFile();
-    console.log('🎉 Build completed successfully!');
+    console.log(`🎉 Build completed successfully! (${ASSET_HASH_CACHE.size} assets versioned)`);
 } catch (error) {
     console.error('❌ Build failed:', error);
     process.exit(1); // Ensures CI/CD pipelines fail immediately if an error occurs

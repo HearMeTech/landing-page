@@ -84,7 +84,7 @@ function setupLanguageSwitchers() {
             
             let cleanPath = path.replace(window.APP_CONFIG.langPrefixRegex, '/');
             
-            if (!cleanPath.startsWith('/')) cleanPath = '/' + cleanPath;
+            if (!cleanPath.startsWith('/')) cleanPath = `/${  cleanPath}`;
             
             let newPath = `/${newLang}${cleanPath}`;
             

@@ -122,7 +122,7 @@
     "testing": "Alpha-Tests"
   },
   "hero": {
-    "title": "Ihre Stimme.<br>Ihre Worte.<br><span class='text-brand-teal'>Endlich verstanden.</span>",
+    "title": "Ihre Stimme.<br>Ihre Worte.<br><span class='text-brand-teal'>Endlich verstanden!</span>",
     "subtitle": "<b>HearMe</b> ist eine revolutionäre KI-App, die Ihre einzigartigen Sprachmuster lernt und Ihnen hilft, klar und selbstbewusst zu kommunizieren.",
     "cta": "HearMe ausprobieren",
     "testing_btn": "Tester werden"

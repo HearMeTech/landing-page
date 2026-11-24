@@ -124,7 +124,7 @@
     "testing": "Alpha Testing"
   },
   "hero": {
-    "title": "Your Voice.<br>Your Words.<br><span class='text-brand-teal'>Finally Understood.</span>",
+    "title": "Your Voice.<br>Your Words.<br><span class='text-brand-teal'>Finally Understood!</span>",
     "subtitle": "<b>HearMe</b> is a revolutionary AI app that learns your unique speech patterns, empowering you to communicate clearly and confidently.",
     "cta": "Launch App",
     "testing_btn": "Become a Tester"

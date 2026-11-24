@@ -24,7 +24,7 @@ function setupMaintenanceTimer() {
     const endTime = new Date(MAINTENANCE_END_TIME).getTime();
 
     function pad(num) {
-        return num < 10 ? '0' + num : num;
+        return num < 10 ? `0${  num}` : num;
     }
 
     function updateTimer() {

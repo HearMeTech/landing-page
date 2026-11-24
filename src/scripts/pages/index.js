@@ -1,8 +1,6 @@
 // public/js/pages/index.js
 
-// Imports for functionality
-import { db, authReadyPromise } from '../firebase-init.js';
-import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+import { attachFirestoreForm, isValidEmail } from '../services/form-handler.js';
 
 // ============================================================================
 // Hero Animation Configuration (Single Control Panel)
@@ -32,7 +30,7 @@ let activeTypewriterTimeout = null;
 let isTypewriterFinished = false;
 
 /**
- * Initializes Scroll Reveal animation.
+ * Initializes Scroll Reveal animation using IntersectionObserver.
  */
 function setupScrollReveal() {
     const observerOptions = {
@@ -42,7 +40,7 @@ function setupScrollReveal() {
     };
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
                 observer.unobserve(entry.target);
@@ -56,6 +54,10 @@ function setupScrollReveal() {
 /**
  * Typewriter effect logic.
  * Dispatches 'hero:typewriter-done' once the full phrase is rendered.
+ *
+ * @param {HTMLElement} element
+ * @param {string} text
+ * @param {number} [baseSpeed]
  */
 function typeWriterEffect(element, text, baseSpeed = HERO_ANIMATION_CONFIG.TYPING_BASE_SPEED_MS) {
     if (!element || !text) return;
@@ -67,7 +69,7 @@ function typeWriterEffect(element, text, baseSpeed = HERO_ANIMATION_CONFIG.TYPIN
 
     isTypewriterFinished = false;
     element.innerHTML = '';
-    
+
     let i = 0;
     let isTag = false;
     let currentHTML = '';
@@ -83,7 +85,7 @@ function typeWriterEffect(element, text, baseSpeed = HERO_ANIMATION_CONFIG.TYPIN
         const char = text.charAt(i);
         if (char === '<') isTag = true;
         currentHTML += char;
-        element.innerHTML = currentHTML; 
+        element.innerHTML = currentHTML;
         if (char === '>') isTag = false;
         i++;
 
@@ -94,9 +96,13 @@ function typeWriterEffect(element, text, baseSpeed = HERO_ANIMATION_CONFIG.TYPIN
             activeTypewriterTimeout = setTimeout(type, randomSpeed);
         }
     }
+
     type();
 }
 
+/**
+ * Starts the hero headline typewriter animation from the hidden source span.
+ */
 function triggerHeroAnimation() {
     const displayElement = document.getElementById('hero-title-display');
     const sourceElement = document.getElementById('hero-title-source');
@@ -108,22 +114,22 @@ function triggerHeroAnimation() {
 }
 
 /**
- * Tilt effect for cards.
+ * Initializes 3D tilt hover effect for feature and step cards.
  */
 function setupTiltEffect() {
     const cards = document.querySelectorAll('.tilt-card');
-    
-    cards.forEach(card => {
-        const intensity = card.getAttribute('data-tilt-strength') || 20;
+
+    cards.forEach((card) => {
+        const intensity = Number(card.getAttribute('data-tilt-strength')) || 20;
 
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
-            const xPct = (x / rect.width - 0.5) * intensity; 
-            const yPct = (y / rect.height - 0.5) * -intensity; 
-            
+
+            const xPct = (x / rect.width - 0.5) * intensity;
+            const yPct = (y / rect.height - 0.5) * -intensity;
+
             card.style.transition = 'none';
             card.style.transform = `perspective(1000px) rotateX(${yPct}deg) rotateY(${xPct}deg) scale3d(1.02, 1.02, 1.02)`;
         });
@@ -136,37 +142,29 @@ function setupTiltEffect() {
 }
 
 /**
- * Validates email format.
- */
-function isValidEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-}
-
-/**
- * Flip cards logic for mobile (Culture section)
+ * Initializes tap-to-flip card behavior for mobile devices (Culture section).
  */
 function setupFlipCards() {
     const flipCards = document.querySelectorAll('.flip-card');
-    
-    flipCards.forEach(card => {
-        card.addEventListener('click', function() {
-            flipCards.forEach(c => {
+
+    flipCards.forEach((card) => {
+        card.addEventListener('click', () => {
+            flipCards.forEach((c) => {
                 if (c !== card) c.classList.remove('is-flipped');
             });
             card.classList.toggle('is-flipped');
         });
     });
 
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', (e) => {
         if (!e.target.closest('.flip-card')) {
-            flipCards.forEach(c => c.classList.remove('is-flipped'));
+            flipCards.forEach((c) => c.classList.remove('is-flipped'));
         }
     });
 }
 
 /**
- * Sets up the Contact Form logic (Firebase).
+ * Sets up the Contact Form via the shared Firestore form handler.
  */
 function setupContactForm() {
     const form = document.getElementById('contact-form');
@@ -174,96 +172,76 @@ function setupContactForm() {
     const successContainer = document.getElementById('contact-success');
     const resetBtn = document.getElementById('contact-reset-btn');
     const submitBtn = document.getElementById('contact-submit-btn');
-    
-    // Button text state elements
-    const btnTextDefault = document.getElementById('btn-text-default');
-    const btnTextLoading = document.getElementById('btn-text-loading');
-    
-    const spinner = document.getElementById('contact-spinner');
-    const errorMsg = document.getElementById('contact-error-msg');
 
-    if (!form) return;
+    if (!form || !submitBtn) return;
 
-    // Helper to reset button UI to default state
-    function resetButtonState() {
-        submitBtn.disabled = false;
-        if (btnTextDefault) btnTextDefault.classList.remove('hidden');
-        if (btnTextLoading) btnTextLoading.classList.add('hidden');
-        if (spinner) spinner.classList.add('hidden');
-    }
+    const nameInput = document.getElementById('contact-name');
+    const emailInput = document.getElementById('contact-email');
+    const messageInput = document.getElementById('contact-message');
 
-    // Helper to switch to Success View
+    // Helper to transition from form view to success state
     function showSuccessState() {
         formContainer.style.opacity = '0';
         setTimeout(() => {
             formContainer.classList.add('hidden');
             successContainer.classList.remove('hidden');
-            // Reset button for next time (in case user clicks "Send another")
-            resetButtonState(); 
         }, 500);
     }
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        errorMsg.classList.add('hidden');
+    const formController = attachFirestoreForm({
+        form,
+        collectionName: 'messages',
+        honeypotSelector: '#contact_hp',
+        submitBtn,
+        btnTextDefault: document.getElementById('btn-text-default'),
+        btnTextLoading: document.getElementById('btn-text-loading'),
+        spinner: document.getElementById('contact-spinner'),
+        errorContainer: document.getElementById('contact-error-msg'),
+        buildPayload: () => {
+            const name = nameInput?.value.trim() || '';
+            const email = emailInput?.value.trim() || '';
+            const message = messageInput?.value.trim() || '';
 
-        const honeyPot = document.getElementById('contact_hp');
-        if (honeyPot && honeyPot.value) {
+            if (!isValidEmail(email)) {
+                return { valid: false, focusEl: emailInput };
+            }
+
+            // Guard against whitespace-only submissions that bypass HTML `required`
+            if (!message) {
+                return { valid: false, focusEl: messageInput };
+            }
+
+            return {
+                valid: true,
+                data: {
+                    name: name || 'Anonymous',
+                    email,
+                    message,
+                    source: 'homepage_contact'
+                }
+            };
+        },
+        onSuccess: ({ isBot }) => {
+            if (!isBot && typeof window.gtag === 'function') {
+                window.gtag('event', 'contact_form_submit', {
+                    event_category: 'engagement',
+                    event_label: 'Homepage Contact Form'
+                });
+            }
+
             showSuccessState();
-            return;
         }
-
-        const email = document.getElementById('contact-email').value.trim();
-        if (!isValidEmail(email)) {
-            // Show error (text comes from HTML data-i18n)
-            errorMsg.classList.remove('hidden');
-            return;
-        }
-
-        // --- UI Loading State START ---
-        submitBtn.disabled = true;
-        
-        // Toggle button text: hide "Send", show "Sending..."
-        if (btnTextDefault) btnTextDefault.classList.add('hidden');
-        if (btnTextLoading) btnTextLoading.classList.remove('hidden');
-        
-        if (spinner) spinner.classList.remove('hidden');
-        // ------------------------------
-
-        const name = document.getElementById('contact-name').value.trim();
-        const message = document.getElementById('contact-message').value.trim();
-
-        try {
-            await authReadyPromise; 
-
-            await addDoc(collection(db, "messages"), {
-                name: name || "Anonymous",
-                email: email,
-                message: message,
-                createdAt: serverTimestamp(),
-                source: 'homepage_contact',
-                userAgent: navigator.userAgent
-            });
-
-            showSuccessState();
-
-        } catch (error) {
-            console.error("Error sending message:", error);
-            errorMsg.classList.remove('hidden');
-            
-            // Revert button state on error
-            resetButtonState();
-        } 
     });
 
     // Reset logic ("Send another message")
     if (resetBtn) {
         resetBtn.addEventListener('click', () => {
             form.reset();
+            formController?.clearError();
             successContainer.classList.add('hidden');
-            
+
             formContainer.classList.remove('hidden');
-            // Small delay to allow display:block to apply before opacity transition
+            // Wait one frame so display:block applies before opacity transition
             requestAnimationFrame(() => {
                 formContainer.style.opacity = '1';
             });
@@ -272,23 +250,23 @@ function setupContactForm() {
 }
 
 /**
- * Analytics tracking for CTA clicks.
+ * Analytics tracking for global CTA clicks.
  */
 function setupAnalytics() {
     document.addEventListener('click', (e) => {
         const launchTarget = e.target.closest('[data-analytics="launch-app"]');
         if (launchTarget && typeof window.gtag === 'function') {
             window.gtag('event', 'launch_app_click', {
-                'event_category': 'engagement',
-                'event_label': 'Global Launch Button'
+                event_category: 'engagement',
+                event_label: 'Global Launch Button'
             });
         }
 
         const waitlistTarget = e.target.closest('[data-analytics="waitlist-click"]');
         if (waitlistTarget && typeof window.gtag === 'function') {
             window.gtag('event', 'join_waitlist_redirect', {
-                'event_category': 'engagement',
-                'event_label': 'Pricing Section Redirect'
+                event_category: 'engagement',
+                event_label: 'Pricing Section Redirect'
             });
         }
     });
@@ -316,7 +294,7 @@ async function initHeroSvgAnimation() {
 
         if (!svgElement) return;
 
-        // Clean fixed width/height attributes so CSS controls responsive scaling cleanly
+        // Remove fixed dimensions so CSS controls responsive scaling cleanly
         svgElement.removeAttribute('width');
         svgElement.removeAttribute('height');
 
@@ -398,11 +376,11 @@ async function initHeroSvgAnimation() {
 }
 
 /**
- * Main initialization.
+ * Main page initialization.
  */
 function initPage() {
     const heroTitle = document.getElementById('hero-title-display');
-    if (heroTitle) heroTitle.innerHTML = ' ';
+    if (heroTitle) heroTitle.innerHTML = '\u00A0';
 
     setupScrollReveal();
     setupTiltEffect();
