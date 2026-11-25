@@ -1,0 +1,61 @@
+name: 🦾 Deploy Firebase Cloud Functions
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'functions/**'
+      - 'firebase.json'
+      - '.github/workflows/deploy-functions.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-landing-functions
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Validate & Deploy Functions
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: functions/package-lock.json
+
+      - name: Install dependencies
+        working-directory: functions
+        run: npm ci
+
+      - name: Syntax check
+        working-directory: functions
+        run: npm run lint
+
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HEAR_ME_LANDING }}
+
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      - name: Sync NOTIFY_SECRET to Firebase Secrets
+        env:
+          NOTIFY_SECRET_VALUE: ${{ secrets.NOTIFY_SECRET }}
+        run: printf "%s" "$NOTIFY_SECRET_VALUE" | firebase functions:secrets:set NOTIFY_SECRET --data-file=- --force
+
+      - name: Create Firebase Functions env file
+        env:
+          TARGET_URL: ${{ secrets.WORKER_NOTIFY_URL }}
+        run: printf 'WORKER_NOTIFY_URL="%s"\n' "$TARGET_URL" > functions/.env.hear-me-landing
+
+      - name: Deploy Cloud Functions
+        run: firebase deploy --only functions --force

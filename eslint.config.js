@@ -8,7 +8,7 @@ export default [
         ignores: [
             'public/**',
             '.firebase/**',
-            'node_modules/**',
+            '**/node_modules/**',
             'tailwind.config.js'
         ]
     },
@@ -32,9 +32,9 @@ export default [
         }
     },
 
-    // 4. Node.js build & tooling scripts
+    // 4. Node.js build, tooling & Cloud Functions scripts
     {
-        files: ['build.js', 'eslint.config.js', 'tools/**/*.{js,mjs}'],
+        files: ['build.js', 'eslint.config.js', 'tools/**/*.{js,mjs}', 'functions/**/*.js'],
         languageOptions: {
             ecmaVersion: 'latest',
             sourceType: 'module',
