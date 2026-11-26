@@ -7,8 +7,8 @@
         "node_modules",
         ".git",
         "firebase-debug.log",
-        "firebase-debug..log",
-        ".local"
+        "firebase-debug.*.log",
+        "*.local"
       ]
     }
   ],
@@ -18,46 +18,46 @@
     "trailingSlash": false,
     "ignore": [
       "firebase.json",
-      "/.*",
-      "/node_modules/"
+      "**/.*",
+      "**/node_modules/**"
     ],
     "rewrites": [
       {
-        "source": "/en/",
+        "source": "/en/**",
         "destination": "/en/404.html"
       },
       {
-        "source": "/uk/",
+        "source": "/uk/**",
         "destination": "/uk/404.html"
       },
       {
-        "source": "/de/",
+        "source": "/de/**",
         "destination": "/de/404.html"
       },
       {
-        "source": "/es/",
+        "source": "/es/**",
         "destination": "/es/404.html"
       },
       {
-        "source": "/fr/",
+        "source": "/fr/**",
         "destination": "/fr/404.html"
       },
       {
-        "source": "/pt/",
+        "source": "/pt/**",
         "destination": "/pt/404.html"
       },
       {
-        "source": "/sv/",
+        "source": "/sv/**",
         "destination": "/sv/404.html"
       },
       {
-        "source": "",
+        "source": "**",
         "destination": "/404.html"
       }
     ],
     "headers": [
       {
-        "source": "/.@(jpg|jpeg|gif|png|webp|svg|ico|woff|woff2|webmanifest)",
+        "source": "**/*.@(jpg|jpeg|gif|png|webp|svg|ico|woff|woff2|webmanifest)",
         "headers": [
           {
             "key": "Cache-Control",
@@ -66,7 +66,7 @@
         ]
       },
       {
-        "source": "/.@(js|css)",
+        "source": "**/*.@(js|css)",
         "headers": [
           {
             "key": "Cache-Control",
@@ -75,7 +75,7 @@
         ]
       },
       {
-        "source": "/*.html",
+        "source": "**/*.html",
         "headers": [
           {
             "key": "Cache-Control",
