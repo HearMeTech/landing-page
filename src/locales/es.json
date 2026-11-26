@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "HearMe — Reconocimiento de voz con IA para trastornos del habla",
-    "desc": "HearMe es una revolucionaria aplicación móvil con IA que ofrece reconocimiento de voz personalizado para personas con desafíos en el habla.",
-    "ogImageAlt": "Interfaz de la aplicación HearMe - Reconocimiento de voz con IA para personas con dificultades del habla"
+    "title": "HearMe — Reconocimiento de IA para el habla atípica",
+    "desc": "HearMe es una aplicación personal con IA para el reconocimiento del habla atípica, diseñada para personas con trastornos del habla.",
+    "ogImageAlt": "Interfaz de la aplicación HearMe — Reconocimiento de IA para personas con trastornos del habla"
   },
   "schema": {
     "@context": "https://schema.org",
@@ -15,30 +15,52 @@
         "url": "https://hearme.tech/",
         "logo": "https://hearme.tech/images/logo-full.png",
         "image": "https://hearme.tech/images/og-image.png",
-        "sameAs": [ "https://www.linkedin.com/company/hearmetech/" ]
+        "sameAs": [
+          "https://www.linkedin.com/company/hearmetech/"
+        ]
       },
       {
         "@type": "SoftwareApplication",
         "@id": "https://hearme.tech/#software",
         "name": "HearMe",
-        "alternateName": "Aplicación de reconocimiento de voz HearMe AI",
+        "alternateName": "Aplicación de reconocimiento de voz HearMe IA",
         "image": "https://hearme.tech/images/og-image.png",
         "applicationCategory": "HealthApplication",
         "operatingSystem": "Web, iOS, Android",
-        "description": "HearMe es una revolucionaria aplicación móvil con IA que ofrece reconocimiento de voz personalizado para personas con dificultades del habla (parálisis cerebral, ictus, ELA).",
+        "description": "HearMe es una aplicación personal con IA que ofrece reconocimiento individualizado del habla atípica para personas con trastornos del habla (parálisis cerebral, ictus o ELA).",
         "url": "https://hearme.tech/",
         "installUrl": "https://alpha.hearme.tech",
         "releaseNotes": "https://hearme.tech/#roadmap",
-        "publisher": { "@id": "https://hearme.tech/#organization" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "1" },
+        "publisher": {
+          "@id": "https://hearme.tech/#organization"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "reviewCount": "1"
+        },
         "offers": [
-          { "@type": "Offer", "name": "Plan Básico", "description": "Plan gratuito con funciones esenciales.", "price": "0", "priceCurrency": "EUR", "availability": "https://schema.org/InStock" },
-          { "@type": "Offer", "name": "Plan Completo", "description": "Suscripción mensual tras un mes de prueba gratuita.", "price": "19.99", "priceCurrency": "EUR", "availability": "https://schema.org/InStock" }
+          {
+            "@type": "Offer",
+            "name": "Plan Básico",
+            "description": "Plan gratuito con funciones esenciales.",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Plan Completo",
+            "description": "Suscripción mensual tras un mes de prueba gratuita.",
+            "price": "19.99",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
+          }
         ],
         "featureList": [
           "Modelo de voz personalizado con IA",
-          "Reconocimiento de voz en tiempo real",
-          "Salida de voz y texto",
+          "Reconocimiento en vivo de frases entrenadas",
+          "Voz y texto",
           "Traducción instantánea",
           "Autenticación segura con Firebase"
         ]
@@ -49,64 +71,96 @@
         "jobTitle": "Fundador y CEO",
         "description": "Arquitecto de software y especialista en ML, lidera la estrategia de producto e I+D en tecnologías asistivas.",
         "url": "https://hearme.tech/",
-        "sameAs": ["https://www.linkedin.com/in/mtrineiev/"],
-        "worksFor": { "@id": "https://hearme.tech/#organization" }
+        "sameAs": [
+          "https://www.linkedin.com/in/mtrineiev/"
+        ],
+        "worksFor": {
+          "@id": "https://hearme.tech/#organization"
+        }
       },
       {
         "@type": "Person",
         "name": "Anastasiia Tsaruk",
         "jobTitle": "Cofundadora y Directora de Alianzas",
         "description": "Especialista en programas de innovación europeos y alianzas estratégicas para captación de fondos.",
-        "sameAs": ["https://www.linkedin.com/in/anastasiia-tsaruk/"],
-        "worksFor": { "@id": "https://hearme.tech/#organization" }
+        "sameAs": [
+          "https://www.linkedin.com/in/anastasiia-tsaruk/"
+        ],
+        "worksFor": {
+          "@id": "https://hearme.tech/#organization"
+        }
       },
       {
         "@type": "Person",
         "name": "Irina Oleynikova",
         "jobTitle": "Cofundadora y Asesora Médica",
-        "description": "Exmédica de cabecera con experiencia en medicina clínica y atención geriátrica, garantizando la precisión médica de los algoritmos de IA.",
-        "sameAs": ["https://www.linkedin.com/in/irina-oleynikova-27a89971/"],
-        "affiliation": { "@id": "https://hearme.tech/#organization" }
+        "description": "Médica de cabecera con experiencia en medicina clínica y atención geriátrica, garantizando que los algoritmos respondan a las necesidades reales.",
+        "sameAs": [
+          "https://www.linkedin.com/in/irina-oleynikova-27a89971/"
+        ],
+        "affiliation": {
+          "@id": "https://hearme.tech/#organization"
+        }
       },
       {
         "@type": "Person",
         "name": "Mykhailo Tkachenko",
         "jobTitle": "Cofundador y Líder de Negocios",
-        "description": "Asesor de escalado SaaS y estrategia comercial para mercados internacionales.",
-        "sameAs": ["https://www.linkedin.com/in/mykhailo-tkachenko-5114991a2/"],
-        "affiliation": { "@id": "https://hearme.tech/#organization" }
+        "description": "Especialista en escalado SaaS y estrategia comercial para mercados internacionales.",
+        "sameAs": [
+          "https://www.linkedin.com/in/mykhailo-tkachenko-5114991a2/"
+        ],
+        "affiliation": {
+          "@id": "https://hearme.tech/#organization"
+        }
       },
       {
         "@type": "Person",
         "name": "Evgenia Zavela-Averhed",
         "jobTitle": "Asesora Estratégica de Recaudación de Fondos",
         "description": "Experta en recaudación de fondos y financiación europea de la innovación.",
-        "sameAs": ["https://www.linkedin.com/in/evgenia-zavela-21335033/"],
-        "affiliation": { "@id": "https://hearme.tech/#organization" }
+        "sameAs": [
+          "https://www.linkedin.com/in/evgenia-zavela-21335033/"
+        ],
+        "affiliation": {
+          "@id": "https://hearme.tech/#organization"
+        }
       },
       {
         "@type": "Person",
         "name": "Dmytro Lebedynets",
         "jobTitle": "Asesor Clínico",
         "description": "Jefe del Centro de Ictus del Hospital Feofaniya, experto en rehabilitación neurológica.",
-        "sameAs": ["https://www.linkedin.com/in/dmytrolebedynets/"],
-        "affiliation": { "@id": "https://hearme.tech/#organization" }
+        "sameAs": [
+          "https://www.linkedin.com/in/dmytrolebedynets/"
+        ],
+        "affiliation": {
+          "@id": "https://hearme.tech/#organization"
+        }
       },
       {
         "@type": "Person",
         "name": "Kateryna Martynova",
         "jobTitle": "Asesora de Comunicaciones",
         "description": "Asesora de comunicaciones estratégicas y posicionamiento de marca.",
-        "sameAs": ["https://www.linkedin.com/in/katerynamartynova/"],
-        "affiliation": { "@id": "https://hearme.tech/#organization" }
+        "sameAs": [
+          "https://www.linkedin.com/in/katerynamartynova/"
+        ],
+        "affiliation": {
+          "@id": "https://hearme.tech/#organization"
+        }
       },
       {
         "@type": "Person",
         "name": "Vitalii Rybalko",
         "jobTitle": "Asesor de Tecnología y ML",
         "description": "Experto en arquitectura de IA, asesora en modelos de reconocimiento de voz de baja latencia.",
-        "sameAs": ["https://www.linkedin.com/in/vitalii-rybalko-9593a7a9/"],
-        "affiliation": { "@id": "https://hearme.tech/#organization" }
+        "sameAs": [
+          "https://www.linkedin.com/in/vitalii-rybalko-9593a7a9/"
+        ],
+        "affiliation": {
+          "@id": "https://hearme.tech/#organization"
+        }
       }
     ]
   },
@@ -123,38 +177,38 @@
   },
   "hero": {
     "title": "Su voz.<br>Sus palabras.<br><span class='text-brand-teal'>¡Por fin comprendidas!</span>",
-    "subtitle": "<b>HearMe</b> es una revolucionaria aplicación de IA que aprende sus patrones de habla únicos, permitiéndole comunicarse con claridad y confianza.",
+    "subtitle": "<b>HearMe</b> es una aplicación personal con IA que aprende las particularidades de su voz. Entrene sus frases más importantes para comunicarse con libertad y confianza.",
     "cta": "Probar HearMe",
-    "testing_btn": "Convertirse en evaluador"
+    "testing_btn": "Ser evaluador (Premium de por vida)"
   },
   "features": {
     "title": "Comunicación sin barreras",
-    "subtitle": "Diseñada para personas con desafíos en el habla causados por parálisis cerebral, ictus o ELA, <b>HearMe</b> combina IA avanzada con una interfaz intuitiva.",
+    "subtitle": "Diseñada para personas con habla atípica por parálisis cerebral, ictus o ELA. <b>HearMe</b> combina IA personalizada con una interfaz clara y sencilla.",
     "personal_title": "Modelo de IA personalizado",
-    "personal_desc": "La aplicación se adapta a <b>sus</b> patrones de voz específicos mediante Machine Learning, ganando precisión con cada conversación.",
-    "recognition_title": "Reconocimiento en tiempo real",
-    "recognition_desc": "Nuestra IA transcribe al instante su habla en texto con una latencia ultrabaja, permitiendo diálogos fluidos y naturales.",
-    "output_title": "Salida de voz y texto",
-    "output_desc": "Reproduzca sus frases en voz alta mediante síntesis de voz natural, copie el texto al portapapeles o compártalo con otras aplicaciones.",
-    "fallback_title": "Alternativa inteligente",
-    "fallback_desc": "¿Reconocimiento incierto? Seleccione al instante sus frases preestablecidas directamente en la pantalla para hablar, copiar o compartir.",
+    "personal_desc": "La aplicación aprende los patrones únicos de su voz a partir de sus frases grabadas y gana precisión con el tiempo.",
+    "recognition_title": "Reconocimiento en vivo",
+    "recognition_desc": "Nuestra IA convierte sus frases entrenadas en texto con mínima demora, ayudándole a mantener un diálogo fluido.",
+    "output_title": "Voz y texto",
+    "output_desc": "Reproduzca sus frases con síntesis de voz natural, copie el texto al portapapeles o compártalo en otras aplicaciones.",
+    "fallback_title": "Sugerencias inteligentes",
+    "fallback_desc": "¿La IA duda al reconocer? Toque una frase guardada en la pantalla para reproducirla o compartirla al instante.",
     "translation_title": "Traducción instantánea",
-    "translation_desc": "Rompa las barreras del idioma. Traduzca al instante sus pensamientos para comunicarse sin esfuerzo en los idiomas más hablados del mundo.",
+    "translation_desc": "Supere las barreras del idioma. Traduzca al instante sus frases habladas a los idiomas más utilizados del mundo.",
     "secure_title": "Seguro y privado",
-    "secure_desc": "Su voz le pertenece solo a usted. Protegemos sus datos con el mismo nivel de cifrado que utilizan las aplicaciones bancarias modernas."
+    "secure_desc": "Su voz le pertenece solo a usted. Protegemos sus datos con el mismo nivel de cifrado que las aplicaciones bancarias."
   },
   "howItWorks": {
-    "title": "Su camino hacia un habla más clara",
-    "subtitle": "Comenzar es muy sencillo. Nuestro proceso guiado garantiza que la IA se adapte a su voz de inmediato.",
-    "badge": "Solo para testers",
+    "title": "Su camino hacia una comunicación libre",
+    "subtitle": "Comenzar es muy sencillo. En pocos pasos, la IA se adapta específicamente a su voz.",
+    "badge": "Solo para evaluadores",
     "step1_title": "Inicie la aplicación web",
-    "step1_desc": "Sin descargas ni tiendas de aplicaciones. Abra <a href='https://alpha.hearme.tech/login' class='text-brand-teal font-semibold hover:underline'>HearMe</a> en su navegador para empezar al instante en cualquier dispositivo.",
+    "step1_desc": "Sin descargas ni tiendas de aplicaciones. Abra <a href='https://alpha.hearme.tech/login' class='text-brand-teal font-semibold hover:underline'>HearMe</a> directamente en su navegador desde cualquier dispositivo.",
     "step2_title": "Entrenamiento básico",
-    "step2_desc": "Entrena un conjunto de frases básicas grabando unas pocas muestras de voz para cada una. Esto crea un modelo base sólido adaptado específicamente a tu voz.",
+    "step2_desc": "Entrene un conjunto de frases básicas grabando unas pocas muestras de voz para cada una. Esto crea un modelo base fiable adaptado específicamente a su voz.",
     "step3_title": "Amplíe su vocabulario",
-    "step3_desc": "Añade frases personalizadas propias de tu día a día para hacer la IA más personalizada.",
+    "step3_desc": "Añada frases personalizadas propias de su día a día para que la IA sea realmente suya.",
     "step4_title": "Hable libremente",
-    "step4_desc": "Deje que la aplicación hable por usted en tiempo real. Mediante síntesis de voz o texto en pantalla, sus palabras por fin se entenderán."
+    "step4_desc": "Hable con su propia voz: la aplicación convierte sus palabras en voz clara o las muestra como texto en la pantalla."
   },
   "pricing": {
     "title": "Precios simples y transparentes",
@@ -163,10 +217,10 @@
     "free_forever": "Gratis <span class='text-base font-normal text-gray-400'>/ para siempre</span>",
     "basic_desc": "Perfecto para comenzar con las herramientas de comunicación esenciales.",
     "full_title": "Completo",
-    "full_price": "€19.99 <span class='text-base font-normal text-gray-400'>/ mes</span>",
-    "full_desc": "Desbloquee todo el poder del reconocimiento de voz personalizado con IA.",
+    "full_price": "19,99 € <span class='text-base font-normal text-gray-400'>/ mes</span>",
+    "full_desc": "Aproveche todo el potencial del reconocimiento de voz personalizado con IA.",
     "coming_soon": "Próximamente",
-    "cta_launch": "Abrir aplicación",
+    "cta_launch": "Probar HearMe",
     "cta_waitlist": "Unirse a la lista",
     "notify_text": "Reciba una notificación en cuanto el Plan Completo esté disponible.",
     "feat_library": "Frases preestablecidas esenciales",
@@ -182,11 +236,11 @@
     "title": "El futuro de HearMe",
     "subtitle": "Nuestra misión va más allá de las pantallas. Integramos <b>HearMe</b> en su día a día, eliminando barreras en el mundo digital y físico.",
     "item1_title": "Integración con el teclado",
-    "item1_desc": "Utilice su modelo de voz personalizado para dictar texto en cualquier aplicación, directamente desde el teclado de su sistema.",
+    "item1_desc": "Utilice su modelo de voz personalizado para dictar texto en cualquier aplicación directamente desde el teclado de su sistema.",
     "item2_title": "Llamadas de voz integradas",
-    "item2_desc": "Realice llamadas nítidas directamente desde <b>HearMe</b>. Conéctese con sus seres queridos sin esfuerzo mientras nuestra IA garantiza que le entiendan a la perfección.",
+    "item2_desc": "Llame a sus seres queridos directamente desde <b>HearMe</b>. Hable sin esfuerzo mientras nuestra IA garantiza que su interlocutor le escuche y comprenda con claridad.",
     "item3_title": "API para empresas (B2B)",
-    "item3_desc": "Lanzamiento de una API segura y de alto rendimiento que permitirá a terceros (asistentes bancarios o bots de soporte) reconocer con precisión el habla atípica.",
+    "item3_desc": "Una API segura y de alto rendimiento que permitirá a terceros (asistentes bancarios, soporte al cliente o dispositivos inteligentes) reconocer con precisión el habla atípica.",
     "item4_title": "Asistentes de voz",
     "item4_desc": "Potencie Siri o Google Assistant con su modelo <b>HearMe</b>. Controle su hogar inteligente de forma fiable con los asistentes que ya utiliza."
   },
@@ -198,52 +252,52 @@
     "val_h_li2": "<b>Con nuestro equipo:</b> Fomentamos una cultura de opinión abierta donde gana la mejor idea, independientemente del cargo.",
     "val_h_li3": "<b>Con los inversores:</b> Nos comunicamos con franqueza tanto sobre nuestros desafíos como sobre nuestros logros.",
     "val_e_title": "Empatía",
-    "val_e_li1": "<b>Por nuestros usuarios:</b> Servimos a una comunidad altamente vulnerable para la cual cada palabra cuenta.",
+    "val_e_li1": "<b>Por nuestros usuarios:</b> Creamos tecnología para personas para quienes cada palabra comprendida tiene un valor inmenso.",
     "val_e_li2": "<b>Por nuestros socios:</b> Nos ayudan a escalar nuestro impacto real y a impulsar cambios significativos.",
-    "val_e_li3": "<b>Por nuestros colegas:</b> Las mejores innovaciones nacen en un ambiente de respeto mutuo y apoyo.",
+    "val_e_li3": "<b>Por nuestros colegas:</b> Las mejores ideas nacen en un ambiente de respeto mutuo y apoyo.",
     "val_a_title": "Ambición",
     "val_a_li1": "<b>Por la calidad del producto:</b> No hacemos concesiones en cuanto a la precisión del reconocimiento y la experiencia de usuario (UX).",
     "val_a_li2": "<b>Por el aprendizaje continuo:</b> El campo de la IA avanza rápido; nos esforzamos por ir siempre un paso por delante.",
     "val_a_li3": "<b>Por la innovación:</b> Afrontamos desafíos complejos para expandir los límites de la tecnología del habla.",
     "val_r_title": "Responsabilidad",
-    "val_r_li1": "<b>Por la privacidad:</b> La protección absoluta de los datos de voz de nuestros usuarios es nuestra prioridad incondicional.",
-    "val_r_li2": "<b>Por la accesibilidad:</b> Desarrollamos un producto que debe funcionar de forma impecable para todos, en cualquier lugar.",
-    "val_r_li3": "<b>Por los resultados:</b> Sabemos que la capacidad de una persona para conectar y ser escuchada depende directamente de nuestra ejecución."
+    "val_r_li1": "<b>Por la privacidad:</b> La protección de los datos de voz de nuestros usuarios es nuestra prioridad incondicional.",
+    "val_r_li2": "<b>Por la accesibilidad:</b> Desarrollamos un producto que funciona de forma fiable y cómoda para todos.",
+    "val_r_li3": "<b>Por los resultados:</b> Sabemos que la capacidad de una persona para conectar y ser escuchada depende directamente de nuestro trabajo."
   },
-"team": {
+  "team": {
     "title": "Equipo y asesores",
     "subtitle": "HearMe cuenta con el respaldo de expertos en Machine Learning, medicina y negocios, unidos por un único objetivo: dar voz a todos.",
     "founders_heading": "Fundadores",
     "advisors_heading": "Asesores",
     "founder_1_name": "Maksym Trineiev",
     "founder_1_role": "Fundador y CEO",
-    "founder_1_bio": "Como arquitecto de software y visionario del producto, Maksym lidera la estrategia de producto e I+D, enfocándose en unir la IA avanzada con tecnologías asistivas para universalizar la comunicación.",
+    "founder_1_bio": "Como arquitecto de software y visionario del producto, Maksym lidera la estrategia de producto e I+D, enfocándose en unir la IA con tecnologías asistivas para universalizar la comunicación.",
     "founder_2_name": "Anastasiia Tsaruk",
     "founder_2_role": "Cofundadora y Directora de Alianzas",
     "founder_2_bio": "Anastasiia se especializa en programas de innovación europeos y alianzas estratégicas, centrándose en la captación de fondos y la creación de consorcios internacionales para proyectos de gran impacto.",
     "founder_3_name": "Irina Oleynikova",
     "founder_3_role": "Cofundadora y Asesora Médica",
-    "founder_3_bio": "Con experiencia como médica general en medicina clínica y cuidados geriátricos a largo plazo, Irina se asegura de que nuestros algoritmos aborden las necesidades diarias de los usuarios con problemas del habla.",
+    "founder_3_bio": "Con experiencia como médica general en medicina clínica y cuidados geriátricos a largo plazo, Irina se asegura de que nuestros algoritmos aborden las necesidades diarias de los usuarios con trastornos del habla.",
     "founder_4_name": "Mykhailo Tkachenko",
     "founder_4_role": "Cofundador y Líder de Negocios",
-    "founder_4_bio": "Especializado en la escalabilidad de SaaS y estrategia empresarial, Mykhailo impulsa el modelo de negocio sostenible de HearMe para una exitosa expansión en el mercado internacional.",
+    "founder_4_bio": "Especializado en la escalabilidad de SaaS y estrategia empresarial, Mykhailo impulsa el modelo de negocio sostenible de HearMe para su expansión en el mercado internacional.",
     "advisor_1_name": "Evgenia Zavela-Averhed",
     "advisor_1_role": "Asesora Estratégica de Recaudación de Fondos",
     "advisor_1_bio": "Evgenia es experta en recaudación de fondos estratégica, impulsando el crecimiento sostenible a través de la financiación de la innovación europea y ayudando a transformar ideas impactantes en iniciativas internacionales.",
     "advisor_2_name": "Dmytro Lebedynets",
     "advisor_2_role": "Asesor Clínico",
-    "advisor_2_bio": "Como Jefe del Centro de Accidentes Cerebrovasculares del Hospital Feofaniya, Dmytro aporta una amplia experiencia clínica en el manejo de accidentes cerebrovasculares y rehabilitación neurológica, alineando nuestras soluciones con los flujos de trabajo clínicos reales.",
+    "advisor_2_bio": "Como Jefe del Centro de Ictus del Hospital Feofaniya, Dmytro aporta una amplia experiencia clínica en el manejo de accidentes cerebrovasculares y rehabilitación neurológica, alineando nuestras soluciones con los flujos de trabajo clínicos reales.",
     "advisor_3_name": "Kateryna Martynova",
     "advisor_3_role": "Asesora de Comunicaciones",
     "advisor_3_bio": "Kateryna ayuda a HearMe a contar su historia a través de mensajes claros y comunicaciones estratégicas. Se asegura de que nuestra misión resuene por igual entre usuarios, socios e inversores.",
     "advisor_4_name": "Vitalii Rybalko",
     "advisor_4_role": "Asesor de Tecnología y ML",
-    "advisor_4_bio": "Con una sólida trayectoria en arquitectura de IA, Vitalii asesora al equipo en la optimización de modelos complejos de Machine Learning para garantizar un reconocimiento de voz con latencia ultrabaja."
+    "advisor_4_bio": "Con una sólida trayectoria en arquitectura de IA, Vitalii asesora al equipo en la optimización de modelos complejos de Machine Learning para garantizar un reconocimiento de voz con baja latencia."
   },
   "test_section": {
     "badge": "Alfa Abierta",
     "title": "Ayúdenos a dar voz a todos",
-    "desc": "Únase a las pruebas de nuestros nuevos modelos de IA. Comparta sus comentarios sobre la precisión del reconocimiento de voz y obtenga acceso premium vitalicio a la aplicación HearMe de forma totalmente gratuita.",
+    "desc": "Únase a las pruebas de nuestros nuevos modelos de IA. Comparta sus comentarios sobre la precisión del reconocimiento y obtenga acceso premium de por vida a la aplicación HearMe totalmente gratis.",
     "btn": "Más información y unirse"
   },
   "contact": {
@@ -261,12 +315,12 @@
   },
   "waitlist": {
     "meta_title": "HearMe — Unirse a la lista de espera",
-    "meta_desc": "Únase a la lista de espera de HearMe, una revolucionaria aplicación móvil con IA para el reconocimiento de voz personalizado.",
+    "meta_desc": "Únase a la lista de espera de HearMe, una aplicación personal con IA para el reconocimiento del habla atípica.",
     "title": "Únase a la lista de espera",
-    "subtitle": "Sea de los primeros en experimentar el reconocimiento de voz personalizado. <br class='hidden md:inline'> Regístrese para obtener acceso anticipado y novedades.",
+    "subtitle": "Sea de los primeros en probar el reconocimiento de voz personalizado. <br class='hidden md:inline'> Regístrese para obtener acceso anticipado y novedades.",
     "name_placeholder": "Su nombre (Opcional)",
     "email_placeholder": "Introduzca su correo electrónico",
-    "comment_placeholder": "¿Sugerencias o comentarios? (Opcional)",
+    "comment_placeholder": "¿Preguntas o comentarios? (Opcional)",
     "btn_join": "Unirse ahora",
     "btn_joining": "Uniéndose...",
     "privacy": "Respetamos su privacidad. Cero spam garantizado.",
@@ -276,12 +330,12 @@
     "error_title": "Algo salió mal"
   },
   "footer": {
-      "desc": "Dando a todos el poder de ser escuchados",
-      "product": "Producto",
-      "about": "Nosotros",
-      "connect": "Contacto",
-      "company_name": "<b>LLC „HearMeTech“</b> (Nº Reg. 46281283)",
-      "rights": "Todos los derechos reservados."
+    "desc": "Dando a todos el poder de ser escuchados",
+    "product": "Producto",
+    "about": "Nosotros",
+    "connect": "Contacto",
+    "company_name": "<b>LLC «HearMeTech»</b> (N.º Reg. 46281283)",
+    "rights": "Todos los derechos reservados."
   },
   "maintenance": {
     "meta_title": "HearMe — En mantenimiento",
@@ -294,18 +348,18 @@
     "meta_title": "HearMe — Relaciones con Inversores",
     "meta_desc": "Invierta en el futuro de la accesibilidad del habla. HearMe busca una ronda Pre-seed para acelerar su I+D y expansión de mercado.",
     "title": "Invierta en la <span class='text-brand-teal'>Voz del Futuro</span>",
-    "subtitle": "Estamos recaudando una ronda Pre-seed para acelerar la I+D y expandir nuestra tecnología Edge AI de restauración del habla en Ucrania, Europa y EE. UU.",
+    "subtitle": "Estamos recaudando una ronda Pre-seed para acelerar la I+D y expandir nuestra tecnología asistiva del habla con Edge AI en Ucrania, Europa y EE. UU.",
     "video_title": "Mensaje del Fundador",
-    "video_desc": "Un breve resumen de los objetivos clave de HearMe, nuestra misión y por qué ahora es el momento perfecto para invertir.",
+    "video_desc": "Un breve resumen de los objetivos clave de HearMe, nuestra misión y por qué ahora es el momento adecuado para invertir.",
     "video_url": "https://youtube.com/embed/fgTjURRscHY?autoplay=0&rel=0&cc_load_policy=1&hl=en&cc_lang_pref=en",
     "deck_title": "Puntos clave del Pitch Deck",
     "deck_mission_title": "La Misión",
-    "deck_mission_desc": "Más de 70 millones de personas viven en 'aislamiento silencioso' debido a trastornos graves del habla por parálisis cerebral, ictus o ELA. Estamos restaurando su derecho humano fundamental a ser comprendidos.",
+    "deck_mission_desc": "Más de 70 millones de personas viven en «aislamiento silencioso» debido a trastornos graves del habla por parálisis cerebral, ictus o ELA. Estamos devolviéndoles su derecho humano fundamental a ser comprendidos.",
     "deck_problem_title": "El Problema",
     "deck_problem_b1": "Las grandes tecnológicas (Siri/Alexa) no logran reconocer voces atípicas",
     "deck_problem_b2": "Las herramientas asistivas actuales requieren hardware de más de $5000, invaden la privacidad o causan un gran desfase",
     "deck_solution_title": "La Solución",
-    "deck_solution_desc": "Una aplicación móvil con Edge AI que traduce el habla atípica en tiempo real.",
+    "deck_solution_desc": "Una aplicación móvil con Edge AI que reconoce el habla atípica en tiempo real.",
     "deck_solution_b1": "Privacidad total",
     "deck_solution_b2": "Latencia cero",
     "deck_market_title": "Validación de Mercado",
@@ -315,19 +369,19 @@
     "deck_expertise_title": "La Experiencia",
     "deck_expertise_desc": "Creado por un ex-Engineering Lead de EPAM con sólida formación matemática y más de 10 años de experiencia, respaldado por expertos médicos, de negocios y ML.",
     "dataroom_title": "Investor Data Room",
-    "dataroom_desc": "Acceda a nuestro conjunto completo de documentos en Google Drive, incluyendo el Pitch Deck, modelos financieros y hoja de ruta técnica. Disponible bajo petición.",
+    "dataroom_desc": "Acceda a nuestro conjunto completo de documentos, incluyendo el Pitch Deck, modelos financieros y hoja de ruta técnica. Disponible bajo petición.",
     "btn_open": "Abrir"
   },
   "testing": {
     "meta_title": "HearMe — Pruebas Alfa",
     "meta_desc": "Únase a las pruebas alfa abiertas de HearMe. Ayúdenos a mejorar nuestro reconocimiento de voz con IA y obtenga acceso premium de por vida.",
     "hero_title": "Únase a las <span class=\"text-teal-600\">Pruebas Alfa</span> abiertas de HearMe",
-    "hero_subtitle": "Estamos creando tecnología que ayuda a las personas con parálisis cerebral, secuelas de accidentes cerebrovasculares y otros problemas del habla a comunicarse con mayor libertad. Participe en las pruebas de nuestra primera versión web (PWA) y ayúdenos a mejorar nuestros algoritmos de reconocimiento de voz individual.",
+    "hero_subtitle": "Creamos tecnología que ayuda a las personas con parálisis cerebral, secuelas de ictus y otros trastornos del habla a comunicarse con mayor libertad. Participe en las pruebas de nuestra primera versión web (PWA) y ayúdenos a mejorar nuestros algoritmos de reconocimiento de voz individual.",
     "benefits_title": "Lo que obtiene como evaluador",
-    "benefit_1_title": "Acceso gratuito de por vida",
-    "benefit_1_desc": "Todos los participantes activos que compartan sus comentarios recibirán acceso premium gratuito a las futuras aplicaciones nativas para siempre tras el lanzamiento oficial.",
+    "benefit_1_title": "Acceso premium de por vida",
+    "benefit_1_desc": "Todos los evaluadores activos que compartan sus comentarios recibirán acceso premium gratuito de por vida a nuestras futuras aplicaciones nativas tras el lanzamiento oficial.",
     "benefit_2_title": "Acceso anticipado",
-    "benefit_2_desc": "Puede configurar hoy mismo sus primeras frases cotidianas o personalizadas adaptadas a las características específicas de su voz.",
+    "benefit_2_desc": "Empiece hoy mismo a entrenar sus primeras frases cotidianas o personalizadas, adaptadas a su voz única.",
     "benefit_3_title": "Seguridad y privacidad",
     "benefit_3_desc": "Recopilamos datos mínimos (solo cuenta de Google o correo electrónico). Sus muestras de voz se utilizan exclusivamente para entrenar su modelo personal y pueden eliminarse en cualquier momento si lo solicita.",
     "steps_title": "Solo 3 sencillos pasos",
@@ -336,13 +390,13 @@
     "step_2_title": "Obtenga el enlace",
     "step_2_desc": "Le enviaremos las instrucciones sobre cómo instalar la aplicación PWA a su correo electrónico una vez que se procese su solicitud.",
     "step_3_title": "Entrene a la IA y comuníquese",
-    "step_3_desc": "Gabe frases, compruebe la precisión del reconocimiento, disfrute de todas las ventajas y ayúdenos a mejorar.",
+    "step_3_desc": "Grabe frases, compruebe la precisión del reconocimiento, disfrute de todas las ventajas y ayúdenos a mejorar.",
     "cta_button": "Convertirse en evaluador de HearMe"
   },
   "error404": {
     "meta_title": "HearMe — Página no encontrada",
     "title": "¡Oops! Página no encontrada",
-    "desc": "Lo sentimos, no parecemos encontrar la página que busca. Es posible que haya sido movida, eliminada o que la URL contenga un error tipográfico.",
+    "desc": "Lo sentimos, no encontramos la página que busca. Es posible que haya sido movida, eliminada o que la URL contenga un error tipográfico.",
     "btn_home": "Volver al inicio",
     "redirect_prefix": "Redirección automática en",
     "redirect_suffix": "segundos..."

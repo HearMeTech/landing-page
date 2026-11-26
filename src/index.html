@@ -75,18 +75,23 @@
                         <b>HearMe</b> is a revolutionary AI app that learns your unique speech patterns, giving you the power to communicate clearly and confidently.
                     </p>
                     <div class="flex flex-col md:flex-row gap-8 justify-center md:justify-start">
-                        <a href="https://alpha.hearme.tech/login" data-analytics="launch-app" class="btn-primary btn-ripple bg-teal-700 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg flex items-center justify-center group">
-                            <span data-i18n="hero.cta">Launch App</span>
-                            <div class="sound-wave-container" aria-hidden="true">
-                                <span class="sound-bar"></span>
-                                <span class="sound-bar"></span>
-                                <span class="sound-bar"></span>
-                                <span class="sound-bar"></span>
-                                <span class="sound-bar"></span>
-                            </div>
-                        </a>
-                        <a href="/testing" class="inline-flex items-center justify-center bg-transparent border-2 border-brand-teal text-brand-teal dark:text-brand-teal-light dark:border-brand-teal-light px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-teal/5 dark:hover:bg-brand-teal/15 transition duration-300 shadow-sm hover:shadow-md">
+                        <a href="/testing" data-analytics="launch-app" class="btn-primary btn-ripple bg-teal-700 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-brand-teal-dark transition duration-200 shadow-lg flex items-center justify-center group">
                             <span data-i18n="hero.testing_btn">Become a Tester</span>
+                            <svg class="flask-icon w-6 h-6 ml-2.5 overflow-visible" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <!-- Rising bubbles (visible only on button hover) -->
+                                <g class="flask-bubbles" fill="currentColor">
+                                    <circle class="flask-bubble flask-bubble-1" cx="11" cy="14" r="1.25" />
+                                    <circle class="flask-bubble flask-bubble-2" cx="13.5" cy="15" r="1" />
+                                    <circle class="flask-bubble flask-bubble-3" cx="12" cy="13" r="0.85" />
+                                </g>
+                                <!-- Friendly conical flask body -->
+                                <g class="flask-body">
+                                    <!-- Liquid inside the flask -->
+                                    <path d="M6.8 15.5h10.4l1.3 2.3A2 2 0 0 1 16.75 20.8h-9.5A2 2 0 0 1 5.5 17.8l1.3-2.3Z" fill="currentColor" fill-opacity="0.28" />
+                                    <!-- Flask outline -->
+                                    <path d="M9.5 3.5h5M10 3.5v4.8L5.3 17.4a2.2 2.2 0 0 0 1.95 3.2h9.5a2.2 2.2 0 0 0 1.95-3.2L14 8.3V3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                            </svg>
                         </a>
                     </div>
                 </div>

@@ -465,6 +465,101 @@ html.dark .tech-card:hover {
     animation-play-state: running;
 }
 
+/* Friendly testing flask animation (Hero CTA) */
+.flask-body {
+    transform-box: fill-box;
+    transform-origin: 50% 65%;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.flask-bubbles {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.flask-bubble {
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+/* Periodic playful shake: active wiggle (0-35%), then calm pause (35-100%) */
+@keyframes flask-periodic-shake {
+    0%, 36%, 100% {
+        transform: rotate(0deg);
+    }
+
+    8% {
+        transform: rotate(-14deg);
+    }
+
+    16% {
+        transform: rotate(11deg);
+    }
+
+    24% {
+        transform: rotate(-7deg);
+    }
+
+    30% {
+        transform: rotate(3deg);
+    }
+}
+
+@keyframes flask-bubble-rise {
+    0% {
+        opacity: 0;
+        transform: translateY(2px) scale(0.6);
+    }
+
+    25% {
+        opacity: 0.95;
+    }
+
+    80% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-13px) scale(1.15);
+    }
+}
+
+.btn-primary:hover .flask-body,
+.btn-primary:focus-visible .flask-body {
+    animation: flask-periodic-shake 2.4s ease-in-out infinite;
+}
+
+.btn-primary:hover .flask-bubbles,
+.btn-primary:focus-visible .flask-bubbles {
+    opacity: 1;
+}
+
+.btn-primary:hover .flask-bubble-1,
+.btn-primary:focus-visible .flask-bubble-1 {
+    animation: flask-bubble-rise 1.3s ease-out infinite;
+}
+
+.btn-primary:hover .flask-bubble-2,
+.btn-primary:focus-visible .flask-bubble-2 {
+    animation: flask-bubble-rise 1.3s ease-out 0.45s infinite;
+}
+
+.btn-primary:hover .flask-bubble-3,
+.btn-primary:focus-visible .flask-bubble-3 {
+    animation: flask-bubble-rise 1.3s ease-out 0.9s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-primary:hover .flask-body,
+    .btn-primary:focus-visible .flask-body,
+    .btn-primary:hover .flask-bubble,
+    .btn-primary:focus-visible .flask-bubble {
+        animation: none;
+    }
+}
+
 /* =========================================
    9. Maintenance Page Specifics
    ========================================= */
@@ -515,6 +610,21 @@ html.dark .tech-card:hover {
 
 .flip-card.is-flipped .flip-card-inner {
     transform: rotateY(180deg);
+}
+
+/* Lighter base weight creates strong typographic contrast with the bold initial */
+.flip-card-front h3 {
+    color: rgb(255 255 255 / 78%);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.flip-card-front h3::first-letter {
+    color: #fff;
+    font-size: 1.35em;
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: 0 0 18px rgb(255 255 255 / 45%);
 }
 
 /* =========================================
